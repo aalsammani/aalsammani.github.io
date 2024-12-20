@@ -16,7 +16,7 @@ redirect_from:
 
 ## ✨ **About Me**  
 
-A passionate mathematician and data scientist with over **a dacade of teaching experience**. My expertise spans **mathematical modeling**, **data science**, **machine learning**, and **applied statistics**, bridging theory and real-world applications across biology, medicine, economics, and technology. I am committed to fostering innovation and impactful instruction through interdisciplinary research and collaboration.
+A passionate mathematician and data scientist with over **a decade of teaching experience**. My expertise spans **mathematical modeling**, **data science**, **machine learning**, and **applied statistics**, bridging theory and real-world applications across biology, medicine, economics, and technology. I am committed to fostering innovation and impactful instruction through interdisciplinary research and collaboration.
 
 ---
 
