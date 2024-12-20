@@ -129,7 +129,7 @@ My research integrates computational mathematics, data science, and machine lear
 
 ---
 
-**[View Full CV on GitHub](https://github.com/username/your-cv-repo)**  
+**[View Full CV on GitHub](https://github.com/aalsammani/your-cv-repo)**  
 
 
 #{% include base_path %}
