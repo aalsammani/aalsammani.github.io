@@ -16,9 +16,9 @@ redirect_from:
 
 Hello! I'm Abdallah Alsammani, a mathematician and data scientist with over nine years of experience in teaching, research, and interdisciplinary collaboration. I specialize in mathematical modeling, applied statistics, data science, and machine learning, seamlessly connecting theoretical foundations with real-world applications. My academic journey has led me to work on impactful projects in systems biology, computational neuroscience, public health, epidemiology, and environmental science.
 
-Currently, I serve as an Assistant Professor of Data Science at Jacksonville University, where I design and teach innovative courses, mentor undergraduate research, and contribute to curriculum development. My goal is to empower students and researchers alike with the tools and insights to solve complex challenges using data-driven approaches.
+I am an Assistant Professor of Data Science at Jacksonville University. I design and teach innovative courses, mentor undergraduate research, and contribute to curriculum development. My goal is to empower students and researchers with the tools and insights to solve complex challenges using data-driven approaches.
 
-Whether it's advancing knowledge through research, mentoring aspiring scholars, or exploring new ways to integrate technology into education, I am committed to making a meaningful impact. Thank you for visiting my website—feel free to explore my work and connect with me!
+Whether advancing knowledge through research, mentoring aspiring scholars, or exploring new ways to integrate technology into education, I am committed to making a meaningful impact. Thank you for visiting my website. Feel free to explore my work and connect with me!
 
 
 
