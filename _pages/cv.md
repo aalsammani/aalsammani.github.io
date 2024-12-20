@@ -1,13 +1,12 @@
 ---
 layout: archive
-title: "CV"
+title: "Abdallah Alsammani - CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
 ---
 
-# 🎓 **Abdallah Alsammani**  
 
 📧 [aalsamm@ju.edu](mailto:aalsamm@ju.edu) | [abdallah142@gmail.com](mailto:abdallah142@gmail.com)  
 📞 904.256.7439 | 📱 334.524.1360  
