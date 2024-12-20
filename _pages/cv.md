@@ -1,3 +1,4 @@
+<!--
 ---
 layout: archive
 title: "CV"
@@ -6,6 +7,7 @@ author_profile: true
 redirect_from:
   - /resume
 ---
+-->
 
 {% include base_path %}
 [Download CV here](https://github.com/aalsammani/aalsammani.github.io/blob/master/files/cv.pdf)
