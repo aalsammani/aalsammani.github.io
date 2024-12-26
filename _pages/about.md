@@ -1,8 +1,3 @@
-
-
-
-
-
 ---
 permalink: /
 title: "Welcome to the Personal Website of Abdallah Alsammani"
@@ -10,9 +5,7 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
----
-
-# 
+--- 
 
 Hello! I'm Abdallah Alsammani, a mathematician and data scientist with over nine years of experience in teaching, research, and interdisciplinary collaboration. I specialize in mathematical modeling, applied statistics, data science, and machine learning, seamlessly connecting theoretical foundations with real-world applications. My academic journey has led me to work on impactful projects in systems biology, computational neuroscience, public health, epidemiology, and environmental science.
 
