@@ -4,8 +4,8 @@ collection: publications
 category: manuscripts
 permalink: /publication/2023-11-30-Estimation of circular statistics in the presence of measurement bias
 excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'IEEE journal of biomedical and health informatics'
+date: 2023-11-30
+venue: 'IEEE Journal of Biomedical and Health Informatics'
 slidesurl: '[http://academicpages.github.io/files/slides1.pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10335958)'
 paperurl: 'http://academicpages.github.io/files/paper1.pdf'
 citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
