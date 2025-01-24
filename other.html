@@ -58,3 +58,127 @@
   </main>
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create a GitHub Project and Link it to Your Local Computer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+        }
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 4px;
+            font-family: Consolas, monospace;
+            font-size: 1em;
+        }
+        pre {
+            background-color: #e8e8e8;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        .step {
+            margin-bottom: 20px;
+        }
+        .step h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>How to Create a GitHub Project and Link it to Your Local Computer</h1>
+
+    <p>This guide will walk you through creating a new GitHub project and linking it to your local computer using Git. Follow these steps carefully to get started with version control and repository management.</p>
+
+    <div class="step">
+        <h2>Step 1: Create a New Repository on GitHub</h2>
+        <ol>
+            <li>Log in to your GitHub account.</li>
+            <li>Click the <strong>"+"</strong> icon in the top-right corner and select <strong>"New repository"</strong>.</li>
+            <li>Enter a <strong>repository name</strong>. For example, <code>my-project</code>.</li>
+            <li>Add an optional description (e.g., "This is my first GitHub project").</li>
+            <li>Choose the visibility: <strong>Public</strong> or <strong>Private</strong>.</li>
+            <li>Check the box to initialize the repository with a <strong>README</strong> file if desired.</li>
+            <li>Click <strong>"Create repository"</strong>.</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>Step 2: Install Git on Your Local Machine</h2>
+        <p>If you haven’t installed Git yet, follow these steps:</p>
+        <ul>
+            <li><strong>Windows:</strong> Download and install Git from <a href="https://git-scm.com/" target="_blank">git-scm.com</a>.</li>
+            <li><strong>macOS:</strong> Use Homebrew to install Git: <code>brew install git</code>.</li>
+            <li><strong>Linux:</strong> Use your package manager: <code>sudo apt install git</code> (Ubuntu).</li>
+        </ul>
+        <p>To verify Git is installed, run:</p>
+        <pre>git --version</pre>
+    </div>
+
+    <div class="step">
+        <h2>Step 3: Clone the Repository to Your Local Machine</h2>
+        <ol>
+            <li>Go to your repository page on GitHub.</li>
+            <li>Click the green <strong>"Code"</strong> button and copy the URL (choose HTTPS or SSH).</li>
+            <li>Open a terminal or command prompt on your local computer.</li>
+            <li>Navigate to the folder where you want to store the repository:</li>
+            <pre>cd /path/to/your/folder</pre>
+            <li>Run the following command to clone the repository:</li>
+            <pre>git clone https://github.com/username/my-project.git</pre>
+        </ol>
+        <p>This will create a folder named <code>my-project</code> in your directory and copy the repository’s content into it.</p>
+    </div>
+
+    <div class="step">
+        <h2>Step 4: Add Files to Your Local Repository</h2>
+        <ol>
+            <li>Navigate to your project folder:</li>
+            <pre>cd my-project</pre>
+            <li>Add a new file to the folder. For example, create a file called <code>example.txt</code>:</li>
+            <pre>echo "This is an example file." > example.txt</pre>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>Step 5: Stage the File for Commit</h2>
+        <p>To tell Git to track the new file, use the <code>git add</code> command:</p>
+        <pre>git add example.txt</pre>
+        <p>To stage all files in the folder, use:</p>
+        <pre>git add .</pre>
+    </div>
+
+    <div class="step">
+        <h2>Step 6: Commit the Changes</h2>
+        <p>Save your changes to the local repository with a commit message:</p>
+        <pre>git commit -m "Add example.txt file"</pre>
+    </div>
+
+    <div class="step">
+        <h2>Step 7: Push Changes to GitHub</h2>
+        <p>Upload your changes to the GitHub repository:</p>
+        <pre>git push origin main</pre>
+        <p>Replace <code>main</code> with your branch name if it’s different (e.g., <code>master</code>).</p>
+    </div>
+
+    <div class="step">
+        <h2>Step 8: Verify on GitHub</h2>
+        <p>Go to your GitHub repository in your browser and refresh the page. You should see the new file (e.g., <code>example.txt</code>) in your repository.</p>
+    </div>
+
+    <footer>
+        <p>By following these steps, you’ve successfully created a GitHub repository, linked it to your local computer, and pushed changes! For more Git tutorials, visit <a href="https://git-scm.com/" target="_blank">git-scm.com</a>.</p>
+    </footer>
+</body>
+</html>
+
