@@ -1,53 +1,41 @@
-/* ================ RESET & GLOBAL ================ */
+/* style.css */
+
+/* ===== RESET & GLOBAL ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
   color: #333;
-  background: #f9f9f9;
   line-height: 1.6;
 }
-
 a {
   text-decoration: none;
-  color: #0066cc;
+  color: #007acc;
 }
-
 a:hover {
   text-decoration: underline;
 }
 
-/* ================ LAYOUT ================ */
-/* Sidebar on the left, main content on the right */
+/* ===== SIDEBAR ===== */
 .sidebar {
   position: fixed;
   left: 0;
   top: 0;
   width: 250px;
-  height: 100%;
-  background-color: #ffffff;
+  height: 100vh;
+  background-color: #f8f8f8;
   border-right: 1px solid #ddd;
   padding: 1rem;
   overflow-y: auto;
 }
-
-.main-content {
-  margin-left: 250px; /* Leaves space for the sidebar */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ================ SIDEBAR CONTENT ================ */
 .profile-info {
   text-align: center;
   margin-bottom: 2rem;
 }
-
 .profile-pic {
   width: 120px;
   height: 120px;
@@ -55,142 +43,162 @@ a:hover {
   border-radius: 50%;
   margin-bottom: 1rem;
 }
-
 .name {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  margin-bottom: 0.3rem;
 }
-
 .title,
 .university {
   font-size: 0.9rem;
-  margin-bottom: 0.3rem;
+  color: #555;
 }
-
 .contact {
   margin-top: 1rem;
   font-size: 0.9rem;
 }
-
 .social-links {
   margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
-/* ================ TOP NAV BAR ================ */
+/* ===== MAIN CONTENT & TOP NAV ===== */
+.main-content {
+  margin-left: 250px; /* space for the sidebar */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 .topnav {
-  background: #0066cc;
-  color: #fff;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
   padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 }
-
 .nav-links li a {
-  color: #fff;
+  color: #007acc;
   font-weight: 500;
-  transition: background 0.3s;
-  padding: 0.4rem 0.6rem;
+  padding: 0.3rem 0.5rem;
   border-radius: 4px;
+  transition: background 0.3s;
 }
-
 .nav-links li a:hover,
 .nav-links li a.active {
-  background-color: #004c99;
+  background-color: #e7f3ff;
 }
 
-/* ================ MOBILE MENU ICON ================ */
+/* Hamburger icon for mobile */
 .mobile-menu-icon {
   display: none;
-  cursor: pointer;
   flex-direction: column;
   gap: 4px;
+  cursor: pointer;
 }
-
 .mobile-menu-icon span {
   width: 25px;
   height: 3px;
-  background: #fff;
+  background: #007acc;
   border-radius: 2px;
 }
 
-/* ================ CONTENT SECTIONS ================ */
+/* ===== PAGE SECTIONS ===== */
 .hero {
-  background: url("images/background.jpg") no-repeat center center/cover;
-  padding: 3rem;
-  color: #fff;
-  background-color: #333; /* fallback if image not found */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2rem;
+  background-color: #fafafa;
 }
-
 .hero-text {
-  max-width: 800px;
+  flex: 1;
+  min-width: 300px;
+  margin-right: 1rem;
 }
-
 .hero-text h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
+}
+.hero-text p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+.hero-video {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
 }
 
 .highlights {
   display: flex;
-  gap: 1rem;
-  padding: 2rem 1rem;
   flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
 }
-
 .highlight-box {
-  background: #fff;
+  background-color: #f9f9f9;
   flex: 1;
   min-width: 250px;
   border-radius: 5px;
   padding: 1rem;
-  margin-bottom: 1rem;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
-
 .highlight-box h3 {
   margin-bottom: 0.5rem;
 }
-
 .btn {
   display: inline-block;
   margin-top: 1rem;
-  background-color: #0066cc;
+  background-color: #007acc;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   font-weight: 500;
 }
+.btn:hover {
+  background-color: #005a99;
+}
 
-/* Page-Content (About, Teaching, etc.) */
 .page-content {
   padding: 2rem;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
-
 .page-content h2 {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+}
+.page-content p,
+.page-content li {
+  margin-bottom: 0.7rem;
+  color: #555;
 }
 
-/* ================ FOOTER ================ */
+/* CV Page style enhancements */
+.cv-page h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== FOOTER ===== */
 .footer {
-  background: #f0f0f0;
+  background-color: #f8f8f8;
   text-align: center;
   padding: 1rem 0;
   margin-top: auto;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-/* ================ RESPONSIVE DESIGN ================ */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  /* Make sidebar collapsible or top-floating if desired */
   .sidebar {
     position: relative;
     width: 100%;
@@ -199,26 +207,18 @@ a:hover {
     border-bottom: 1px solid #ddd;
     margin-bottom: 1rem;
   }
-
   .main-content {
     margin-left: 0;
   }
-
-  .topnav {
-    flex-wrap: wrap;
-  }
-
   .nav-links {
-    display: none; /* hidden by default, toggled by JS */
+    display: none; /* hidden by default in mobile view */
     flex-direction: column;
-    gap: 1rem;
     width: 100%;
     margin-top: 1rem;
-    background: #005bb5;
-    padding: 1rem;
+    background: #f1f9ff;
+    padding: 0.5rem;
     border-radius: 4px;
   }
-
   .mobile-menu-icon {
     display: flex;
   }
