@@ -1,0 +1,225 @@
+/* ================ RESET & GLOBAL ================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background: #f9f9f9;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ================ LAYOUT ================ */
+/* Sidebar on the left, main content on the right */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.main-content {
+  margin-left: 250px; /* Leaves space for the sidebar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================ SIDEBAR CONTENT ================ */
+.profile-info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.title,
+.university {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.contact {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+/* ================ TOP NAV BAR ================ */
+.topnav {
+  background: #0066cc;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  font-weight: 500;
+  transition: background 0.3s;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: #004c99;
+}
+
+/* ================ MOBILE MENU ICON ================ */
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-menu-icon span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* ================ CONTENT SECTIONS ================ */
+.hero {
+  background: url("images/background.jpg") no-repeat center center/cover;
+  padding: 3rem;
+  color: #fff;
+  background-color: #333; /* fallback if image not found */
+}
+
+.hero-text {
+  max-width: 800px;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.highlights {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  flex-wrap: wrap;
+}
+
+.highlight-box {
+  background: #fff;
+  flex: 1;
+  min-width: 250px;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.highlight-box h3 {
+  margin-bottom: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #0066cc;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Page-Content (About, Teaching, etc.) */
+.page-content {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-content h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* ================ FOOTER ================ */
+.footer {
+  background: #f0f0f0;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+}
+
+/* ================ RESPONSIVE DESIGN ================ */
+@media (max-width: 768px) {
+  /* Make sidebar collapsible or top-floating if desired */
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .topnav {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    display: none; /* hidden by default, toggled by JS */
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    background: #005bb5;
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+  .mobile-menu-icon {
+    display: flex;
+  }
+}
