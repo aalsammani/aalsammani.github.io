@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dr. Jane Doe - Home</title>
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Optional JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ========== LEFT SIDEBAR ========== -->
+  <aside class="sidebar">
+    <div class="profile-info">
+      <img src="images/profile.jpg" alt="Profile Photo" class="profile-pic" />
+      <h1 class="name">Dr. Jane Doe</h1>
+      <p class="title">Assistant Professor</p>
+      <p class="university">XYZ University</p>
+
+      <div class="contact">
+        <p>Email: <a href="mailto:jdoe@xyz.edu">jdoe@xyz.edu</a></p>
+        <p>Office: Room 123</p>
+        <p>Phone: (123) 456-7890</p>
+      </div>
+
+      <div class="social-links">
+        <a href="#" target="_blank">LinkedIn</a> |
+        <a href="#" target="_blank">Twitter</a> |
+        <a href="#" target="_blank">Google Scholar</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="main-content">
+    <!-- TOP NAV BAR -->
+    <header class="topnav">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="other.html">Other</a></li>
+      </ul>
+      <!-- Mobile toggle icon (hamburger) -->
+      <div class="mobile-menu-icon" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </header>
+
+    <!-- HERO / WELCOME SECTION -->
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Welcome to My Academic Website</h2>
+        <p>
+          I am Dr. Jane Doe, an Assistant Professor at XYZ University. My research focuses 
+          on Machine Learning, Data Science, and Artificial Intelligence. I am passionate 
+          about teaching, mentoring, and advancing new algorithms for real-world impact.
+        </p>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS SECTION -->
+    <section class="highlights">
+      <article class="highlight-box">
+        <h3>Latest Publication</h3>
+        <p>“Advances in Neural Network Architectures” <br/> <em>Journal of AI Research, 2025</em></p>
+        <a class="btn" href="research.html">Read More</a>
+      </article>
+
+      <article class="highlight-box">
+        <h3>Upcoming Talk</h3>
+        <p>Keynote at the Global AI Conference <br/> June 2025, San Francisco</p>
+        <a class="btn" href="#">Conference Website</a>
+      </article>
+
+      <article class="highlight-box">
+        <h3>Teaching Spotlight</h3>
+        <p>“Calculus with Python” <br/> <em>Spring 2025</em></p>
+        <a class="btn" href="teaching.html">View Course Info</a>
+      </article>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2025 Dr. Jane Doe. All rights reserved.</p>
+    </footer>
+  </main>
+
+</body>
+</html>
