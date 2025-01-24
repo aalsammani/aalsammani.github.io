@@ -1,4 +1,4 @@
-/* style.css */
+<!-- /* style.css */
 
 /* ===== RESET & GLOBAL ===== */
 * {
@@ -222,4 +222,34 @@ a:hover {
   .mobile-menu-icon {
     display: flex;
   }
+} -->
+/* Example additions to style your fancy hero section */
+.fancy-hero {
+  background: linear-gradient(to right, #f0f9ff, #ffffff);
+  padding: 3rem 2rem;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
 }
+
+.fancy-hero .hero-text {
+  margin-bottom: 1rem;
+}
+
+.fancy-hero .hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #007acc;
+}
+
+.fancy-hero .tagline {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.hero-video {
+  text-align: center;
+  margin-top: 1rem;
+}
+
