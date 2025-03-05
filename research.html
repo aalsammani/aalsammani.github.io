@@ -1,143 +1,182 @@
+Updated research.html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research - Abdallah Alsammani</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
-
+  <!-- LEFT SIDEBAR -->
   <aside class="sidebar">
     <div class="profile-info">
       <img src="images/profile.jpg" alt="Abdallah Alsammani" class="profile-pic" />
       <h1 class="name">Abdallah Alsammani</h1>
       <p class="title">Assistant Professor of Data Science</p>
       <p class="university">Jacksonville University</p>
-      <div class="contact">
-   <!--     <p>Email: <a href="mailto:aalsamm@ju.edu">aalsamm@ju.edu</a></p>
-        <p>Email: <a href="mailto:abdallah142@gmail.com">abdallah142@gmail.com</a></p>
-        <p>Phone: (904) 256-7439</p>
-        <p>Phone: (334) 524-1360</p>
-        <p>2800 University Blvd N, Jacksonville, FL 32211</p>
-      </div> 
-         -->
       <div class="social-links">
-        <a href="#" target="_blank">LinkedIn</a> |
-        <a href="#" target="_blank">Google Scholar</a> |
-        <a href="#" target="_blank">Twitter</a>
+        <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=abdallah-alsammani" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://github.com/aalsammani" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank"><i class="fab fa-orcid"></i></a>
       </div>
     </div>
   </aside>
-
+  
+  <!-- MAIN CONTENT -->
   <main class="main-content">
     <header class="topnav">
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-menu">
         <li><a href="index.html">Home</a></li>
-    <!--    <li><a href="about.html">About</a></li>   -->
+        <li><a href="about.html">About</a></li>
         <li><a href="teaching.html">Teaching</a></li>
         <li><a href="research.html" class="active">Research</a></li>
         <li><a href="cv.html">CV</a></li>
- <!--       <li><a href="other.html">Other</a></li>   -->
       </ul>
       <div class="mobile-menu-icon" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </div>
     </header>
-
-   <!-- <section class="page-content">  -->
-   <section class="research-interests" style="background: linear-gradient(to right, #f9f9f9, #e9f0fa); padding: 50px; font-family: Arial, sans-serif;">
-  <div class="container" style="max-width: 1000px; margin: 0 auto;">
-    <h2 style="color: #2c3e50; font-size: 2.8em; margin-bottom: 20px; text-align: center;">Research Interests</h2>
-    <p style="line-height: 1.8; color: #34495e; font-size: 1.2em; text-align: justify;">
-      My research lies at the intersection of applied mathematics, data science, statistics, and machine learning, focusing on understanding and influencing biological, ecological, and medical systems. 
-      By uniting mathematical theory, computational methods, and data-driven approaches, I develop rigorous models that reveal patterns, predict behaviors, and guide real-world decision-making. 
-      Synergistic approaches—combining analytical models with high-quality data and advanced computational techniques—drive my work to tackle challenges that single-method strategies cannot.
-    </p>
-
-    <h3 style="color: #2c3e50; font-size: 2em; margin-top: 30px;">Primary Research Areas</h3>
-    <div style="padding-left: 20px;">
-      <h4 style="color: #2c3e50; font-size: 1.5em;">Applied Mathematics and Theoretical Foundations</h4>
-      <p style="line-height: 1.8; color: #34495e;">
-        I specialize in dynamical systems and differential equations and use these tools to model infectious diseases, oncological processes, and ecological networks. 
-        I uncover conditions that influence disease persistence, treatment outcomes, and population dynamics through stability analysis and sensitivity studies. 
-        My doctoral research on stochastic and nonautonomous hepatitis B virus (HBV) models provided critical insights into disease spread and persistence parameters.
-      </p>
-
-      <h4 style="color: #2c3e50; font-size: 1.5em;">Computational and Data-Driven Science</h4>
-      <p style="line-height: 1.8; color: #34495e;">
-        I leverage large-scale biological and clinical datasets to apply machine learning and advanced data visualization techniques to problems in epidemiology, neuroscience, and healthcare analytics. 
-        Recent projects include using natural language processing to predict clinical outcomes and analyzing time-series intracranial EEG data to identify neurological patterns. 
-        These efforts extract actionable insights from complex, multidimensional data.
-      </p>
-
-      <h4 style="color: #2c3e50; font-size: 1.5em;">Interdisciplinary and Ethical Dimensions</h4>
-      <p style="line-height: 1.8; color: #34495e;">
-        My research extends to practical applications in neuroscience, epidemiology, environmental science, and business analytics. I focus on developing evidence-based models for disease control, personalized medicine, and policy-making. Aware of the ethical implications of AI and machine learning, I am committed to promoting transparency, fairness, and responsible decision-making in all my research endeavors.
-      </p>
-    </div>
-
-    <h3 style="color: #2c3e50; font-size: 2em; margin-top: 30px;">Current Research Projects</h3>
-    <ul style="line-height: 1.8; color: #34495e; font-size: 1.2em; padding-left: 20px;">
-      <li><strong style="color: #2c3e50;">Mathematical Epidemiology:</strong> Collaborating with the University of Florida to model COVID-19 vaccination strategies, exploring the interplay between vaccination rates, economic factors, and public health outcomes.</li>
-      <li><strong style="color: #2c3e50;">Data-Driven Healthcare Analytics:</strong> Developing machine learning algorithms, including NLP-based models, to analyze EHRs from resources like MIMIC-IV. This work enhances patient care by predicting outcomes and refining treatment methodologies.</li>
-      <li><strong style="color: #2c3e50;">Data Science Education:</strong> Investigating strategies for teaching data science, emphasizing real-world problem-solving, coding proficiency, and ethical considerations in curricula.</li>
-    </ul>
-
-    <h3 style="color: #2c3e50; font-size: 2em; margin-top: 30px;">Future Directions</h3>
-    <div style="padding-left: 20px;">
-      <h4 style="color: #2c3e50; font-size: 1.5em;">Advancing Computational Models</h4>
-      <p style="line-height: 1.8; color: #34495e;">
-        I aim to develop multi-scale models that integrate molecular dynamics with population-level data, addressing complex challenges such as cancer tumor growth, vector-borne disease spread, and ecological network resilience under environmental stressors.
-      </p>
-
-      <h4 style="color: #2c3e50; font-size: 1.5em;">Integrating AI in Healthcare</h4>
-      <p style="line-height: 1.8; color: #34495e;">
-        By combining cutting-edge machine learning techniques with rigorous mathematical modeling, I strive to enhance risk stratification, early detection, and treatment optimization while maintaining ethical transparency and fairness.
-      </p>
-
-      <h4 style="color: #2c3e50; font-size: 1.5em;">Building Collaborative Research Environments</h4>
-      <p style="line-height: 1.8; color: #34495e;">
-        My vision includes creating an interdisciplinary research lab that fosters collaboration among mathematicians, clinicians, biologists, and industry partners. This initiative aims to pursue grant-supported projects and mentor emerging researchers.
-      </p>
-    </div>
-
-      <h2>Publications &amp; Projects</h2>
-      <h3>Peer-Reviewed Publications</h3>
-      <ul>
-        <li><strong>A. Alsammani</strong>, W. C. Stacey, and S. V. Gliske. “Estimation of Circular Statistics in the Presence of Measurement Bias.” <em>IEEE Journal of Biomedical and Health Informatics</em>, 2023.</li>
-        <li>Alflahi, A. A. E., Mohammed, M. A. Y., and <strong>A. Alsammani</strong>. "Enhancement of database access performance..." <em>Computational Science and Its Applications – ICCSA 2024</em>. Springer.</li>
-        <li><strong>A. Alsammani</strong>. "Mathematical Analysis of Autonomous and Nonautonomous Hepatitis B Virus Transmission Models." <em>ICCSA 2023</em>. Springer.</li>
-        <li>Tyner, K., <strong>A. Alsammani</strong>, et al. "The impact of intracranial EEG on sleep..." <em>SLEEP</em>, 45: A255-A255, 2022.</li>
-        <li>Abdulrashid, I., <strong>A. A. M. Alsammani</strong>, and X. Han. "Stability analysis of a chemotherapy model with delays." <em>Discrete and Continuous Dynamical Systems - B</em>, 24(3):989-1005, 2019.</li>
-      </ul>
-
-      <h3>Preprints &amp; Under Review</h3>
-      <ul>
-        <li>Mohammed, M. et al., <strong>A. Alsammani</strong>, et al. "Coexistence via trophic cascade..." arXiv:2408, 2024.</li>
-        <li><strong>A. Alsammani</strong>. "Stochastic modeling and computational simulations of HBV infection dynamics." arXiv:2308.05819, 2023. (Under Review)</li>
-        <li><strong>A. Alsammani</strong>, W. C. Stacey, and S. V. Gliske. "No need to restrict the analysis of HFOs..." (Submitted to <em>Annals of Clinical and Translational Neurology</em>), expected 2025.</li>
-      </ul>
-
-      <h3>In Progress</h3>
-      <ul>
-        <li>An Optimal Control Analysis of a Two-Disease SIS Coinfection Model with Time Delays.</li>
-        <li>The Effect of Game-Theoretic and Economic Factors on COVID-19 Dynamics.</li>
-      </ul>
-
-      <h3>Presentations &amp; Posters</h3>
-      <ul>
-        <li>Alflahi, A. A. E., M. A. Y. Mohammed, and A. Alsammani, <em>ICCSA</em>, July 2024 (Talk)</li>
-        <li>A. Alsammani, <em>ICCSA</em>, July 2023 (Talk)</li>
-        <li>A. Alsammani, "An Exploration of Mathematical Modeling," SPi Mu Epsilon Induction Ceremony, JU, April 2024</li>
-        <li>A. Alsammani, "Dynamical Analysis of the Hepatitis B Virus Infection Model," SELS, JU, 2023 (Talk)</li>
-        <li>A. Alsammani et al., "Effect of Sleep Stage on HFOs and Artifacts," AES Annual Meeting, 2021 (Poster)</li>
-      </ul>
-
+    
+    <section class="page-content">
+      <h2>Research</h2>
+      
+      <div class="research-interests">
+        <h3>Research Interests</h3>
+        <p>
+          My research integrates computational mathematics, data science, and machine learning to tackle complex, real-world challenges. 
+          I focus on systems biology, medical imaging, computational neuroscience, epidemiology, public health, environmental science, and ecology. 
+          I seek collaborations that bridge theoretical models and empirical data, facilitating new tools, algorithms, and analytical 
+          methods for advancing knowledge in interdisciplinary fields.
+        </p>
+      </div>
+      
+      <div class="publications-section">
+        <h3>Publications</h3>
+        
+        <div class="publications-tabs">
+          <div class="publication-tab active" data-category="all">All Publications</div>
+          <div class="publication-tab" data-category="published">Published</div>
+          <div class="publication-tab" data-category="preprint">Preprints</div>
+          <div class="publication-tab" data-category="submitted">Submitted</div>
+        </div>
+        
+        <div class="publications-list">
+          <!-- Published Papers -->
+          <div class="publication-item" data-type="published">
+            <h4 class="publication-title">Estimation of Circular Statistics in the Presence of Measurement Bias</h4>
+            <p class="publication-authors">A. Alsammani, W. C. Stacey, and S. V. Gliske</p>
+            <p class="publication-journal">IEEE Journal of Biomedical and Health Informatics<span class="publication-year">2023</span></p>
+            <p>DOI: 10.1109/JBHI.2023.3334684</p>
+            <a href="#" class="publication-link">View Publication <i class="fas fa-external-link-alt"></i></a>
+          </div>
+          
+          <div class="publication-item" data-type="published">
+            <h4 class="publication-title">Enhancement of database access performance by improving data consistency in a non-relational database system (NoSQL)</h4>
+            <p class="publication-authors">Alflahi, A. A. E., Mohammed, M. A. Y., and A. Alsammani</p>
+            <p class="publication-journal">Computational Science and Its Applications – ICCSA 2024<span class="publication-year">2024</span></p>
+            <p>Publisher: Springer</p>
+            <a href="#" class="publication-link">View Publication <i class="fas fa-external-link-alt"></i></a>
+          </div>
+          
+          <div class="publication-item" data-type="published">
+            <h4 class="publication-title">Mathematical Analysis of Autonomous and Nonautonomous Hepatitis B Virus Transmission Models</h4>
+            <p class="publication-authors">A. Alsammani</p>
+            <p class="publication-journal">Computational Science and Its Applications – ICCSA 2023<span class="publication-year">2023</span></p>
+            <p>Publisher: Springer</p>
+            <a href="#" class="publication-link">View Publication <i class="fas fa-external-link-alt"></i></a>
+          </div>
+          
+          <div class="publication-item" data-type="published">
+            <h4 class="publication-title">The impact of intracranial EEG on sleep...</h4>
+            <p class="publication-authors">Tyner, K., A. Alsammani, et al.</p>
+            <p class="publication-journal">SLEEP, 45: A255-A255<span class="publication-year">2022</span></p>
+            <a href="#" class="publication-link">View Publication <i class="fas fa-external-link-alt"></i></a>
+          </div>
+          
+          <div class="publication-item" data-type="published">
+            <h4 class="publication-title">Stability analysis of a chemotherapy model with delays</h4>
+            <p class="publication-authors">Abdulrashid, I., A. A. M. Alsammani, and X. Han</p>
+            <p class="publication-journal">Discrete and Continuous Dynamical Systems - B, 24(3):989-1005<span class="publication-year">2019</span></p>
+            <a href="#" class="publication-link">View Publication <i class="fas fa-external-link-alt"></i></a>
+          </div>
+          
+          <!-- Preprints -->
+          <div class="publication-item" data-type="preprint">
+            <h4 class="publication-title">Coexistence via trophic cascade in plant-herbivore-carnivore systems...</h4>
+            <p class="publication-authors">Mohammed, M. et al., A. Alsammani, et al.</p>
+            <p class="publication-journal">arXiv:2408<span class="publication-year">2024</span></p>
+            <a href="#" class="publication-link">View Preprint <i class="fas fa-external-link-alt"></i></a>
+          </div>
+          
+          <div class="publication-item" data-type="preprint">
+            <h4 class="publication-title">Stochastic modeling and computational simulations of HBV infection dynamics</h4>
+            <p class="publication-authors">A. Alsammani</p>
+            <p class="publication-journal">arXiv:2308.05819<span class="publication-year">2023</span></p>
+            <p><em>Under Review</em></p>
+            <a href="#" class="publication-link">View Preprint <i class="fas fa-external-link-alt"></i></a>
+          </div>
+          
+          <!-- Submitted -->
+          <div class="publication-item" data-type="submitted">
+            <h4 class="publication-title">No need to restrict the analysis of High-Frequency Oscillations to slow-wave sleep or time of day</h4>
+            <p class="publication-authors">A. Alsammani, W. C. Stacey, and S. V. Gliske</p>
+            <p class="publication-journal">Submitted to Annals of Clinical and Translational Neurology</p>
+            <p><em>Expected to be online in 2025</em></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="in-progress-section">
+        <h3>Current Projects</h3>
+        
+        <div class="in-progress-item">
+          <p>An Optimal Control Analysis of a Two-Disease SIS Coinfection Model with Time Delays</p>
+        </div>
+        
+        <div class="in-progress-item">
+          <p>The Effect of Game-Theoretic and Economic Factors on COVID-19 Dynamics</p>
+        </div>
+      </div>
+      
+      <div class="research-interests" style="margin-top: 3rem;">
+        <h3>Research Collaborations</h3>
+        <p>
+          I am always interested in new research collaborations that align with my interests in mathematical modeling, 
+          data science, and machine learning applications. If you are interested in potential collaboration, 
+          please feel free to <a href="mailto:aalsamm@ju.edu">contact me</a> to discuss opportunities.
+        </p>
+      </div>
     </section>
-
+    
     <footer class="footer">
-      <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
+      <div class="footer-content">
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:aalsamm@ju.edu">aalsamm@ju.edu</a></p>
+          <p><i class="fas fa-phone"></i> 904.256.7439</p>
+          <p><i class="fas fa-map-marker-alt"></i> Jacksonville University<br>2800 University Blvd N<br>Jacksonville, FL 32211</p>
+        </div>
+        
+        <div class="footer-nav">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
+      </div>
     </footer>
   </main>
 </body>
