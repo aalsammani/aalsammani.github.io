@@ -224,16 +224,18 @@ p {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-top: 0; /* Remove any top padding */
 }
 
 /* ==================== 
    HERO SECTION 
 ===================== */
 .hero {
-  padding: 4rem 2rem;
+  padding: 7rem 2rem 4rem;  /* Increased top padding to prevent overlap with navbar */
   background: linear-gradient(to right, #f5f7fa, #c3cfe2);
   position: relative;
   overflow: hidden;
+  margin-top: 0; /* Ensure no margin is pushing content under navbar */
 }
 
 .hero-content {
@@ -632,9 +634,11 @@ p {
   justify-content: flex-end;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  position: sticky;
+  position: fixed; /* Changed from sticky to fixed */
   top: 0;
-  z-index: 5;
+  right: 0;
+  width: calc(100% - 280px); /* Adjusted width to account for sidebar */
+  z-index: 1000; /* Increased z-index to ensure it stays on top */
 }
 
 .nav-links {
@@ -1100,6 +1104,8 @@ p {
   }
   
   .topnav {
+    width: 100%; /* Full width on mobile */
+    position: fixed;
     justify-content: space-between;
     padding: 1rem;
   }
