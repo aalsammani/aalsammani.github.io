@@ -1,184 +1,261 @@
+Updated teaching.html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teaching - Abdallah Alsammani</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
-
+  <!-- LEFT SIDEBAR -->
   <aside class="sidebar">
     <div class="profile-info">
       <img src="images/profile.jpg" alt="Abdallah Alsammani" class="profile-pic" />
       <h1 class="name">Abdallah Alsammani</h1>
       <p class="title">Assistant Professor of Data Science</p>
       <p class="university">Jacksonville University</p>
-       <!-- <div class="contact">
-      <p>Email: <a href="mailto:aalsamm@ju.edu">aalsamm@ju.edu</a></p>
-        <p>Email: <a href="mailto:abdallah142@gmail.com">abdallah142@gmail.com</a></p>
-        <p>Phone: (904) 256-7439</p>
-        <p>Phone: (334) 524-1360</p> 
-        <p>2800 University Blvd N, Jacksonville, FL 32211</p>
-      </div>   -->
       <div class="social-links">
-        <a href="#" target="_blank">LinkedIn</a> |
-        <a href="#" target="_blank">Google Scholar</a> |
-        <a href="#" target="_blank">Twitter</a>
+        <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=abdallah-alsammani" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://github.com/aalsammani" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank"><i class="fab fa-orcid"></i></a>
       </div>
     </div>
   </aside>
-
+  
+  <!-- MAIN CONTENT -->
   <main class="main-content">
     <header class="topnav">
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-menu">
         <li><a href="index.html">Home</a></li>
-    <!--    <li><a href="about.html">About</a></li>    -->
+        <li><a href="about.html">About</a></li>
         <li><a href="teaching.html" class="active">Teaching</a></li>
         <li><a href="research.html">Research</a></li>
         <li><a href="cv.html">CV</a></li>
-     <!--   <li><a href="other.html">Other</a></li>   -->
       </ul>
       <div class="mobile-menu-icon" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </div>
     </header>
-
-    <section class="teaching-philosophy" style="background: linear-gradient(to right, #fefefe, #f0f8ff); padding: 50px; font-family: Arial, sans-serif;">
-  <div class="container" style="max-width: 1000px; margin: 0 auto;">
-    <h2 style="color: #2c3e50; font-size: 2.8em; margin-bottom: 20px; text-align: center;">Teaching Philosophy</h2>
-    <p style="line-height: 1.8; color: #34495e; font-size: 1.2em; text-align: justify;">
-      My teaching philosophy in applied mathematics, data science, statistics, and machine learning is guided by a commitment to fostering deep conceptual understanding and promoting the ethical and responsible use of emerging technologies. I emphasize a strong theoretical foundation to empower students to tackle complex, real-world challenges confidently. My curriculum focuses on problem-solving, inquiry, and hands-on projects, utilizing real datasets and case studies from fields such as healthcare, economics, and environmental science. These examples showcase the practical relevance and power of analytical tools in addressing real-world issues.
-    </p>
-    <p style="line-height: 1.8; color: #34495e; font-size: 1.2em;">
-      In today’s digital landscape, I am dedicated to guiding students in the ethical integration of AI and machine learning tools. By encouraging critical thinking about data provenance, algorithmic fairness, and privacy considerations, I prepare students to be conscientious stewards of technology in society. This includes fostering awareness of the societal impacts of their analyses and promoting responsible decision-making.
-    </p>
-    <p style="line-height: 1.8; color: #34495e; font-size: 1.2em;">
-      With over a decade of teaching experience, I have worked with students from diverse academic and cultural backgrounds. My approach emphasizes active engagement and inclusivity, tailoring teaching methods to match course levels, class sizes, and individual needs. Through lectures, workshops, flipped classrooms, and collaborative projects, I ensure that students learn in ways best suited to them. I also provide ongoing support through regular office hours and responsive communication, fostering an environment where students feel valued and confident in seeking guidance.
-    </p>
-
-    <h3 style="color: #2c3e50; font-size: 2em; margin-top: 30px;">Teaching Approach</h3>
-    <ul style="line-height: 1.8; color: #34495e; font-size: 1.2em; padding-left: 20px;">
-      <li><strong style="color: #2c3e50;">Encourage a Positive and Inclusive Learning Environment:</strong> I strive to create a welcoming atmosphere where students feel 
-        respected and supported, fostering trust and curiosity through approachable communication and active dialogue.</li>
-      <li><strong style="color: #2c3e50;">Provide Structured, Engaging Materials:</strong> Clear lecture notes, thoughtfully chosen examples, 
-        and real-world applications ensure students grasp concepts deeply while appreciating their practical value.</li>
-      <li><strong style="color: #2c3e50;">Promote Independent and Creative Thinking:</strong> I design activities that encourage intellectual 
-        curiosity and critical evaluation of algorithms and assumptions, helping students become forward-thinking problem-solvers.</li>
-      <li><strong style="color: #2c3e50;">Incorporate Technology and AI Thoughtfully:</strong> Hands-on exploration using statistical software, 
-        machine learning libraries and ethical AI practices prepare students for real-world data challenges.</li>
-      <li><strong style="color: #2c3e50;">Adapt to Diverse Needs and Backgrounds:</strong> I provide targeted support for students with varying 
-        academic preparation, ensuring inclusivity and fostering confidence across all learning levels.</li>
-    </ul>
-
-    <h3 style="color: #2c3e50; font-size: 2em; margin-top: 30px;">Teaching Experience</h3>
-    <p style="line-height: 1.8; color: #34495e; font-size: 1.2em;">
-       I have taught a range of Data Science, Statistics, and Mathematics 
-        courses at Jacksonville University and Auburn University. 
-        My teaching approach emphasizes real-world applications, 
-        interdisciplinary teamwork, and hands-on projects.
-    </p>
-
- <h3>Jacksonville University (2022—Present)</h3>
-      <ul>
-        <li>
-          <strong>Spring 2025</strong>
-          <ul>
-            <li>Introduction to Machine Learning</li>
-            <li>Introduction to Data Science</li>
-            <li>Capstone Research Project</li>
+    
+    <section class="page-content">
+      <h2>Teaching</h2>
+      
+      <div class="teaching-section">
+        <h3>Current & Recent Courses at Jacksonville University</h3>
+        
+        <div class="semester-box">
+          <h4 class="semester-title">Spring 2025</h4>
+          <ul class="course-list">
+            <li>MATH 470: Machine Learning Algorithms</li>
+            <li>MATH 270: Introduction to Data Science</li>
+            <li>MATH 170: Data Science Foundations</li>
+            <li>MATH 481WS: Capstone Research Project</li>
+            <li>MATH 487RI: Independent study</li>
           </ul>
-        </li>
-        <li>
-          <strong>Fall 2024</strong>
-          <ul>
-            <li>Introduction to Data Science</li>
-            <li>Data Science Foundations</li>
-            <li>Differential Equations</li>
-            <li>Statistical Learning</li>
+        </div>
+        
+        <div class="semester-box">
+          <h4 class="semester-title">Fall 2024</h4>
+          <ul class="course-list">
+            <li>MATH 331-101: Differential Equations</li>
+            <li>MATH 331-103: Differential Equations</li>
+            <li>MATH 270: Introduction to Data Science</li>
+            <li>MATH 170: Data Science Foundations</li>
+            <li>MATH 487RI: Independent study</li>
           </ul>
-        </li>
-        <li>
-          <strong>Summer 2024</strong>
-          <ul>
+        </div>
+        
+        <div class="semester-box">
+          <h4 class="semester-title">Summer 2024</h4>
+          <ul class="course-list">
             <li>Elementary Statistics</li>
           </ul>
-        </li>
-        <li>
-          <strong>Spring 2024</strong>
-          <ul>
-            <li>Introduction to Data Science</li>
-            <li>Data Science Foundations</li>
+        </div>
+        
+        <div class="semester-box">
+          <h4 class="semester-title">Spring 2024</h4>
+          <ul class="course-list">
+            <li>MATH 270: Introduction to Data Science</li>
+            <li>MATH 170: Data Science Foundations</li>
+            <li>MATH 490: Internship Sponsor</li>
           </ul>
-        </li>
-        <li>
-          <strong>Fall 2023</strong>
-          <ul>
-            <li>Introduction to Data Science</li>
-            <li>Data Science Foundations</li>
-            <li>Linear Algebra II</li>
+        </div>
+        
+        <div class="semester-box">
+          <h4 class="semester-title">Fall 2023</h4>
+          <ul class="course-list">
+            <li>MATH 420: Linear Algebra II</li>
+            <li>MATH 240: Calculus III</li>
+            <li>MATH 170: Data Science Foundations</li>
+            <li>MATH 487RI: Independent Study</li>
+            <li>MATH 490: Internship Sponsor</li>
           </ul>
-        </li>
-        <li>
-          <strong>Spring 2023</strong>
-          <ul>
-            <li>Introduction to Data Science</li>
-            <li>Probability Theory</li>
-            <li>Calculus III</li>
+        </div>
+        
+        <div class="semester-box">
+          <h4 class="semester-title">Spring 2023</h4>
+          <ul class="course-list">
+            <li>MATH 315: Probability</li>
+            <li>MATH 240: Calculus III</li>
+            <li>MATH 487RI: Independent Study</li>
           </ul>
-        </li>
-        <li>
-          <strong>Fall 2022</strong>
-          <ul>
-            <li>Introduction to Data Science</li>
-            <li>Data Science Foundations</li>
-            <li>Calculus III</li>
+        </div>
+        
+        <div class="semester-box">
+          <h4 class="semester-title">Fall 2022</h4>
+          <ul class="course-list">
+            <li>MATH 270: Introduction to Data Science</li>
+            <li>MATH 170: Data Science Foundations</li>
+            <li>MATH 240: Calculus III</li>
           </ul>
-        </li>
-      </ul>
-
-      <h3>Auburn University (2014—2020)</h3>
-      <ul>
-        <li>Instructor of record for:
-          <ul>
-            <li>Introduction to Statistics</li>
-            <li>Linear Algebra</li>
-            <li>Differential Equations</li>
-            <li>College Algebra</li>
-            <li>Pre-Calculus</li>
-            <li>Calculus I, II, III</li>
-          </ul>
-        </li>
-        <li>Supervised Auburn Tutoring Center, enhancing student performance 
-            and retention in STEM courses.</li>
-      </ul>
-
-      <h3>Overseas Teaching Experience (Sudan) (2010–2013)</h3>
-      <ul>
-        <li>
-          Taught at Al-Neelain University and Academy of Engineering and Medical Sciences:
-          <ul>
-            <li>Matlab Programming</li>
-            <li>Introductory &amp; Theoretical Statistics</li>
-            <li>Real Analysis</li>
-            <li>Topology</li>
-            <li>Number Theory</li>
-            <li>Mathematical Methods</li>
-            <li>Abstract Algebra</li>
-          </ul>
-        </li>
-      </ul>
-
-      <p>
-        I strive to cultivate a passion for problem-solving and 
-        independent thinking in my classes, ensuring that students 
-        can confidently apply what they learn to real-world contexts.
-      </p>
+        </div>
+      </div>
+      
+      <div class="teaching-section">
+        <h3>Previous Teaching Experience</h3>
+        
+        <div class="previous-teaching">
+          <div class="teaching-card">
+            <h4>Auburn University (2014-2020)</h4>
+            <ul>
+              <li>Calculus III</li>
+              <li>Calculus II</li>
+              <li>Calculus I</li>
+              <li>Pre-Calculus</li>
+              <li>College Algebra</li>
+              <li>Introduction to Statistics</li>
+              <li>Linear Algebra</li>
+              <li>Differential Equations</li>
+            </ul>
+          </div>
+          
+          <div class="teaching-card">
+            <h4>Al Neelain University, Sudan (2012-2013)</h4>
+            <ul>
+              <li>Matlab Programming</li>
+              <li>Introduction to Statistics</li>
+              <li>Real Analysis</li>
+              <li>Topology</li>
+              <li>Number Theory</li>
+              <li>Mathematical Methods</li>
+              <li>Abstract Algebra</li>
+            </ul>
+          </div>
+          
+          <div class="teaching-card">
+            <h4>Academy of Engineering and Medical Sciences, Sudan (2012-2013)</h4>
+            <ul>
+              <li>Foundational Mathematics</li>
+              <li>Applied Mathematics</li>
+              <li>Statistics for Engineers</li>
+              <li>Mathematical Modeling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="teaching-section research-supervision">
+        <h3>Research Supervision & Academic Advising</h3>
+        
+        <h4 style="margin-top: 1.5rem; margin-bottom: 1rem;">Undergraduate Research Supervision</h4>
+        
+        <div class="supervision-item">
+          <div class="project">Independent study research on Data Analysis and Visualization for Animal Shelter Outcomes</div>
+          <div class="semester">Spring 2025</div>
+        </div>
+        
+        <div class="supervision-item">
+          <div class="project">Independent study research on Statistical Learning</div>
+          <div class="semester">Fall 2024</div>
+        </div>
+        
+        <div class="supervision-item">
+          <div class="project">Internship Sponsor</div>
+          <div class="semester">Fall 2024</div>
+        </div>
+        
+        <div class="supervision-item">
+          <div class="project">Independent study research on Data Analytics on Road Accidents visualization</div>
+          <div class="semester">Fall 2023</div>
+        </div>
+        
+        <div class="supervision-item">
+          <div class="project">Independent study research on Introduction to Data Science and Prediction Algorithms in R</div>
+          <div class="semester">Fall 2023</div>
+        </div>
+        
+        <div class="supervision-item">
+          <div class="project">Internship Sponsor</div>
+          <div class="semester">Fall 2023</div>
+        </div>
+        
+        <div class="supervision-item">
+          <div class="project">Independent study research on NFL Game Prediction Model using SVD</div>
+          <div class="semester">Spring 2023</div>
+        </div>
+        
+        <h4 style="margin-top: 2rem; margin-bottom: 1rem;">Academic Advising</h4>
+        <p>
+          I have advised eight undergraduate students to support their academic progress and career planning 
+          since Spring 2023. My advising focuses on helping students navigate their academic journey in 
+          mathematics and data science, selecting appropriate courses, exploring research opportunities, 
+          and preparing for graduate studies or industry positions.
+        </p>
+      </div>
+      
+      <div class="teaching-section">
+        <h3>Teaching Philosophy</h3>
+        <p>
+          My teaching philosophy centers on creating an engaging and inclusive learning environment where 
+          students develop both technical skills and critical thinking abilities. I believe in using real-world 
+          examples and applications to demonstrate the relevance and power of mathematics and data science.
+        </p>
+        <p>
+          I strive to:
+        </p>
+        <ul style="margin-left: 1.5rem; list-style-type: disc; margin-bottom: 1.5rem;">
+          <li>Foster a collaborative learning environment where students feel comfortable asking questions</li>
+          <li>Incorporate hands-on activities and projects that allow students to apply theoretical concepts</li>
+          <li>Adapt teaching methods to accommodate diverse learning styles and backgrounds</li>
+          <li>Integrate current research and industry practices into course materials</li>
+          <li>Encourage interdisciplinary thinking and applications</li>
+        </ul>
+        <p>
+          I am committed to continuous improvement in my teaching methods and regularly incorporate student 
+          feedback to enhance the learning experience.
+        </p>
+      </div>
     </section>
-
-
+    
     <footer class="footer">
-      <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
+      <div class="footer-content">
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:aalsamm@ju.edu">aalsamm@ju.edu</a></p>
+          <p><i class="fas fa-phone"></i> 904.256.7439</p>
+          <p><i class="fas fa-map-marker-alt"></i> Jacksonville University<br>2800 University Blvd N<br>Jacksonville, FL 32211</p>
+        </div>
+        
+        <div class="footer-nav">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
+      </div>
     </footer>
   </main>
 </body>
