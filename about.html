@@ -2,80 +2,162 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - Abdallah Alsammani</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
-
-  <!-- LEFT SIDEBAR (same as on index.html) -->
+  <!-- LEFT SIDEBAR -->
   <aside class="sidebar">
     <div class="profile-info">
       <img src="images/profile.jpg" alt="Abdallah Alsammani" class="profile-pic" />
       <h1 class="name">Abdallah Alsammani</h1>
       <p class="title">Assistant Professor of Data Science</p>
       <p class="university">Jacksonville University</p>
-  <!--    <div class="contact">
-        <p>Email: <a href="mailto:aalsamm@ju.edu">aalsamm@ju.edu</a></p>
-        <p>Email: <a href="mailto:abdallah142@gmail.com">abdallah142@gmail.com</a></p>
-        <p>Phone: (904) 256-7439</p>
-        <p>Phone: (334) 524-1360</p>
-        <p>2800 University Blvd N, Jacksonville, FL 32211</p>
-      </div> -->
       <div class="social-links">
-        <a href="#" target="_blank">LinkedIn</a> |
-        <a href="#" target="_blank">Google Scholar</a> |
-        <a href="#" target="_blank">Twitter</a>
+        <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=abdallah-alsammani" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://github.com/aalsammani" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank"><i class="fab fa-orcid"></i></a>
       </div>
     </div>
   </aside>
-
+  
   <!-- MAIN CONTENT -->
   <main class="main-content">
     <header class="topnav">
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-menu">
         <li><a href="index.html">Home</a></li>
-      <!--  <li><a href="about.html" class="active">About</a></li> -->
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="teaching.html">Teaching</a></li>
         <li><a href="research.html">Research</a></li>
         <li><a href="cv.html">CV</a></li>
-    <!--    <li><a href="other.html">Other</a></li> -->
       </ul>
       <div class="mobile-menu-icon" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </div>
     </header>
-
+    
     <section class="page-content">
       <h2>About Me</h2>
       <p>
-        I am a dedicated and interdisciplinary mathematician and data scientist 
-        with over nine years of teaching experience, strong quantitative modeling skills, 
-        and a proven track record in cross-functional research.
+        I am a dedicated and interdisciplinary mathematician and data scientist with over nine years of 
+        teaching experience, strong quantitative modeling skills, and a proven track record in cross-functional research.
+        I am committed to advancing knowledge through collaborative research and impactful instruction because I specialize in 
+        mathematical modeling, applied statistics, data science, and machine learning. My work bridges theory and application 
+        in biology, medicine, economics, and technology, and I am eager to contribute to innovative, data-driven solutions 
+        in diverse academic environments.
       </p>
+      
       <p>
-        Currently, I serve as an Assistant Professor of Data Science (Tenure-track)
-        at Jacksonville University, where I design and teach courses in Data Science 
-        and Mathematics, mentor undergraduate research and collaborate on 
-        interdisciplinary projects.
+        Currently, I serve as an Assistant Professor of Data Science (Tenure-track) at Jacksonville University, 
+        where I design and teach courses in Data Science and Mathematics, lead and mentor undergraduate research 
+        focusing on interdisciplinary applications and practical analytics, and contribute to curriculum development, 
+        accreditation assessment, and departmental service.
       </p>
-      <p>
-        My primary research areas include mathematical modeling, applied statistics, 
-        data science, and machine learning, especially as these fields intersect 
-        with biology, medicine, economics, and technology.
-      </p>
-      <p>
-        I received my Ph.D. in Applied Mathematics from Auburn University. 
-        Before joining Jacksonville University, I served as a Postdoctoral 
-        Research Associate at the University of Georgia and the University of Nebraska 
-        Medical Center, focusing on epidemiological modeling and computational neuroscience.
-      </p>
+      
+      <div class="education-section">
+        <h3>Education</h3>
+        
+        <div class="education-card">
+          <h4>Ph.D. in Applied Mathematics</h4>
+          <p>Auburn University, Auburn, AL</p>
+          <p class="year">2020</p>
+        </div>
+        
+        <div class="education-card">
+          <h4>Postgraduate Diploma (Pre-Ph.D.) in Mathematics</h4>
+          <p>International Centre for Theoretical Physics (ICTP), Trieste, Italy</p>
+          <p class="year">2014</p>
+        </div>
+        
+        <div class="education-card">
+          <h4>M.Sc. in Applied Mathematics</h4>
+          <p>African Institute for Mathematical Sciences (AIMS), Senegal</p>
+          <p class="year">2012</p>
+        </div>
+        
+        <div class="education-card">
+          <h4>B.Sc. in Mathematics (Honors)</h4>
+          <p>Al Neelain University, Khartoum, Sudan</p>
+          <p class="year">2009</p>
+        </div>
+      </div>
+      
+      <div class="experience-section">
+        <h3>Professional Experience</h3>
+        
+        <div class="experience-card">
+          <h4>Assistant Professor of Data Science (Tenure-track)</h4>
+          <p>School of Science and Mathematics, Jacksonville University, Jacksonville, FL</p>
+          <p class="period">Aug 2022 – Present</p>
+          <ul>
+            <li>Design and teach courses in Data Science and Mathematics.</li>
+            <li>Lead and mentor undergraduate research, focusing on interdisciplinary applications and practical analytics.</li>
+            <li>Contribute to curriculum development, accreditation assessment, and departmental service.</li>
+          </ul>
+        </div>
+        
+        <div class="experience-card">
+          <h4>Postdoctoral Research Associate</h4>
+          <p>Department of Infectious Diseases, University of Georgia, Athens, GA</p>
+          <p class="period">Jan 2022 – July 2022</p>
+          <ul>
+            <li>Conducted epidemiological modeling and data analysis for CDC-contracted projects.</li>
+            <li>Prepared monthly research reports and data-driven insights for the CDC.</li>
+            <li>Managed a research group of seven Ph.D. students, fostering productivity and collaboration.</li>
+          </ul>
+        </div>
+        
+        <div class="experience-card">
+          <h4>Postdoctoral Research Associate</h4>
+          <p>Department of Neurosurgery, University of Nebraska Medical Center, Omaha, NE</p>
+          <p class="period">Jan 2021 – Jan 2022</p>
+          <ul>
+            <li>Developed computational models in neuroscience, focusing on real-time data from the operating room.</li>
+            <li>Streamlined data collection and analysis procedures, enhancing the precision of clinical research.</li>
+          </ul>
+        </div>
+        
+        <div class="experience-card">
+          <h4>Graduate Teaching Assistant (Instructor)</h4>
+          <p>Department of Mathematics and Statistics, Auburn University, Auburn, AL</p>
+          <p class="period">Aug 2014 – Dec 2020</p>
+          <ul>
+            <li>Independently taught undergraduate courses in Mathematics and Statistics.</li>
+            <li>Provided academic support through tutoring centers, improving student performance and retention.</li>
+          </ul>
+        </div>
+      </div>
     </section>
-
+    
     <footer class="footer">
-      <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
+      <div class="footer-content">
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:aalsamm@ju.edu">aalsamm@ju.edu</a></p>
+          <p><i class="fas fa-phone"></i> 904.256.7439</p>
+          <p><i class="fas fa-map-marker-alt"></i> Jacksonville University<br>2800 University Blvd N<br>Jacksonville, FL 32211</p>
+        </div>
+        
+        <div class="footer-nav">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
+      </div>
     </footer>
   </main>
-
 </body>
 </html>
