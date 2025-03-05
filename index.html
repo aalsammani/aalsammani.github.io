@@ -1,46 +1,33 @@
+Updated index.html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home - Abdallah Alsammani</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
 
   <!-- ========== LEFT SIDEBAR ========== -->
   <aside class="sidebar">
     <div class="profile-info">
-      <!-- Replace with your real image -->
+      <!-- Profile image -->
       <img src="images/profile.jpg" alt="Abdallah Alsammani" class="profile-pic" />
 
       <h1 class="name">Abdallah Alsammani</h1>
-      <p class="title">Assistant Professor of Data Science </p>
+      <p class="title">Assistant Professor of Data Science</p>
       <p class="university">Jacksonville University</p>
 
-<!--      <div class="contact">
-        <p>
-          <strong>Email 1:</strong> 
-          <a href="mailto:aalsamm@ju.edu">aalsamm@ju.edu</a><br/>
-          <strong>Email 2:</strong> 
-          <a href="mailto:abdallah142@gmail.com">abdallah142@gmail.com</a>
-        </p>
-        <p>
-          <strong>Phone 1:</strong> 904.256.7439<br/>
-          <strong>Phone 2:</strong> 334.524.1360
-        </p>
-        <p>
-          <strong>Address:</strong><br/>
-          2800 University Blvd N<br/>
-          Jacksonville, FL 32211
-        </p>
-      </div>  -->
-
       <div class="social-links">
-        <!-- Replace '#' with your real social links if desired -->
-        <a href="#" target="_blank">LinkedIn</a> |
-        <a href="#" target="_blank">Google Scholar</a> |
-        <a href="#" target="_blank">Twitter</a>
+        <!-- Updated with icons -->
+        <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=abdallah-alsammani" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://github.com/aalsammani" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank"><i class="fab fa-orcid"></i></a>
       </div>
     </div>
   </aside>
@@ -52,11 +39,10 @@
     <header class="topnav">
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
-    <!--    <li><a href="about.html">About</a></li>    -->
+        <li><a href="about.html">About</a></li>
         <li><a href="teaching.html">Teaching</a></li>
         <li><a href="research.html">Research</a></li>
         <li><a href="cv.html">CV</a></li>
-      <!--  <li><a href="other.html">Other</a></li> -->
       </ul>
       <div class="mobile-menu-icon" onclick="toggleMenu()">
         <span></span>
@@ -65,42 +51,59 @@
       </div>
     </header>
 
-    <!-- ========== HERO SECTION with LIVE MOVING PICTURE ========== -->
-<section class="hero" style="background: linear-gradient(to right, #f5f7fa, #c3cfe2); color: #333; padding: 50px 20px; text-align: center;">
-  <div class="hero-text" style="max-width: 800px; margin: 0 auto;">
-    <h2 style="font-size: 2.5em; font-weight: bold; margin-bottom: 20px; color: #2c3e50;">Hello & Welcome! </h2>
-    <p style="font-size: 1.2em; line-height: 1.8; color: #34495e;">
-      This is Abdallah Alsammani. A passionate mathematician and data scientist with over a decade of teaching experience, 
-      I specialize in empowering students and solving complex problems through mathematics, statistics, and programming. 
-      My expertise spans mathematical modeling, applied statistics, data science, and machine learning, with a commitment to bridging 
-      theory and practical applications. By working across diverse fields such as biology, medicine, economics, and technology, 
-      I strive to create innovative solutions that drive progress and tackle real-world challenges with clarity and precision.
-    </p>
-  </div>
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Hello & Welcome!</h2>
+        <p>
+          This is Abdallah Alsammani. A dedicated and interdisciplinary mathematician and data scientist with over nine years 
+          of teaching experience, strong quantitative modeling skills, and a proven track record in cross-functional research. 
+          I am committed to advancing knowledge through collaborative research and impactful instruction because I specialize in 
+          mathematical modeling, applied statistics, data science, and machine learning. My work bridges theory and application 
+          in biology, medicine, economics, and technology, and I am eager to contribute to innovative, data-driven solutions 
+          in diverse academic environments.
+        </p>
+        <div class="hero-buttons">
+          <a href="research.html" class="btn primary-btn">View My Research</a>
+          <a href="cv.html" class="btn secondary-btn">Download CV</a>
+        </div>
+      </div>
 
-      <!-- A looped video or animated GIF. Adjust width/height as needed. -->
-      <div class="hero-video">
-        <!-- If it's a gif, simply use <img src="images/moving-picture.gif" /> -->
-        <video width="400" autoplay muted loop>
-          <source src="images/moving-picture.mp4" type="video/mp4" />
-          <!-- Fallback for older browsers -->
-          Your browser does not support the video tag.
-        </video>
+      <!-- Animated visualization element representing data science -->
+      <div class="hero-visual">
+        <div class="data-visualization">
+          <div class="data-point" style="--delay:0s; --x:20%; --y:30%"></div>
+          <div class="data-point" style="--delay:0.5s; --x:65%; --y:60%"></div>
+          <div class="data-point" style="--delay:1s; --x:80%; --y:20%"></div>
+          <div class="data-point" style="--delay:1.5s; --x:40%; --y:75%"></div>
+          <div class="data-point" style="--delay:2s; --x:60%; --y:35%"></div>
+          <div class="data-point" style="--delay:2.5s; --x:25%; --y:65%"></div>
+          <div class="data-point" style="--delay:3s; --x:75%; --y:45%"></div>
+          <div class="data-line"></div>
+          <div class="data-line"></div>
+          <div class="data-line"></div>
+        </div>
       </div>
     </section>
 
     <!-- ========== HIGHLIGHTS SECTION ========== -->
     <section class="highlights">
       <article class="highlight-box">
+        <div class="highlight-icon">
+          <i class="fas fa-file-alt"></i>
+        </div>
         <h3>Latest Publication</h3>
         <p>
-          “Estimation of Circular Statistics in the Presence of Measurement Bias” <br/>
+          "Estimation of Circular Statistics in the Presence of Measurement Bias" <br/>
           <em>IEEE Journal of Biomedical and Health Informatics, 2023</em>
         </p>
         <a class="btn" href="research.html">Read More</a>
       </article>
 
       <article class="highlight-box">
+        <div class="highlight-icon">
+          <i class="fas fa-chalkboard-teacher"></i>
+        </div>
         <h3>Current Position</h3>
         <p>
           Assistant Professor of Data Science <br/>
@@ -110,19 +113,91 @@
       </article>
 
       <article class="highlight-box">
-        <h3>Teaching</h3>
+        <div class="highlight-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h3>Research Focus</h3>
         <p>
-          “Introduction to Data Science,” “Machine Learning,” “Calculus III,” 
-          “Probability Theory,” and more.
+          Mathematical modeling, applied statistics, data science, and machine learning applications in 
+          biology, medicine, economics, and technology.
         </p>
-        <a class="btn" href="teaching.html">View Courses</a>
+        <a class="btn" href="research.html">Explore Research</a>
       </article>
+    </section>
+
+    <!-- ========== EXPERTISE SECTION ========== -->
+    <section class="expertise-section">
+      <h2 class="section-title">Areas of Expertise</h2>
+      
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <div class="expertise-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Data Science</h3>
+          <p>Advanced data analysis, visualization, and management techniques to extract meaningful insights.</p>
+        </div>
+        
+        <div class="expertise-card">
+          <div class="expertise-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>Machine Learning</h3>
+          <p>Development and implementation of ML algorithms for predictive modeling and pattern recognition.</p>
+        </div>
+        
+        <div class="expertise-card">
+          <div class="expertise-icon">
+            <i class="fas fa-calculator"></i>
+          </div>
+          <h3>Mathematical Modeling</h3>
+          <p>Creating mathematical representations of real-world systems to solve complex problems.</p>
+        </div>
+        
+        <div class="expertise-card">
+          <div class="expertise-icon">
+            <i class="fas fa-microscope"></i>
+          </div>
+          <h3>Computational Biology</h3>
+          <p>Applying computational methods to understand biological systems and medical applications.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT BANNER ========== -->
+    <section class="contact-banner">
+      <div class="contact-content">
+        <h3>Interested in Collaboration?</h3>
+        <p>I'm always open to research collaborations and innovative projects.</p>
+        <a href="mailto:aalsamm@ju.edu" class="btn primary-btn">Get in Touch</a>
+      </div>
     </section>
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer">
-      <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
+      <div class="footer-content">
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:aalsamm@ju.edu">aalsamm@ju.edu</a></p>
+          <p><i class="fas fa-phone"></i> 904.256.7439</p>
+          <p><i class="fas fa-map-marker-alt"></i> Jacksonville University<br>2800 University Blvd N<br>Jacksonville, FL 32211</p>
+        </div>
+        
+        <div class="footer-nav">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
+      </div>
     </footer>
   </main>
 </body>
-</html>
