@@ -240,6 +240,7 @@ p {
 
 .hero-content {
   display: flex;
+  flex-direction: row; /* Explicitly set to row */
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
@@ -1047,7 +1048,6 @@ p {
   .hero-content {
     flex-direction: column;
     text-align: center;
-    padding: 3rem 1.5rem;
   }
   
   .hero-text {
