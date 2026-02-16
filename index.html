@@ -1,751 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--
+  ============================================================================
+  ALSAMMANI FACULTY WEBSITE — HOME PAGE
+  ============================================================================
+  File:    index.html
+  Author:  Abdallah Alsammani
+  Desc:    Homepage with welcome hero, expertise strip, and contact section.
+  
+  QUICK EDITS:
+  • Profile photo:  Search "PROFILE PHOTO" below — replace initials with <img>
+  • Bio text:       Search "HERO BIO" — edit the paragraph content
+  • Contact info:   Search "CONTACT INFO" — update email, phone, address
+  • Social links:   Search "SOCIAL LINKS" — update href URLs
+  ============================================================================
+  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abdallah Alsammani — Applied Mathematics & Data Science</title>
+  <meta name="description" content="Assistant Professor at Delaware State University. Research in mathematical modeling, data science, machine learning, and computational biology." />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --sidebar-bg: #1E4158;
-      --sidebar-bg-dark: #162F42;
-      --sidebar-text: #B8CCD8;
-      --sidebar-text-bright: #FFFFFF;
-      --sidebar-accent: #6BB8E0;
-      --sidebar-width: 260px;
-
-      --bg: #F2F4F7;
-      --bg-white: #FFFFFF;
-      --bg-alt: #E8ECF1;
-      --text: #1E293B;
-      --text-secondary: #556677;
-      --text-light: #8899AA;
-      --accent: #1E4158;
-      --accent-blue: #2B7EA8;
-      --accent-teal: #1A8A7D;
-      --accent-warm: #C4553D;
-      --accent-gold: #B8860B;
-      --border: #D8DFE8;
-      --border-light: #EDF0F5;
-
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'Source Sans 3', -apple-system, sans-serif;
-      --font-mono: 'IBM Plex Mono', monospace;
-
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
-      --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
-      --radius: 8px;
-      --radius-lg: 14px;
-      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 20px; }
-
-    body {
-      font-family: var(--font-body);
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.72;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      display: flex;
-      min-height: 100vh;
-    }
-
-    img { max-width: 100%; display: block; }
-    a { color: var(--accent-blue); text-decoration: none; transition: var(--transition); }
-    a:hover { color: var(--accent-warm); }
-
-    /* =============================================
-       SIDEBAR
-       ============================================= */
-    .sidebar {
-      position: fixed;
-      left: 0; top: 0; bottom: 0;
-      width: var(--sidebar-width);
-      background: linear-gradient(175deg, var(--sidebar-bg) 0%, var(--sidebar-bg-dark) 100%);
-      color: var(--sidebar-text);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2.8rem 1.5rem 1.8rem;
-      z-index: 100;
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-
-    .sidebar::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 30% 0%, rgba(107,184,224,0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 100%, rgba(26,138,125,0.06) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .sidebar-inner {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      flex: 1;
-    }
-
-    .profile-photo {
-      width: 145px; height: 145px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3.5px solid rgba(255,255,255,0.12);
-      box-shadow: 0 6px 28px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.05);
-      margin-bottom: 1.6rem;
-      background: rgba(255,255,255,0.06);
-      display: flex; align-items: center; justify-content: center;
-      transition: var(--transition);
-    }
-
-    .profile-photo:hover { border-color: rgba(107,184,224,0.3); }
-
-    .profile-photo img { width: 100%; height: 100%; object-fit: cover; }
-
-    .profile-photo .initials {
-      font-family: var(--font-display);
-      font-size: 2.6rem;
-      font-weight: 600;
-      color: var(--sidebar-accent);
-      letter-spacing: 0.02em;
-    }
-
-    .sidebar-name {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--sidebar-text-bright);
-      text-align: center;
-      line-height: 1.2;
-      margin-bottom: 0.45rem;
-      letter-spacing: -0.01em;
-    }
-
-    .sidebar-title {
-      font-size: 0.88rem;
-      color: var(--sidebar-accent);
-      font-weight: 500;
-      text-align: center;
-      margin-bottom: 0.15rem;
-    }
-
-    .sidebar-univ {
-      font-size: 0.8rem;
-      color: var(--sidebar-text);
-      text-align: center;
-      opacity: 0.7;
-      margin-bottom: 2rem;
-    }
-
-    .sidebar-nav {
-      width: 100%;
-      list-style: none;
-      margin-bottom: 1.5rem;
-    }
-
-    .sidebar-nav li a {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      padding: 0.6rem 0.9rem;
-      border-radius: 7px;
-      color: var(--sidebar-text);
-      font-size: 0.86rem;
-      font-weight: 500;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .sidebar-nav li a i {
-      width: 17px; text-align: center;
-      font-size: 0.82rem; opacity: 0.6;
-    }
-
-    .sidebar-nav li a:hover {
-      background: rgba(255,255,255,0.07);
-      color: var(--sidebar-text-bright);
-    }
-
-    .sidebar-nav li a.active {
-      background: rgba(107,184,224,0.12);
-      color: var(--sidebar-accent);
-    }
-
-    .sidebar-nav li a.active i { opacity: 1; }
-
-    .sidebar-divider {
-      width: 50%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-      margin: 0.4rem auto 1.4rem;
-    }
-
-    .sidebar-social {
-      display: flex;
-      gap: 0.55rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .sidebar-social a {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(255,255,255,0.06);
-      color: var(--sidebar-text);
-      font-size: 0.85rem;
-      transition: var(--transition);
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .sidebar-social a:hover {
-      background: var(--sidebar-accent);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 14px rgba(107,184,224,0.35);
-      border-color: transparent;
-    }
-
-    .sidebar-bottom {
-      margin-top: auto;
-      width: 100%;
-    }
-
-    .sidebar-contact-item {
-      display: flex; align-items: center; gap: 0.55rem;
-      font-size: 0.75rem; color: var(--sidebar-text);
-      opacity: 0.6; margin-bottom: 0.5rem;
-    }
-
-    .sidebar-contact-item i { width: 13px; text-align: center; font-size: 0.68rem; }
-    .sidebar-contact-item a { color: var(--sidebar-text); }
-    .sidebar-contact-item a:hover { color: var(--sidebar-accent); opacity: 1; }
-
-    .cv-btn {
-      display: flex; align-items: center; justify-content: center;
-      gap: 0.45rem; width: 100%; padding: 0.62rem 0.9rem;
-      border-radius: 7px;
-      background: rgba(107,184,224,0.12);
-      color: var(--sidebar-accent);
-      font-size: 0.82rem; font-weight: 600;
-      transition: var(--transition);
-      margin-top: 0.9rem;
-      border: 1px solid rgba(107,184,224,0.15);
-    }
-
-    .cv-btn:hover { background: var(--sidebar-accent); color: white; border-color: var(--sidebar-accent); }
-
-    /* =============================================
-       MAIN
-       ============================================= */
-    .main {
-      margin-left: var(--sidebar-width);
-      flex: 1;
-      min-height: 100vh;
-    }
-
-    /* Top nav */
-    .topbar {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(242,244,247,0.82);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(0,0,0,0.04);
-      padding: 0 3.5rem;
-      height: 56px;
-      display: flex; align-items: center; justify-content: flex-end;
-    }
-
-    .topbar-nav {
-      list-style: none; display: flex; gap: 0.15rem;
-    }
-
-    .topbar-nav a {
-      font-size: 0.86rem; font-weight: 500;
-      color: var(--text-light);
-      padding: 0.4rem 0.9rem;
-      border-radius: 6px;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .topbar-nav a:hover { color: var(--accent-blue); }
-
-    .topbar-nav a.active {
-      color: var(--accent-blue);
-      font-weight: 600;
-    }
-
-    .topbar-nav a.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 50%; transform: translateX(-50%);
-      width: 18px; height: 2px;
-      background: var(--accent-blue);
-      border-radius: 1px;
-    }
-
-    /* Sections */
-    .section { padding: 4.5rem 3.5rem; }
-    .section-alt { background: var(--bg-white); }
-
-    .section-label {
-      font-family: var(--font-mono);
-      font-size: 0.7rem; font-weight: 500;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--accent-blue);
-      margin-bottom: 0.6rem;
-      display: inline-flex; align-items: center; gap: 0.6rem;
-    }
-
-    .section-label::before {
-      content: ''; width: 22px; height: 1.5px;
-      background: var(--accent-blue); border-radius: 1px;
-    }
-
-    .section-heading {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
-      font-weight: 600; color: var(--text);
-      line-height: 1.2; margin-bottom: 0.7rem;
-    }
-
-    .section-desc {
-      font-size: 1rem; color: var(--text-secondary);
-      max-width: 600px; line-height: 1.8; margin-bottom: 2.5rem;
-    }
-
-    /* =============================================
-       HERO — matches screenshot layout
-       ============================================= */
-    .hero {
-      padding: 4.5rem 3.5rem 4rem;
-      position: relative;
-      overflow: hidden;
-      min-height: calc(100vh - 56px);
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 3rem;
-      align-items: center;
-      width: 100%;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-greeting {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 4vw, 3.4rem);
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.1;
-      margin-bottom: 1.8rem;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-greeting em {
-      color: var(--accent-blue);
-      font-style: italic;
-    }
-
-    .hero-bio {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      line-height: 1.88;
-      margin-bottom: 2.2rem;
-      max-width: 560px;
-    }
-
-    .hero-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.45rem;
-      padding: 0.65rem 1.35rem; border-radius: 7px;
-      font-family: var(--font-body); font-size: 0.86rem; font-weight: 600;
-      transition: var(--transition); cursor: pointer; border: none;
-    }
-
-    .btn i { font-size: 0.8rem; }
-
-    .btn-primary { background: var(--accent); color: white; }
-    .btn-primary:hover { background: #122838; color: white; transform: translateY(-1px); box-shadow: var(--shadow-md); }
-
-    .btn-outline { border: 1.5px solid var(--border); color: var(--text); background: transparent; }
-    .btn-outline:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
-
-    /* Network visualization — matches screenshot */
-    .hero-viz {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .network-container {
-      width: 340px; height: 340px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 45% 40%,
-        rgba(43,126,168,0.06) 0%,
-        rgba(43,126,168,0.03) 40%,
-        rgba(242,244,247,0.5) 70%,
-        transparent 100%
-      );
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .network-container canvas {
-      position: absolute;
-      inset: 0;
-    }
-
-    /* =============================================
-       EXPERTISE STRIP
-       ============================================= */
-    .expertise-strip {
-      background: var(--bg-white);
-      border-top: 1px solid var(--border-light);
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .expertise-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .expertise-item {
-      padding: 2.2rem 1.4rem;
-      text-align: center;
-      position: relative;
-      transition: var(--transition);
-    }
-
-    .expertise-item:not(:last-child)::after {
-      content: ''; position: absolute; right: 0; top: 22%; height: 56%;
-      width: 1px; background: var(--border-light);
-    }
-
-    .expertise-item:hover { background: rgba(43,126,168,0.02); }
-
-    .exp-icon {
-      width: 44px; height: 44px; border-radius: 11px;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 0.7rem; font-size: 1.05rem;
-      background: rgba(43,126,168,0.07); color: var(--accent-blue);
-    }
-
-    .expertise-item h4 {
-      font-family: var(--font-display); font-size: 1rem;
-      font-weight: 600; margin-bottom: 0.3rem;
-    }
-
-    .expertise-item p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
-
-    /* =============================================
-       PUBLICATIONS
-       ============================================= */
-    .pub-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    .pub-card {
-      background: var(--bg-white);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      transition: var(--transition);
-      display: flex; flex-direction: column;
-    }
-
-    .pub-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
-      border-color: #c8d4de;
-    }
-
-    .pub-fig { height: 185px; overflow: hidden; flex-shrink: 0; }
-    .pub-fig svg { width: 100%; height: 100%; }
-
-    .pub-body { padding: 1.2rem 1.4rem 1.4rem; flex: 1; display: flex; flex-direction: column; }
-
-    .pub-tag {
-      font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 0.18rem 0.55rem; border-radius: 4px;
-      display: inline-block; width: fit-content; margin-bottom: 0.55rem; font-weight: 500;
-    }
-
-    .pub-tag.epi { background: rgba(43,126,168,0.08); color: var(--accent-blue); }
-    .pub-tag.ml { background: rgba(184,134,11,0.08); color: var(--accent-gold); }
-    .pub-tag.bio { background: rgba(26,138,125,0.08); color: var(--accent-teal); }
-    .pub-tag.stat { background: rgba(196,85,61,0.06); color: var(--accent-warm); }
-
-    .pub-title {
-      font-family: var(--font-display); font-size: 1.02rem; font-weight: 600;
-      color: var(--text); line-height: 1.35; margin-bottom: 0.35rem;
-    }
-
-    .pub-authors { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.2rem; }
-    .pub-journal { font-size: 0.78rem; color: var(--text-light); font-style: italic; margin-bottom: 0.9rem; }
-
-    .pub-links { margin-top: auto; display: flex; gap: 0.35rem; }
-
-    .pub-link {
-      font-size: 0.72rem; font-weight: 500; padding: 0.25rem 0.65rem;
-      border-radius: 5px; border: 1px solid var(--border); color: var(--text-secondary);
-      transition: var(--transition); display: inline-flex; align-items: center; gap: 0.25rem;
-    }
-
-    .pub-link:hover {
-      border-color: var(--accent-blue); color: var(--accent-blue);
-      background: rgba(43,126,168,0.03);
-    }
-
-    .more-pubs { text-align: center; margin-top: 2rem; }
-
-    /* =============================================
-       TEACHING
-       ============================================= */
-    .teaching-cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
-
-    .teach-block h3 {
-      font-family: var(--font-display); font-size: 1.3rem;
-      font-weight: 600; margin-bottom: 0.2rem;
-    }
-
-    .teach-block .inst {
-      font-size: 0.83rem; color: var(--accent-blue);
-      font-weight: 500; margin-bottom: 1rem;
-    }
-
-    .course-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
-
-    .course {
-      display: flex; align-items: baseline; gap: 0.7rem;
-      padding: 0.55rem 0.85rem;
-      background: var(--bg);
-      border-radius: 7px;
-      border: 1px solid var(--border-light);
-      transition: var(--transition);
-    }
-
-    .section-alt .course { background: #F4F6F9; }
-    .course:hover { border-color: var(--border); box-shadow: var(--shadow-sm); }
-
-    .course-code {
-      font-family: var(--font-mono); font-size: 0.73rem;
-      color: var(--accent-blue); font-weight: 500; white-space: nowrap;
-    }
-
-    .course-name { font-size: 0.86rem; color: var(--text); }
-
-    .course-badge {
-      font-size: 0.62rem; padding: 0.08rem 0.4rem; border-radius: 3px;
-      margin-left: auto; white-space: nowrap; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.04em;
-    }
-
-    .course-badge.grad { background: rgba(43,126,168,0.08); color: var(--accent-blue); }
-    .course-badge.online { background: rgba(26,138,125,0.08); color: var(--accent-teal); }
-
-    .teaching-quote {
-      border-left: 3px solid var(--accent-blue);
-      padding-left: 1.4rem;
-      margin-top: 2.5rem;
-      max-width: 640px;
-    }
-
-    .teaching-quote p {
-      font-family: var(--font-display); font-size: 1.08rem;
-      font-style: italic; color: var(--text-secondary); line-height: 1.7;
-    }
-
-    /* =============================================
-       TEAM
-       ============================================= */
-    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
-
-    .team-card {
-      background: var(--bg-white); border-radius: var(--radius-lg);
-      border: 1px solid var(--border); overflow: hidden; transition: var(--transition);
-    }
-
-    .team-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-
-    .team-card.pi {
-      grid-column: 1 / -1; display: grid;
-      grid-template-columns: 190px 1fr;
-      max-width: 660px; margin: 0 auto 0.5rem;
-    }
-
-    .team-photo {
-      height: 210px;
-      background: linear-gradient(135deg, #d8e4ec 0%, #c0d0dc 100%);
-      display: flex; align-items: center; justify-content: center;
-    }
-
-    .team-photo .placeholder { font-size: 2.2rem; color: var(--accent); opacity: 0.25; }
-    .pi .team-photo { width: 190px; height: auto; min-height: 190px; }
-
-    .team-info { padding: 1.2rem 1.4rem; }
-
-    .team-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.1rem; }
-    .team-role { font-size: 0.78rem; color: var(--accent-blue); font-weight: 500; margin-bottom: 0.6rem; }
-    .team-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.6rem; }
-
-    .tags { display: flex; flex-wrap: wrap; gap: 0.25rem; }
-
-    .tag {
-      font-size: 0.66rem; padding: 0.12rem 0.45rem; border-radius: 4px;
-      background: var(--bg-alt); color: var(--text-secondary); border: 1px solid var(--border-light);
-    }
-
-    .join-banner {
-      text-align: center; margin-top: 2.5rem; padding: 2.2rem;
-      background: linear-gradient(135deg, rgba(43,126,168,0.03), rgba(26,138,125,0.03));
-      border-radius: var(--radius-lg);
-      border: 1px dashed rgba(43,126,168,0.22);
-    }
-
-    .join-banner h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.35rem; }
-    .join-banner p { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.2rem; max-width: 460px; margin-left: auto; margin-right: auto; }
-
-    /* =============================================
-       CONTACT
-       ============================================= */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-    .contact-items { display: flex; flex-direction: column; gap: 1.2rem; }
-    .contact-row { display: flex; align-items: flex-start; gap: 0.9rem; }
-
-    .contact-icon {
-      width: 40px; height: 40px; border-radius: 10px;
-      background: rgba(43,126,168,0.07);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent-blue); font-size: 0.9rem; flex-shrink: 0;
-    }
-
-    .contact-text h4 { font-size: 0.86rem; font-weight: 600; margin-bottom: 0.05rem; }
-    .contact-text p, .contact-text a { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; }
-
-    .contact-map {
-      border-radius: var(--radius-lg); overflow: hidden;
-      border: 1px solid var(--border); height: 270px;
-    }
-
-    .contact-map iframe { width: 100%; height: 100%; border: none; }
-
-    /* FOOTER */
-    .footer {
-      background: var(--accent); color: rgba(255,255,255,0.55);
-      padding: 1.5rem 3.5rem; display: flex; justify-content: space-between;
-      align-items: center; font-size: 0.78rem;
-    }
-
-    .footer-links { display: flex; gap: 1rem; }
-    .footer-links a { color: rgba(255,255,255,0.45); font-size: 0.9rem; transition: var(--transition); }
-    .footer-links a:hover { color: white; }
-
-    /* REVEAL */
-    .reveal {
-      opacity: 0; transform: translateY(22px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* MOBILE */
-    .mobile-header { display: none; }
-
-    @media (max-width: 1100px) {
-      .hero-layout { grid-template-columns: 1fr; }
-      .hero-viz { display: none; }
-      .pub-grid { grid-template-columns: 1fr; max-width: 540px; }
-      .team-grid { grid-template-columns: repeat(2, 1fr); }
-      .team-card.pi { grid-column: 1 / -1; }
-    }
-
-    @media (max-width: 900px) {
-      .sidebar { display: none; }
-      .main { margin-left: 0; }
-      .mobile-header {
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 0.7rem 1.4rem;
-        background: var(--sidebar-bg);
-        color: white;
-        position: sticky; top: 0; z-index: 200;
-      }
-      .mobile-header .logo { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; }
-      .mobile-header .logo span { color: var(--sidebar-accent); }
-      .hamburger { background: none; border: none; display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
-      .hamburger span { width: 21px; height: 2px; background: white; border-radius: 2px; }
-      .mobile-nav { display: none; background: var(--sidebar-bg-dark); padding: 0.8rem 1.4rem; }
-      .mobile-nav.open { display: block; }
-      .mobile-nav a {
-        display: block; padding: 0.55rem 0; color: var(--sidebar-text);
-        font-size: 0.88rem; font-weight: 500;
-        border-bottom: 1px solid rgba(255,255,255,0.04);
-      }
-      .mobile-nav a:hover { color: var(--sidebar-accent); }
-      .topbar { display: none; }
-      .section { padding: 3rem 1.4rem; }
-      .hero { padding: 3rem 1.4rem; min-height: auto; }
-      .expertise-row { grid-template-columns: repeat(2, 1fr); }
-      .expertise-item:nth-child(2)::after { display: none; }
-      .teaching-cols { grid-template-columns: 1fr; }
-      .team-grid { grid-template-columns: 1fr; }
-      .team-card.pi { grid-template-columns: 1fr; }
-      .pi .team-photo { width: 100%; height: 170px; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 1.4rem; }
-    }
-
-    @media (max-width: 500px) {
-      .expertise-row { grid-template-columns: 1fr; }
-      .expertise-item::after { display: none !important; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- MOBILE -->
+<!-- ====================================================================
+     MOBILE HEADER — Only visible on screens < 900px
+     ==================================================================== -->
 <div class="mobile-header">
   <div class="logo">A. <span>Alsammani</span></div>
-  <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+  <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
 </div>
 <nav class="mobile-nav" id="mobileNav">
-  <a href="#home" onclick="this.parentElement.classList.remove('open')">Home</a>
-  <a href="#research" onclick="this.parentElement.classList.remove('open')">Research</a>
-  <a href="#teaching" onclick="this.parentElement.classList.remove('open')">Teaching</a>
-  <a href="#team" onclick="this.parentElement.classList.remove('open')">Team</a>
-  <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="research.html" onclick="closeMobileNav()">Research</a>
+  <a href="teaching.html" onclick="closeMobileNav()">Teaching</a>
+  <a href="team.html" onclick="closeMobileNav()">Team</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
   <a href="CV.pdf">Download CV</a>
 </nav>
 
-<!-- SIDEBAR -->
+<!-- ====================================================================
+     SIDEBAR — Fixed left panel with profile, nav, social, contact
+     ==================================================================== -->
 <aside class="sidebar">
   <div class="sidebar-inner">
+
+    <!-- PROFILE PHOTO — Replace initials with: <img src="images/profile.jpg" alt="Abdallah Alsammani" /> -->
     <div class="profile-photo">
-      <!-- Replace with: <img src="images/profile.jpg" alt="Abdallah Alsammani" /> -->
       <span class="initials">AA</span>
     </div>
 
@@ -753,16 +61,18 @@
     <p class="sidebar-title">Assistant Professor</p>
     <p class="sidebar-univ">Delaware State University</p>
 
+    <!-- Navigation — active class set by JS based on current page -->
     <ul class="sidebar-nav">
-      <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#research"><i class="fas fa-flask"></i> Research</a></li>
-      <li><a href="#teaching"><i class="fas fa-chalkboard"></i> Teaching</a></li>
-      <li><a href="#team"><i class="fas fa-users"></i> Team</a></li>
+      <li><a href="index.html"    class="active"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="research.html"><i class="fas fa-flask"></i> Research</a></li>
+      <li><a href="teaching.html"><i class="fas fa-chalkboard"></i> Teaching</a></li>
+      <li><a href="team.html"><i class="fas fa-users"></i> Team</a></li>
       <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
 
     <div class="sidebar-divider"></div>
 
+    <!-- SOCIAL LINKS — Update href values with your actual profile URLs -->
     <div class="sidebar-social">
       <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       <a href="#" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
@@ -779,172 +89,155 @@
   </div>
 </aside>
 
-<!-- MAIN -->
+
+<!-- ====================================================================
+     MAIN CONTENT
+     ==================================================================== -->
 <main class="main">
+
+  <!-- Top navigation bar — matches sidebar links -->
   <div class="topbar">
     <ul class="topbar-nav">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#research">Research</a></li>
+      <li><a href="index.html"    class="active">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 
-  <!-- HERO -->
+
+  <!-- ================================================================
+       HERO SECTION — Welcome message + neural network visualization
+       ================================================================ -->
   <section class="hero" id="home">
     <div class="hero-layout">
       <div>
         <h2 class="hero-greeting reveal">Hello &amp; <em>Welcome!</em></h2>
+
+        <!-- HERO BIO — Edit this paragraph to update your welcome text -->
         <p class="hero-bio reveal">
-          I'm Abdallah Alsammani, an interdisciplinary mathematician and data scientist who translates complex problems into actionable insights. With over a decade of teaching experience and a research portfolio spanning biology, medicine, economics, and technology, I bridge the gap between theoretical rigor and real-world application. My expertise lies in mathematical modeling, applied statistics, and machine learning — tools I use to tackle questions that matter. Whether developing quantitative frameworks for biological systems or designing statistical solutions for emerging challenges, I thrive at the intersection of disciplines where creative problem-solving drives innovation. I'm committed to advancing knowledge through collaborative research and teaching that empower others to think critically and work confidently with data. I'm always eager to contribute to teams pushing the boundaries of what data-driven science can achieve.
+          I'm Abdallah Alsammani, an interdisciplinary mathematician and data
+          scientist who translates complex problems into actionable insights.
+          With over a decade of teaching experience and a research portfolio
+          spanning biology, medicine, economics, and technology, I bridge the
+          gap between theoretical rigor and real-world application. My expertise
+          lies in mathematical modeling, applied statistics, and machine
+          learning — tools I use to tackle questions that matter. Whether
+          developing quantitative frameworks for biological systems or designing
+          statistical solutions for emerging challenges, I thrive at the
+          intersection of disciplines where creative problem-solving drives
+          innovation. I'm committed to advancing knowledge through collaborative
+          research and teaching that empower others to think critically and work
+          confidently with data.
         </p>
+
         <div class="hero-buttons reveal">
-          <a href="#research" class="btn btn-primary"><i class="fas fa-flask"></i> View My Research</a>
+          <a href="research.html" class="btn btn-primary"><i class="fas fa-flask"></i> View My Research</a>
           <a href="CV.pdf" class="btn btn-outline"><i class="fas fa-download"></i> Download CV (PDF)</a>
         </div>
       </div>
 
+      <!-- Animated AI/ML neural network visualization -->
       <div class="hero-viz reveal">
-        <div class="network-container">
-          <canvas id="networkCanvas" width="340" height="340"></canvas>
+        <div class="nn-container">
+          <canvas id="nnCanvas" width="380" height="380"></canvas>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EXPERTISE -->
+
+  <!-- ================================================================
+       EXPERTISE STRIP — Four research areas
+       ================================================================ -->
   <section class="expertise-strip">
     <div class="expertise-row">
-      <div class="expertise-item reveal"><div class="exp-icon"><i class="fas fa-chart-line"></i></div><h4>Data Science</h4><p>High-dimensional data analysis, visualization, and predictive modeling.</p></div>
-      <div class="expertise-item reveal"><div class="exp-icon"><i class="fas fa-brain"></i></div><h4>Machine Learning</h4><p>Clinical prediction, pattern recognition, and deep learning methods.</p></div>
-      <div class="expertise-item reveal"><div class="exp-icon"><i class="fas fa-square-root-variable"></i></div><h4>Math Modeling</h4><p>Deterministic &amp; stochastic models for disease dynamics.</p></div>
-      <div class="expertise-item reveal"><div class="exp-icon"><i class="fas fa-dna"></i></div><h4>Computational Biology</h4><p>Epidemiological modeling, neuroscience, and host-pathogen dynamics.</p></div>
+      <div class="expertise-item reveal">
+        <div class="exp-icon"><i class="fas fa-chart-line"></i></div>
+        <h4>Data Science</h4>
+        <p>High-dimensional data analysis, visualization, and predictive modeling.</p>
+      </div>
+      <div class="expertise-item reveal reveal-delay-1">
+        <div class="exp-icon"><i class="fas fa-brain"></i></div>
+        <h4>Machine Learning</h4>
+        <p>Clinical prediction, pattern recognition, and deep learning methods.</p>
+      </div>
+      <div class="expertise-item reveal reveal-delay-2">
+        <div class="exp-icon"><i class="fas fa-square-root-variable"></i></div>
+        <h4>Math Modeling</h4>
+        <p>Deterministic &amp; stochastic models for disease dynamics.</p>
+      </div>
+      <div class="expertise-item reveal reveal-delay-3">
+        <div class="exp-icon"><i class="fas fa-dna"></i></div>
+        <h4>Computational Biology</h4>
+        <p>Epidemiological modeling, neuroscience, and host-pathogen dynamics.</p>
+      </div>
     </div>
   </section>
 
-  <!-- RESEARCH -->
-  <section class="section" id="research">
-    <div class="section-label">Research</div>
-    <h2 class="section-heading reveal">Selected Publications</h2>
-    <p class="section-desc reveal">Integrating biostatistics, data science, machine learning, and mathematical biology to address challenges in biological systems and public health.</p>
 
-    <div class="pub-grid">
-      <!-- PUB 1 -->
-      <div class="pub-card reveal">
-        <div class="pub-fig"><svg viewBox="0 0 500 185" xmlns="http://www.w3.org/2000/svg"><rect width="500" height="185" fill="#EDF4F8"/><text x="28" y="22" font-family="IBM Plex Mono, monospace" font-size="8" fill="#2B7EA8" opacity="0.55">SIR + Vaccination Behavior Model</text><line x1="40" y1="155" x2="260" y2="155" stroke="#c8d8e2" stroke-width="0.5"/><line x1="40" y1="125" x2="260" y2="125" stroke="#c8d8e2" stroke-width="0.5" stroke-dasharray="3,4"/><line x1="40" y1="95" x2="260" y2="95" stroke="#c8d8e2" stroke-width="0.5" stroke-dasharray="3,4"/><line x1="40" y1="65" x2="260" y2="65" stroke="#c8d8e2" stroke-width="0.5" stroke-dasharray="3,4"/><path d="M45 150 Q70 147, 95 130 T145 60 T195 42 T245 68" fill="none" stroke="#1E4158" stroke-width="2.2"/><path d="M45 150 Q70 148, 100 140 T155 100 T205 80 T245 96" fill="none" stroke="#C4553D" stroke-width="1.8" stroke-dasharray="5,3" opacity="0.7"/><path d="M45 150 Q85 149, 115 147 T180 135 T230 125 T255 123" fill="none" stroke="#B8860B" stroke-width="1.3" stroke-dasharray="3,3" opacity="0.5"/><circle cx="95" cy="130" r="3" fill="#1E4158" opacity="0.65"/><circle cx="145" cy="60" r="3" fill="#1E4158" opacity="0.65"/><circle cx="195" cy="42" r="3" fill="#1E4158" opacity="0.65"/><rect x="290" y="48" width="175" height="92" rx="8" fill="white" stroke="#d8e4ea" stroke-width="0.8"/><line x1="304" y1="72" x2="322" y2="72" stroke="#1E4158" stroke-width="2.2"/><text x="329" y="75" font-family="Source Sans 3, sans-serif" font-size="9" fill="#556677">High vaccination</text><line x1="304" y1="94" x2="322" y2="94" stroke="#C4553D" stroke-width="1.8" stroke-dasharray="5,3"/><text x="329" y="97" font-family="Source Sans 3, sans-serif" font-size="9" fill="#556677">Low vaccination</text><line x1="304" y1="116" x2="322" y2="116" stroke="#B8860B" stroke-width="1.3" stroke-dasharray="3,3"/><text x="329" y="119" font-family="Source Sans 3, sans-serif" font-size="9" fill="#556677">No vaccination</text><text x="120" y="172" font-family="Source Sans 3, sans-serif" font-size="8" fill="#8899AA" text-anchor="middle">Time →</text></svg></div>
-        <div class="pub-body"><span class="pub-tag epi">Epidemiology</span><h4 class="pub-title">Impact of Vaccination Behavior on COVID-19 Dynamics and Economic Outcomes</h4><p class="pub-authors"><strong>Alsammani, A.</strong>, Ngonghala, C. N., Martcheva, M.</p><p class="pub-journal">Mathematical Biosciences and Engineering, 22(9), 2300–2338, 2025</p><div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div></div>
-      </div>
-
-      <!-- PUB 2 -->
-      <div class="pub-card reveal">
-        <div class="pub-fig"><svg viewBox="0 0 500 185" xmlns="http://www.w3.org/2000/svg"><rect width="500" height="185" fill="#F5F1E7"/><text x="28" y="22" font-family="IBM Plex Mono, monospace" font-size="8" fill="#B8860B" opacity="0.55">ML Classification · Comparative Analysis</text><rect x="45" y="42" width="50" height="50" rx="4" fill="#1E4158" opacity="0.72"/><rect x="98" y="42" width="50" height="50" rx="4" fill="#1E4158" opacity="0.1"/><rect x="45" y="95" width="50" height="50" rx="4" fill="#1E4158" opacity="0.1"/><rect x="98" y="95" width="50" height="50" rx="4" fill="#1E4158" opacity="0.62"/><text x="70" y="73" font-family="Source Sans 3, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="700">94</text><text x="123" y="73" font-family="Source Sans 3, sans-serif" font-size="14" fill="#1E4158" text-anchor="middle" opacity="0.45">6</text><text x="70" y="126" font-family="Source Sans 3, sans-serif" font-size="14" fill="#1E4158" text-anchor="middle" opacity="0.45">8</text><text x="123" y="126" font-family="Source Sans 3, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="700">92</text><text x="96" y="162" font-family="Source Sans 3, sans-serif" font-size="7.5" fill="#8899AA" text-anchor="middle">Confusion Matrix</text><rect x="215" y="55" width="40" height="96" rx="4" fill="#1E4158" opacity="0.8"/><rect x="263" y="70" width="40" height="81" rx="4" fill="#2B7EA8" opacity="0.7"/><rect x="311" y="80" width="40" height="71" rx="4" fill="#1A8A7D" opacity="0.6"/><rect x="359" y="90" width="40" height="61" rx="4" fill="#B8860B" opacity="0.5"/><text x="235" y="47" font-family="Source Sans 3, sans-serif" font-size="8.5" fill="#1E4158" text-anchor="middle" font-weight="600">RF</text><text x="283" y="62" font-family="Source Sans 3, sans-serif" font-size="8.5" fill="#2B7EA8" text-anchor="middle" font-weight="600">SVM</text><text x="331" y="72" font-family="Source Sans 3, sans-serif" font-size="8.5" fill="#1A8A7D" text-anchor="middle" font-weight="600">KNN</text><text x="379" y="82" font-family="Source Sans 3, sans-serif" font-size="8.5" fill="#B8860B" text-anchor="middle" font-weight="600">LR</text><text x="297" y="168" font-family="Source Sans 3, sans-serif" font-size="8" fill="#8899AA" text-anchor="middle">Model Accuracy (%)</text></svg></div>
-        <div class="pub-body"><span class="pub-tag ml">Machine Learning</span><h4 class="pub-title">Predicting Sleep Disorders Using Machine Learning: A Comparative Analysis</h4><p class="pub-authors">Goodyear, S. and <strong>Alsammani, A.</strong></p><p class="pub-journal">ICCSA 2025, LNCS vol 15648, Springer</p><div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="https://doi.org/10.1007/978-3-031-97000-9_7" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div></div>
-      </div>
-
-      <!-- PUB 3 -->
-      <div class="pub-card reveal">
-        <div class="pub-fig"><svg viewBox="0 0 500 185" xmlns="http://www.w3.org/2000/svg"><rect width="500" height="185" fill="#ECF0F5"/><text x="28" y="22" font-family="IBM Plex Mono, monospace" font-size="8" fill="#C4553D" opacity="0.55">Circular Statistics · Measurement Bias</text><circle cx="128" cy="100" r="60" fill="none" stroke="#c8d4de" stroke-width="0.8"/><circle cx="128" cy="100" r="40" fill="none" stroke="#c8d4de" stroke-width="0.5"/><line x1="128" y1="40" x2="128" y2="160" stroke="#d8e0e8" stroke-width="0.4"/><line x1="68" y1="100" x2="188" y2="100" stroke="#d8e0e8" stroke-width="0.4"/><circle cx="175" cy="72" r="3" fill="#C4553D" opacity="0.55"/><circle cx="170" cy="62" r="3" fill="#C4553D" opacity="0.55"/><circle cx="182" cy="78" r="3" fill="#C4553D" opacity="0.55"/><circle cx="172" cy="69" r="3" fill="#C4553D" opacity="0.55"/><circle cx="165" cy="65" r="3" fill="#C4553D" opacity="0.55"/><circle cx="153" cy="52" r="3" fill="#2B7EA8" opacity="0.65"/><circle cx="157" cy="48" r="3" fill="#2B7EA8" opacity="0.65"/><circle cx="148" cy="57" r="3" fill="#2B7EA8" opacity="0.65"/><circle cx="160" cy="45" r="3" fill="#2B7EA8" opacity="0.65"/><line x1="128" y1="100" x2="177" y2="74" stroke="#C4553D" stroke-width="1.5" opacity="0.4"/><line x1="128" y1="100" x2="156" y2="50" stroke="#2B7EA8" stroke-width="1.8"/><path d="M255 72 Q266 54, 278 72 T302 72 T326 72 Q333 50, 340 72 T364 72 Q373 38, 382 72 T406 72 T428 72" fill="none" stroke="#1E4158" stroke-width="1.2" opacity="0.35"/><path d="M255 106 Q262 86, 270 106 T286 106 Q292 80, 298 106 T314 106 Q323 62, 332 106 T348 106" fill="none" stroke="#C4553D" stroke-width="1.6" opacity="0.55"/><text x="342" y="125" font-family="Source Sans 3, sans-serif" font-size="8" fill="#8899AA">HFO Signal</text><circle cx="264" cy="160" r="3.5" fill="#C4553D" opacity="0.55"/><text x="274" y="163" font-family="Source Sans 3, sans-serif" font-size="8" fill="#556677">Biased</text><circle cx="324" cy="160" r="3.5" fill="#2B7EA8" opacity="0.65"/><text x="334" y="163" font-family="Source Sans 3, sans-serif" font-size="8" fill="#556677">Corrected</text></svg></div>
-        <div class="pub-body"><span class="pub-tag stat">Biostatistics</span><h4 class="pub-title">Estimation of Circular Statistics in the Presence of Measurement Bias</h4><p class="pub-authors"><strong>Alsammani, A.</strong>, Stacey, W. C., Gliske, S. V.</p><p class="pub-journal">IEEE J. Biomedical and Health Informatics, 28(4), 2179–2186, 2023</p><div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="https://doi.org/10.1109/JBHI.2023.3334684" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div></div>
-      </div>
-
-      <!-- PUB 4 -->
-      <div class="pub-card reveal">
-        <div class="pub-fig"><svg viewBox="0 0 500 185" xmlns="http://www.w3.org/2000/svg"><rect width="500" height="185" fill="#ECF0E8"/><text x="28" y="22" font-family="IBM Plex Mono, monospace" font-size="8" fill="#1A8A7D" opacity="0.55">Cholera SIRW Model · Optimal Control</text><rect x="35" y="68" width="54" height="30" rx="15" fill="none" stroke="#1E4158" stroke-width="1.3"/><text x="62" y="88" font-family="Playfair Display, serif" font-size="14" fill="#1E4158" text-anchor="middle" font-style="italic" font-weight="600">S</text><rect x="132" y="68" width="54" height="30" rx="15" fill="none" stroke="#C4553D" stroke-width="1.3"/><text x="159" y="88" font-family="Playfair Display, serif" font-size="14" fill="#C4553D" text-anchor="middle" font-style="italic" font-weight="600">I</text><rect x="228" y="68" width="54" height="30" rx="15" fill="none" stroke="#1A8A7D" stroke-width="1.3"/><text x="255" y="88" font-family="Playfair Display, serif" font-size="14" fill="#1A8A7D" text-anchor="middle" font-style="italic" font-weight="600">R</text><line x1="89" y1="83" x2="127" y2="83" stroke="#556677" stroke-width="1" marker-end="url(#ca)"/><line x1="186" y1="83" x2="224" y2="83" stroke="#556677" stroke-width="1" marker-end="url(#ca)"/><rect x="118" y="130" width="65" height="30" rx="15" fill="none" stroke="#B8860B" stroke-width="1.3"/><text x="150" y="150" font-family="Playfair Display, serif" font-size="14" fill="#B8860B" text-anchor="middle" font-style="italic" font-weight="600">W</text><line x1="159" y1="98" x2="159" y2="127" stroke="#556677" stroke-width="0.8" stroke-dasharray="3,3"/><rect x="335" y="42" width="130" height="108" rx="9" fill="white" stroke="#d0dce4" stroke-width="0.8"/><text x="400" y="62" font-family="Source Sans 3, sans-serif" font-size="9" fill="#1E4158" text-anchor="middle" font-weight="600">Sanitation Controls</text><line x1="348" y1="70" x2="452" y2="70" stroke="#e8eef2" stroke-width="0.8"/><text x="358" y="88" font-family="Source Sans 3, sans-serif" font-size="8" fill="#556677">• Water treatment</text><text x="358" y="104" font-family="Source Sans 3, sans-serif" font-size="8" fill="#556677">• Hygiene education</text><text x="358" y="120" font-family="Source Sans 3, sans-serif" font-size="8" fill="#556677">• Sanitation infra.</text><text x="400" y="142" font-family="Source Sans 3, sans-serif" font-size="8.5" fill="#1A8A7D" text-anchor="middle" font-weight="600">↓ 60% reduction</text><defs><marker id="ca" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto"><path d="M0,0 L6,2 L0,4" fill="#556677"/></marker></defs></svg></div>
-        <div class="pub-body"><span class="pub-tag bio">Epidemiology</span><h4 class="pub-title">Cholera Transmission Dynamics with Sanitation Control Measures</h4><p class="pub-authors"><strong>Alsammani, A.</strong>, Farah, G., Mohammed, M., Yavuz, M.</p><p class="pub-journal">arXiv:2505.08873, 2025 (Under Review)</p><div class="pub-links"><a href="https://arxiv.org/abs/2505.08873" class="pub-link"><i class="fas fa-file-pdf"></i> arXiv</a></div></div>
-      </div>
-
-      <!-- PUB 5 -->
-      <div class="pub-card reveal">
-        <div class="pub-fig"><svg viewBox="0 0 500 185" xmlns="http://www.w3.org/2000/svg"><rect width="500" height="185" fill="#EFECED"/><text x="28" y="22" font-family="IBM Plex Mono, monospace" font-size="8" fill="#7B4F9D" opacity="0.55">Chemotherapy Delay Model · Stability</text><line x1="40" y1="150" x2="270" y2="150" stroke="#d0d8e0" stroke-width="0.4"/><path d="M45 130 Q68 127, 82 114 T120 82 T160 66 T200 58 T240 54 T268 50" fill="none" stroke="#1E4158" stroke-width="2"/><path d="M45 135 Q68 133, 86 126 T130 106 T170 96 T215 92 T260 91" fill="none" stroke="#C4553D" stroke-width="1.6" stroke-dasharray="5,3" opacity="0.6"/><line x1="120" y1="40" x2="120" y2="150" stroke="#B8860B" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.35"/><text x="125" y="38" font-family="Source Sans 3, sans-serif" font-size="7.5" fill="#B8860B">τ</text><rect x="315" y="42" width="145" height="105" rx="7" fill="white" stroke="#d8e0e8" stroke-width="0.8"/><line x1="387" y1="48" x2="387" y2="140" stroke="#e0e6ec" stroke-width="0.4"/><line x1="320" y1="94" x2="455" y2="94" stroke="#e0e6ec" stroke-width="0.4"/><circle cx="362" cy="76" r="3" fill="#2B7EA8"/><circle cx="372" cy="108" r="3" fill="#2B7EA8"/><circle cx="408" cy="85" r="3" fill="#C4553D"/><circle cx="398" cy="118" r="3" fill="#2B7EA8"/><circle cx="422" cy="72" r="3" fill="#C4553D"/><text x="387" y="154" font-family="Source Sans 3, sans-serif" font-size="7.5" fill="#8899AA" text-anchor="middle">Eigenvalue Plane</text><text x="145" y="166" font-family="Source Sans 3, sans-serif" font-size="7.5" fill="#8899AA" text-anchor="middle">Tumor cells &amp; drug concentration</text></svg></div>
-        <div class="pub-body"><span class="pub-tag bio">Math Biology</span><h4 class="pub-title">Stability Analysis of a Chemotherapy Model with Delays</h4><p class="pub-authors">Abdulrashid, I., <strong>Alsammani, A.</strong>, Han, X.</p><p class="pub-journal">DCDS-B, 24(3), 989–1005, 2019</p><div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div></div>
-      </div>
-
-      <!-- PUB 6 -->
-      <div class="pub-card reveal">
-        <div class="pub-fig"><svg viewBox="0 0 500 185" xmlns="http://www.w3.org/2000/svg"><rect width="500" height="185" fill="#EAF0F3"/><text x="28" y="22" font-family="IBM Plex Mono, monospace" font-size="8" fill="#1E4158" opacity="0.55">HBV Dynamics · Nonautonomous Systems</text><ellipse cx="148" cy="96" rx="72" ry="48" fill="none" stroke="#2B7EA8" stroke-width="1" opacity="0.3"/><ellipse cx="148" cy="96" rx="48" ry="32" fill="none" stroke="#2B7EA8" stroke-width="0.7" opacity="0.2"/><ellipse cx="148" cy="96" rx="20" ry="13" fill="none" stroke="#2B7EA8" stroke-width="0.5" opacity="0.15"/><circle cx="148" cy="96" r="4.5" fill="#C4553D" opacity="0.75"/><text x="159" y="93" font-family="Source Sans 3, sans-serif" font-size="8.5" fill="#C4553D" font-weight="600">E*</text><text x="290" y="58" font-family="Playfair Display, serif" font-size="18" fill="#1E4158" font-style="italic">R</text><text x="307" y="63" font-family="Source Sans 3, sans-serif" font-size="10" fill="#1E4158">0</text><text x="322" y="58" font-family="Source Sans 3, sans-serif" font-size="16" fill="#556677"> = </text><text x="352" y="51" font-family="Playfair Display, serif" font-size="13" fill="#1E4158" font-style="italic">βΛ</text><line x1="342" y1="58" x2="422" y2="58" stroke="#556677" stroke-width="0.8"/><text x="342" y="74" font-family="Playfair Display, serif" font-size="12" fill="#1E4158" font-style="italic">μ(μ+δ+γ)</text><path d="M290 115 L358 115 Q368 115, 378 100 L432 68" fill="none" stroke="#1E4158" stroke-width="1.8" opacity="0.65"/><path d="M290 115 L358 115 Q368 115, 378 130 L432 162" fill="none" stroke="#C4553D" stroke-width="1.3" opacity="0.35" stroke-dasharray="4,3"/><circle cx="358" cy="115" r="4" fill="#B8860B"/><text x="340" y="142" font-family="Source Sans 3, sans-serif" font-size="7.5" fill="#8899AA">Bifurcation</text></svg></div>
-        <div class="pub-body"><span class="pub-tag bio">Math Biology</span><h4 class="pub-title">Mathematical Analysis of Autonomous and Nonautonomous HBV Transmission Models</h4><p class="pub-authors"><strong>Alsammani, A.</strong></p><p class="pub-journal">ICCSA 2023, LNCS, Springer</p><div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div></div>
-      </div>
-    </div>
-
-    <div class="more-pubs reveal">
-      <a href="#" class="btn btn-outline" target="_blank"><i class="fas fa-graduation-cap"></i> View All on Google Scholar</a>
-    </div>
-  </section>
-
-  <!-- TEACHING -->
-  <section class="section section-alt" id="teaching">
-    <div class="section-label">Teaching</div>
-    <h2 class="section-heading reveal">Courses</h2>
-    <p class="section-desc reveal">Over twelve years of teaching across applied mathematics, data science, and statistics — from introductory courses to graduate seminars.</p>
-    <div class="teaching-cols">
-      <div class="teach-block reveal">
-        <h3>Delaware State University</h3>
-        <p class="inst">Dept. of Mathematical Sciences · 2025 – Present</p>
-        <ul class="course-list">
-          <li class="course"><span class="course-code">MTSC 821</span><span class="course-name">Scientific Computations I</span><span class="course-badge grad">Graduate</span></li>
-          <li class="course"><span class="course-code">MTSC 571</span><span class="course-name">Complex Analysis</span><span class="course-badge grad">Graduate</span></li>
-          <li class="course"><span class="course-code">MTSC 452</span><span class="course-name">Advanced Calculus II</span></li>
-          <li class="course"><span class="course-code">MTSC 341</span><span class="course-name">Probability</span><span class="course-badge online">Online</span></li>
-        </ul>
-      </div>
-      <div class="teach-block reveal">
-        <h3>Jacksonville University</h3>
-        <p class="inst">School of Science &amp; Mathematics · 2022 – 2025</p>
-        <ul class="course-list">
-          <li class="course"><span class="course-code">MATH 470</span><span class="course-name">Machine Learning Algorithms</span></li>
-          <li class="course"><span class="course-code">MATH 270</span><span class="course-name">Introduction to Data Science</span></li>
-          <li class="course"><span class="course-code">MATH 331</span><span class="course-name">Differential Equations</span></li>
-          <li class="course"><span class="course-code">MATH 420</span><span class="course-name">Linear Algebra II</span></li>
-          <li class="course"><span class="course-code">MATH 315</span><span class="course-name">Probability</span></li>
-          <li class="course"><span class="course-code">MATH 240</span><span class="course-name">Calculus III</span></li>
-          <li class="course"><span class="course-code">MATH 205</span><span class="course-name">Elementary Statistics</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="teaching-quote reveal"><p>"I believe in teaching that empowers students to think critically and work confidently with data — bridging theoretical rigor with real-world application."</p></div>
-  </section>
-
-  <!-- TEAM -->
-  <section class="section" id="team">
-    <div class="section-label">Lab</div>
-    <h2 class="section-heading reveal">Research Team</h2>
-    <p class="section-desc reveal">The Applied Mathematics &amp; Data Science (AMDS) Lab focuses on mathematical modeling, machine learning, and computational biology.</p>
-    <div class="team-grid">
-      <div class="team-card pi reveal">
-        <div class="team-photo"><div class="placeholder"><i class="fas fa-user"></i></div></div>
-        <div class="team-info"><div class="team-name">Dr. Abdallah Alsammani</div><div class="team-role">Principal Investigator · Lab Director</div><p class="team-desc">Interdisciplinary researcher with expertise in mathematical biology, epidemiological modeling, computational neuroscience, and machine learning. Ph.D. in Applied Mathematics from Auburn University.</p><div class="tags"><span class="tag">Math Modeling</span><span class="tag">Epidemiology</span><span class="tag">ML</span><span class="tag">Biostatistics</span><span class="tag">Neuroscience</span></div></div>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-photo"><div class="placeholder"><i class="fas fa-user-graduate"></i></div></div>
-        <div class="team-info"><div class="team-name">Graduate Student</div><div class="team-role">M.S. Candidate · Mathematical Sciences</div><p class="team-desc">Investigating computational methods for infectious disease modeling and optimal control strategies.</p><div class="tags"><span class="tag">Disease Modeling</span><span class="tag">Optimal Control</span></div></div>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-photo"><div class="placeholder"><i class="fas fa-user-graduate"></i></div></div>
-        <div class="team-info"><div class="team-name">Graduate Student</div><div class="team-role">M.S. Candidate · Data Science</div><p class="team-desc">Applying machine learning to biomedical data for predictive health analytics.</p><div class="tags"><span class="tag">Machine Learning</span><span class="tag">Health Analytics</span></div></div>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-photo"><div class="placeholder"><i class="fas fa-user"></i></div></div>
-        <div class="team-info"><div class="team-name">Undergraduate Researcher</div><div class="team-role">Research Assistant · Mathematics</div><p class="team-desc">Working on data visualization and exploratory analysis for epidemiological datasets.</p><div class="tags"><span class="tag">Data Viz</span><span class="tag">Statistics</span></div></div>
-      </div>
-    </div>
-    <div class="join-banner reveal"><h3>Join Our Lab</h3><p>We are actively recruiting motivated graduate and undergraduate students interested in applied mathematics, data science, and computational biology.</p><a href="mailto:aalsammani@desu.edu" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Dr. Alsammani</a></div>
-  </section>
-
-  <!-- CONTACT -->
+  <!-- ================================================================
+       CONTACT SECTION
+       ================================================================ -->
   <section class="section section-alt" id="contact">
     <div class="section-label">Contact</div>
     <h2 class="section-heading reveal">Get in Touch</h2>
     <p class="section-desc reveal">Open to research collaborations, speaking invitations, and prospective student inquiries.</p>
+
+    <!-- CONTACT INFO — Update email, phone, address below -->
     <div class="contact-grid reveal">
       <div class="contact-items">
-        <div class="contact-row"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div class="contact-text"><h4>Email</h4><a href="mailto:aalsammani@desu.edu">aalsammani@desu.edu</a></div></div>
-        <div class="contact-row"><div class="contact-icon"><i class="fas fa-phone"></i></div><div class="contact-text"><h4>Office Phone</h4><p>302.857.6642</p></div></div>
-        <div class="contact-row"><div class="contact-icon"><i class="fas fa-building"></i></div><div class="contact-text"><h4>Office</h4><p>Department of Mathematical Sciences<br>Delaware State University<br>1200 N. DuPont Highway<br>Dover, DE 19901</p></div></div>
-        <div class="contact-row"><div class="contact-icon"><i class="fab fa-linkedin-in"></i></div><div class="contact-text"><h4>LinkedIn</h4><a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank">linkedin.com/in/abdallah-alsammani</a></div></div>
+        <div class="contact-row">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-text">
+            <h4>Email</h4>
+            <a href="mailto:aalsammani@desu.edu">aalsammani@desu.edu</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-text">
+            <h4>Office Phone</h4>
+            <p>302.857.6642</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><i class="fas fa-building"></i></div>
+          <div class="contact-text">
+            <h4>Office</h4>
+            <p>
+              Department of Mathematical Sciences<br>
+              Delaware State University<br>
+              1200 N. DuPont Highway<br>
+              Dover, DE 19901
+            </p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+          <div class="contact-text">
+            <h4>LinkedIn</h4>
+            <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank">linkedin.com/in/abdallah-alsammani</a>
+          </div>
+        </div>
       </div>
-      <div class="contact-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.5!2d-75.524!3d39.168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c764a1d8b5e9d7%3A0x6c5b7c0c0dd0aab2!2sDelaware%20State%20University!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe></div>
+
+      <!-- Google Maps embed — update coordinates if needed -->
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.5!2d-75.524!3d39.168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c764a1d8b5e9d7%3A0x6c5b7c0c0dd0aab2!2sDelaware%20State%20University!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
     </div>
   </section>
 
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
   <footer class="footer">
     <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
     <div class="footer-links">
@@ -953,128 +246,11 @@
       <a href="https://github.com/aalsammani" target="_blank"><i class="fab fa-github"></i></a>
     </div>
   </footer>
+
 </main>
 
-<script>
-// ——— Interactive Network Visualization (matching screenshot) ———
-(function() {
-  const canvas = document.getElementById('networkCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const W = 340, H = 340;
-  const cx = W / 2, cy = H / 2;
-  const dpr = window.devicePixelRatio || 1;
-  canvas.width = W * dpr;
-  canvas.height = H * dpr;
-  canvas.style.width = W + 'px';
-  canvas.style.height = H + 'px';
-  ctx.scale(dpr, dpr);
+<!-- Shared JavaScript (nav highlighting, scroll reveal, neural network animation) -->
+<script src="js/main.js"></script>
 
-  // Nodes
-  const nodes = [
-    { x: cx - 65, y: cy - 55, r: 5.5, label: 'Stats' },
-    { x: cx - 30, y: cy - 18, r: 4.5, label: 'ML' },
-    { x: cx + 10, y: cy - 30, r: 5, label: 'Bio' },
-    { x: cx + 55, y: cy - 55, r: 4, label: 'SIR' },
-    { x: cx + 80, y: cy - 20, r: 6, label: 'Data' },
-    { x: cx + 40, y: cy + 30, r: 5.5, label: 'Epi' },
-    { x: cx - 15, y: cy + 55, r: 4.5, label: 'HBV' },
-    { x: cx - 60, y: cy + 25, r: 4, label: 'DDE' },
-    { x: cx + 100, y: cy + 60, r: 3.5, label: '' },
-    { x: cx - 90, y: cy + 5, r: 3.5, label: '' },
-  ];
-
-  // Edges (index pairs)
-  const edges = [
-    [0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,0],
-    [1,5],[2,4],[0,6],[1,7],[2,5],[3,5],[4,8],[6,9]
-  ];
-
-  let time = 0;
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    time += 0.004;
-
-    // Draw edges
-    edges.forEach(([a, b]) => {
-      const na = nodes[a], nb = nodes[b];
-      const ax = na.x + Math.sin(time + a) * 2.5;
-      const ay = na.y + Math.cos(time * 0.7 + a) * 2;
-      const bx = nb.x + Math.sin(time + b) * 2.5;
-      const by = nb.y + Math.cos(time * 0.7 + b) * 2;
-      ctx.beginPath();
-      ctx.moveTo(ax, ay);
-      ctx.lineTo(bx, by);
-      ctx.strokeStyle = 'rgba(43, 126, 168, 0.12)';
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    });
-
-    // Draw a subtle regression line
-    ctx.beginPath();
-    ctx.moveTo(cx - 80, cy + 20);
-    ctx.lineTo(cx + 100, cy - 40);
-    ctx.strokeStyle = 'rgba(43, 126, 168, 0.1)';
-    ctx.lineWidth = 1.2;
-    ctx.stroke();
-
-    // Draw nodes
-    nodes.forEach((n, i) => {
-      const nx = n.x + Math.sin(time + i) * 2.5;
-      const ny = n.y + Math.cos(time * 0.7 + i) * 2;
-
-      // Glow
-      ctx.beginPath();
-      ctx.arc(nx, ny, n.r + 6, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(43, 126, 168, 0.04)';
-      ctx.fill();
-
-      // Node
-      ctx.beginPath();
-      ctx.arc(nx, ny, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(43, 126, 168, ${0.45 + Math.sin(time * 1.5 + i) * 0.15})`;
-      ctx.fill();
-
-      // Inner highlight
-      ctx.beginPath();
-      ctx.arc(nx - n.r * 0.25, ny - n.r * 0.25, n.r * 0.35, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255,255,255,0.25)';
-      ctx.fill();
-    });
-
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-})();
-
-// ——— Active nav on scroll ———
-const sections = document.querySelectorAll('section[id], .hero');
-const sideLinks = document.querySelectorAll('.sidebar-nav a');
-const topLinks = document.querySelectorAll('.topbar-nav a');
-
-function updateActive() {
-  let current = 'home';
-  sections.forEach(s => {
-    const id = s.getAttribute('id');
-    if (id && window.scrollY >= s.offsetTop - 140) current = id;
-  });
-  [sideLinks, topLinks].forEach(links => {
-    links.forEach(a => {
-      a.classList.remove('active');
-      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-    });
-  });
-}
-window.addEventListener('scroll', updateActive);
-
-// ——— Scroll reveal ———
-const reveals = document.querySelectorAll('.reveal');
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
-reveals.forEach(el => obs.observe(el));
-</script>
 </body>
 </html>
