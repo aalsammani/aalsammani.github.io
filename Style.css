@@ -1,0 +1,1314 @@
+/* =============================================================================
+   ALSAMMANI FACULTY WEBSITE — SHARED STYLESHEET
+   =============================================================================
+   
+   Author:      Abdallah Alsammani
+   Version:     2.0
+   Last Updated: 2025
+   
+   TABLE OF CONTENTS
+   -----------------
+   1. CSS VARIABLES (colors, fonts, spacing — edit these to rebrand)
+   2. RESET & BASE
+   3. TYPOGRAPHY
+   4. SIDEBAR (fixed left navigation)
+   5. MAIN CONTENT AREA
+   6. TOP NAVIGATION BAR
+   7. BUTTONS & LINKS
+   8. SECTION HEADINGS
+   9. HERO SECTION (homepage)
+   10. EXPERTISE STRIP (homepage)
+   11. PUBLICATION CARDS (research page)
+   12. COURSE LIST (teaching page)
+   13. TEAM CARDS (team page)
+   14. CONTACT SECTION
+   15. FOOTER
+   16. ANIMATIONS & SCROLL REVEAL
+   17. RESPONSIVE / MOBILE
+   
+   HOW TO CUSTOMIZE
+   ----------------
+   • Change colors:   Edit variables in Section 1 under :root
+   • Change fonts:    Edit --font-display / --font-body / --font-mono
+   • Add profile pic: In sidebar HTML, replace <span class="initials">AA</span>
+                       with <img src="images/profile.jpg" alt="..." />
+   • Add team photos: Replace .placeholder divs with <img> tags
+   • Change sidebar:  Edit --sidebar-width and --sidebar-bg
+   
+   ============================================================================= */
+
+
+/* =============================================================================
+   1. CSS VARIABLES — EDIT THESE TO REBRAND THE ENTIRE SITE
+   ============================================================================= */
+
+:root {
+  /* --- Sidebar Colors --- */
+  --sidebar-bg:          #1C3D52;      /* Main sidebar background              */
+  --sidebar-bg-dark:     #132D3E;      /* Sidebar gradient end (darker)        */
+  --sidebar-text:        #A8C0D0;      /* Sidebar body text                    */
+  --sidebar-text-bright: #FFFFFF;      /* Sidebar headings / active items      */
+  --sidebar-accent:      #5FB8DE;      /* Sidebar highlights (links, icons)    */
+  --sidebar-width:       264px;        /* Fixed sidebar width                  */
+
+  /* --- Page Colors --- */
+  --bg:            #F3F5F8;            /* Main page background                 */
+  --bg-white:      #FFFFFF;            /* Card / section white background      */
+  --bg-alt:        #E9EDF2;            /* Alternate section / input background */
+  --bg-hero:       #F3F5F8;           /* Hero section background              */
+
+  /* --- Text Colors --- */
+  --text:          #1A2B3C;            /* Primary headings & body text         */
+  --text-secondary:#55667A;            /* Secondary / supporting text          */
+  --text-light:    #8494A7;            /* Muted text, captions, dates          */
+
+  /* --- Accent Colors (used for tags, highlights, buttons) --- */
+  --accent:        #1C3D52;            /* Primary accent (matches sidebar)     */
+  --accent-blue:   #2980B0;            /* Links, active states, primary CTA    */
+  --accent-teal:   #1A8A7D;            /* Success, biology tags                */
+  --accent-warm:   #C4553D;            /* Warning, epidemiology accents        */
+  --accent-gold:   #B8860B;            /* ML tags, special highlights          */
+  --accent-purple: #7B4F9D;            /* Math biology accents                 */
+
+  /* --- Borders & Shadows --- */
+  --border:        #D4DCE4;            /* Card borders, dividers               */
+  --border-light:  #ECF0F5;            /* Subtle borders, table lines          */
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md:     0 4px 18px rgba(0,0,0,0.06);
+  --shadow-lg:     0 14px 44px rgba(0,0,0,0.08);
+  --shadow-card:   0 2px 8px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.02);
+
+  /* --- Typography --- */
+  /* Display:  Used for all headings (h1-h3), hero text, publication titles    */
+  /* Body:     Used for paragraphs, navigation, buttons, form elements         */
+  /* Mono:     Used for code, course codes, tags, labels                       */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:    'Source Sans 3', 'Segoe UI', -apple-system, sans-serif;
+  --font-mono:    'IBM Plex Mono', 'SF Mono', 'Consolas', monospace;
+
+  /* --- Spacing & Sizing --- */
+  --radius:        8px;                /* Default border radius                */
+  --radius-lg:     14px;               /* Cards, large containers              */
+  --radius-xl:     20px;               /* Hero cards, featured elements        */
+  --section-pad-x: 3.5rem;             /* Horizontal padding for sections      */
+  --section-pad-y: 5rem;               /* Vertical padding for sections        */
+
+  /* --- Transitions --- */
+  --ease:          cubic-bezier(0.4, 0, 0.2, 1);
+  --transition:    0.3s var(--ease);
+  --transition-slow: 0.5s var(--ease);
+}
+
+
+/* =============================================================================
+   2. RESET & BASE
+   ============================================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.72;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent-warm);
+}
+
+::selection {
+  background: rgba(41, 128, 176, 0.15);
+  color: var(--text);
+}
+
+
+/* =============================================================================
+   3. TYPOGRAPHY — Global text styles
+   ============================================================================= */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+
+/* =============================================================================
+   4. SIDEBAR — Fixed left navigation panel
+   =============================================================================
+   The sidebar stays pinned to the left on desktop and hides on mobile (<900px).
+   To change width, edit --sidebar-width above.
+   To add a profile photo, replace the .initials span with an <img> tag.
+   ============================================================================= */
+
+.sidebar {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: var(--sidebar-width);
+  background: linear-gradient(175deg, var(--sidebar-bg) 0%, var(--sidebar-bg-dark) 100%);
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1.4rem 1.6rem;
+  z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Decorative gradient overlay on sidebar */
+.sidebar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 25% 0%, rgba(95,184,222,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 100%, rgba(26,138,125,0.05) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.sidebar-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
+/* --- Profile Photo --- 
+   Replace the .initials span with an <img> tag:
+   <img src="images/profile.jpg" alt="Abdallah Alsammani" />
+*/
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3.5px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 6px 28px rgba(0,0,0,0.3),
+    0 0 0 1px rgba(255,255,255,0.04);
+  margin-bottom: 1.5rem;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.profile-photo:hover {
+  border-color: rgba(95,184,222,0.3);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(95,184,222,0.1);
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-photo .initials {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--sidebar-accent);
+  letter-spacing: 0.02em;
+}
+
+/* --- Sidebar Text --- */
+.sidebar-name {
+  font-family: var(--font-display);
+  font-size: 1.42rem;
+  font-weight: 700;
+  color: var(--sidebar-text-bright);
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.sidebar-title {
+  font-size: 0.86rem;
+  color: var(--sidebar-accent);
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0.12rem;
+}
+
+.sidebar-univ {
+  font-size: 0.78rem;
+  color: var(--sidebar-text);
+  text-align: center;
+  opacity: 0.65;
+  margin-bottom: 1.8rem;
+}
+
+/* --- Sidebar Navigation Links --- */
+.sidebar-nav {
+  width: 100%;
+  list-style: none;
+  margin-bottom: 1.3rem;
+}
+
+.sidebar-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.58rem 0.85rem;
+  border-radius: 7px;
+  color: var(--sidebar-text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.sidebar-nav li a i {
+  width: 16px;
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.55;
+  transition: var(--transition);
+}
+
+.sidebar-nav li a:hover {
+  background: rgba(255,255,255,0.07);
+  color: var(--sidebar-text-bright);
+}
+
+.sidebar-nav li a:hover i {
+  opacity: 0.85;
+}
+
+/* Active page indicator */
+.sidebar-nav li a.active {
+  background: rgba(95,184,222,0.13);
+  color: var(--sidebar-accent);
+}
+
+.sidebar-nav li a.active i {
+  opacity: 1;
+}
+
+/* Active indicator dot */
+.sidebar-nav li a.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  background: var(--sidebar-accent);
+  border-radius: 0 3px 3px 0;
+}
+
+/* --- Sidebar Divider --- */
+.sidebar-divider {
+  width: 45%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  margin: 0.3rem auto 1.3rem;
+}
+
+/* --- Social Icons --- */
+.sidebar-social {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-social a {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.055);
+  color: var(--sidebar-text);
+  font-size: 0.82rem;
+  transition: var(--transition);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.sidebar-social a:hover {
+  background: var(--sidebar-accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(95,184,222,0.35);
+  border-color: transparent;
+}
+
+/* --- Sidebar Bottom (contact info + CV button) --- */
+.sidebar-bottom {
+  margin-top: auto;
+  width: 100%;
+}
+
+.sidebar-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.73rem;
+  color: var(--sidebar-text);
+  opacity: 0.55;
+  margin-bottom: 0.45rem;
+}
+
+.sidebar-contact-item i {
+  width: 12px;
+  text-align: center;
+  font-size: 0.66rem;
+}
+
+.sidebar-contact-item a {
+  color: var(--sidebar-text);
+}
+
+.sidebar-contact-item a:hover {
+  color: var(--sidebar-accent);
+  opacity: 1;
+}
+
+/* Download CV button */
+.cv-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 0.58rem 0.8rem;
+  border-radius: 7px;
+  background: rgba(95,184,222,0.1);
+  color: var(--sidebar-accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: var(--transition);
+  margin-top: 0.8rem;
+  border: 1px solid rgba(95,184,222,0.12);
+}
+
+.cv-btn:hover {
+  background: var(--sidebar-accent);
+  color: white;
+  border-color: var(--sidebar-accent);
+}
+
+
+/* =============================================================================
+   5. MAIN CONTENT AREA
+   ============================================================================= */
+
+.main {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  min-height: 100vh;
+}
+
+
+/* =============================================================================
+   6. TOP NAVIGATION BAR — Sticky bar at top of main content
+   =============================================================================
+   Matches sidebar nav items: Home, Research, Teaching, Team, Contact
+   ============================================================================= */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(243,245,248,0.78);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  padding: 0 var(--section-pad-x);
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.topbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 0.1rem;
+}
+
+.topbar-nav a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-light);
+  padding: 0.38rem 0.85rem;
+  border-radius: 6px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.topbar-nav a:hover {
+  color: var(--accent-blue);
+  background: rgba(41,128,176,0.05);
+}
+
+/* Active page indicator — underline */
+.topbar-nav a.active {
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.topbar-nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: var(--accent-blue);
+  border-radius: 1px;
+}
+
+
+/* =============================================================================
+   7. BUTTONS & LINKS
+   ============================================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.62rem 1.3rem;
+  border-radius: 7px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  line-height: 1.4;
+}
+
+.btn i { font-size: 0.78rem; }
+
+/* Primary filled button */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #112430;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Outline / ghost button */
+.btn-outline {
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  background: rgba(41,128,176,0.03);
+}
+
+/* Small button variant */
+.btn-sm {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  border-radius: 5px;
+}
+
+
+/* =============================================================================
+   8. SECTION HEADINGS — Reusable across all pages
+   ============================================================================= */
+
+.section {
+  padding: var(--section-pad-y) var(--section-pad-x);
+}
+
+.section-alt {
+  background: var(--bg-white);
+}
+
+/* Small monospace label above heading (e.g. "Research", "Teaching") */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  margin-bottom: 0.55rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1.5px;
+  background: var(--accent-blue);
+  border-radius: 1px;
+}
+
+/* Main section heading */
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.7rem;
+}
+
+/* Section description paragraph */
+.section-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 620px;
+  line-height: 1.82;
+  margin-bottom: 2.8rem;
+}
+
+
+/* =============================================================================
+   9. HERO SECTION — Homepage welcome area
+   ============================================================================= */
+
+.hero {
+  padding: 4.5rem var(--section-pad-x) 4rem;
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - 54px);
+  display: flex;
+  align-items: center;
+  background: var(--bg-hero);
+}
+
+/* Layout: text on left, visualization on right */
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3.5rem;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-greeting {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.08;
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.025em;
+}
+
+.hero-greeting em {
+  color: var(--accent-blue);
+  font-style: italic;
+}
+
+.hero-bio {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-bottom: 2.2rem;
+  max-width: 560px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Neural network visualization container */
+.hero-viz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nn-container {
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 42% 38%,
+    rgba(41,128,176,0.06) 0%,
+    rgba(41,128,176,0.025) 35%,
+    rgba(243,245,248,0.4) 65%,
+    transparent 100%
+  );
+  position: relative;
+}
+
+.nn-container canvas {
+  position: absolute;
+  inset: 0;
+}
+
+
+/* =============================================================================
+   10. EXPERTISE STRIP — Four-column icons below hero
+   ============================================================================= */
+
+.expertise-strip {
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.expertise-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.expertise-item {
+  padding: 2.2rem 1.4rem;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+}
+
+/* Vertical divider between items */
+.expertise-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 22%;
+  height: 56%;
+  width: 1px;
+  background: var(--border-light);
+}
+
+.expertise-item:hover {
+  background: rgba(41,128,176,0.02);
+}
+
+.exp-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.7rem;
+  font-size: 1.05rem;
+  background: rgba(41,128,176,0.07);
+  color: var(--accent-blue);
+  transition: var(--transition);
+}
+
+.expertise-item:hover .exp-icon {
+  background: rgba(41,128,176,0.12);
+  transform: translateY(-2px);
+}
+
+.expertise-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.expertise-item p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.52;
+}
+
+
+/* =============================================================================
+   11. PUBLICATION CARDS — Horizontal layout (figure left, details right)
+   =============================================================================
+   Each publication is a single row: SVG figure on the left, text on the right.
+   To add a new publication, copy a .pub-card block and update content.
+   ============================================================================= */
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Single publication — horizontal card */
+.pub-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  display: grid;
+  grid-template-columns: 320px 1fr;        /* Figure width | Text fills rest   */
+  min-height: 200px;
+}
+
+.pub-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: #c0cdd8;
+}
+
+/* Figure area (left side) */
+.pub-fig {
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+
+.pub-fig svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Text area (right side) */
+.pub-body {
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Category tag (e.g. "Epidemiology", "Machine Learning") */
+.pub-tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.55rem;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Tag color variants — add more as needed */
+.pub-tag.epi  { background: rgba(41,128,176,0.08); color: var(--accent-blue); }
+.pub-tag.ml   { background: rgba(184,134,11,0.08); color: var(--accent-gold); }
+.pub-tag.bio  { background: rgba(26,138,125,0.08); color: var(--accent-teal); }
+.pub-tag.stat { background: rgba(196,85,61,0.06);  color: var(--accent-warm); }
+
+.pub-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+  margin-bottom: 0.4rem;
+}
+
+.pub-authors {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.2rem;
+}
+
+.pub-journal {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-bottom: 0.9rem;
+}
+
+.pub-links {
+  margin-top: auto;
+  display: flex;
+  gap: 0.35rem;
+}
+
+.pub-link {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.pub-link:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  background: rgba(41,128,176,0.03);
+}
+
+.more-pubs {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+
+/* =============================================================================
+   12. COURSE LIST — Teaching page
+   ============================================================================= */
+
+.teaching-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.teach-block h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+/* Institution subtitle */
+.teach-block .inst {
+  font-size: 0.84rem;
+  color: var(--accent-blue);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.course-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.course {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  padding: 0.55rem 0.85rem;
+  background: var(--bg);
+  border-radius: 7px;
+  border: 1px solid var(--border-light);
+  transition: var(--transition);
+}
+
+.section-alt .course {
+  background: #F2F5F8;
+}
+
+.course:hover {
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.course-code {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  color: var(--accent-blue);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.course-name {
+  font-size: 0.86rem;
+  color: var(--text);
+}
+
+/* Badges for special courses */
+.course-badge {
+  font-size: 0.62rem;
+  padding: 0.08rem 0.4rem;
+  border-radius: 3px;
+  margin-left: auto;
+  white-space: nowrap;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.course-badge.grad   { background: rgba(41,128,176,0.08);  color: var(--accent-blue); }
+.course-badge.online { background: rgba(26,138,125,0.08);  color: var(--accent-teal); }
+
+/* Teaching philosophy quote */
+.teaching-quote {
+  border-left: 3px solid var(--accent-blue);
+  padding-left: 1.4rem;
+  margin-top: 2.5rem;
+  max-width: 640px;
+}
+
+.teaching-quote p {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.72;
+}
+
+
+/* =============================================================================
+   13. TEAM CARDS — Team page
+   ============================================================================= */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.team-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.team-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* PI card spans full width with photo on left */
+.team-card.pi {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  max-width: 700px;
+  margin: 0 auto 0.5rem;
+}
+
+/* Photo area */
+.team-photo {
+  height: 220px;
+  background: linear-gradient(135deg, #d4e2ec 0%, #bcceda 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-photo .placeholder {
+  font-size: 2.2rem;
+  color: var(--accent);
+  opacity: 0.22;
+}
+
+.pi .team-photo {
+  width: 200px;
+  height: auto;
+  min-height: 200px;
+}
+
+/* Info area */
+.team-info { padding: 1.2rem 1.4rem; }
+
+.team-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+}
+
+.team-role {
+  font-size: 0.78rem;
+  color: var(--accent-blue);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.team-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.62;
+  margin-bottom: 0.6rem;
+}
+
+/* Research interest tags */
+.tags { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+
+.tag {
+  font-size: 0.66rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  background: var(--bg-alt);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+}
+
+/* "Join our lab" recruitment banner */
+.join-banner {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(41,128,176,0.03), rgba(26,138,125,0.03));
+  border-radius: var(--radius-lg);
+  border: 1px dashed rgba(41,128,176,0.2);
+}
+
+.join-banner h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.join-banner p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =============================================================================
+   14. CONTACT SECTION
+   ============================================================================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(41,128,176,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-blue);
+  font-size: 0.92rem;
+  flex-shrink: 0;
+}
+
+.contact-text h4 {
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin-bottom: 0.05rem;
+}
+
+.contact-text p,
+.contact-text a {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.contact-map {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  height: 280px;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* =============================================================================
+   15. FOOTER
+   ============================================================================= */
+
+.footer {
+  background: var(--accent);
+  color: rgba(255,255,255,0.5);
+  padding: 1.5rem var(--section-pad-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.76rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.88rem;
+  transition: var(--transition);
+}
+
+.footer-links a:hover { color: white; }
+
+
+/* =============================================================================
+   16. ANIMATIONS & SCROLL REVEAL
+   ============================================================================= */
+
+/* Elements with .reveal fade up when they enter viewport */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation delay for grouped items */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+
+/* =============================================================================
+   17. RESPONSIVE / MOBILE
+   =============================================================================
+   Breakpoints:
+   - 1100px: Stack hero, single-column publications
+   - 900px:  Hide sidebar, show mobile header + hamburger menu
+   - 500px:  Single-column expertise strip
+   ============================================================================= */
+
+/* --- Mobile Header (hidden on desktop) --- */
+.mobile-header { display: none; }
+
+@media (max-width: 1100px) {
+  .hero-layout { grid-template-columns: 1fr; }
+  .hero-viz { display: none; }
+  .pub-card { grid-template-columns: 240px 1fr; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-card.pi { grid-column: 1 / -1; }
+}
+
+@media (max-width: 900px) {
+  /* Hide sidebar, show mobile header */
+  .sidebar { display: none; }
+  .main { margin-left: 0; }
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 1.4rem;
+    background: var(--sidebar-bg);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+
+  .mobile-header .logo {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .mobile-header .logo span { color: var(--sidebar-accent); }
+
+  .hamburger {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+  }
+
+  .hamburger span {
+    width: 21px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  .mobile-nav {
+    display: none;
+    background: var(--sidebar-bg-dark);
+    padding: 0.8rem 1.4rem;
+  }
+
+  .mobile-nav.open { display: block; }
+
+  .mobile-nav a {
+    display: block;
+    padding: 0.55rem 0;
+    color: var(--sidebar-text);
+    font-size: 0.88rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .mobile-nav a:hover { color: var(--sidebar-accent); }
+
+  /* Layout adjustments */
+  .topbar { display: none; }
+  .section { padding: 3rem 1.4rem; }
+  .hero { padding: 3rem 1.4rem; min-height: auto; }
+  .expertise-row { grid-template-columns: repeat(2, 1fr); }
+  .expertise-item:nth-child(2)::after { display: none; }
+  .pub-card { grid-template-columns: 1fr; }           /* Stack on mobile */
+  .pub-fig { height: 180px; }
+  .teaching-cols { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  .team-card.pi { grid-template-columns: 1fr; }
+  .pi .team-photo { width: 100%; height: 170px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+    padding: 1.4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .expertise-row { grid-template-columns: 1fr; }
+  .expertise-item::after { display: none !important; }
+}
