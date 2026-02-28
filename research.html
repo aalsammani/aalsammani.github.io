@@ -31,33 +31,17 @@ a:hover{color:var(--warm)}
 ::selection{background:rgba(41,128,176,.14)}
 
 /* ── TOP NAV ── */
-.topnav{
-  position:sticky;top:0;z-index:200;
-  background:rgba(27,58,75,.97);backdrop-filter:blur(16px);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 2.2rem;height:58px;
-  box-shadow:0 2px 12px rgba(0,0,0,.12);
-}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(27,58,75,.97);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:0 2.2rem;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.12)}
 .topnav-left{display:flex;align-items:center;gap:.65rem}
-.topnav-photo{
-  width:38px;height:38px;border-radius:50%;overflow:hidden;
-  border:2px solid rgba(255,255,255,.18);flex-shrink:0;
-  background:#2a5068;
-}
+.topnav-photo{width:38px;height:38px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.18);flex-shrink:0;background:#2a5068}
 .topnav-photo img{width:100%;height:100%;object-fit:cover}
-.topnav-photo .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-d);font-size:.85rem;color:rgba(255,255,255,.5);font-weight:600}
 .topnav-name{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;color:#fff;white-space:nowrap}
 .topnav-name span{color:#5CB8E6}
 .topnav-links{list-style:none;display:flex;gap:.15rem}
-.topnav-links a{
-  font-size:.84rem;font-weight:500;color:rgba(255,255,255,.55);
-  padding:.38rem .78rem;border-radius:6px;transition:var(--tr);position:relative;
-}
+.topnav-links a{font-size:.84rem;font-weight:500;color:rgba(255,255,255,.55);padding:.38rem .78rem;border-radius:6px;transition:var(--tr);position:relative}
 .topnav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
 .topnav-links a.active{color:#5CB8E6;font-weight:600}
 .topnav-links a.active::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:18px;height:2px;background:#5CB8E6;border-radius:1px}
-
-/* Mobile */
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:5px}
 .hamburger span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;margin:4px 0;transition:var(--tr)}
 .mob-nav{display:none;background:rgba(18,41,58,.98);padding:.5rem 1.5rem;position:sticky;top:58px;z-index:199}
@@ -65,39 +49,35 @@ a:hover{color:var(--warm)}
 .mob-nav a{display:block;padding:.55rem 0;color:rgba(255,255,255,.6);font-size:.88rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.04)}
 .mob-nav a:hover{color:#5CB8E6}
 
-/* ── PAGE HERO ── */
-.hero{
-  padding:3.5rem 2.2rem 3rem;position:relative;overflow:hidden;
-  background:linear-gradient(165deg,var(--bg) 0%,#E4EAF2 50%,#DCE5F0 100%);
-}
+/* ── HERO ── */
+.hero{padding:3.8rem 2.2rem 3.2rem;position:relative;overflow:hidden;background:linear-gradient(165deg,var(--bg) 0%,#E4EAF2 50%,#DCE5F0 100%)}
 .hero::before{content:'';position:absolute;top:-80px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(92,184,230,.06) 0%,transparent 70%);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:2.5rem;align-items:center;max-width:1100px;margin:0 auto;position:relative;z-index:1}
-.hero-grid.no-canvas{grid-template-columns:1fr}
-.hero h2{font-family:var(--ff-d);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:600;line-height:1.12;margin-bottom:1rem;letter-spacing:-.01em}
+.hero::after{content:'';position:absolute;bottom:-60px;left:-80px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(26,138,125,.04) 0%,transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:2.5rem;align-items:start;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.hero h2{font-family:var(--ff-d);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:600;line-height:1.15;margin-bottom:1rem;letter-spacing:-.01em}
 .hero h2 em{color:var(--blue);font-style:italic}
-.hero p{font-size:.98rem;color:var(--text2);line-height:1.85;margin-bottom:1.5rem;max-width:560px}
+.hero-text{font-size:.96rem;color:var(--text2);line-height:1.85;margin-bottom:.9rem;max-width:620px}
+.hero-text + .hero-text{margin-bottom:1.4rem}
+.hero-kw{display:inline;font-weight:600;color:var(--text)}
+.hero-pillars{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:.35rem;
+  padding:.32rem .7rem;border-radius:20px;font-size:.74rem;font-weight:500;
+  border:1px solid var(--border);background:rgba(255,255,255,.7);
+  color:var(--text2);transition:var(--tr);
+}
+.hero-pill i{font-size:.62rem;opacity:.6}
+.hero-pill.hl-blue{border-color:rgba(41,128,176,.25);color:var(--blue);background:rgba(41,128,176,.04)}
+.hero-pill.hl-gold{border-color:rgba(184,134,11,.25);color:var(--gold);background:rgba(184,134,11,.04)}
+.hero-pill.hl-warm{border-color:rgba(196,85,61,.2);color:var(--warm);background:rgba(196,85,61,.04)}
+.hero-pill.hl-teal{border-color:rgba(26,138,125,.25);color:var(--teal);background:rgba(26,138,125,.04)}
+.hero-pill.hl-purple{border-color:rgba(123,79,157,.2);color:var(--purple);background:rgba(123,79,157,.04)}
 .hero .btns{display:flex;gap:.6rem;flex-wrap:wrap}
 .canvas-wrap{display:flex;align-items:center;justify-content:center}
 .canvas-c{width:360px;height:360px;border-radius:50%;position:relative;background:radial-gradient(circle at 42% 38%,rgba(41,128,176,.09) 0%,rgba(41,128,176,.03) 40%,transparent 70%)}
 .canvas-c canvas{position:absolute;inset:0}
 
-/* Home hero with headshot */
-.home-intro{display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:center;margin-bottom:1.8rem}
-.home-headshot{width:180px;height:180px;border-radius:50%;overflow:hidden;border:4px solid rgba(27,58,75,.1);box-shadow:var(--shadow-l);background:#d2e1ec}
-.home-headshot img{width:100%;height:100%;object-fit:cover}
-.home-headshot .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--accent);opacity:.15;font-size:3.5rem}
-
-/* ── SECTIONS ── */
-.section{padding:3.5rem 2.2rem;max-width:1100px;margin:0 auto}
-.section-wide{max-width:none}
-.section-alt{background:var(--bg-w)}
-.section-alt .section{padding:3.5rem 2.2rem}
-.slabel{font-family:var(--ff-m);font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:.4rem;display:inline-flex;align-items:center;gap:.5rem}
-.slabel::before{content:'';width:20px;height:1.5px;background:var(--blue)}
-.sheading{font-family:var(--ff-d);font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:600;line-height:1.18;margin-bottom:.5rem}
-.sdesc{font-size:.95rem;color:var(--text2);max-width:600px;line-height:1.82;margin-bottom:2.2rem}
-
-/* BUTTONS */
+/* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.15rem;border-radius:7px;font-family:var(--ff-b);font-size:.82rem;font-weight:600;transition:var(--tr);cursor:pointer;border:none}
 .btn i{font-size:.74rem}
 .btn-p{background:var(--accent);color:#fff}
@@ -105,18 +85,56 @@ a:hover{color:var(--warm)}
 .btn-o{border:1.5px solid var(--border);color:var(--text);background:transparent}
 .btn-o:hover{border-color:var(--blue);color:var(--blue)}
 
-/* EXPERTISE */
-.exp{background:var(--bg-w);border-top:1px solid var(--border-lt);border-bottom:1px solid var(--border-lt)}
-.exp-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto}
-.exp-item{padding:1.8rem 1.2rem;text-align:center;position:relative;transition:var(--tr)}
-.exp-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:var(--border-lt)}
-.exp-item:hover{background:rgba(41,128,176,.015)}
-.exp-icon{width:40px;height:40px;border-radius:10px;margin:0 auto .5rem;display:flex;align-items:center;justify-content:center;background:rgba(41,128,176,.07);color:var(--blue);font-size:.95rem;transition:var(--tr)}
-.exp-item:hover .exp-icon{background:rgba(41,128,176,.12);transform:scale(1.05)}
-.exp-item h4{font-family:var(--ff-d);font-size:.92rem;font-weight:600;margin-bottom:.2rem}
-.exp-item p{font-size:.76rem;color:var(--text2);line-height:1.5}
+/* ── SECTIONS ── */
+.section{padding:3.5rem 2.2rem;max-width:1100px;margin:0 auto}
+.section-alt{background:var(--bg-w)}
+.section-alt .section{padding:3.5rem 2.2rem}
+.slabel{font-family:var(--ff-m);font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:.4rem;display:inline-flex;align-items:center;gap:.5rem}
+.slabel::before{content:'';width:20px;height:1.5px;background:var(--blue)}
+.sheading{font-family:var(--ff-d);font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:600;line-height:1.18;margin-bottom:.5rem}
+.sdesc{font-size:.95rem;color:var(--text2);max-width:620px;line-height:1.82;margin-bottom:2.2rem}
 
-/* PUBLICATIONS */
+/* ── RESEARCH AREAS ── */
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.area-card{background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border-lt);overflow:hidden;transition:var(--tr);position:relative}
+.area-card:hover{box-shadow:var(--shadow-m);transform:translateY(-3px);border-color:#bfcdd9}
+.area-top{height:6px}
+.area-card:nth-child(1) .area-top{background:linear-gradient(90deg,var(--blue),#5CB8E6)}
+.area-card:nth-child(2) .area-top{background:linear-gradient(90deg,var(--gold),#D4A832)}
+.area-card:nth-child(3) .area-top{background:linear-gradient(90deg,var(--warm),#E08060)}
+.area-card:nth-child(4) .area-top{background:linear-gradient(90deg,var(--teal),#3DC9B0)}
+.area-body{padding:1.4rem 1.3rem 1.3rem}
+.area-icon{width:46px;height:46px;border-radius:12px;margin-bottom:.85rem;display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+.area-card:nth-child(1) .area-icon{background:rgba(41,128,176,.08);color:var(--blue)}
+.area-card:nth-child(2) .area-icon{background:rgba(184,134,11,.07);color:var(--gold)}
+.area-card:nth-child(3) .area-icon{background:rgba(196,85,61,.06);color:var(--warm)}
+.area-card:nth-child(4) .area-icon{background:rgba(26,138,125,.07);color:var(--teal)}
+.area-card h4{font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.4rem;line-height:1.25}
+.area-card p{font-size:.82rem;color:var(--text2);line-height:1.72}
+.area-tags{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.7rem}
+.area-tag{font-size:.6rem;padding:.1rem .4rem;border-radius:3px;background:var(--bg-alt);color:var(--text3);border:1px solid var(--border-lt);font-family:var(--ff-m);letter-spacing:.02em}
+
+/* ── METHODS STRIP ── */
+.methods-strip{
+  margin-top:1.8rem;padding:1.6rem 1.8rem;
+  background:linear-gradient(135deg,rgba(27,58,75,.025),rgba(41,128,176,.03));
+  border-radius:var(--radius-lg);border:1px solid rgba(41,128,176,.08);
+  display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start;
+}
+.methods-strip-icon{
+  width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  background:rgba(41,128,176,.08);color:var(--blue);font-size:.95rem;margin-top:.1rem;
+}
+.methods-strip h4{font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.35rem}
+.methods-strip p{font-size:.84rem;color:var(--text2);line-height:1.75}
+.methods-list{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.6rem}
+.methods-list span{
+  font-size:.68rem;padding:.18rem .55rem;border-radius:5px;
+  background:var(--bg-w);border:1px solid var(--border-lt);
+  color:var(--text2);font-family:var(--ff-m);font-weight:500;letter-spacing:.02em;
+}
+
+/* ── PUBLICATIONS ── */
 .pub-list{display:flex;flex-direction:column;gap:1.3rem}
 .pub-card{background:var(--bg-w);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);transition:var(--tr);display:grid;grid-template-columns:300px 1fr}
 .pub-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
@@ -136,58 +154,37 @@ a:hover{color:var(--warm)}
 .pub-link:hover{border-color:var(--blue);color:var(--blue);background:rgba(41,128,176,.02)}
 .more-pubs{text-align:center;margin-top:2rem}
 
-/* TEACHING */
-.teach-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
-.teach-block h3{font-family:var(--ff-d);font-size:1.15rem;font-weight:600;margin-bottom:.12rem}
-.teach-block .inst{font-size:.8rem;color:var(--blue);font-weight:500;margin-bottom:.8rem}
-.course-list{list-style:none;display:flex;flex-direction:column;gap:.35rem}
-.course{display:flex;align-items:baseline;gap:.6rem;padding:.45rem .75rem;background:var(--bg);border-radius:7px;border:1px solid var(--border-lt);transition:var(--tr)}
-.section-alt .course{background:#F1F4F8}
-.course:hover{border-color:var(--border);box-shadow:var(--shadow-s)}
-.course-code{font-family:var(--ff-m);font-size:.7rem;color:var(--blue);font-weight:500;white-space:nowrap}
-.course-name{font-size:.82rem}
-.cbadge{font-size:.58rem;padding:.05rem .35rem;border-radius:3px;margin-left:auto;white-space:nowrap;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-.cbadge.grad{background:rgba(41,128,176,.08);color:var(--blue)}
-.cbadge.online{background:rgba(26,138,125,.08);color:var(--teal)}
+/* ── FUTURE WORK ── */
+.future-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.future-card{
+  padding:1.3rem 1.4rem;background:var(--bg-w);
+  border-radius:var(--radius-lg);border:1px solid var(--border-lt);
+  transition:var(--tr);display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;
+}
+.future-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
+.future-num{
+  font-family:var(--ff-d);font-size:1.6rem;font-weight:700;
+  color:var(--blue);opacity:.2;line-height:1;margin-top:.1rem;
+}
+.future-card h4{font-family:var(--ff-d);font-size:.92rem;font-weight:600;margin-bottom:.25rem;line-height:1.3}
+.future-card p{font-size:.8rem;color:var(--text2);line-height:1.68}
 
-/* TEAM */
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.team-card{background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border);overflow:hidden;transition:var(--tr)}
-.team-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px)}
-.team-card.pi{grid-column:1/-1;display:grid;grid-template-columns:190px 1fr;max-width:660px;margin:0 auto .5rem}
-.team-photo{height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#d2e1ec,#bdd0de);overflow:hidden;position:relative}
-.team-photo img{width:100%;height:100%;object-fit:cover}
-.team-photo .ph{font-size:2rem;color:var(--accent);opacity:.15}
-/* Placeholder label */
-.team-photo::after{content:'Replace with photo';position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:.58rem;color:rgba(27,58,75,.25);font-family:var(--ff-m);white-space:nowrap;pointer-events:none}
-.pi .team-photo{width:190px;height:auto;min-height:190px}
-.team-info{padding:1rem 1.2rem}
-.team-name{font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.06rem}
-.team-role{font-size:.74rem;color:var(--blue);font-weight:500;margin-bottom:.45rem}
-.team-desc{font-size:.78rem;color:var(--text2);line-height:1.55;margin-bottom:.45rem}
-.tags{display:flex;flex-wrap:wrap;gap:.2rem}
-.tag{font-size:.61rem;padding:.08rem .38rem;border-radius:3px;background:var(--bg-alt);color:var(--text2);border:1px solid var(--border-lt)}
-.join-banner{text-align:center;margin-top:2rem;padding:2rem;background:linear-gradient(135deg,rgba(41,128,176,.025),rgba(26,138,125,.025));border-radius:var(--radius-lg);border:1px dashed rgba(41,128,176,.2)}
-.join-banner h3{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;margin-bottom:.25rem}
-.join-banner p{font-size:.84rem;color:var(--text2);margin-bottom:1rem;max-width:440px;margin-left:auto;margin-right:auto}
+/* ── COLLAB BANNER ── */
+.collab-banner{
+  text-align:center;margin-top:2.5rem;padding:2rem;
+  background:linear-gradient(135deg,rgba(41,128,176,.025),rgba(26,138,125,.025));
+  border-radius:var(--radius-lg);border:1px dashed rgba(41,128,176,.2);
+}
+.collab-banner h3{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;margin-bottom:.3rem}
+.collab-banner p{font-size:.84rem;color:var(--text2);margin-bottom:1rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
 
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.contact-items{display:flex;flex-direction:column;gap:1rem}
-.contact-row{display:flex;align-items:flex-start;gap:.8rem}
-.contact-icon{width:38px;height:38px;border-radius:10px;flex-shrink:0;background:rgba(41,128,176,.07);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:.85rem}
-.contact-text h4{font-size:.82rem;font-weight:600;margin-bottom:.02rem}
-.contact-text p,.contact-text a{font-size:.8rem;color:var(--text2);line-height:1.55}
-.contact-map{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);height:260px}
-.contact-map iframe{width:100%;height:100%;border:none}
-
-/* FOOTER */
+/* ── FOOTER ── */
 .footer{background:var(--accent);color:rgba(255,255,255,.4);padding:1.2rem 2.2rem;display:flex;justify-content:space-between;align-items:center;font-size:.72rem}
 .footer-links{display:flex;gap:.8rem}
 .footer-links a{color:rgba(255,255,255,.3);font-size:.84rem;transition:var(--tr)}
 .footer-links a:hover{color:#fff}
 
-/* REVEAL */
+/* ── REVEAL ── */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .rv.vis{opacity:1;transform:translateY(0)}
 .rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
@@ -195,10 +192,9 @@ a:hover{color:var(--warm)}
 /* ── RESPONSIVE ── */
 @media(max-width:1000px){
   .hero-grid{grid-template-columns:1fr}.canvas-wrap{display:none}
+  .areas-grid{grid-template-columns:repeat(2,1fr)}
   .pub-card{grid-template-columns:220px 1fr}
-  .team-grid{grid-template-columns:repeat(2,1fr)}.team-card.pi{grid-column:1/-1}
-  .home-intro{grid-template-columns:150px 1fr;gap:1.5rem}
-  .home-headshot{width:150px;height:150px}
+  .future-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   .topnav-links{display:none}
@@ -206,95 +202,339 @@ a:hover{color:var(--warm)}
   .topnav{padding:0 1.2rem}
   .hero{padding:2.5rem 1.2rem 2rem}
   .section,.section-alt .section{padding:2.5rem 1.2rem}
-  .exp-row{grid-template-columns:repeat(2,1fr)}
-  .exp-item:nth-child(2)::after{display:none}
+  .areas-grid{grid-template-columns:1fr}
   .pub-card{grid-template-columns:1fr}.pub-fig{height:160px}
-  .teach-cols{grid-template-columns:1fr}
-  .team-grid{grid-template-columns:1fr}
-  .team-card.pi{grid-template-columns:1fr}.pi .team-photo{width:100%;height:150px}
-  .contact-grid{grid-template-columns:1fr}
-  .home-intro{grid-template-columns:1fr;text-align:center}
-  .home-headshot{margin:0 auto}
+  .methods-strip{grid-template-columns:1fr}
   .footer{flex-direction:column;gap:.5rem;text-align:center;padding:1rem}
 }
-@media(max-width:480px){.exp-row{grid-template-columns:1fr}.exp-item::after{display:none!important}}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="topnav">
   <div class="topnav-left">
-    <div class="topnav-photo"> 
-      <img src="profile.jpg"/>
-    </div> 
+    <div class="topnav-photo"><img src="profile.jpg" alt="Abdallah Alsammani"/></div>
     <div class="topnav-name">Abdallah <span>Alsammani</span></div>
   </div>
   <ul class="topnav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html" class=active>Research</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html" class="active">Research</a></li>
+    <li><a href="teaching.html">Teaching</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="hamburger" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob-nav" id="mnav">
-  <a href="index.html" onclick="closeMob()">Home</a>
-  <a href="research.html" onclick="closeMob()">Research</a>
-  <a href="teaching.html" onclick="closeMob()">Teaching</a>
-  <a href="team.html" onclick="closeMob()">Team</a>
-  <a href="contact.html" onclick="closeMob()">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="research.html">Research</a>
+  <a href="teaching.html">Teaching</a>
+  <a href="team.html">Team</a>
+  <a href="contact.html">Contact</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-grid">
     <div>
       <h2 class="rv">Research <em>Overview</em></h2>
-      <p class="rv">
-        I develop mathematical and computational tools to study complex biological systems. My research combines differential equations, optimal control theory, and statistical learning to model the spread and control of infectious diseases such as COVID-19, cholera, and hepatitis B. A second line of work uses machine learning to extract clinically useful predictions from biomedical datasets, including sleep disorder classification and neural signal analysis. I am also interested in novel statistical methods, particularly circular statistics with applications in computational neuroscience.
+      <p class="hero-text rv">
+        My research develops mathematical and computational methods for studying complex biological systems, with sustained focus on three interconnected areas: <span class="hero-kw">infectious disease dynamics</span>, <span class="hero-kw">machine learning for biomedical prediction</span>, and <span class="hero-kw">computational neuroscience</span>. I work at the intersection of dynamical systems theory, optimal control, and statistical learning to build models that reveal how diseases spread through populations, how interventions reshape transmission, and how patterns in clinical and neural data can inform medical decisions. My published work spans compartmental epidemic models with behavioral and economic coupling, supervised learning for clinical prediction, bias-corrected circular statistics for neural signal analysis, and stability theory for delay differential equations in cancer treatment.
       </p>
+      <p class="hero-text rv">
+        A growing emphasis of my program is the application of machine learning and deep learning to biomedical data at scale. I develop and evaluate ensemble classifiers, support vector machines, and neural network architectures for tasks including sleep disorder prediction from health records, clinical outcome forecasting from electronic health records using natural language processing, and automated detection of pathological high-frequency oscillations in intracranial EEG. In computational neuroscience, I study how phase relationships between brain oscillations encode information about neural function and pathology, developing new statistical tools for directional data that account for the measurement artifacts inherent in electrophysiological recordings. These methods connect to broader questions in epilepsy localization, brain-state classification, and MEG source reconstruction as a mathematical inverse problem.
+      </p>
+      <div class="hero-pillars rv">
+        <span class="hero-pill hl-blue"><i class="fas fa-virus"></i> Epidemic Modeling</span>
+        <span class="hero-pill hl-gold"><i class="fas fa-brain"></i> Deep Learning</span>
+        <span class="hero-pill hl-teal"><i class="fas fa-wave-square"></i> Neural Signal Analysis</span>
+        <span class="hero-pill hl-warm"><i class="fas fa-sliders-h"></i> Optimal Control</span>
+        <span class="hero-pill hl-purple"><i class="fas fa-microscope"></i> Biomedical AI</span>
+      </div>
+      <div class="btns rv">
+        <a href="#areas" class="btn btn-p"><i class="fas fa-flask"></i> Research Areas</a>
+        <a href="#publications" class="btn btn-o"><i class="fas fa-book-open"></i> Publications</a>
+      </div>
     </div>
     <div class="canvas-wrap rv"><div class="canvas-c"><canvas id="heroCanvas"></canvas></div></div>
   </div>
 </section>
-<div class="section-alt">
+
+<!-- RESEARCH AREAS -->
+<div id="areas" class="section">
+  <div class="slabel">Focus Areas</div>
+  <h2 class="sheading rv">Research Areas</h2>
+  <p class="sdesc rv">Four interconnected lines of inquiry, each grounded in mathematical theory and directed toward problems in public health and biomedical science.</p>
+
+  <div class="areas-grid">
+    <div class="area-card rv">
+      <div class="area-top"></div>
+      <div class="area-body">
+        <div class="area-icon"><i class="fas fa-virus"></i></div>
+        <h4>Infectious Disease Modeling</h4>
+        <p>I build and analyze compartmental models (SIR, SIRW, and extensions) for diseases including COVID-19, cholera, and hepatitis B. My work examines how vaccination behavior, sanitation interventions, and human decision-making alter transmission dynamics and long-term epidemic outcomes. I use stability analysis, bifurcation theory, and numerical simulation to characterize disease-free and endemic equilibria under realistic conditions.</p>
+        <div class="area-tags">
+          <span class="area-tag">ODE/PDE Systems</span>
+          <span class="area-tag">Bifurcation Theory</span>
+          <span class="area-tag">Stability Analysis</span>
+          <span class="area-tag">R&#8320; Analysis</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-card rv rv-d1">
+      <div class="area-top"></div>
+      <div class="area-body">
+        <div class="area-icon"><i class="fas fa-brain"></i></div>
+        <h4>Machine Learning for Biomedical Data</h4>
+        <p>A second line of research applies supervised and unsupervised learning methods to extract clinically useful predictions from biomedical datasets. Recent projects include sleep disorder classification using ensemble methods and comparative analysis of classifiers on health outcomes data. I emphasize model interpretability and rigorous validation alongside predictive accuracy.</p>
+        <div class="area-tags">
+          <span class="area-tag">Random Forests</span>
+          <span class="area-tag">SVM</span>
+          <span class="area-tag">Model Validation</span>
+          <span class="area-tag">Clinical Prediction</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-card rv rv-d2">
+      <div class="area-top"></div>
+      <div class="area-body">
+        <div class="area-icon"><i class="fas fa-chart-line"></i></div>
+        <h4>Circular Statistics &amp; Computational Neuroscience</h4>
+        <p>I develop novel statistical methods for directional data, with applications in neural signal analysis. My published work addresses estimation of circular statistics under measurement bias, a problem that arises when recording phase relationships in brain signals. This line of research connects mathematical statistics to questions in epilepsy research and neural dynamics.</p>
+        <div class="area-tags">
+          <span class="area-tag">Directional Statistics</span>
+          <span class="area-tag">Bias Correction</span>
+          <span class="area-tag">EEG/iEEG</span>
+          <span class="area-tag">Phase Analysis</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-card rv rv-d3">
+      <div class="area-top"></div>
+      <div class="area-body">
+        <div class="area-icon"><i class="fas fa-sliders-h"></i></div>
+        <h4>Optimal Control in Epidemiology</h4>
+        <p>I study how mathematical control theory can guide the design of public health interventions. Using Pontryagin's Maximum Principle and numerical optimization, I determine time-varying strategies for vaccination, treatment, and sanitation that minimize disease burden subject to resource constraints. This work informs cost-effective policy recommendations for disease control programs.</p>
+        <div class="area-tags">
+          <span class="area-tag">Pontryagin's Principle</span>
+          <span class="area-tag">Cost-Effectiveness</span>
+          <span class="area-tag">Intervention Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="methods-strip rv">
+    <div class="methods-strip-icon"><i class="fas fa-tools"></i></div>
+    <div>
+      <h4>Mathematical &amp; Computational Toolkit</h4>
+      <p>My research draws on a shared set of mathematical methods and computational tools across all four areas.</p>
+      <div class="methods-list">
+        <span>Differential Equations</span>
+        <span>Optimal Control Theory</span>
+        <span>Stability &amp; Bifurcation Analysis</span>
+        <span>Statistical Learning</span>
+        <span>Circular Statistics</span>
+        <span>Numerical Simulation</span>
+        <span>Python</span>
+        <span>MATLAB</span>
+        <span>R</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div id="publications" class="section-alt">
 <div class="section">
   <div class="slabel">Publications</div>
   <h2 class="sheading rv">Selected Publications</h2>
   <p class="sdesc rv">A selection of recent and representative work across epidemiology, machine learning, biostatistics, and mathematical biology.</p>
   <div class="pub-list">
-    <div class="pub-card rv"><div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#EDF4F8"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#2980B0" opacity=".5">SIR + Vaccination Behavior</text><line x1="28" y1="168" x2="190" y2="168" stroke="#c8d8e2" stroke-width=".5"/><line x1="28" y1="138" x2="190" y2="138" stroke="#c8d8e2" stroke-width=".3" stroke-dasharray="3,4"/><path d="M32 163Q52 160,72 142T112 68T152 48T188 76" fill="none" stroke="#1B3A4B" stroke-width="2.2"/><path d="M32 163Q52 161,76 152T120 108T162 88T188 100" fill="none" stroke="#C4553D" stroke-width="1.7" stroke-dasharray="5,3" opacity=".7"/><circle cx="72" cy="142" r="2.5" fill="#1B3A4B" opacity=".6"/><circle cx="112" cy="68" r="2.5" fill="#1B3A4B" opacity=".6"/><rect x="206" y="52" width="82" height="78" rx="6" fill="white" stroke="#dce6ec" stroke-width=".6"/><line x1="214" y1="72" x2="228" y2="72" stroke="#1B3A4B" stroke-width="2"/><text x="233" y="75" font-family="Source Sans 3" font-size="7.5" fill="#4D6478">High vacc.</text><line x1="214" y1="90" x2="228" y2="90" stroke="#C4553D" stroke-width="1.4" stroke-dasharray="4,2"/><text x="233" y="93" font-family="Source Sans 3" font-size="7.5" fill="#4D6478">Low vacc.</text></svg></div><div class="pub-body"><span class="pub-tag epi">Epidemiology</span><h4 class="pub-title">Impact of Vaccination Behavior on COVID-19 Dynamics and Economic Outcomes</h4><p class="pub-authors"><strong>Alsammani, A.</strong>, Ngonghala, C. N., Martcheva, M.</p><p class="pub-journal">Mathematical Biosciences and Engineering, 22(9), 2300-2338, 2025</p><div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div></div></div>
-    <div class="pub-card rv"><div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#F5F1E7"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#B8860B" opacity=".5">ML Classification</text><rect x="26" y="40" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".72"/><rect x="75" y="40" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".1"/><rect x="26" y="89" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".1"/><rect x="75" y="89" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".62"/><text x="49" y="69" font-family="Source Sans 3" font-size="14" fill="white" text-anchor="middle" font-weight="700">94</text><text x="98" y="69" font-family="Source Sans 3" font-size="14" fill="#1B3A4B" text-anchor="middle" opacity=".4">6</text><text x="49" y="118" font-family="Source Sans 3" font-size="14" fill="#1B3A4B" text-anchor="middle" opacity=".4">8</text><text x="98" y="118" font-family="Source Sans 3" font-size="14" fill="white" text-anchor="middle" font-weight="700">92</text><rect x="152" y="52" width="28" height="92" rx="3" fill="#1B3A4B" opacity=".8"/><rect x="186" y="68" width="28" height="76" rx="3" fill="#2980B0" opacity=".7"/><rect x="220" y="78" width="28" height="66" rx="3" fill="#1A8A7D" opacity=".6"/><rect x="254" y="88" width="28" height="56" rx="3" fill="#B8860B" opacity=".5"/><text x="166" y="44" font-family="Source Sans 3" font-size="7.5" fill="#1B3A4B" text-anchor="middle" font-weight="600">RF</text><text x="200" y="60" font-family="Source Sans 3" font-size="7.5" fill="#2980B0" text-anchor="middle" font-weight="600">SVM</text><text x="234" y="70" font-family="Source Sans 3" font-size="7.5" fill="#1A8A7D" text-anchor="middle" font-weight="600">KNN</text><text x="268" y="80" font-family="Source Sans 3" font-size="7.5" fill="#B8860B" text-anchor="middle" font-weight="600">LR</text></svg></div><div class="pub-body"><span class="pub-tag ml">Machine Learning</span><h4 class="pub-title">Predicting Sleep Disorders Using Machine Learning: A Comparative Analysis</h4><p class="pub-authors">Goodyear, S. and <strong>Alsammani, A.</strong></p><p class="pub-journal">ICCSA 2025, LNCS vol 15648, Springer</p><div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="https://doi.org/10.1007/978-3-031-97000-9_7" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div></div></div>
-    <div class="pub-card rv"><div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#ECF0F5"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#C4553D" opacity=".5">Circular Statistics</text><circle cx="92" cy="106" r="56" fill="none" stroke="#c8d4de" stroke-width=".8"/><circle cx="92" cy="106" r="36" fill="none" stroke="#c8d4de" stroke-width=".4"/><circle cx="136" cy="78" r="2.8" fill="#C4553D" opacity=".5"/><circle cx="130" cy="68" r="2.8" fill="#C4553D" opacity=".5"/><circle cx="142" cy="84" r="2.8" fill="#C4553D" opacity=".5"/><circle cx="114" cy="56" r="2.8" fill="#2980B0" opacity=".65"/><circle cx="118" cy="52" r="2.8" fill="#2980B0" opacity=".65"/><circle cx="109" cy="61" r="2.8" fill="#2980B0" opacity=".65"/><line x1="92" y1="106" x2="137" y2="80" stroke="#C4553D" stroke-width="1.2" opacity=".4"/><line x1="92" y1="106" x2="117" y2="54" stroke="#2980B0" stroke-width="1.5"/><path d="M172 80Q180 58,190 80T210 80T230 80Q236 54,242 80T260 80" fill="none" stroke="#1B3A4B" stroke-width="1" opacity=".3"/><path d="M172 118Q178 96,186 118T200 118Q206 88,212 118T228 118" fill="none" stroke="#C4553D" stroke-width="1.4" opacity=".5"/><circle cx="178" cy="170" r="2.5" fill="#C4553D" opacity=".5"/><text x="187" y="173" font-family="Source Sans 3" font-size="7" fill="#4D6478">Biased</text><circle cx="230" cy="170" r="2.5" fill="#2980B0" opacity=".65"/><text x="239" y="173" font-family="Source Sans 3" font-size="7" fill="#4D6478">Corrected</text></svg></div><div class="pub-body"><span class="pub-tag stat">Biostatistics</span><h4 class="pub-title">Estimation of Circular Statistics in the Presence of Measurement Bias</h4><p class="pub-authors"><strong>Alsammani, A.</strong>, Stacey, W. C., Gliske, S. V.</p><p class="pub-journal">IEEE J. of Biomedical and Health Informatics, 28(4), 2179-2186, 2023</p><div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="https://doi.org/10.1109/JBHI.2023.3334684" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div></div></div>
-    <div class="pub-card rv"><div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#ECF0E8"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#1A8A7D" opacity=".5">Cholera SIRW</text><rect x="22" y="68" width="50" height="26" rx="13" fill="none" stroke="#1B3A4B" stroke-width="1.2"/><text x="47" y="86" font-family="Playfair Display,serif" font-size="13" fill="#1B3A4B" text-anchor="middle" font-style="italic" font-weight="600">S</text><rect x="104" y="68" width="50" height="26" rx="13" fill="none" stroke="#C4553D" stroke-width="1.2"/><text x="129" y="86" font-family="Playfair Display,serif" font-size="13" fill="#C4553D" text-anchor="middle" font-style="italic" font-weight="600">I</text><rect x="186" y="68" width="50" height="26" rx="13" fill="none" stroke="#1A8A7D" stroke-width="1.2"/><text x="211" y="86" font-family="Playfair Display,serif" font-size="13" fill="#1A8A7D" text-anchor="middle" font-style="italic" font-weight="600">R</text><line x1="72" y1="81" x2="100" y2="81" stroke="#4D6478" stroke-width=".9" marker-end="url(#a1)"/><line x1="154" y1="81" x2="182" y2="81" stroke="#4D6478" stroke-width=".9" marker-end="url(#a1)"/><rect x="90" y="125" width="56" height="26" rx="13" fill="none" stroke="#B8860B" stroke-width="1.2"/><text x="118" y="143" font-family="Playfair Display,serif" font-size="13" fill="#B8860B" text-anchor="middle" font-style="italic" font-weight="600">W</text><rect x="185" y="116" width="100" height="62" rx="7" fill="white" stroke="#d0dce4" stroke-width=".6"/><text x="235" y="133" font-family="Source Sans 3" font-size="8" fill="#1B3A4B" text-anchor="middle" font-weight="600">Sanitation Controls</text><text x="200" y="152" font-family="Source Sans 3" font-size="7" fill="#4D6478">Water treatment</text><text x="200" y="163" font-family="Source Sans 3" font-size="7" fill="#4D6478">Hygiene education</text><defs><marker id="a1" markerWidth="5" markerHeight="4" refX="5" refY="2" orient="auto"><path d="M0,0L5,2L0,4" fill="#4D6478"/></marker></defs></svg></div><div class="pub-body"><span class="pub-tag epi">Epidemiology</span><h4 class="pub-title">Cholera Transmission Dynamics with Sanitation Control Measures</h4><p class="pub-authors"><strong>Alsammani, A.</strong>, Farah, G., Mohammed, M., Yavuz, M.</p><p class="pub-journal">arXiv:2505.08873, 2025 (Under Review)</p><div class="pub-links"><a href="https://arxiv.org/abs/2505.08873" class="pub-link"><i class="fas fa-file-pdf"></i> arXiv</a></div></div></div>
-    <div class="pub-card rv"><div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#EFECED"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#7B4F9D" opacity=".5">Chemotherapy Delay</text><line x1="24" y1="158" x2="178" y2="158" stroke="#d0d8e0" stroke-width=".4"/><path d="M28 138Q46 134,62 120T94 84T126 68T156 62T174 58" fill="none" stroke="#1B3A4B" stroke-width="2"/><path d="M28 142Q46 140,66 131T102 108T136 96T166 92T174 91" fill="none" stroke="#C4553D" stroke-width="1.4" stroke-dasharray="5,3" opacity=".6"/><line x1="94" y1="38" x2="94" y2="158" stroke="#B8860B" stroke-width=".6" stroke-dasharray="3,3" opacity=".3"/><rect x="192" y="38" width="92" height="76" rx="6" fill="white" stroke="#d8e0e8" stroke-width=".6"/><line x1="238" y1="42" x2="238" y2="110" stroke="#e0e6ec" stroke-width=".4"/><line x1="196" y1="76" x2="280" y2="76" stroke="#e0e6ec" stroke-width=".4"/><circle cx="218" cy="58" r="2.8" fill="#2980B0"/><circle cx="226" cy="88" r="2.8" fill="#2980B0"/><circle cx="254" cy="66" r="2.8" fill="#C4553D"/><circle cx="246" cy="96" r="2.8" fill="#2980B0"/></svg></div><div class="pub-body"><span class="pub-tag bio">Mathematical Biology</span><h4 class="pub-title">Stability Analysis of a Chemotherapy Model with Delays</h4><p class="pub-authors">Abdulrashid, I., <strong>Alsammani, A.</strong>, Han, X.</p><p class="pub-journal">DCDS-B, 24(3), 989-1005, 2019</p><div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div></div></div>
-    <div class="pub-card rv"><div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#EAF0F3"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#1B3A4B" opacity=".5">HBV Dynamics</text><ellipse cx="100" cy="98" rx="65" ry="42" fill="none" stroke="#2980B0" stroke-width=".9" opacity=".28"/><ellipse cx="100" cy="98" rx="42" ry="28" fill="none" stroke="#2980B0" stroke-width=".6" opacity=".18"/><circle cx="100" cy="98" r="4" fill="#C4553D" opacity=".75"/><text x="110" y="95" font-family="Source Sans 3" font-size="8" fill="#C4553D" font-weight="600">E*</text><text x="195" y="56" font-family="Playfair Display,serif" font-size="16" fill="#1B3A4B" font-style="italic">R</text><text x="210" y="61" font-family="Source Sans 3" font-size="9" fill="#1B3A4B">0</text><text x="222" y="56" font-family="Source Sans 3" font-size="14" fill="#4D6478"> = </text><text x="246" y="50" font-family="Playfair Display,serif" font-size="11" fill="#1B3A4B" font-style="italic">βΛ</text><line x1="238" y1="56" x2="290" y2="56" stroke="#4D6478" stroke-width=".7"/><text x="238" y="70" font-family="Playfair Display,serif" font-size="10" fill="#1B3A4B" font-style="italic">μ(μ+δ+γ)</text><path d="M195 112L255 112Q264 112,272 99L290 78" fill="none" stroke="#1B3A4B" stroke-width="1.5" opacity=".6"/><circle cx="255" cy="112" r="3.2" fill="#B8860B"/></svg></div><div class="pub-body"><span class="pub-tag bio">Mathematical Biology</span><h4 class="pub-title">Mathematical Analysis of Autonomous and Nonautonomous HBV Transmission Models</h4><p class="pub-authors"><strong>Alsammani, A.</strong></p><p class="pub-journal">ICCSA 2023, LNCS, Springer</p><div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div></div></div>
+
+    <!-- Pub 1: COVID Vaccination -->
+    <div class="pub-card rv">
+      <div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#EDF4F8"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#2980B0" opacity=".5">SIR + Vaccination Behavior</text><line x1="28" y1="168" x2="190" y2="168" stroke="#c8d8e2" stroke-width=".5"/><line x1="28" y1="138" x2="190" y2="138" stroke="#c8d8e2" stroke-width=".3" stroke-dasharray="3,4"/><path d="M32 163Q52 160,72 142T112 68T152 48T188 76" fill="none" stroke="#1B3A4B" stroke-width="2.2"/><path d="M32 163Q52 161,76 152T120 108T162 88T188 100" fill="none" stroke="#C4553D" stroke-width="1.7" stroke-dasharray="5,3" opacity=".7"/><circle cx="72" cy="142" r="2.5" fill="#1B3A4B" opacity=".6"/><circle cx="112" cy="68" r="2.5" fill="#1B3A4B" opacity=".6"/><rect x="206" y="52" width="82" height="78" rx="6" fill="white" stroke="#dce6ec" stroke-width=".6"/><line x1="214" y1="72" x2="228" y2="72" stroke="#1B3A4B" stroke-width="2"/><text x="233" y="75" font-family="Source Sans 3" font-size="7.5" fill="#4D6478">High vacc.</text><line x1="214" y1="90" x2="228" y2="90" stroke="#C4553D" stroke-width="1.4" stroke-dasharray="4,2"/><text x="233" y="93" font-family="Source Sans 3" font-size="7.5" fill="#4D6478">Low vacc.</text></svg></div>
+      <div class="pub-body">
+        <span class="pub-tag epi">Epidemiology</span>
+        <h4 class="pub-title">Impact of Vaccination Behavior on COVID-19 Dynamics and Economic Outcomes</h4>
+        <p class="pub-authors"><strong>Alsammani, A.</strong>, Ngonghala, C. N., Martcheva, M.</p>
+        <p class="pub-journal">Mathematical Biosciences and Engineering, 22(9), 2300-2338, 2025</p>
+        <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+      </div>
+    </div>
+
+    <!-- Pub 2: Sleep Disorders -->
+    <div class="pub-card rv">
+      <div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#F5F1E7"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#B8860B" opacity=".5">ML Classification</text><rect x="26" y="40" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".72"/><rect x="75" y="40" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".1"/><rect x="26" y="89" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".1"/><rect x="75" y="89" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".62"/><text x="49" y="69" font-family="Source Sans 3" font-size="14" fill="white" text-anchor="middle" font-weight="700">94</text><text x="98" y="69" font-family="Source Sans 3" font-size="14" fill="#1B3A4B" text-anchor="middle" opacity=".4">6</text><text x="49" y="118" font-family="Source Sans 3" font-size="14" fill="#1B3A4B" text-anchor="middle" opacity=".4">8</text><text x="98" y="118" font-family="Source Sans 3" font-size="14" fill="white" text-anchor="middle" font-weight="700">92</text><rect x="152" y="52" width="28" height="92" rx="3" fill="#1B3A4B" opacity=".8"/><rect x="186" y="68" width="28" height="76" rx="3" fill="#2980B0" opacity=".7"/><rect x="220" y="78" width="28" height="66" rx="3" fill="#1A8A7D" opacity=".6"/><rect x="254" y="88" width="28" height="56" rx="3" fill="#B8860B" opacity=".5"/><text x="166" y="44" font-family="Source Sans 3" font-size="7.5" fill="#1B3A4B" text-anchor="middle" font-weight="600">RF</text><text x="200" y="60" font-family="Source Sans 3" font-size="7.5" fill="#2980B0" text-anchor="middle" font-weight="600">SVM</text><text x="234" y="70" font-family="Source Sans 3" font-size="7.5" fill="#1A8A7D" text-anchor="middle" font-weight="600">KNN</text><text x="268" y="80" font-family="Source Sans 3" font-size="7.5" fill="#B8860B" text-anchor="middle" font-weight="600">LR</text></svg></div>
+      <div class="pub-body">
+        <span class="pub-tag ml">Machine Learning</span>
+        <h4 class="pub-title">Predicting Sleep Disorders Using Machine Learning: A Comparative Analysis</h4>
+        <p class="pub-authors">Goodyear, S. and <strong>Alsammani, A.</strong></p>
+        <p class="pub-journal">ICCSA 2025, LNCS vol 15648, Springer</p>
+        <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="https://doi.org/10.1007/978-3-031-97000-9_7" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+      </div>
+    </div>
+
+    <!-- Pub 3: Circular Statistics -->
+    <div class="pub-card rv">
+      <div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#ECF0F5"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#C4553D" opacity=".5">Circular Statistics</text><circle cx="92" cy="106" r="56" fill="none" stroke="#c8d4de" stroke-width=".8"/><circle cx="92" cy="106" r="36" fill="none" stroke="#c8d4de" stroke-width=".4"/><circle cx="136" cy="78" r="2.8" fill="#C4553D" opacity=".5"/><circle cx="130" cy="68" r="2.8" fill="#C4553D" opacity=".5"/><circle cx="142" cy="84" r="2.8" fill="#C4553D" opacity=".5"/><circle cx="114" cy="56" r="2.8" fill="#2980B0" opacity=".65"/><circle cx="118" cy="52" r="2.8" fill="#2980B0" opacity=".65"/><circle cx="109" cy="61" r="2.8" fill="#2980B0" opacity=".65"/><line x1="92" y1="106" x2="137" y2="80" stroke="#C4553D" stroke-width="1.2" opacity=".4"/><line x1="92" y1="106" x2="117" y2="54" stroke="#2980B0" stroke-width="1.5"/><path d="M172 80Q180 58,190 80T210 80T230 80Q236 54,242 80T260 80" fill="none" stroke="#1B3A4B" stroke-width="1" opacity=".3"/><path d="M172 118Q178 96,186 118T200 118Q206 88,212 118T228 118" fill="none" stroke="#C4553D" stroke-width="1.4" opacity=".5"/><circle cx="178" cy="170" r="2.5" fill="#C4553D" opacity=".5"/><text x="187" y="173" font-family="Source Sans 3" font-size="7" fill="#4D6478">Biased</text><circle cx="230" cy="170" r="2.5" fill="#2980B0" opacity=".65"/><text x="239" y="173" font-family="Source Sans 3" font-size="7" fill="#4D6478">Corrected</text></svg></div>
+      <div class="pub-body">
+        <span class="pub-tag stat">Biostatistics</span>
+        <h4 class="pub-title">Estimation of Circular Statistics in the Presence of Measurement Bias</h4>
+        <p class="pub-authors"><strong>Alsammani, A.</strong>, Stacey, W. C., Gliske, S. V.</p>
+        <p class="pub-journal">IEEE J. of Biomedical and Health Informatics, 28(4), 2179-2186, 2023</p>
+        <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="https://doi.org/10.1109/JBHI.2023.3334684" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+      </div>
+    </div>
+
+    <!-- Pub 4: Cholera -->
+    <div class="pub-card rv">
+      <div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#ECF0E8"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#1A8A7D" opacity=".5">Cholera SIRW</text><rect x="22" y="68" width="50" height="26" rx="13" fill="none" stroke="#1B3A4B" stroke-width="1.2"/><text x="47" y="86" font-family="Playfair Display,serif" font-size="13" fill="#1B3A4B" text-anchor="middle" font-style="italic" font-weight="600">S</text><rect x="104" y="68" width="50" height="26" rx="13" fill="none" stroke="#C4553D" stroke-width="1.2"/><text x="129" y="86" font-family="Playfair Display,serif" font-size="13" fill="#C4553D" text-anchor="middle" font-style="italic" font-weight="600">I</text><rect x="186" y="68" width="50" height="26" rx="13" fill="none" stroke="#1A8A7D" stroke-width="1.2"/><text x="211" y="86" font-family="Playfair Display,serif" font-size="13" fill="#1A8A7D" text-anchor="middle" font-style="italic" font-weight="600">R</text><line x1="72" y1="81" x2="100" y2="81" stroke="#4D6478" stroke-width=".9" marker-end="url(#a1)"/><line x1="154" y1="81" x2="182" y2="81" stroke="#4D6478" stroke-width=".9" marker-end="url(#a1)"/><rect x="90" y="125" width="56" height="26" rx="13" fill="none" stroke="#B8860B" stroke-width="1.2"/><text x="118" y="143" font-family="Playfair Display,serif" font-size="13" fill="#B8860B" text-anchor="middle" font-style="italic" font-weight="600">W</text><rect x="185" y="116" width="100" height="62" rx="7" fill="white" stroke="#d0dce4" stroke-width=".6"/><text x="235" y="133" font-family="Source Sans 3" font-size="8" fill="#1B3A4B" text-anchor="middle" font-weight="600">Sanitation Controls</text><text x="200" y="152" font-family="Source Sans 3" font-size="7" fill="#4D6478">Water treatment</text><text x="200" y="163" font-family="Source Sans 3" font-size="7" fill="#4D6478">Hygiene education</text><defs><marker id="a1" markerWidth="5" markerHeight="4" refX="5" refY="2" orient="auto"><path d="M0,0L5,2L0,4" fill="#4D6478"/></marker></defs></svg></div>
+      <div class="pub-body">
+        <span class="pub-tag epi">Epidemiology</span>
+        <h4 class="pub-title">Cholera Transmission Dynamics with Sanitation Control Measures</h4>
+        <p class="pub-authors"><strong>Alsammani, A.</strong>, Farah, G., Mohammed, M., Yavuz, M.</p>
+        <p class="pub-journal">arXiv:2505.08873, 2025 (Under Review)</p>
+        <div class="pub-links"><a href="https://arxiv.org/abs/2505.08873" class="pub-link"><i class="fas fa-file-pdf"></i> arXiv</a></div>
+      </div>
+    </div>
+
+    <!-- Pub 5: Chemotherapy -->
+    <div class="pub-card rv">
+      <div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#EFECED"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#7B4F9D" opacity=".5">Chemotherapy Delay</text><line x1="24" y1="158" x2="178" y2="158" stroke="#d0d8e0" stroke-width=".4"/><path d="M28 138Q46 134,62 120T94 84T126 68T156 62T174 58" fill="none" stroke="#1B3A4B" stroke-width="2"/><path d="M28 142Q46 140,66 131T102 108T136 96T166 92T174 91" fill="none" stroke="#C4553D" stroke-width="1.4" stroke-dasharray="5,3" opacity=".6"/><line x1="94" y1="38" x2="94" y2="158" stroke="#B8860B" stroke-width=".6" stroke-dasharray="3,3" opacity=".3"/><rect x="192" y="38" width="92" height="76" rx="6" fill="white" stroke="#d8e0e8" stroke-width=".6"/><line x1="238" y1="42" x2="238" y2="110" stroke="#e0e6ec" stroke-width=".4"/><line x1="196" y1="76" x2="280" y2="76" stroke="#e0e6ec" stroke-width=".4"/><circle cx="218" cy="58" r="2.8" fill="#2980B0"/><circle cx="226" cy="88" r="2.8" fill="#2980B0"/><circle cx="254" cy="66" r="2.8" fill="#C4553D"/><circle cx="246" cy="96" r="2.8" fill="#2980B0"/></svg></div>
+      <div class="pub-body">
+        <span class="pub-tag bio">Mathematical Biology</span>
+        <h4 class="pub-title">Stability Analysis of a Chemotherapy Model with Delays</h4>
+        <p class="pub-authors">Abdulrashid, I., <strong>Alsammani, A.</strong>, Han, X.</p>
+        <p class="pub-journal">DCDS-B, 24(3), 989-1005, 2019</p>
+        <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+      </div>
+    </div>
+
+    <!-- Pub 6: HBV -->
+    <div class="pub-card rv">
+      <div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#EAF0F3"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#1B3A4B" opacity=".5">HBV Dynamics</text><ellipse cx="100" cy="98" rx="65" ry="42" fill="none" stroke="#2980B0" stroke-width=".9" opacity=".28"/><ellipse cx="100" cy="98" rx="42" ry="28" fill="none" stroke="#2980B0" stroke-width=".6" opacity=".18"/><circle cx="100" cy="98" r="4" fill="#C4553D" opacity=".75"/><text x="110" y="95" font-family="Source Sans 3" font-size="8" fill="#C4553D" font-weight="600">E*</text><text x="195" y="56" font-family="Playfair Display,serif" font-size="16" fill="#1B3A4B" font-style="italic">R</text><text x="210" y="61" font-family="Source Sans 3" font-size="9" fill="#1B3A4B">0</text><text x="222" y="56" font-family="Source Sans 3" font-size="14" fill="#4D6478"> = </text><text x="246" y="50" font-family="Playfair Display,serif" font-size="11" fill="#1B3A4B" font-style="italic">&#946;&#923;</text><line x1="238" y1="56" x2="290" y2="56" stroke="#4D6478" stroke-width=".7"/><text x="238" y="70" font-family="Playfair Display,serif" font-size="10" fill="#1B3A4B" font-style="italic">&#956;(&#956;+&#948;+&#947;)</text><path d="M195 112L255 112Q264 112,272 99L290 78" fill="none" stroke="#1B3A4B" stroke-width="1.5" opacity=".6"/><circle cx="255" cy="112" r="3.2" fill="#B8860B"/></svg></div>
+      <div class="pub-body">
+        <span class="pub-tag bio">Mathematical Biology</span>
+        <h4 class="pub-title">Mathematical Analysis of Autonomous and Nonautonomous HBV Transmission Models</h4>
+        <p class="pub-authors"><strong>Alsammani, A.</strong></p>
+        <p class="pub-journal">ICCSA 2023, LNCS, Springer</p>
+        <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+      </div>
+    </div>
   </div>
+
   <div class="more-pubs rv"><a href="#" class="btn btn-o" target="_blank"><i class="fas fa-graduation-cap"></i> View All on Google Scholar</a></div>
 </div>
 </div>
 
+<!-- FUTURE DIRECTIONS -->
+<div class="section">
+  <div class="slabel">Looking Ahead</div>
+  <h2 class="sheading rv">Future Directions</h2>
+  <p class="sdesc rv">My current and planned research extends naturally toward several problems where mathematical modeling meets biomedical AI.</p>
+
+  <div class="future-grid">
+    <div class="future-card rv">
+      <div class="future-num">01</div>
+      <div>
+        <h4>AI-Informed Epidemic Forecasting</h4>
+        <p>Combining mechanistic compartmental models with machine learning to produce hybrid forecasting systems that respect biological structure while learning from real-time surveillance data.</p>
+      </div>
+    </div>
+    <div class="future-card rv rv-d1">
+      <div class="future-num">02</div>
+      <div>
+        <h4>Uncertainty Quantification in Clinical AI</h4>
+        <p>Developing Bayesian and sensitivity-based frameworks for quantifying prediction uncertainty in machine learning models applied to radiology, endocrinology, and diagnostic screening.</p>
+      </div>
+    </div>
+    <div class="future-card rv rv-d2">
+      <div class="future-num">03</div>
+      <div>
+        <h4>Optimal Intervention Design</h4>
+        <p>Extending optimal control methods to multi-scale and multi-pathogen systems, with the goal of informing resource allocation for vaccination campaigns and public health infrastructure.</p>
+      </div>
+    </div>
+    <div class="future-card rv rv-d3">
+      <div class="future-num">04</div>
+      <div>
+        <h4>Mathematical Foundations of Medical Imaging</h4>
+        <p>Applying inverse problem theory and regularization methods to image reconstruction tasks in CT and MRI, with emphasis on mathematical guarantees for clinical reliability.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="collab-banner rv">
+    <h3>Interested in Collaboration?</h3>
+    <p>I welcome inquiries from prospective graduate students, postdoctoral researchers, and faculty interested in joint work at the intersection of applied mathematics, machine learning, and biomedical science.</p>
+    <a href="contact.html" class="btn btn-p"><i class="fas fa-envelope"></i> Get in Touch</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer class="footer">
   <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    <a href="#" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+    <a href="https://scholar.google.com" target="_blank"><i class="fas fa-graduation-cap"></i></a>
     <a href="https://github.com/aalsammani" target="_blank"><i class="fab fa-github"></i></a>
   </div>
 </footer>
+
 <script>
 function toggleMob(){var n=document.getElementById('mnav');if(n)n.classList.toggle('open')}
 function closeMob(){var n=document.getElementById('mnav');if(n)n.classList.remove('open')}
+
+// Scroll reveals
 (function(){var els=document.querySelectorAll('.rv');if(!els.length)return;var obs=new IntersectionObserver(function(ents){ents.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.05,rootMargin:'0px 0px -20px 0px'});els.forEach(function(el){obs.observe(el)})})();
 
-(function(){var c=document.getElementById('heroCanvas');if(!c)return;var ctx=c.getContext('2d'),W=360,H=360,dpr=window.devicePixelRatio||1;c.width=W*dpr;c.height=H*dpr;c.style.width=W+'px';c.style.height=H+'px';ctx.scale(dpr,dpr);var cx=W/2,cy=H/2,t=0;
-var N=18,nodes=[];for(var i=0;i<N;i++){var a=i/N*Math.PI*2;nodes.push({x:cx+Math.cos(a)*(40+Math.random()*80),y:cy+Math.sin(a)*(40+Math.random()*80),r:3+Math.random()*3.5,spd:.2+Math.random()*.35,ph:Math.random()*Math.PI*2,col:['#2980B0','#1A8A7D','#C4553D','#B8860B','#7B4F9D'][i%5]})}
-var edges=[];for(var i=0;i<N;i++){edges.push([i,(i+1)%N]);if(i%2===0)edges.push([i,(i+3)%N])}
-var mx=-999,my=-999;c.onmousemove=function(e){var r=c.getBoundingClientRect();mx=(e.clientX-r.left)*(W/r.width);my=(e.clientY-r.top)*(H/r.height)};c.onmouseleave=function(){mx=-999;my=-999};
-function draw(){ctx.clearRect(0,0,W,H);t+=.005;
-edges.forEach(function(e){var a=nodes[e[0]],b=nodes[e[1]],ax=a.x+Math.sin(t*a.spd+a.ph)*8,ay=a.y+Math.cos(t*a.spd*.7+a.ph)*6,bx=b.x+Math.sin(t*b.spd+b.ph)*8,by=b.y+Math.cos(t*b.spd*.7+b.ph)*6;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.strokeStyle='rgba(41,128,176,.07)';ctx.lineWidth=.8;ctx.stroke();var pt=(.5+Math.sin(t*2+e[0])*.5);ctx.beginPath();ctx.arc(ax+(bx-ax)*pt,ay+(by-ay)*pt,1.3,0,Math.PI*2);ctx.fillStyle='rgba(92,184,230,.35)';ctx.fill()});
-nodes.forEach(function(n){var nx=n.x+Math.sin(t*n.spd+n.ph)*8,ny=n.y+Math.cos(t*n.spd*.7+n.ph)*6,dx=mx-nx,dy=my-ny,dist=Math.sqrt(dx*dx+dy*dy),hover=dist<45?1.3:1,r=n.r*(.88+Math.sin(t*1.5+nx*.01)*.12)*hover;ctx.beginPath();ctx.arc(nx,ny,r+7,0,Math.PI*2);ctx.fillStyle='rgba(41,128,176,.025)';ctx.fill();var g=ctx.createRadialGradient(nx-r*.2,ny-r*.2,0,nx,ny,r);g.addColorStop(0,n.col+'CC');g.addColorStop(1,n.col+'66');ctx.beginPath();ctx.arc(nx,ny,r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();ctx.beginPath();ctx.arc(nx-r*.2,ny-r*.2,r*.3,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.3)';ctx.fill()});
-requestAnimationFrame(draw)}draw()})();
+// Hero canvas
+(function(){
+  var c=document.getElementById('heroCanvas');if(!c)return;
+  var ctx=c.getContext('2d'),W=360,H=360,dpr=window.devicePixelRatio||1;
+  c.width=W*dpr;c.height=H*dpr;c.style.width=W+'px';c.style.height=H+'px';ctx.scale(dpr,dpr);
+  var cx=W/2,cy=H/2,t=0;
+  var N=18,nodes=[];
+  for(var i=0;i<N;i++){var a=i/N*Math.PI*2;nodes.push({x:cx+Math.cos(a)*(40+Math.random()*80),y:cy+Math.sin(a)*(40+Math.random()*80),r:3+Math.random()*3.5,spd:.2+Math.random()*.35,ph:Math.random()*Math.PI*2,col:['#2980B0','#1A8A7D','#C4553D','#B8860B','#7B4F9D'][i%5]})}
+  var edges=[];for(var i=0;i<N;i++){edges.push([i,(i+1)%N]);if(i%2===0)edges.push([i,(i+3)%N])}
+  var mx=-999,my=-999;
+  c.onmousemove=function(e){var r=c.getBoundingClientRect();mx=(e.clientX-r.left)*(W/r.width);my=(e.clientY-r.top)*(H/r.height)};
+  c.onmouseleave=function(){mx=-999;my=-999};
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);t+=.005;
+    edges.forEach(function(e){
+      var a=nodes[e[0]],b=nodes[e[1]];
+      var ax=a.x+Math.sin(t*a.spd+a.ph)*8,ay=a.y+Math.cos(t*a.spd*.7+a.ph)*6;
+      var bx=b.x+Math.sin(t*b.spd+b.ph)*8,by=b.y+Math.cos(t*b.spd*.7+b.ph)*6;
+      ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);
+      ctx.strokeStyle='rgba(41,128,176,.07)';ctx.lineWidth=.8;ctx.stroke();
+      var pt=(.5+Math.sin(t*2+e[0])*.5);
+      ctx.beginPath();ctx.arc(ax+(bx-ax)*pt,ay+(by-ay)*pt,1.3,0,Math.PI*2);
+      ctx.fillStyle='rgba(92,184,230,.35)';ctx.fill();
+    });
+    nodes.forEach(function(n){
+      var nx=n.x+Math.sin(t*n.spd+n.ph)*8,ny=n.y+Math.cos(t*n.spd*.7+n.ph)*6;
+      var dx=mx-nx,dy=my-ny,dist=Math.sqrt(dx*dx+dy*dy);
+      var hover=dist<45?1.3:1,r=n.r*(.88+Math.sin(t*1.5+nx*.01)*.12)*hover;
+      ctx.beginPath();ctx.arc(nx,ny,r+7,0,Math.PI*2);
+      ctx.fillStyle='rgba(41,128,176,.025)';ctx.fill();
+      var g=ctx.createRadialGradient(nx-r*.2,ny-r*.2,0,nx,ny,r);
+      g.addColorStop(0,n.col+'CC');g.addColorStop(1,n.col+'66');
+      ctx.beginPath();ctx.arc(nx,ny,r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+      ctx.beginPath();ctx.arc(nx-r*.2,ny-r*.2,r*.3,0,Math.PI*2);
+      ctx.fillStyle='rgba(255,255,255,.3)';ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
 </script>
 </body>
 </html>
