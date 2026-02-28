@@ -45,7 +45,6 @@ a:hover{color:var(--warm)}
   background:#2a5068;
 }
 .topnav-photo img{width:100%;height:100%;object-fit:cover}
-.topnav-photo .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-d);font-size:.85rem;color:rgba(255,255,255,.5);font-weight:600}
 .topnav-name{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;color:#fff;white-space:nowrap}
 .topnav-name span{color:#5CB8E6}
 .topnav-links{list-style:none;display:flex;gap:.15rem}
@@ -56,8 +55,6 @@ a:hover{color:var(--warm)}
 .topnav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
 .topnav-links a.active{color:#5CB8E6;font-weight:600}
 .topnav-links a.active::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:18px;height:2px;background:#5CB8E6;border-radius:1px}
-
-/* Mobile */
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:5px}
 .hamburger span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;margin:4px 0;transition:var(--tr)}
 .mob-nav{display:none;background:rgba(18,41,58,.98);padding:.5rem 1.5rem;position:sticky;top:58px;z-index:199}
@@ -65,39 +62,23 @@ a:hover{color:var(--warm)}
 .mob-nav a{display:block;padding:.55rem 0;color:rgba(255,255,255,.6);font-size:.88rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.04)}
 .mob-nav a:hover{color:#5CB8E6}
 
-/* ── PAGE HERO ── */
+/* ── HERO ── */
 .hero{
-  padding:3.5rem 2.2rem 3rem;position:relative;overflow:hidden;
+  padding:3.8rem 2.2rem 3.2rem;position:relative;overflow:hidden;
   background:linear-gradient(165deg,var(--bg) 0%,#E4EAF2 50%,#DCE5F0 100%);
 }
 .hero::before{content:'';position:absolute;top:-80px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(92,184,230,.06) 0%,transparent 70%);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:2.5rem;align-items:center;max-width:1100px;margin:0 auto;position:relative;z-index:1}
-.hero-grid.no-canvas{grid-template-columns:1fr}
-.hero h2{font-family:var(--ff-d);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:600;line-height:1.12;margin-bottom:1rem;letter-spacing:-.01em}
+.hero::after{content:'';position:absolute;bottom:-60px;left:-80px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(26,138,125,.04) 0%,transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 360px;gap:2.5rem;align-items:center;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.hero h2{font-family:var(--ff-d);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:600;line-height:1.15;margin-bottom:1rem;letter-spacing:-.01em}
 .hero h2 em{color:var(--blue);font-style:italic}
-.hero p{font-size:.98rem;color:var(--text2);line-height:1.85;margin-bottom:1.5rem;max-width:560px}
+.hero-text{font-size:.96rem;color:var(--text2);line-height:1.85;margin-bottom:1.5rem;max-width:580px}
 .hero .btns{display:flex;gap:.6rem;flex-wrap:wrap}
 .canvas-wrap{display:flex;align-items:center;justify-content:center}
 .canvas-c{width:360px;height:360px;border-radius:50%;position:relative;background:radial-gradient(circle at 42% 38%,rgba(41,128,176,.09) 0%,rgba(41,128,176,.03) 40%,transparent 70%)}
 .canvas-c canvas{position:absolute;inset:0}
 
-/* Home hero with headshot */
-.home-intro{display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:center;margin-bottom:1.8rem}
-.home-headshot{width:180px;height:180px;border-radius:50%;overflow:hidden;border:4px solid rgba(27,58,75,.1);box-shadow:var(--shadow-l);background:#d2e1ec}
-.home-headshot img{width:100%;height:100%;object-fit:cover}
-.home-headshot .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--accent);opacity:.15;font-size:3.5rem}
-
-/* ── SECTIONS ── */
-.section{padding:3.5rem 2.2rem;max-width:1100px;margin:0 auto}
-.section-wide{max-width:none}
-.section-alt{background:var(--bg-w)}
-.section-alt .section{padding:3.5rem 2.2rem}
-.slabel{font-family:var(--ff-m);font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:.4rem;display:inline-flex;align-items:center;gap:.5rem}
-.slabel::before{content:'';width:20px;height:1.5px;background:var(--blue)}
-.sheading{font-family:var(--ff-d);font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:600;line-height:1.18;margin-bottom:.5rem}
-.sdesc{font-size:.95rem;color:var(--text2);max-width:600px;line-height:1.82;margin-bottom:2.2rem}
-
-/* BUTTONS */
+/* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.15rem;border-radius:7px;font-family:var(--ff-b);font-size:.82rem;font-weight:600;transition:var(--tr);cursor:pointer;border:none}
 .btn i{font-size:.74rem}
 .btn-p{background:var(--accent);color:#fff}
@@ -105,38 +86,40 @@ a:hover{color:var(--warm)}
 .btn-o{border:1.5px solid var(--border);color:var(--text);background:transparent}
 .btn-o:hover{border-color:var(--blue);color:var(--blue)}
 
-/* EXPERTISE */
-.exp{background:var(--bg-w);border-top:1px solid var(--border-lt);border-bottom:1px solid var(--border-lt)}
-.exp-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto}
-.exp-item{padding:1.8rem 1.2rem;text-align:center;position:relative;transition:var(--tr)}
-.exp-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:var(--border-lt)}
-.exp-item:hover{background:rgba(41,128,176,.015)}
-.exp-icon{width:40px;height:40px;border-radius:10px;margin:0 auto .5rem;display:flex;align-items:center;justify-content:center;background:rgba(41,128,176,.07);color:var(--blue);font-size:.95rem;transition:var(--tr)}
-.exp-item:hover .exp-icon{background:rgba(41,128,176,.12);transform:scale(1.05)}
-.exp-item h4{font-family:var(--ff-d);font-size:.92rem;font-weight:600;margin-bottom:.2rem}
-.exp-item p{font-size:.76rem;color:var(--text2);line-height:1.5}
+/* ── SECTIONS ── */
+.section{padding:3.5rem 2.2rem;max-width:1100px;margin:0 auto}
+.section-alt{background:var(--bg-w)}
+.section-alt .section{padding:3.5rem 2.2rem}
+.slabel{font-family:var(--ff-m);font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:.4rem;display:inline-flex;align-items:center;gap:.5rem}
+.slabel::before{content:'';width:20px;height:1.5px;background:var(--blue)}
+.sheading{font-family:var(--ff-d);font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:600;line-height:1.18;margin-bottom:.5rem}
+.sdesc{font-size:.95rem;color:var(--text2);max-width:620px;line-height:1.82;margin-bottom:2.2rem}
 
-/* PUBLICATIONS */
-.pub-list{display:flex;flex-direction:column;gap:1.3rem}
-.pub-card{background:var(--bg-w);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);transition:var(--tr);display:grid;grid-template-columns:300px 1fr}
-.pub-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
-.pub-fig{overflow:hidden;background:var(--bg-alt)}
-.pub-fig svg{width:100%;height:100%;display:block}
-.pub-body{padding:1.2rem 1.4rem;display:flex;flex-direction:column;justify-content:center}
-.pub-tag{font-family:var(--ff-m);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.14rem .45rem;border-radius:4px;display:inline-block;width:fit-content;margin-bottom:.4rem;font-weight:500}
-.pub-tag.epi{background:rgba(41,128,176,.08);color:var(--blue)}
-.pub-tag.ml{background:rgba(184,134,11,.08);color:var(--gold)}
-.pub-tag.bio{background:rgba(26,138,125,.08);color:var(--teal)}
-.pub-tag.stat{background:rgba(196,85,61,.06);color:var(--warm)}
-.pub-title{font-family:var(--ff-d);font-size:1rem;font-weight:600;line-height:1.35;margin-bottom:.3rem}
-.pub-authors{font-size:.8rem;color:var(--text2);margin-bottom:.12rem}
-.pub-journal{font-size:.76rem;color:var(--text3);font-style:italic;margin-bottom:.7rem}
-.pub-links{margin-top:auto;display:flex;gap:.3rem}
-.pub-link{font-size:.68rem;font-weight:500;padding:.2rem .55rem;border-radius:5px;border:1px solid var(--border);color:var(--text2);transition:var(--tr);display:inline-flex;align-items:center;gap:.2rem}
-.pub-link:hover{border-color:var(--blue);color:var(--blue);background:rgba(41,128,176,.02)}
-.more-pubs{text-align:center;margin-top:2rem}
+/* ── APPROACH CARDS ── */
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-bottom:.5rem}
+.approach-card{
+  background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border-lt);
+  padding:1.6rem 1.4rem;position:relative;overflow:hidden;transition:var(--tr);
+}
+.approach-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
+.approach-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  border-radius:var(--radius-lg) var(--radius-lg) 0 0;
+}
+.approach-card:nth-child(1)::before{background:linear-gradient(90deg,var(--blue),#5CB8E6)}
+.approach-card:nth-child(2)::before{background:linear-gradient(90deg,var(--teal),#3DC9B0)}
+.approach-card:nth-child(3)::before{background:linear-gradient(90deg,var(--warm),#E08060)}
+.approach-icon{
+  width:44px;height:44px;border-radius:11px;margin-bottom:.9rem;
+  display:flex;align-items:center;justify-content:center;font-size:1rem;
+}
+.approach-card:nth-child(1) .approach-icon{background:rgba(41,128,176,.08);color:var(--blue)}
+.approach-card:nth-child(2) .approach-icon{background:rgba(26,138,125,.08);color:var(--teal)}
+.approach-card:nth-child(3) .approach-icon{background:rgba(196,85,61,.06);color:var(--warm)}
+.approach-card h4{font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.4rem}
+.approach-card p{font-size:.84rem;color:var(--text2);line-height:1.72}
 
-/* TEACHING */
+/* ── COURSES ── */
 .teach-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
 .teach-block h3{font-family:var(--ff-d);font-size:1.15rem;font-weight:600;margin-bottom:.12rem}
 .teach-block .inst{font-size:.8rem;color:var(--blue);font-weight:500;margin-bottom:.8rem}
@@ -149,45 +132,85 @@ a:hover{color:var(--warm)}
 .cbadge{font-size:.58rem;padding:.05rem .35rem;border-radius:3px;margin-left:auto;white-space:nowrap;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
 .cbadge.grad{background:rgba(41,128,176,.08);color:var(--blue)}
 .cbadge.online{background:rgba(26,138,125,.08);color:var(--teal)}
+.cbadge.new{background:rgba(184,134,11,.08);color:var(--gold)}
 
-/* TEAM */
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.team-card{background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border);overflow:hidden;transition:var(--tr)}
-.team-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px)}
-.team-card.pi{grid-column:1/-1;display:grid;grid-template-columns:190px 1fr;max-width:660px;margin:0 auto .5rem}
-.team-photo{height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#d2e1ec,#bdd0de);overflow:hidden;position:relative}
-.team-photo img{width:100%;height:100%;object-fit:cover}
-.team-photo .ph{font-size:2rem;color:var(--accent);opacity:.15}
-/* Placeholder label */
-.team-photo::after{content:'Replace with photo';position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:.58rem;color:rgba(27,58,75,.25);font-family:var(--ff-m);white-space:nowrap;pointer-events:none}
-.pi .team-photo{width:190px;height:auto;min-height:190px}
-.team-info{padding:1rem 1.2rem}
-.team-name{font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.06rem}
-.team-role{font-size:.74rem;color:var(--blue);font-weight:500;margin-bottom:.45rem}
-.team-desc{font-size:.78rem;color:var(--text2);line-height:1.55;margin-bottom:.45rem}
-.tags{display:flex;flex-wrap:wrap;gap:.2rem}
-.tag{font-size:.61rem;padding:.08rem .38rem;border-radius:3px;background:var(--bg-alt);color:var(--text2);border:1px solid var(--border-lt)}
-.join-banner{text-align:center;margin-top:2rem;padding:2rem;background:linear-gradient(135deg,rgba(41,128,176,.025),rgba(26,138,125,.025));border-radius:var(--radius-lg);border:1px dashed rgba(41,128,176,.2)}
-.join-banner h3{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;margin-bottom:.25rem}
-.join-banner p{font-size:.84rem;color:var(--text2);margin-bottom:1rem;max-width:440px;margin-left:auto;margin-right:auto}
+/* ── AUBURN ── */
+.auburn-block{
+  margin-top:2rem;padding:1.4rem 1.6rem;
+  background:linear-gradient(135deg,rgba(41,128,176,.02),rgba(26,138,125,.02));
+  border-radius:var(--radius-lg);border:1px solid var(--border-lt);
+}
+.auburn-block h3{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;margin-bottom:.12rem}
+.auburn-block .inst{font-size:.8rem;color:var(--blue);font-weight:500;margin-bottom:.5rem}
+.auburn-block p{font-size:.84rem;color:var(--text2);line-height:1.72}
+.award-badge{
+  display:inline-flex;align-items:center;gap:.35rem;
+  margin-top:.6rem;padding:.3rem .7rem;border-radius:6px;
+  background:rgba(184,134,11,.06);border:1px solid rgba(184,134,11,.12);
+  font-size:.76rem;font-weight:600;color:var(--gold);
+}
+.award-badge i{font-size:.7rem}
 
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.contact-items{display:flex;flex-direction:column;gap:1rem}
-.contact-row{display:flex;align-items:flex-start;gap:.8rem}
-.contact-icon{width:38px;height:38px;border-radius:10px;flex-shrink:0;background:rgba(41,128,176,.07);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:.85rem}
-.contact-text h4{font-size:.82rem;font-weight:600;margin-bottom:.02rem}
-.contact-text p,.contact-text a{font-size:.8rem;color:var(--text2);line-height:1.55}
-.contact-map{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);height:260px}
-.contact-map iframe{width:100%;height:100%;border:none}
+/* ── AI COURSES ── */
+.ai-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.ai-card{
+  padding:1.2rem 1.3rem;background:var(--bg-w);
+  border-radius:var(--radius-lg);border:1px solid var(--border-lt);
+  transition:var(--tr);position:relative;
+}
+.ai-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
+.ai-card:last-child:nth-child(odd){grid-column:1 / -1;max-width:calc(50% - .5rem)}
+.ai-card-num{
+  font-family:var(--ff-m);font-size:.6rem;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:.4rem;
+}
+.ai-card h4{font-family:var(--ff-d);font-size:.95rem;font-weight:600;margin-bottom:.3rem;line-height:1.3}
+.ai-card p{font-size:.8rem;color:var(--text2);line-height:1.65}
 
-/* FOOTER */
+/* ── MENTORSHIP ── */
+.mentor-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.mentor-box{
+  padding:1.5rem;background:var(--bg-w);
+  border-radius:var(--radius-lg);border:1px solid var(--border-lt);
+}
+.mentor-box h4{font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
+.mentor-box h4 i{color:var(--blue);font-size:.85rem}
+.mentor-box p{font-size:.84rem;color:var(--text2);line-height:1.75}
+.mentor-box ul{list-style:none;margin-top:.5rem}
+.mentor-box li{
+  font-size:.82rem;color:var(--text2);line-height:1.65;
+  padding:.25rem 0;padding-left:1.1rem;position:relative;
+}
+.mentor-box li::before{
+  content:'';position:absolute;left:0;top:.55rem;
+  width:5px;height:5px;border-radius:50%;background:var(--blue);opacity:.35;
+}
+
+/* ── INCLUSION STRIP ── */
+.inclusion-strip{
+  margin-top:2rem;padding:1.8rem 2rem;
+  background:linear-gradient(135deg,rgba(27,58,75,.03),rgba(41,128,176,.04));
+  border-radius:var(--radius-lg);border:1px solid rgba(41,128,176,.1);
+  position:relative;overflow:hidden;
+}
+.inclusion-strip::before{
+  content:'';position:absolute;top:-30px;right:-30px;
+  width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle,rgba(92,184,230,.06),transparent 70%);
+  pointer-events:none;
+}
+.inclusion-strip h4{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;margin-bottom:.5rem}
+.inclusion-strip p{font-size:.86rem;color:var(--text2);line-height:1.78;max-width:780px}
+.inclusion-strip p+p{margin-top:.6rem}
+
+/* ── FOOTER ── */
 .footer{background:var(--accent);color:rgba(255,255,255,.4);padding:1.2rem 2.2rem;display:flex;justify-content:space-between;align-items:center;font-size:.72rem}
 .footer-links{display:flex;gap:.8rem}
 .footer-links a{color:rgba(255,255,255,.3);font-size:.84rem;transition:var(--tr)}
 .footer-links a:hover{color:#fff}
 
-/* REVEAL */
+/* ── REVEAL ── */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .rv.vis{opacity:1;transform:translateY(0)}
 .rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
@@ -195,10 +218,9 @@ a:hover{color:var(--warm)}
 /* ── RESPONSIVE ── */
 @media(max-width:1000px){
   .hero-grid{grid-template-columns:1fr}.canvas-wrap{display:none}
-  .pub-card{grid-template-columns:220px 1fr}
-  .team-grid{grid-template-columns:repeat(2,1fr)}.team-card.pi{grid-column:1/-1}
-  .home-intro{grid-template-columns:150px 1fr;gap:1.5rem}
-  .home-headshot{width:150px;height:150px}
+  .approach-grid{grid-template-columns:1fr}
+  .ai-grid{grid-template-columns:1fr}
+  .ai-card:last-child:nth-child(odd){max-width:100%}
 }
 @media(max-width:768px){
   .topnav-links{display:none}
@@ -206,66 +228,88 @@ a:hover{color:var(--warm)}
   .topnav{padding:0 1.2rem}
   .hero{padding:2.5rem 1.2rem 2rem}
   .section,.section-alt .section{padding:2.5rem 1.2rem}
-  .exp-row{grid-template-columns:repeat(2,1fr)}
-  .exp-item:nth-child(2)::after{display:none}
-  .pub-card{grid-template-columns:1fr}.pub-fig{height:160px}
   .teach-cols{grid-template-columns:1fr}
-  .team-grid{grid-template-columns:1fr}
-  .team-card.pi{grid-template-columns:1fr}.pi .team-photo{width:100%;height:150px}
-  .contact-grid{grid-template-columns:1fr}
-  .home-intro{grid-template-columns:1fr;text-align:center}
-  .home-headshot{margin:0 auto}
+  .mentor-cols{grid-template-columns:1fr}
   .footer{flex-direction:column;gap:.5rem;text-align:center;padding:1rem}
 }
-@media(max-width:480px){.exp-row{grid-template-columns:1fr}.exp-item::after{display:none!important}}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="topnav">
   <div class="topnav-left">
-    <div class="topnav-photo">
-      <img src="profile.jpg"/>
-    </div>
+    <div class="topnav-photo"><img src="profile.jpg" alt="Abdallah Alsammani"/></div>
     <div class="topnav-name">Abdallah <span>Alsammani</span></div>
   </div>
   <ul class="topnav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="teaching.html" class=active>Teaching</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="teaching.html" class="active">Teaching</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="hamburger" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob-nav" id="mnav">
-  <a href="index.html" onclick="closeMob()">Home</a>
-  <a href="research.html" onclick="closeMob()">Research</a>
-  <a href="teaching.html" onclick="closeMob()">Teaching</a>
-  <a href="team.html" onclick="closeMob()">Team</a>
-  <a href="contact.html" onclick="closeMob()">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="research.html">Research</a>
+  <a href="teaching.html">Teaching</a>
+  <a href="team.html">Team</a>
+  <a href="contact.html">Contact</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-grid">
     <div>
       <h2 class="rv">Teaching <em>Philosophy</em></h2>
-      <p class="rv">
-        Good teaching makes abstract ideas feel concrete. In every course I design, students work with real data and build models they can see, test, and break. Whether the topic is probability, differential equations, or machine learning, I structure each class around active problem solving, peer collaboration, and computational tools so that students leave with both conceptual understanding and practical skill. My goal is to produce graduates who can move confidently between theory and application.
+      <p class="hero-text rv">
+        Mathematics gives us the language to describe complex systems with precision and to reason about them with confidence. In every course I teach, I develop habits of thought that are rigorous, portable, and rooted in first principles. Students learn not only how a method works but why it works, where it fails, and how it connects to questions beyond the classroom. In courses involving machine learning and statistical modeling, I anchor discussion in optimization theory, linear algebra, probability, and statistical inference, asking students to engage with algorithms at the level of their mathematical structure.
       </p>
+      <div class="btns rv">
+        <a href="#approach" class="btn btn-p"><i class="fas fa-chalkboard-teacher"></i> My Approach</a>
+        <a href="#courses" class="btn btn-o"><i class="fas fa-book"></i> Course Catalog</a>
+      </div>
     </div>
     <div class="canvas-wrap rv"><div class="canvas-c"><canvas id="heroCanvas"></canvas></div></div>
   </div>
 </section>
-<div class="section-alt">
+
+<!-- PEDAGOGICAL APPROACH -->
+<div id="approach" class="section">
+  <div class="slabel">Pedagogy</div>
+  <h2 class="sheading rv">How I Teach</h2>
+  <p class="sdesc rv">Three principles organize my classroom practice, whether the course is proof-based analysis or applied machine learning.</p>
+  <div class="approach-grid">
+    <div class="approach-card rv">
+      <div class="approach-icon"><i class="fas fa-sitemap"></i></div>
+      <h4>Theory to Application</h4>
+      <p>Every course follows a deliberate mathematical arc: definitions, axioms, and central theorems first; worked examples and applications as consequences. In proof-based courses, I walk students through the reasoning and dead ends that produce a finished argument. In applied courses, every computational technique is preceded by the result that justifies it, so students see computation as an outgrowth of theory rather than a replacement.</p>
+    </div>
+    <div class="approach-card rv rv-d1">
+      <div class="approach-icon"><i class="fas fa-terminal"></i></div>
+      <h4>Purposeful Computation</h4>
+      <p>In data science, machine learning, and scientific computation courses, laboratory exercises in Python, R, or MATLAB are tightly coupled to each unit's mathematical content. A representative assignment asks students to derive the gradient update for a regularized regression model, implement it, apply it to clinical data, and interpret results in light of both statistical theory and the subject matter.</p>
+    </div>
+    <div class="approach-card rv rv-d2">
+      <div class="approach-icon"><i class="fas fa-microscope"></i></div>
+      <h4>Research-Informed Instruction</h4>
+      <p>I draw on my own work in infectious disease modeling, computational neuroscience, and health analytics for examples that show the reach of mathematical methods into biomedical science. When teaching optimization, I illustrate gradient-based techniques through parameter estimation in epidemic models. When teaching probability, I ground conditional reasoning in diagnostic screening problems.</p>
+    </div>
+  </div>
+</div>
+
+<!-- COURSES TAUGHT -->
+<div id="courses" class="section-alt">
 <div class="section">
   <div class="slabel">Courses</div>
   <h2 class="sheading rv">Courses Taught</h2>
-  <p class="sdesc rv">Undergraduate and graduate courses across two institutions, spanning statistics, calculus, differential equations, and machine learning.</p>
+  <p class="sdesc rv">Undergraduate and graduate courses across three institutions, spanning pure mathematics, applied statistics, differential equations, and machine learning.</p>
   <div class="teach-cols">
     <div class="teach-block rv">
       <h3>Delaware State University</h3>
-      <p class="inst">Dept. of Mathematical Sciences, 2025 to present</p>
+      <p class="inst">Dept. of Mathematical Sciences &middot; 2025&ndash;present</p>
       <ul class="course-list">
         <li class="course"><span class="course-code">MTSC 821</span><span class="course-name">Scientific Computations I</span><span class="cbadge grad">Graduate</span></li>
         <li class="course"><span class="course-code">MTSC 571</span><span class="course-name">Complex Analysis</span><span class="cbadge grad">Graduate</span></li>
@@ -273,43 +317,178 @@ a:hover{color:var(--warm)}
         <li class="course"><span class="course-code">MTSC 341</span><span class="course-name">Probability</span><span class="cbadge online">Online</span></li>
       </ul>
     </div>
-    <div class="teach-block rv">
+    <div class="teach-block rv rv-d1">
       <h3>Jacksonville University</h3>
-      <p class="inst">School of Science and Mathematics, 2022 to 2025</p>
+      <p class="inst">School of Science &amp; Mathematics &middot; 2022&ndash;2025</p>
       <ul class="course-list">
-        <li class="course"><span class="course-code">MATH 470</span><span class="course-name">Machine Learning Algorithms</span></li>
-        <li class="course"><span class="course-code">MATH 270</span><span class="course-name">Introduction to Data Science</span></li>
-        <li class="course"><span class="course-code">MATH 331</span><span class="course-name">Differential Equations</span></li>
+        <li class="course"><span class="course-code">MATH 470</span><span class="course-name">Machine Learning Algorithms</span><span class="cbadge new">New</span></li>
+        <li class="course"><span class="course-code">MATH 270</span><span class="course-name">Introduction to Data Science</span><span class="cbadge new">New</span></li>
+        <li class="course"><span class="course-code">MATH 271</span><span class="course-name">Data Science Foundations</span><span class="cbadge new">New</span></li>
         <li class="course"><span class="course-code">MATH 420</span><span class="course-name">Linear Algebra II</span></li>
+        <li class="course"><span class="course-code">MATH 331</span><span class="course-name">Differential Equations</span></li>
         <li class="course"><span class="course-code">MATH 315</span><span class="course-name">Probability</span></li>
         <li class="course"><span class="course-code">MATH 240</span><span class="course-name">Calculus III</span></li>
         <li class="course"><span class="course-code">MATH 205</span><span class="course-name">Elementary Statistics</span></li>
       </ul>
     </div>
   </div>
+
+  <!-- Auburn -->
+  <div class="auburn-block rv">
+    <h3>Auburn University</h3>
+    <p class="inst">Dept. of Mathematics &amp; Statistics &middot; Doctoral Training</p>
+    <p>Instructor of Record for Calculus I, II, and III, Pre-Calculus, and College Algebra. Teaching students with widely varying preparation sharpened my ability to diagnose conceptual gaps, calibrate explanations for different audiences, and maintain exacting standards while providing the support students need.</p>
+    <div class="award-badge"><i class="fas fa-trophy"></i> Excellence in Teaching Award</div>
+  </div>
 </div>
 </div>
 
+<!-- MATHEMATICS-ENHANCED AI -->
+<div class="section">
+  <div class="slabel">Curriculum Development</div>
+  <h2 class="sheading rv">Mathematics-Enhanced AI Courses</h2>
+  <p class="sdesc rv">Proposed graduate and advanced undergraduate courses for Howard University's research cluster in AI for radiology and endocrinology, where strong mathematical preparation is indispensable for responsible AI work.</p>
+  <div class="ai-grid">
+    <div class="ai-card rv">
+      <div class="ai-card-num">Course I</div>
+      <h4>Optimization &amp; Numerical Methods for Machine Learning</h4>
+      <p>Gradient descent variants, convex and nonconvex landscapes, and convergence guarantees for training statistical and deep learning models.</p>
+    </div>
+    <div class="ai-card rv rv-d1">
+      <div class="ai-card-num">Course II</div>
+      <h4>Statistical Learning Theory &amp; Model Validation</h4>
+      <p>Generalization bounds, bias-variance tradeoffs, and model selection in high-dimensional, low-sample biomedical settings.</p>
+    </div>
+    <div class="ai-card rv rv-d2">
+      <div class="ai-card-num">Course III</div>
+      <h4>Inverse Problems &amp; Image Reconstruction</h4>
+      <p>Ill-posedness, regularization, and iterative solvers applied to medical imaging modalities including CT, MRI, and PET.</p>
+    </div>
+    <div class="ai-card rv rv-d3">
+      <div class="ai-card-num">Course IV</div>
+      <h4>Uncertainty Quantification in Predictive Systems</h4>
+      <p>Bayesian inference, sensitivity analysis, and uncertainty propagation supporting the reliability of AI-assisted clinical predictions.</p>
+    </div>
+    <div class="ai-card rv">
+      <div class="ai-card-num">Course V</div>
+      <h4>Ethics &amp; Responsibility in Quantitative Modeling</h4>
+      <p>How loss functions, training data composition, and fairness constraints produce measurable consequences for equity in healthcare delivery.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MENTORSHIP & INCLUSION -->
+<div class="section-alt">
+<div class="section">
+  <div class="slabel">Mentorship</div>
+  <h2 class="sheading rv">Mentorship &amp; Student Development</h2>
+  <p class="sdesc rv">I treat mentorship as a natural extension of classroom teaching, guiding students through the full arc of mathematical research.</p>
+
+  <div class="mentor-cols">
+    <div class="mentor-box rv">
+      <h4><i class="fas fa-flask"></i> Undergraduate Research</h4>
+      <p>At Jacksonville University, I supervised several undergraduate research projects in which students formulated applied problems, built predictive models, and presented findings formally. Students learned to:</p>
+      <ul>
+        <li>Read literature critically and isolate tractable questions</li>
+        <li>Write precise mathematical formulations</li>
+        <li>Implement and validate computational solutions</li>
+        <li>Communicate results to varied audiences</li>
+      </ul>
+    </div>
+    <div class="mentor-box rv rv-d1">
+      <h4><i class="fas fa-graduation-cap"></i> Graduate Advising</h4>
+      <p>I bring the same commitment to graduate mentoring through qualifying exam preparation, thesis advising, and career-planning conversations built on regular one-on-one meetings and detailed written feedback on proofs, derivations, and drafts.</p>
+    </div>
+  </div>
+
+  <!-- Inclusion -->
+  <div class="inclusion-strip rv">
+    <h4>Commitment to Inclusive Excellence</h4>
+    <p>Supporting students from historically underrepresented groups in the mathematical sciences is a responsibility I hold with particular conviction. I keep accessible office hours, build assignments that develop skill in a graduated sequence, and foster a classroom culture where asking hard questions is expected and respected.</p>
+    <p>My assessments probe conceptual understanding rather than procedural memory. In AI and data science courses, I engage students with questions of bias, fairness, and the social weight of modeling decisions, because learning to build models responsibly is part of doing applied mathematics well.</p>
+  </div>
+</div>
+</div>
+
+<!-- FOOTER -->
 <footer class="footer">
   <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    <a href="#" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+    <a href="https://scholar.google.com" target="_blank"><i class="fas fa-graduation-cap"></i></a>
     <a href="https://github.com/aalsammani" target="_blank"><i class="fab fa-github"></i></a>
   </div>
 </footer>
+
 <script>
 function toggleMob(){var n=document.getElementById('mnav');if(n)n.classList.toggle('open')}
 function closeMob(){var n=document.getElementById('mnav');if(n)n.classList.remove('open')}
+
+// Scroll reveals
 (function(){var els=document.querySelectorAll('.rv');if(!els.length)return;var obs=new IntersectionObserver(function(ents){ents.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.05,rootMargin:'0px 0px -20px 0px'});els.forEach(function(el){obs.observe(el)})})();
 
-(function(){var c=document.getElementById('heroCanvas');if(!c)return;var ctx=c.getContext('2d'),W=360,H=360,dpr=window.devicePixelRatio||1;c.width=W*dpr;c.height=H*dpr;c.style.width=W+'px';c.style.height=H+'px';ctx.scale(dpr,dpr);var cx=W/2,cy=H/2,t=0;
-var nodes=[{x:cx,y:75,l:'Math',r:7,children:[0,1,2]},{x:cx-90,y:155,l:'Stats',r:5.5,children:[3,4]},{x:cx,y:150,l:'Calc',r:5.5,children:[5,6]},{x:cx+90,y:155,l:'ML',r:5.5,children:[7,8]},{x:cx-120,y:230,l:'Prob',r:4,children:[]},{x:cx-60,y:235,l:'Data',r:4,children:[]},{x:cx-15,y:228,l:'DiffEq',r:4,children:[]},{x:cx+40,y:232,l:'LinAlg',r:4,children:[]},{x:cx+85,y:228,l:'DL',r:4,children:[]},{x:cx+135,y:235,l:'AI',r:4,children:[]}];
-var mx=-999,my=-999;c.onmousemove=function(e){var r=c.getBoundingClientRect();mx=(e.clientX-r.left)*(W/r.width);my=(e.clientY-r.top)*(H/r.height)};c.onmouseleave=function(){mx=-999;my=-999};
-function draw(){ctx.clearRect(0,0,W,H);t+=.005;
-nodes.forEach(function(n){if(!n.children.length)return;n.children.forEach(function(ci){var ch=nodes[ci],nx=n.x+Math.sin(t*.4+n.x*.01)*3,ny=n.y+Math.cos(t*.35+n.y*.01)*2,chx=ch.x+Math.sin(t*.4+ch.x*.01)*3,chy=ch.y+Math.cos(t*.35+ch.y*.01)*2;ctx.beginPath();ctx.moveTo(nx,ny);ctx.quadraticCurveTo((nx+chx)/2,(ny+chy)/2+Math.sin(t+ci)*4,chx,chy);ctx.strokeStyle='rgba(41,128,176,.1)';ctx.lineWidth=1;ctx.stroke();var pt=Math.abs(Math.sin(t*1.2+ci*.8));var px=nx+(chx-nx)*pt,py=ny+(chy-ny)*pt;ctx.beginPath();ctx.arc(px,py,1.4,0,Math.PI*2);ctx.fillStyle='rgba(92,184,230,.4)';ctx.fill()})});
-nodes.forEach(function(n,i){var nx=n.x+Math.sin(t*.4+n.x*.01)*3,ny=n.y+Math.cos(t*.35+n.y*.01)*2,pulse=Math.sin(t*1.5+i)*.12+.88,dx=mx-nx,dy=my-ny,dist=Math.sqrt(dx*dx+dy*dy),hover=dist<40?1.3:1,r=n.r*pulse*hover;ctx.beginPath();ctx.arc(nx,ny,r+8,0,Math.PI*2);ctx.fillStyle='rgba(41,128,176,.025)';ctx.fill();var col=i===0?'rgba(196,85,61,':'rgba(92,184,230,';var g=ctx.createRadialGradient(nx-r*.2,ny-r*.2,0,nx,ny,r);g.addColorStop(0,col+(.75*hover)+')');g.addColorStop(1,col+(.45*hover)+')');ctx.beginPath();ctx.arc(nx,ny,r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();ctx.beginPath();ctx.arc(nx-r*.2,ny-r*.2,r*.3,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.35)';ctx.fill();ctx.font='7.5px IBM Plex Mono,monospace';ctx.fillStyle='rgba(41,128,176,.3)';ctx.textAlign='center';ctx.fillText(n.l,nx,ny+r+11)});
-requestAnimationFrame(draw)}draw()})();
+// Hero canvas animation
+(function(){
+  var c=document.getElementById('heroCanvas');if(!c)return;
+  var ctx=c.getContext('2d'),W=360,H=360,dpr=window.devicePixelRatio||1;
+  c.width=W*dpr;c.height=H*dpr;c.style.width=W+'px';c.style.height=H+'px';ctx.scale(dpr,dpr);
+  var cx=W/2,cy=H/2,t=0;
+  var nodes=[
+    {x:cx,y:70,l:'Math',r:7.5,ch:[1,2,3]},
+    {x:cx-95,y:152,l:'Stats',r:5.5,ch:[4,5]},
+    {x:cx,y:148,l:'Calculus',r:5.5,ch:[6,7]},
+    {x:cx+95,y:152,l:'ML',r:5.5,ch:[8,9]},
+    {x:cx-125,y:230,l:'Prob',r:4,ch:[]},
+    {x:cx-65,y:236,l:'Data',r:4,ch:[]},
+    {x:cx-18,y:228,l:'DiffEq',r:4,ch:[]},
+    {x:cx+38,y:232,l:'LinAlg',r:4,ch:[]},
+    {x:cx+88,y:228,l:'DL',r:4,ch:[]},
+    {x:cx+138,y:236,l:'AI',r:4,ch:[]}
+  ];
+  var mx=-999,my=-999;
+  c.onmousemove=function(e){var r=c.getBoundingClientRect();mx=(e.clientX-r.left)*(W/r.width);my=(e.clientY-r.top)*(H/r.height)};
+  c.onmouseleave=function(){mx=-999;my=-999};
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);t+=.005;
+    // edges
+    nodes.forEach(function(n){
+      if(!n.ch.length)return;
+      n.ch.forEach(function(ci){
+        var ch=nodes[ci];
+        var nx=n.x+Math.sin(t*.4+n.x*.01)*3,ny=n.y+Math.cos(t*.35+n.y*.01)*2;
+        var chx=ch.x+Math.sin(t*.4+ch.x*.01)*3,chy=ch.y+Math.cos(t*.35+ch.y*.01)*2;
+        ctx.beginPath();ctx.moveTo(nx,ny);
+        ctx.quadraticCurveTo((nx+chx)/2,(ny+chy)/2+Math.sin(t+ci)*4,chx,chy);
+        ctx.strokeStyle='rgba(41,128,176,.1)';ctx.lineWidth=1;ctx.stroke();
+        var pt=Math.abs(Math.sin(t*1.2+ci*.8));
+        var px=nx+(chx-nx)*pt,py=ny+(chy-ny)*pt;
+        ctx.beginPath();ctx.arc(px,py,1.4,0,Math.PI*2);
+        ctx.fillStyle='rgba(92,184,230,.4)';ctx.fill();
+      });
+    });
+    // nodes
+    nodes.forEach(function(n,i){
+      var nx=n.x+Math.sin(t*.4+n.x*.01)*3,ny=n.y+Math.cos(t*.35+n.y*.01)*2;
+      var pulse=Math.sin(t*1.5+i)*.12+.88;
+      var dx=mx-nx,dy=my-ny,dist=Math.sqrt(dx*dx+dy*dy);
+      var hover=dist<40?1.3:1,r=n.r*pulse*hover;
+      ctx.beginPath();ctx.arc(nx,ny,r+8,0,Math.PI*2);
+      ctx.fillStyle='rgba(41,128,176,.025)';ctx.fill();
+      var col=i===0?'rgba(196,85,61,':'rgba(92,184,230,';
+      var g=ctx.createRadialGradient(nx-r*.2,ny-r*.2,0,nx,ny,r);
+      g.addColorStop(0,col+(.75*hover)+')');g.addColorStop(1,col+(.45*hover)+')');
+      ctx.beginPath();ctx.arc(nx,ny,r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+      ctx.beginPath();ctx.arc(nx-r*.2,ny-r*.2,r*.3,0,Math.PI*2);
+      ctx.fillStyle='rgba(255,255,255,.35)';ctx.fill();
+      ctx.font='7.5px IBM Plex Mono,monospace';
+      ctx.fillStyle='rgba(41,128,176,.3)';ctx.textAlign='center';
+      ctx.fillText(n.l,nx,ny+r+11);
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
 </script>
 </body>
 </html>
