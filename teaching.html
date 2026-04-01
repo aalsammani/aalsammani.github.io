@@ -39,19 +39,12 @@ a:hover{color:var(--warm)}
   box-shadow:0 2px 12px rgba(0,0,0,.12);
 }
 .topnav-left{display:flex;align-items:center;gap:.65rem}
-.topnav-photo{
-  width:38px;height:38px;border-radius:50%;overflow:hidden;
-  border:2px solid rgba(255,255,255,.18);flex-shrink:0;
-  background:#2a5068;
-}
+.topnav-photo{width:38px;height:38px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.18);flex-shrink:0;background:#2a5068}
 .topnav-photo img{width:100%;height:100%;object-fit:cover}
 .topnav-name{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;color:#fff;white-space:nowrap}
 .topnav-name span{color:#5CB8E6}
 .topnav-links{list-style:none;display:flex;gap:.15rem}
-.topnav-links a{
-  font-size:.84rem;font-weight:500;color:rgba(255,255,255,.55);
-  padding:.38rem .78rem;border-radius:6px;transition:var(--tr);position:relative;
-}
+.topnav-links a{font-size:.84rem;font-weight:500;color:rgba(255,255,255,.55);padding:.38rem .78rem;border-radius:6px;transition:var(--tr);position:relative}
 .topnav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
 .topnav-links a.active{color:#5CB8E6;font-weight:600}
 .topnav-links a.active::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:18px;height:2px;background:#5CB8E6;border-radius:1px}
@@ -109,10 +102,7 @@ a:hover{color:var(--warm)}
 .approach-card:nth-child(1)::before{background:linear-gradient(90deg,var(--blue),#5CB8E6)}
 .approach-card:nth-child(2)::before{background:linear-gradient(90deg,var(--teal),#3DC9B0)}
 .approach-card:nth-child(3)::before{background:linear-gradient(90deg,var(--warm),#E08060)}
-.approach-icon{
-  width:44px;height:44px;border-radius:11px;margin-bottom:.9rem;
-  display:flex;align-items:center;justify-content:center;font-size:1rem;
-}
+.approach-icon{width:44px;height:44px;border-radius:11px;margin-bottom:.9rem;display:flex;align-items:center;justify-content:center;font-size:1rem}
 .approach-card:nth-child(1) .approach-icon{background:rgba(41,128,176,.08);color:var(--blue)}
 .approach-card:nth-child(2) .approach-icon{background:rgba(26,138,125,.08);color:var(--teal)}
 .approach-card:nth-child(3) .approach-icon{background:rgba(196,85,61,.06);color:var(--warm)}
@@ -133,6 +123,7 @@ a:hover{color:var(--warm)}
 .cbadge.grad{background:rgba(41,128,176,.08);color:var(--blue)}
 .cbadge.online{background:rgba(26,138,125,.08);color:var(--teal)}
 .cbadge.new{background:rgba(184,134,11,.08);color:var(--gold)}
+.cbadge.cap{background:rgba(123,79,157,.07);color:var(--purple)}
 
 /* ── AUBURN ── */
 .auburn-block{
@@ -151,22 +142,24 @@ a:hover{color:var(--warm)}
 }
 .award-badge i{font-size:.7rem}
 
-/* ── AI COURSES ── */
-.ai-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-.ai-card{
-  padding:1.2rem 1.3rem;background:var(--bg-w);
+/* ── CURRICULUM DEVELOPMENT ── */
+.curric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.curric-card{
+  padding:1.3rem 1.4rem;background:var(--bg-w);
   border-radius:var(--radius-lg);border:1px solid var(--border-lt);
-  transition:var(--tr);position:relative;
+  transition:var(--tr);display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;
 }
-.ai-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
-.ai-card:last-child:nth-child(odd){grid-column:1 / -1;max-width:calc(50% - .5rem)}
-.ai-card-num{
-  font-family:var(--ff-m);font-size:.6rem;font-weight:500;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:var(--blue);margin-bottom:.4rem;
+.curric-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
+.curric-icon{
+  width:38px;height:38px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;
 }
-.ai-card h4{font-family:var(--ff-d);font-size:.95rem;font-weight:600;margin-bottom:.3rem;line-height:1.3}
-.ai-card p{font-size:.8rem;color:var(--text2);line-height:1.65}
+.curric-icon.ic-blue{background:rgba(41,128,176,.08);color:var(--blue)}
+.curric-icon.ic-teal{background:rgba(26,138,125,.08);color:var(--teal)}
+.curric-icon.ic-gold{background:rgba(184,134,11,.07);color:var(--gold)}
+.curric-card h4{font-family:var(--ff-d);font-size:.92rem;font-weight:600;margin-bottom:.25rem;line-height:1.3}
+.curric-card p{font-size:.8rem;color:var(--text2);line-height:1.68}
+.curric-card .curric-meta{font-size:.72rem;color:var(--text3);margin-top:.35rem;font-style:italic}
 
 /* ── MENTORSHIP ── */
 .mentor-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
@@ -186,6 +179,14 @@ a:hover{color:var(--warm)}
   content:'';position:absolute;left:0;top:.55rem;
   width:5px;height:5px;border-radius:50%;background:var(--blue);opacity:.35;
 }
+
+/* ── RESEARCH PROJECTS TABLE ── */
+.rp-table{width:100%;border-collapse:collapse;margin-top:.8rem}
+.rp-table th{font-family:var(--ff-m);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);padding:.4rem .6rem;border-bottom:1px solid var(--border-lt);text-align:left;font-weight:500}
+.rp-table td{font-size:.8rem;color:var(--text2);padding:.5rem .6rem;border-bottom:1px solid var(--border-lt);vertical-align:top;line-height:1.55}
+.rp-table tr:last-child td{border-bottom:none}
+.rp-table tr:hover td{background:rgba(41,128,176,.015)}
+.rp-sem{font-family:var(--ff-m);font-size:.68rem;color:var(--blue);white-space:nowrap}
 
 /* ── INCLUSION STRIP ── */
 .inclusion-strip{
@@ -219,8 +220,7 @@ a:hover{color:var(--warm)}
 @media(max-width:1000px){
   .hero-grid{grid-template-columns:1fr}.canvas-wrap{display:none}
   .approach-grid{grid-template-columns:1fr}
-  .ai-grid{grid-template-columns:1fr}
-  .ai-card:last-child:nth-child(odd){max-width:100%}
+  .curric-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
   .topnav-links{display:none}
@@ -230,6 +230,7 @@ a:hover{color:var(--warm)}
   .section,.section-alt .section{padding:2.5rem 1.2rem}
   .teach-cols{grid-template-columns:1fr}
   .mentor-cols{grid-template-columns:1fr}
+  .curric-grid{grid-template-columns:1fr}
   .footer{flex-direction:column;gap:.5rem;text-align:center;padding:1rem}
 }
 </style>
@@ -265,11 +266,11 @@ a:hover{color:var(--warm)}
     <div>
       <h2 class="rv">Teaching <em>Philosophy</em></h2>
       <p class="hero-text rv">
-        Mathematics gives us the language to describe complex systems with precision and to reason about them with confidence. In every course I teach, I develop habits of thought that are rigorous, portable, and rooted in first principles. Students learn not only how a method works but why it works, where it fails, and how it connects to questions beyond the classroom. In courses involving machine learning and statistical modeling, I anchor discussion in optimization theory, linear algebra, probability, and statistical inference, asking students to engage with algorithms at the level of their mathematical structure.
+        Mathematics gives us the language to describe complex systems with precision and to reason about them with confidence. In every course I teach, I work to develop habits of thought that are rigorous, portable, and grounded in first principles. Students learn not only how a method works, but why it works, where its assumptions break down, and how it connects to questions beyond the classroom. In applied courses on machine learning, statistical modeling, and scientific computation, I anchor instruction in the underlying theory of optimization, linear algebra, probability, and statistical inference, asking students to engage with algorithms at the level of their mathematical structure rather than treating them as black boxes.
       </p>
       <div class="btns rv">
         <a href="#approach" class="btn btn-p"><i class="fas fa-chalkboard-teacher"></i> My Approach</a>
-        <a href="#courses" class="btn btn-o"><i class="fas fa-book"></i> Course Catalog</a>
+        <a href="#courses" class="btn btn-o"><i class="fas fa-book"></i> Courses Taught</a>
       </div>
     </div>
     <div class="canvas-wrap rv"><div class="canvas-c"><canvas id="heroCanvas"></canvas></div></div>
@@ -285,17 +286,17 @@ a:hover{color:var(--warm)}
     <div class="approach-card rv">
       <div class="approach-icon"><i class="fas fa-sitemap"></i></div>
       <h4>Theory to Application</h4>
-      <p>Every course follows a deliberate mathematical arc: definitions, axioms, and central theorems first; worked examples and applications as consequences. In proof-based courses, I walk students through the reasoning and dead ends that produce a finished argument. In applied courses, every computational technique is preceded by the result that justifies it, so students see computation as an outgrowth of theory rather than a replacement.</p>
+      <p>Every course follows a deliberate mathematical arc: definitions and central theorems first, worked examples and applications as consequences. In proof-based courses, I walk students through the reasoning that produces a finished argument. In applied courses, every computational technique is preceded by the result that justifies it, so students see computation as an outgrowth of theory rather than a substitute for it.</p>
     </div>
     <div class="approach-card rv rv-d1">
       <div class="approach-icon"><i class="fas fa-terminal"></i></div>
       <h4>Purposeful Computation</h4>
-      <p>In data science, machine learning, and scientific computation courses, laboratory exercises in Python, R, or MATLAB are tightly coupled to each unit's mathematical content. A representative assignment asks students to derive the gradient update for a regularized regression model, implement it, apply it to clinical data, and interpret results in light of both statistical theory and the subject matter.</p>
+      <p>In data science, machine learning, and scientific computation courses, laboratory exercises in Python, R, or MATLAB are tightly coupled to each unit's mathematical content. A representative assignment asks students to derive the gradient update for a regularized model, implement it, apply it to real data, and interpret the results in light of both statistical theory and the subject matter at hand.</p>
     </div>
     <div class="approach-card rv rv-d2">
       <div class="approach-icon"><i class="fas fa-microscope"></i></div>
       <h4>Research-Informed Instruction</h4>
-      <p>I draw on my own work in infectious disease modeling, computational neuroscience, and health analytics for examples that show the reach of mathematical methods into biomedical science. When teaching optimization, I illustrate gradient-based techniques through parameter estimation in epidemic models. When teaching probability, I ground conditional reasoning in diagnostic screening problems.</p>
+      <p>I draw on my research in infectious disease modeling, computational neuroscience, and health analytics for examples that demonstrate the reach of mathematical methods in biomedical science. When teaching optimization, I illustrate gradient-based techniques through parameter estimation in epidemic models. When teaching probability, I ground conditional reasoning in diagnostic screening problems familiar to students in health-related fields.</p>
     </div>
   </div>
 </div>
@@ -305,75 +306,140 @@ a:hover{color:var(--warm)}
 <div class="section">
   <div class="slabel">Courses</div>
   <h2 class="sheading rv">Courses Taught</h2>
-  <p class="sdesc rv">Undergraduate and graduate courses across three institutions, spanning pure mathematics, applied statistics, differential equations, and machine learning.</p>
+  <p class="sdesc rv">Undergraduate and graduate courses across three institutions, spanning pure mathematics, applied statistics, differential equations, data science, and machine learning.</p>
+
   <div class="teach-cols">
+
+    <!-- DSU -->
     <div class="teach-block rv">
       <h3>Delaware State University</h3>
-      <p class="inst">Dept. of Mathematical Sciences &middot; 2025&ndash;present</p>
+      <p class="inst">Department of Mathematical Sciences &middot; 2025&ndash;Present</p>
       <ul class="course-list">
-        <li class="course"><span class="course-code">MTSC 821</span><span class="course-name">Scientific Computations I</span><span class="cbadge grad">Graduate</span></li>
-        <li class="course"><span class="course-code">MTSC 571</span><span class="course-name">Complex Analysis</span><span class="cbadge grad">Graduate</span></li>
-        <li class="course"><span class="course-code">MTSC 452</span><span class="course-name">Advanced Calculus II</span></li>
-        <li class="course"><span class="course-code">MTSC 341</span><span class="course-name">Probability</span><span class="cbadge online">Online</span></li>
+        <li class="course">
+          <span class="course-code">MTSC 821</span>
+          <span class="course-name">Scientific Computations I</span>
+          <span class="cbadge grad">Graduate</span>
+        </li>
+        <li class="course">
+          <span class="course-code">MTSC 571</span>
+          <span class="course-name">Complex Analysis</span>
+          <span class="cbadge grad">Graduate</span>
+        </li>
+        <li class="course">
+          <span class="course-code">MTSC 452</span>
+          <span class="course-name">Advanced Calculus II</span>
+        </li>
+        <li class="course">
+          <span class="course-code">MTSC 341</span>
+          <span class="course-name">Probability</span>
+          <span class="cbadge online">Online</span>
+        </li>
       </ul>
     </div>
+
+    <!-- JU -->
     <div class="teach-block rv rv-d1">
       <h3>Jacksonville University</h3>
       <p class="inst">School of Science &amp; Mathematics &middot; 2022&ndash;2025</p>
       <ul class="course-list">
-        <li class="course"><span class="course-code">MATH 470</span><span class="course-name">Machine Learning Algorithms</span><span class="cbadge new">New</span></li>
-        <li class="course"><span class="course-code">MATH 270</span><span class="course-name">Introduction to Data Science</span><span class="cbadge new">New</span></li>
-        <li class="course"><span class="course-code">MATH 271</span><span class="course-name">Data Science Foundations</span><span class="cbadge new">New</span></li>
-        <li class="course"><span class="course-code">MATH 420</span><span class="course-name">Linear Algebra II</span></li>
-        <li class="course"><span class="course-code">MATH 331</span><span class="course-name">Differential Equations</span></li>
-        <li class="course"><span class="course-code">MATH 315</span><span class="course-name">Probability</span></li>
-        <li class="course"><span class="course-code">MATH 240</span><span class="course-name">Calculus III</span></li>
-        <li class="course"><span class="course-code">MATH 205</span><span class="course-name">Elementary Statistics</span></li>
+        <li class="course">
+          <span class="course-code">MATH 470</span>
+          <span class="course-name">Machine Learning Algorithms</span>
+          <span class="cbadge new">Developed</span>
+        </li>
+        <li class="course">
+          <span class="course-code">MATH 270</span>
+          <span class="course-name">Introduction to Data Science</span>
+          <span class="cbadge new">Developed</span>
+        </li>
+        <li class="course">
+          <span class="course-code">MATH 170</span>
+          <span class="course-name">Data Science Foundations</span>
+          <span class="cbadge new">Developed</span>
+        </li>
+        <li class="course">
+          <span class="course-code">MATH 481WS</span>
+          <span class="course-name">Capstone Research Project</span>
+          <span class="cbadge cap">Capstone</span>
+        </li>
+        <li class="course">
+          <span class="course-code">MATH 420</span>
+          <span class="course-name">Linear Algebra II</span>
+        </li>
+        <li class="course">
+          <span class="course-code">MATH 331</span>
+          <span class="course-name">Differential Equations</span>
+        </li>
+        <li class="course">
+          <span class="course-code">MATH 315</span>
+          <span class="course-name">Probability</span>
+        </li>
+        <li class="course">
+          <span class="course-code">MATH 240</span>
+          <span class="course-name">Calculus III</span>
+        </li>
+        <li class="course">
+          <span class="course-code">MATH 205</span>
+          <span class="course-name">Elementary Statistics</span>
+        </li>
       </ul>
     </div>
+
   </div>
 
   <!-- Auburn -->
   <div class="auburn-block rv">
     <h3>Auburn University</h3>
-    <p class="inst">Dept. of Mathematics &amp; Statistics &middot; Doctoral Training</p>
-    <p>Instructor of Record for Calculus I, II, and III, Pre-Calculus, and College Algebra. Teaching students with widely varying preparation sharpened my ability to diagnose conceptual gaps, calibrate explanations for different audiences, and maintain exacting standards while providing the support students need.</p>
-    <div class="award-badge"><i class="fas fa-trophy"></i> Excellence in Teaching Award</div>
+    <p class="inst">Department of Mathematics &amp; Statistics &middot; Graduate Teaching Assistant &amp; Instructor of Record &middot; 2014&ndash;2020</p>
+    <p>Served as Instructor of Record for Calculus I, II, and III, Pre-Calculus, and College Algebra. Teaching students with widely varying mathematical preparation over six years sharpened my ability to diagnose conceptual gaps, calibrate explanations for diverse audiences, and maintain rigorous standards while providing meaningful academic support. I also supervised the Mathematics Tutoring Center for two semesters, coordinating peer tutoring and academic support for hundreds of undergraduates.</p>
+    <div class="award-badge"><i class="fas fa-trophy"></i> Excellence in Teaching Award &mdash; 2019&ndash;2020</div>
   </div>
+
+  <!-- Sudan -->
+  <div class="auburn-block rv" style="margin-top:1.2rem">
+    <h3>Al Neelain University &amp; Academy of Engineering and Medical Sciences</h3>
+    <p class="inst">Lecturer &middot; Khartoum, Sudan &middot; 2010&ndash;2013</p>
+    <p>Taught undergraduate courses in Real Analysis, Abstract Algebra, Number Theory, Topology, Mathematical Methods, Introduction to Statistics, and MATLAB Programming. This early experience in a resource-constrained environment reinforced the value of clarity, precision, and student engagement as the foundations of effective instruction.</p>
+  </div>
+
 </div>
 </div>
 
-<!-- MATHEMATICS-ENHANCED AI -->
+<!-- CURRICULUM DEVELOPMENT -->
 <div class="section">
   <div class="slabel">Curriculum Development</div>
-  <h2 class="sheading rv">Mathematics-Enhanced AI Courses</h2>
-  <p class="sdesc rv">Proposed graduate and advanced undergraduate courses for Howard University's research cluster in AI for radiology and endocrinology, where strong mathematical preparation is indispensable for responsible AI work.</p>
-  <div class="ai-grid">
-    <div class="ai-card rv">
-      <div class="ai-card-num">Course I</div>
-      <h4>Optimization &amp; Numerical Methods for Machine Learning</h4>
-      <p>Gradient descent variants, convex and nonconvex landscapes, and convergence guarantees for training statistical and deep learning models.</p>
+  <h2 class="sheading rv">Curriculum &amp; Program Development</h2>
+  <p class="sdesc rv">Beyond individual courses, I have contributed to the development of programs, assessments, and pedagogical initiatives designed to strengthen data science education.</p>
+
+  <div class="curric-grid">
+
+    <div class="curric-card rv">
+      <div class="curric-icon ic-blue"><i class="fas fa-certificate"></i></div>
+      <div>
+        <h4>Data Science Certificate Program</h4>
+        <p>Designed and launched a Data Science Certificate Program at Jacksonville University, providing a structured credential pathway for students seeking applied skills in data analysis, machine learning, and statistical computing.</p>
+        <div class="curric-meta">Jacksonville University &mdash; 2023</div>
+      </div>
     </div>
-    <div class="ai-card rv rv-d1">
-      <div class="ai-card-num">Course II</div>
-      <h4>Statistical Learning Theory &amp; Model Validation</h4>
-      <p>Generalization bounds, bias-variance tradeoffs, and model selection in high-dimensional, low-sample biomedical settings.</p>
+
+    <div class="curric-card rv rv-d1">
+      <div class="curric-icon ic-teal"><i class="fas fa-tasks"></i></div>
+      <div>
+        <h4>Program Assessment</h4>
+        <p>Served as Assessment Coordinator for the Data Science major and minor programs, leading outcomes assessment initiatives, aligning course-level objectives with program goals, and preparing formal assessment reports.</p>
+        <div class="curric-meta">Jacksonville University &mdash; 2022&ndash;2025</div>
+      </div>
     </div>
-    <div class="ai-card rv rv-d2">
-      <div class="ai-card-num">Course III</div>
-      <h4>Inverse Problems &amp; Image Reconstruction</h4>
-      <p>Ill-posedness, regularization, and iterative solvers applied to medical imaging modalities including CT, MRI, and PET.</p>
+
+    <div class="curric-card rv rv-d2">
+      <div class="curric-icon ic-gold"><i class="fas fa-flask"></i></div>
+      <div>
+        <h4>Scholarship of Teaching &amp; Learning Grant</h4>
+        <p>Principal investigator for a funded SOTL project investigating active learning strategies and their effects on student outcomes in data science courses, with focus on assessment design and pedagogical innovation.</p>
+        <div class="curric-meta">Jacksonville University &mdash; 2023&ndash;2025</div>
+      </div>
     </div>
-    <div class="ai-card rv rv-d3">
-      <div class="ai-card-num">Course IV</div>
-      <h4>Uncertainty Quantification in Predictive Systems</h4>
-      <p>Bayesian inference, sensitivity analysis, and uncertainty propagation supporting the reliability of AI-assisted clinical predictions.</p>
-    </div>
-    <div class="ai-card rv">
-      <div class="ai-card-num">Course V</div>
-      <h4>Ethics &amp; Responsibility in Quantitative Modeling</h4>
-      <p>How loss functions, training data composition, and fairness constraints produce measurable consequences for equity in healthcare delivery.</p>
-    </div>
+
   </div>
 </div>
 
@@ -381,42 +447,98 @@ a:hover{color:var(--warm)}
 <div class="section-alt">
 <div class="section">
   <div class="slabel">Mentorship</div>
-  <h2 class="sheading rv">Mentorship &amp; Student Development</h2>
-  <p class="sdesc rv">I treat mentorship as a natural extension of classroom teaching, guiding students through the full arc of mathematical research.</p>
+  <h2 class="sheading rv">Undergraduate Research &amp; Mentorship</h2>
+  <p class="sdesc rv">I treat mentorship as a natural extension of classroom teaching, guiding students from their first exposure to research methods through formal presentation of independent work.</p>
 
   <div class="mentor-cols">
     <div class="mentor-box rv">
-      <h4><i class="fas fa-flask"></i> Undergraduate Research</h4>
-      <p>At Jacksonville University, I supervised several undergraduate research projects in which students formulated applied problems, built predictive models, and presented findings formally. Students learned to:</p>
+      <h4><i class="fas fa-flask"></i> Undergraduate Research Projects</h4>
+      <p>At Jacksonville University, I supervised eight independent undergraduate research projects (MATH 487RI and MATH 490), spanning statistical learning, data analytics, and predictive modeling. Students formulated applied problems, built and validated models, and presented their findings in formal settings. Through this process, students developed the ability to:</p>
       <ul>
-        <li>Read literature critically and isolate tractable questions</li>
-        <li>Write precise mathematical formulations</li>
-        <li>Implement and validate computational solutions</li>
-        <li>Communicate results to varied audiences</li>
+        <li>Read technical literature critically and identify tractable research questions</li>
+        <li>Write precise mathematical and statistical problem formulations</li>
+        <li>Implement, test, and validate computational solutions</li>
+        <li>Communicate methods and results to varied audiences</li>
       </ul>
     </div>
     <div class="mentor-box rv rv-d1">
-      <h4><i class="fas fa-graduation-cap"></i> Graduate Advising</h4>
-      <p>I bring the same commitment to graduate mentoring through qualifying exam preparation, thesis advising, and career-planning conversations built on regular one-on-one meetings and detailed written feedback on proofs, derivations, and drafts.</p>
+      <h4><i class="fas fa-graduation-cap"></i> Academic Advising</h4>
+      <p>I advised eight undergraduate students in the Data Science and Mathematics programs at Jacksonville University, providing guidance on course selection, program planning, graduate school preparation, and professional development. At Delaware State University, I continue to mentor students in research and career planning as part of my tenure-track appointment in the Department of Mathematical Sciences.</p>
     </div>
+  </div>
+
+  <!-- Research Projects Table -->
+  <div class="rv" style="margin-top:1.8rem">
+    <p style="font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.6rem">Supervised Research Projects &mdash; Jacksonville University</p>
+    <table class="rp-table">
+      <thead>
+        <tr>
+          <th>Semester</th>
+          <th>Project Topic</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rp-sem">Spring 2025</td>
+          <td>Statistical learning methods</td>
+          <td>Independent Research</td>
+        </tr>
+        <tr>
+          <td class="rp-sem">Spring 2025</td>
+          <td>Data analysis and visualization for animal shelter outcomes</td>
+          <td>Independent Research</td>
+        </tr>
+        <tr>
+          <td class="rp-sem">Fall 2024</td>
+          <td>Statistical learning with applications to healthcare data</td>
+          <td>Independent Research</td>
+        </tr>
+        <tr>
+          <td class="rp-sem">Fall 2024</td>
+          <td>Data analytics in industry</td>
+          <td>Internship</td>
+        </tr>
+        <tr>
+          <td class="rp-sem">Fall 2023</td>
+          <td>Road accident data analytics and visualization</td>
+          <td>Independent Research</td>
+        </tr>
+        <tr>
+          <td class="rp-sem">Fall 2023</td>
+          <td>Introduction to data science and prediction algorithms in R</td>
+          <td>Independent Research</td>
+        </tr>
+        <tr>
+          <td class="rp-sem">Fall 2023</td>
+          <td>Business analytics</td>
+          <td>Internship</td>
+        </tr>
+        <tr>
+          <td class="rp-sem">Spring 2023</td>
+          <td>NFL game prediction modeling using singular value decomposition</td>
+          <td>Independent Research</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- Inclusion -->
   <div class="inclusion-strip rv">
     <h4>Commitment to Inclusive Excellence</h4>
-    <p>Supporting students from historically underrepresented groups in the mathematical sciences is a responsibility I hold with particular conviction. I keep accessible office hours, build assignments that develop skill in a graduated sequence, and foster a classroom culture where asking hard questions is expected and respected.</p>
-    <p>My assessments probe conceptual understanding rather than procedural memory. In AI and data science courses, I engage students with questions of bias, fairness, and the social weight of modeling decisions, because learning to build models responsibly is part of doing applied mathematics well.</p>
+    <p>Supporting students from historically underrepresented groups in the mathematical sciences is a responsibility I hold with conviction. I maintain accessible office hours, design assignments that build skill in a graduated sequence, and foster a classroom environment where rigorous questions are expected and welcomed.</p>
+    <p>My assessments target conceptual understanding rather than procedural recall. In data science and machine learning courses, I engage students with questions of fairness, bias, and the social weight of modeling decisions, because learning to build models responsibly is part of doing applied mathematics well.</p>
   </div>
 </div>
 </div>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
+  <p>&copy; 2026 Abdallah Alsammani. All rights reserved.</p>
   <div class="footer-links">
-    <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://scholar.google.com" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-    <a href="https://github.com/aalsammani" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://scholar.google.com/citations?user=abdallah-alsammani" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+    <a href="https://github.com/aalsammani" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
   </div>
 </footer>
 
@@ -448,10 +570,8 @@ function closeMob(){var n=document.getElementById('mnav');if(n)n.classList.remov
   var mx=-999,my=-999;
   c.onmousemove=function(e){var r=c.getBoundingClientRect();mx=(e.clientX-r.left)*(W/r.width);my=(e.clientY-r.top)*(H/r.height)};
   c.onmouseleave=function(){mx=-999;my=-999};
-
   function draw(){
     ctx.clearRect(0,0,W,H);t+=.005;
-    // edges
     nodes.forEach(function(n){
       if(!n.ch.length)return;
       n.ch.forEach(function(ci){
@@ -467,7 +587,6 @@ function closeMob(){var n=document.getElementById('mnav');if(n)n.classList.remov
         ctx.fillStyle='rgba(92,184,230,.4)';ctx.fill();
       });
     });
-    // nodes
     nodes.forEach(function(n,i){
       var nx=n.x+Math.sin(t*.4+n.x*.01)*3,ny=n.y+Math.cos(t*.35+n.y*.01)*2;
       var pulse=Math.sin(t*1.5+i)*.12+.88;
