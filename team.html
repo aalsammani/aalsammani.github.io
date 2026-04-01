@@ -39,25 +39,15 @@ a:hover{color:var(--warm)}
   box-shadow:0 2px 12px rgba(0,0,0,.12);
 }
 .topnav-left{display:flex;align-items:center;gap:.65rem}
-.topnav-photo{
-  width:38px;height:38px;border-radius:50%;overflow:hidden;
-  border:2px solid rgba(255,255,255,.18);flex-shrink:0;
-  background:#2a5068;
-}
+.topnav-photo{width:38px;height:38px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.18);flex-shrink:0;background:#2a5068}
 .topnav-photo img{width:100%;height:100%;object-fit:cover}
-.topnav-photo .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-d);font-size:.85rem;color:rgba(255,255,255,.5);font-weight:600}
 .topnav-name{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;color:#fff;white-space:nowrap}
 .topnav-name span{color:#5CB8E6}
 .topnav-links{list-style:none;display:flex;gap:.15rem}
-.topnav-links a{
-  font-size:.84rem;font-weight:500;color:rgba(255,255,255,.55);
-  padding:.38rem .78rem;border-radius:6px;transition:var(--tr);position:relative;
-}
+.topnav-links a{font-size:.84rem;font-weight:500;color:rgba(255,255,255,.55);padding:.38rem .78rem;border-radius:6px;transition:var(--tr);position:relative}
 .topnav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
 .topnav-links a.active{color:#5CB8E6;font-weight:600}
 .topnav-links a.active::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:18px;height:2px;background:#5CB8E6;border-radius:1px}
-
-/* Mobile */
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:5px}
 .hamburger span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;margin:4px 0;transition:var(--tr)}
 .mob-nav{display:none;background:rgba(18,41,58,.98);padding:.5rem 1.5rem;position:sticky;top:58px;z-index:199}
@@ -65,39 +55,28 @@ a:hover{color:var(--warm)}
 .mob-nav a{display:block;padding:.55rem 0;color:rgba(255,255,255,.6);font-size:.88rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.04)}
 .mob-nav a:hover{color:#5CB8E6}
 
-/* ── PAGE HERO ── */
+/* ── HERO ── */
 .hero{
-  padding:3.5rem 2.2rem 3rem;position:relative;overflow:hidden;
+  padding:3.8rem 2.2rem 3.2rem;position:relative;overflow:hidden;
   background:linear-gradient(165deg,var(--bg) 0%,#E4EAF2 50%,#DCE5F0 100%);
 }
 .hero::before{content:'';position:absolute;top:-80px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(92,184,230,.06) 0%,transparent 70%);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:2.5rem;align-items:center;max-width:1100px;margin:0 auto;position:relative;z-index:1}
-.hero-grid.no-canvas{grid-template-columns:1fr}
-.hero h2{font-family:var(--ff-d);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:600;line-height:1.12;margin-bottom:1rem;letter-spacing:-.01em}
+.hero::after{content:'';position:absolute;bottom:-60px;left:-80px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(26,138,125,.04) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.hero h2{font-family:var(--ff-d);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:600;line-height:1.12;margin-bottom:.8rem;letter-spacing:-.01em}
 .hero h2 em{color:var(--blue);font-style:italic}
-.hero p{font-size:.98rem;color:var(--text2);line-height:1.85;margin-bottom:1.5rem;max-width:560px}
-.hero .btns{display:flex;gap:.6rem;flex-wrap:wrap}
-.canvas-wrap{display:flex;align-items:center;justify-content:center}
-.canvas-c{width:360px;height:360px;border-radius:50%;position:relative;background:radial-gradient(circle at 42% 38%,rgba(41,128,176,.09) 0%,rgba(41,128,176,.03) 40%,transparent 70%)}
-.canvas-c canvas{position:absolute;inset:0}
-
-/* Home hero with headshot */
-.home-intro{display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:center;margin-bottom:1.8rem}
-.home-headshot{width:180px;height:180px;border-radius:50%;overflow:hidden;border:4px solid rgba(27,58,75,.1);box-shadow:var(--shadow-l);background:#d2e1ec}
-.home-headshot img{width:100%;height:100%;object-fit:cover}
-.home-headshot .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--accent);opacity:.15;font-size:3.5rem}
+.hero-text{font-size:.96rem;color:var(--text2);line-height:1.85;max-width:620px}
 
 /* ── SECTIONS ── */
 .section{padding:3.5rem 2.2rem;max-width:1100px;margin:0 auto}
-.section-wide{max-width:none}
 .section-alt{background:var(--bg-w)}
 .section-alt .section{padding:3.5rem 2.2rem}
 .slabel{font-family:var(--ff-m);font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:.4rem;display:inline-flex;align-items:center;gap:.5rem}
 .slabel::before{content:'';width:20px;height:1.5px;background:var(--blue)}
 .sheading{font-family:var(--ff-d);font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:600;line-height:1.18;margin-bottom:.5rem}
-.sdesc{font-size:.95rem;color:var(--text2);max-width:600px;line-height:1.82;margin-bottom:2.2rem}
+.sdesc{font-size:.95rem;color:var(--text2);max-width:620px;line-height:1.82;margin-bottom:2.2rem}
 
-/* BUTTONS */
+/* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.15rem;border-radius:7px;font-family:var(--ff-b);font-size:.82rem;font-weight:600;transition:var(--tr);cursor:pointer;border:none}
 .btn i{font-size:.74rem}
 .btn-p{background:var(--accent);color:#fff}
@@ -105,100 +84,121 @@ a:hover{color:var(--warm)}
 .btn-o{border:1.5px solid var(--border);color:var(--text);background:transparent}
 .btn-o:hover{border-color:var(--blue);color:var(--blue)}
 
-/* EXPERTISE */
-.exp{background:var(--bg-w);border-top:1px solid var(--border-lt);border-bottom:1px solid var(--border-lt)}
-.exp-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto}
-.exp-item{padding:1.8rem 1.2rem;text-align:center;position:relative;transition:var(--tr)}
-.exp-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:var(--border-lt)}
-.exp-item:hover{background:rgba(41,128,176,.015)}
-.exp-icon{width:40px;height:40px;border-radius:10px;margin:0 auto .5rem;display:flex;align-items:center;justify-content:center;background:rgba(41,128,176,.07);color:var(--blue);font-size:.95rem;transition:var(--tr)}
-.exp-item:hover .exp-icon{background:rgba(41,128,176,.12);transform:scale(1.05)}
-.exp-item h4{font-family:var(--ff-d);font-size:.92rem;font-weight:600;margin-bottom:.2rem}
-.exp-item p{font-size:.76rem;color:var(--text2);line-height:1.5}
+/* ── PI CARD ── */
+.pi-card{
+  background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border);
+  display:grid;grid-template-columns:210px 1fr;overflow:hidden;
+  max-width:780px;margin-bottom:2.8rem;box-shadow:var(--shadow-s);
+}
+.pi-photo{
+  background:linear-gradient(135deg,#d2e1ec,#bdd0de);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;min-height:220px;
+}
+.pi-photo img{width:100%;height:100%;object-fit:cover}
+.pi-photo .ph{font-size:3rem;color:var(--accent);opacity:.12}
+.pi-body{padding:1.4rem 1.6rem}
+.pi-name{font-family:var(--ff-d);font-size:1.2rem;font-weight:700;margin-bottom:.1rem;line-height:1.2}
+.pi-role{font-size:.8rem;font-weight:600;color:var(--blue);margin-bottom:.06rem}
+.pi-dept{font-size:.78rem;color:var(--text2);margin-bottom:.8rem}
+.pi-bio{font-size:.84rem;color:var(--text2);line-height:1.75;margin-bottom:.85rem}
+.pi-tags{display:flex;flex-wrap:wrap;gap:.25rem;margin-bottom:.85rem}
+.pi-tag{font-size:.62rem;padding:.1rem .42rem;border-radius:4px;background:var(--bg-alt);color:var(--text2);border:1px solid var(--border-lt)}
+.pi-links{display:flex;gap:.35rem;flex-wrap:wrap}
+.pi-link{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:.72rem;font-weight:500;padding:.25rem .6rem;
+  border-radius:6px;border:1px solid var(--border);color:var(--text2);
+  transition:var(--tr);
+}
+.pi-link:hover{border-color:var(--blue);color:var(--blue)}
+.pi-link i{font-size:.65rem}
 
-/* PUBLICATIONS */
-.pub-list{display:flex;flex-direction:column;gap:1.3rem}
-.pub-card{background:var(--bg-w);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);transition:var(--tr);display:grid;grid-template-columns:300px 1fr}
-.pub-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
-.pub-fig{overflow:hidden;background:var(--bg-alt)}
-.pub-fig svg{width:100%;height:100%;display:block}
-.pub-body{padding:1.2rem 1.4rem;display:flex;flex-direction:column;justify-content:center}
-.pub-tag{font-family:var(--ff-m);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.14rem .45rem;border-radius:4px;display:inline-block;width:fit-content;margin-bottom:.4rem;font-weight:500}
-.pub-tag.epi{background:rgba(41,128,176,.08);color:var(--blue)}
-.pub-tag.ml{background:rgba(184,134,11,.08);color:var(--gold)}
-.pub-tag.bio{background:rgba(26,138,125,.08);color:var(--teal)}
-.pub-tag.stat{background:rgba(196,85,61,.06);color:var(--warm)}
-.pub-title{font-family:var(--ff-d);font-size:1rem;font-weight:600;line-height:1.35;margin-bottom:.3rem}
-.pub-authors{font-size:.8rem;color:var(--text2);margin-bottom:.12rem}
-.pub-journal{font-size:.76rem;color:var(--text3);font-style:italic;margin-bottom:.7rem}
-.pub-links{margin-top:auto;display:flex;gap:.3rem}
-.pub-link{font-size:.68rem;font-weight:500;padding:.2rem .55rem;border-radius:5px;border:1px solid var(--border);color:var(--text2);transition:var(--tr);display:inline-flex;align-items:center;gap:.2rem}
-.pub-link:hover{border-color:var(--blue);color:var(--blue);background:rgba(41,128,176,.02)}
-.more-pubs{text-align:center;margin-top:2rem}
+/* ── SECTION DIVIDER ── */
+.team-section-label{
+  font-family:var(--ff-d);font-size:1.05rem;font-weight:600;
+  margin-bottom:1rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--border-lt);
+  color:var(--text);display:flex;align-items:center;gap:.5rem;
+}
+.team-section-label i{font-size:.85rem;color:var(--blue);opacity:.7}
+.team-section-label .count{
+  font-family:var(--ff-m);font-size:.65rem;font-weight:500;
+  letter-spacing:.08em;color:var(--text3);margin-left:.3rem;
+}
 
-/* TEACHING */
-.teach-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
-.teach-block h3{font-family:var(--ff-d);font-size:1.15rem;font-weight:600;margin-bottom:.12rem}
-.teach-block .inst{font-size:.8rem;color:var(--blue);font-weight:500;margin-bottom:.8rem}
-.course-list{list-style:none;display:flex;flex-direction:column;gap:.35rem}
-.course{display:flex;align-items:baseline;gap:.6rem;padding:.45rem .75rem;background:var(--bg);border-radius:7px;border:1px solid var(--border-lt);transition:var(--tr)}
-.section-alt .course{background:#F1F4F8}
-.course:hover{border-color:var(--border);box-shadow:var(--shadow-s)}
-.course-code{font-family:var(--ff-m);font-size:.7rem;color:var(--blue);font-weight:500;white-space:nowrap}
-.course-name{font-size:.82rem}
-.cbadge{font-size:.58rem;padding:.05rem .35rem;border-radius:3px;margin-left:auto;white-space:nowrap;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-.cbadge.grad{background:rgba(41,128,176,.08);color:var(--blue)}
-.cbadge.online{background:rgba(26,138,125,.08);color:var(--teal)}
+/* ── STUDENT CARDS ── */
+.students-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2.4rem}
+.student-card{
+  background:var(--bg-w);border-radius:var(--radius-lg);
+  border:1px solid var(--border-lt);overflow:hidden;transition:var(--tr);
+}
+.student-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
+.student-photo{
+  height:170px;background:linear-gradient(135deg,#dce6ef,#c8d8e6);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.student-photo img{width:100%;height:100%;object-fit:cover}
+.student-photo .ph{font-size:2.2rem;color:var(--accent);opacity:.12}
+.student-top{height:4px}
+.phd .student-top{background:linear-gradient(90deg,var(--blue),#5CB8E6)}
+.ms .student-top{background:linear-gradient(90deg,var(--teal),#3DC9B0)}
+.ug .student-top{background:linear-gradient(90deg,var(--gold),#D4A832)}
+.student-body{padding:1rem 1.1rem 1.1rem}
+.student-name{font-family:var(--ff-d);font-size:.95rem;font-weight:600;margin-bottom:.08rem;line-height:1.25}
+.student-role{font-size:.72rem;font-weight:600;margin-bottom:.35rem}
+.phd .student-role{color:var(--blue)}
+.ms .student-role{color:var(--teal)}
+.ug .student-role{color:var(--gold)}
+.student-desc{font-size:.78rem;color:var(--text2);line-height:1.62;margin-bottom:.5rem}
+.student-tags{display:flex;flex-wrap:wrap;gap:.2rem}
+.s-tag{font-size:.6rem;padding:.08rem .36rem;border-radius:3px;background:var(--bg-alt);color:var(--text3);border:1px solid var(--border-lt)}
 
-/* TEAM */
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.team-card{background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border);overflow:hidden;transition:var(--tr)}
-.team-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px)}
-.team-card.pi{grid-column:1/-1;display:grid;grid-template-columns:190px 1fr;max-width:660px;margin:0 auto .5rem}
-.team-photo{height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#d2e1ec,#bdd0de);overflow:hidden;position:relative}
-.team-photo img{width:100%;height:100%;object-fit:cover}
-.team-photo .ph{font-size:2rem;color:var(--accent);opacity:.15}
-/* Placeholder label */
-.team-photo::after{content:'Replace with photo';position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:.58rem;color:rgba(27,58,75,.25);font-family:var(--ff-m);white-space:nowrap;pointer-events:none}
-.pi .team-photo{width:190px;height:auto;min-height:190px}
-.team-info{padding:1rem 1.2rem}
-.team-name{font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.06rem}
-.team-role{font-size:.74rem;color:var(--blue);font-weight:500;margin-bottom:.45rem}
-.team-desc{font-size:.78rem;color:var(--text2);line-height:1.55;margin-bottom:.45rem}
-.tags{display:flex;flex-wrap:wrap;gap:.2rem}
-.tag{font-size:.61rem;padding:.08rem .38rem;border-radius:3px;background:var(--bg-alt);color:var(--text2);border:1px solid var(--border-lt)}
-.join-banner{text-align:center;margin-top:2rem;padding:2rem;background:linear-gradient(135deg,rgba(41,128,176,.025),rgba(26,138,125,.025));border-radius:var(--radius-lg);border:1px dashed rgba(41,128,176,.2)}
-.join-banner h3{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;margin-bottom:.25rem}
-.join-banner p{font-size:.84rem;color:var(--text2);margin-bottom:1rem;max-width:440px;margin-left:auto;margin-right:auto}
+/* ── COLLABORATORS ── */
+.collab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.collab-card{
+  background:var(--bg-w);border-radius:var(--radius);border:1px solid var(--border-lt);
+  padding:.95rem 1.1rem;transition:var(--tr);
+  display:grid;grid-template-columns:auto 1fr;gap:.7rem;align-items:center;
+}
+.collab-card:hover{box-shadow:var(--shadow-s);border-color:#bfcdd9}
+.collab-initials{
+  width:38px;height:38px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-d);font-size:.82rem;font-weight:600;
+  color:var(--bg-w);
+}
+.collab-name{font-size:.84rem;font-weight:600;line-height:1.2;margin-bottom:.06rem}
+.collab-affil{font-size:.72rem;color:var(--text3);line-height:1.35}
 
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.contact-items{display:flex;flex-direction:column;gap:1rem}
-.contact-row{display:flex;align-items:flex-start;gap:.8rem}
-.contact-icon{width:38px;height:38px;border-radius:10px;flex-shrink:0;background:rgba(41,128,176,.07);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:.85rem}
-.contact-text h4{font-size:.82rem;font-weight:600;margin-bottom:.02rem}
-.contact-text p,.contact-text a{font-size:.8rem;color:var(--text2);line-height:1.55}
-.contact-map{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);height:260px}
-.contact-map iframe{width:100%;height:100%;border:none}
+/* ── JOIN BANNER ── */
+.join-section{
+  margin-top:2.4rem;padding:2.2rem;
+  background:linear-gradient(135deg,rgba(41,128,176,.025),rgba(26,138,125,.025));
+  border-radius:var(--radius-lg);border:1px dashed rgba(41,128,176,.2);
+}
+.join-section h3{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;margin-bottom:.35rem}
+.join-inner{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+.join-text p{font-size:.84rem;color:var(--text2);line-height:1.72;max-width:560px}
+.join-text p+p{margin-top:.45rem}
+.join-btns{display:flex;flex-direction:column;gap:.5rem;flex-shrink:0}
 
-/* FOOTER */
+/* ── FOOTER ── */
 .footer{background:var(--accent);color:rgba(255,255,255,.4);padding:1.2rem 2.2rem;display:flex;justify-content:space-between;align-items:center;font-size:.72rem}
 .footer-links{display:flex;gap:.8rem}
 .footer-links a{color:rgba(255,255,255,.3);font-size:.84rem;transition:var(--tr)}
 .footer-links a:hover{color:#fff}
 
-/* REVEAL */
+/* ── REVEAL ── */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .rv.vis{opacity:1;transform:translateY(0)}
 .rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1000px){
-  .hero-grid{grid-template-columns:1fr}.canvas-wrap{display:none}
-  .pub-card{grid-template-columns:220px 1fr}
-  .team-grid{grid-template-columns:repeat(2,1fr)}.team-card.pi{grid-column:1/-1}
-  .home-intro{grid-template-columns:150px 1fr;gap:1.5rem}
-  .home-headshot{width:150px;height:150px}
+  .students-grid{grid-template-columns:repeat(2,1fr)}
+  .collab-grid{grid-template-columns:repeat(2,1fr)}
+  .pi-card{grid-template-columns:170px 1fr}
 }
 @media(max-width:768px){
   .topnav-links{display:none}
@@ -206,35 +206,28 @@ a:hover{color:var(--warm)}
   .topnav{padding:0 1.2rem}
   .hero{padding:2.5rem 1.2rem 2rem}
   .section,.section-alt .section{padding:2.5rem 1.2rem}
-  .exp-row{grid-template-columns:repeat(2,1fr)}
-  .exp-item:nth-child(2)::after{display:none}
-  .pub-card{grid-template-columns:1fr}.pub-fig{height:160px}
-  .teach-cols{grid-template-columns:1fr}
-  .team-grid{grid-template-columns:1fr}
-  .team-card.pi{grid-template-columns:1fr}.pi .team-photo{width:100%;height:150px}
-  .contact-grid{grid-template-columns:1fr}
-  .home-intro{grid-template-columns:1fr;text-align:center}
-  .home-headshot{margin:0 auto}
+  .pi-card{grid-template-columns:1fr}.pi-photo{height:180px}
+  .students-grid{grid-template-columns:1fr}
+  .collab-grid{grid-template-columns:1fr}
+  .join-inner{grid-template-columns:1fr}
+  .join-btns{flex-direction:row}
   .footer{flex-direction:column;gap:.5rem;text-align:center;padding:1rem}
 }
-@media(max-width:480px){.exp-row{grid-template-columns:1fr}.exp-item::after{display:none!important}}
 </style>
 </head>
 <body>
 
 <nav class="topnav">
   <div class="topnav-left">
-    <div class="topnav-photo">
-      <img src="profile.jpg"/>
-    </div>
+    <div class="topnav-photo"><img src="profile.jpg" alt="Abdallah Alsammani"/></div>
     <div class="topnav-name">Abdallah <span>Alsammani</span></div>
   </div>
   <ul class="topnav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="team.html" class=active>Team</a></li>
-      <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="teaching.html">Teaching</a></li>
+    <li><a href="team.html" class="active">Team</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="hamburger" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -246,53 +239,227 @@ a:hover{color:var(--warm)}
   <a href="contact.html" onclick="closeMob()">Contact</a>
 </div>
 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="slabel rv">Lab</div>
+    <h2 class="rv">Applied Mathematics &amp; <em>Data Science Lab</em></h2>
+    <p class="hero-text rv">The AMDS Lab at Delaware State University develops mathematical models and data-driven methods for problems in public health, biomedical science, and computational neuroscience. We are a collaborative, interdisciplinary group committed to rigorous research and the training of the next generation of applied mathematicians and data scientists.</p>
+  </div>
+</section>
+
+<!-- TEAM -->
 <div class="section-alt">
-<div class="section" style="padding-top:3rem">
-  <div class="slabel">Lab</div>
-  <h2 class="sheading rv">Research Team</h2>
-  <p class="sdesc rv">The Applied Mathematics and Data Science (AMDS) Lab at Delaware State University.</p>
-  <div class="team-grid">
-    <div class="team-card pi rv">
-      <div class="team-photo">
-        <!-- Replace with: <img src="profile.jpg" alt="Dr. Abdallah Alsammani"/> -->
-        <div class="ph"><i class="fas fa-user"></i></div>
-      </div>
-      <div class="team-info"><div class="team-name">Dr. Abdallah Alsammani</div><div class="team-role">Principal Investigator, Lab Director</div><p class="team-desc">Applied mathematician with expertise in disease modeling, computational neuroscience, and machine learning. Ph.D. in Applied Mathematics, Auburn University.</p><div class="tags"><span class="tag">Math Modeling</span><span class="tag">Epidemiology</span><span class="tag">ML</span><span class="tag">Biostatistics</span><span class="tag">Neuroscience</span></div></div>
+<div class="section">
+
+  <!-- PI -->
+  <div class="slabel rv">Principal Investigator</div>
+  <div class="pi-card rv">
+    <div class="pi-photo">
+      <img src="profile.jpg" alt="Dr. Abdallah Alsammani"/>
     </div>
-    <div class="team-card rv">
-      <div class="team-photo">
-        <!-- Replace with: <img src="images/student1.jpg" alt="Name"/> -->
-        <div class="ph"><i class="fas fa-user-graduate"></i></div>
+    <div class="pi-body">
+      <div class="pi-name">Abdallah Alsammani, Ph.D.</div>
+      <div class="pi-role">Assistant Professor of Mathematics and Data Science</div>
+      <div class="pi-dept">Department of Mathematical Sciences, Delaware State University</div>
+      <p class="pi-bio">
+        Dr. Alsammani is an applied mathematician and data scientist with over a decade of combined research and teaching experience. His research develops mathematical models, optimal control methods, and machine learning techniques for infectious disease dynamics, computational neuroscience, and clinical prediction. He received his Ph.D. in Applied Mathematics from Auburn University in 2020, and held postdoctoral appointments at the University of Nebraska Medical Center and the University of Georgia before joining Delaware State University in 2025.
+      </p>
+      <div class="pi-tags">
+        <span class="pi-tag">Infectious Disease Modeling</span>
+        <span class="pi-tag">Machine Learning</span>
+        <span class="pi-tag">Optimal Control</span>
+        <span class="pi-tag">Computational Neuroscience</span>
+        <span class="pi-tag">Biostatistics</span>
+        <span class="pi-tag">Stochastic Differential Equations</span>
       </div>
-      <div class="team-info"><div class="team-name">Graduate Student</div><div class="team-role">M.S. Candidate, Mathematical Sciences</div><p class="team-desc">Computational methods for infectious disease modeling and optimal control.</p><div class="tags"><span class="tag">Disease Modeling</span><span class="tag">Optimal Control</span></div></div>
-    </div>
-    <div class="team-card rv">
-      <div class="team-photo">
-        <!-- Replace with: <img src="images/student2.jpg" alt="Name"/> -->
-        <div class="ph"><i class="fas fa-user-graduate"></i></div>
+      <div class="pi-links">
+        <a href="mailto:aalsammani@desu.edu" class="pi-link"><i class="fas fa-envelope"></i> aalsammani@desu.edu</a>
+        <a href="https://scholar.google.com/citations?user=abdallah-alsammani" target="_blank" class="pi-link"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+        <a href="https://github.com/aalsammani" target="_blank" class="pi-link"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank" class="pi-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <a href="CV.pdf" class="pi-link"><i class="fas fa-download"></i> CV</a>
       </div>
-      <div class="team-info"><div class="team-name">Graduate Student</div><div class="team-role">M.S. Candidate, Data Science</div><p class="team-desc">Machine learning applied to biomedical data for predictive health analytics.</p><div class="tags"><span class="tag">Machine Learning</span><span class="tag">Health Analytics</span></div></div>
-    </div>
-    <div class="team-card rv">
-      <div class="team-photo">
-        <!-- Replace with: <img src="images/student3.jpg" alt="Name"/> -->
-        <div class="ph"><i class="fas fa-user"></i></div>
-      </div>
-      <div class="team-info"><div class="team-name">Undergraduate Researcher</div><div class="team-role">Research Assistant, Mathematics</div><p class="team-desc">Data visualization and exploratory analysis for epidemiological datasets.</p><div class="tags"><span class="tag">Data Viz</span><span class="tag">Statistics</span></div></div>
     </div>
   </div>
-  <div class="join-banner rv"><h3>Join Our Lab</h3><p>We welcome motivated graduate and undergraduate students with interests in applied mathematics, data science, and computational biology.</p><a href="mailto:aalsammani@desu.edu" class="btn btn-p"><i class="fas fa-envelope"></i> Get in Touch</a></div>
+
+  <!-- PhD Students -->
+  <div class="team-section-label rv">
+    <i class="fas fa-user-graduate"></i> Ph.D. Students <span class="count">2 members</span>
+  </div>
+  <div class="students-grid" style="grid-template-columns:repeat(2,1fr);max-width:760px">
+
+    <div class="student-card phd rv">
+      <div class="student-top"></div>
+      <div class="student-photo">
+        <!-- Replace with: <img src="images/phd1.jpg" alt="[Student Name]"/> -->
+        <div class="ph"><i class="fas fa-user-graduate"></i></div>
+      </div>
+      <div class="student-body">
+        <div class="student-name">[Student Name]</div>
+        <div class="student-role">Ph.D. Candidate, Mathematical Sciences</div>
+        <p class="student-desc">Research focus: [add brief description of dissertation topic and methods].</p>
+        <div class="student-tags">
+          <span class="s-tag">Mathematical Modeling</span>
+          <span class="s-tag">Epidemiology</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="student-card phd rv rv-d1">
+      <div class="student-top"></div>
+      <div class="student-photo">
+        <!-- Replace with: <img src="images/phd2.jpg" alt="[Student Name]"/> -->
+        <div class="ph"><i class="fas fa-user-graduate"></i></div>
+      </div>
+      <div class="student-body">
+        <div class="student-name">[Student Name]</div>
+        <div class="student-role">Ph.D. Candidate, Mathematical Sciences</div>
+        <p class="student-desc">Research focus: [add brief description of dissertation topic and methods].</p>
+        <div class="student-tags">
+          <span class="s-tag">Data Science</span>
+          <span class="s-tag">Optimal Control</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MS Student -->
+  <div class="team-section-label rv">
+    <i class="fas fa-user-graduate"></i> M.S. Student <span class="count">1 member</span>
+  </div>
+  <div class="students-grid" style="grid-template-columns:repeat(2,1fr);max-width:760px">
+
+    <div class="student-card ms rv">
+      <div class="student-top"></div>
+      <div class="student-photo">
+        <!-- Replace with: <img src="images/ms1.jpg" alt="[Student Name]"/> -->
+        <div class="ph"><i class="fas fa-user-graduate"></i></div>
+      </div>
+      <div class="student-body">
+        <div class="student-name">[Student Name]</div>
+        <div class="student-role">M.S. Student, Mathematical Sciences</div>
+        <p class="student-desc">Research focus: [add brief description of thesis topic and methods].</p>
+        <div class="student-tags">
+          <span class="s-tag">Machine Learning</span>
+          <span class="s-tag">Biomedical Analytics</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Undergraduate -->
+  <div class="team-section-label rv">
+    <i class="fas fa-user"></i> Undergraduate Researcher <span class="count">1 member</span>
+  </div>
+  <div class="students-grid" style="grid-template-columns:repeat(2,1fr);max-width:760px">
+
+    <div class="student-card ug rv">
+      <div class="student-top"></div>
+      <div class="student-photo">
+        <!-- Replace with: <img src="images/ug1.jpg" alt="[Student Name]"/> -->
+        <div class="ph"><i class="fas fa-user"></i></div>
+      </div>
+      <div class="student-body">
+        <div class="student-name">[Student Name]</div>
+        <div class="student-role">Undergraduate Research Assistant</div>
+        <p class="student-desc">Research focus: [add brief description of project and methods].</p>
+        <div class="student-tags">
+          <span class="s-tag">Data Analysis</span>
+          <span class="s-tag">Statistics</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Collaborators -->
+  <div class="slabel rv" style="margin-top:1rem">Collaborators</div>
+  <h2 class="sheading rv">Research Collaborators</h2>
+  <p class="sdesc rv">Current and recent collaborators on published and ongoing work.</p>
+
+  <div class="collab-grid">
+
+    <div class="collab-card rv">
+      <div class="collab-initials" style="background:linear-gradient(135deg,#2980B0,#1B3A4B)">CN</div>
+      <div>
+        <div class="collab-name">Calistus N. Ngonghala</div>
+        <div class="collab-affil">University of Florida</div>
+      </div>
+    </div>
+
+    <div class="collab-card rv rv-d1">
+      <div class="collab-initials" style="background:linear-gradient(135deg,#1A8A7D,#1B3A4B)">MM</div>
+      <div>
+        <div class="collab-name">Maia Martcheva</div>
+        <div class="collab-affil">University of Florida</div>
+      </div>
+    </div>
+
+    <div class="collab-card rv rv-d2">
+      <div class="collab-initials" style="background:linear-gradient(135deg,#7B4F9D,#1B3A4B)">WS</div>
+      <div>
+        <div class="collab-name">William C. Stacey</div>
+        <div class="collab-affil">University of Michigan</div>
+      </div>
+    </div>
+
+    <div class="collab-card rv">
+      <div class="collab-initials" style="background:linear-gradient(135deg,#C4553D,#1B3A4B)">SG</div>
+      <div>
+        <div class="collab-name">Stephen V. Gliske</div>
+        <div class="collab-affil">University of Michigan</div>
+      </div>
+    </div>
+
+    <div class="collab-card rv rv-d1">
+      <div class="collab-initials" style="background:linear-gradient(135deg,#B8860B,#1B3A4B)">MY</div>
+      <div>
+        <div class="collab-name">Mehmet Yavuz</div>
+        <div class="collab-affil">Necmettin Erbakan University</div>
+      </div>
+    </div>
+
+    <div class="collab-card rv rv-d2">
+      <div class="collab-initials" style="background:linear-gradient(135deg,#2980B0,#7B4F9D)">XH</div>
+      <div>
+        <div class="collab-name">Xiaoying Han</div>
+        <div class="collab-affil">Auburn University</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Join -->
+  <div class="join-section rv">
+    <h3>Join the Lab</h3>
+    <div class="join-inner">
+      <div class="join-text">
+        <p>I welcome applications from motivated graduate and undergraduate students with backgrounds in mathematics, statistics, computer science, or related quantitative disciplines. Students with interests in mathematical modeling, machine learning, epidemiology, or computational neuroscience are especially encouraged to reach out.</p>
+        <p>Prospective Ph.D. and M.S. applicants should apply through the Delaware State University graduate program in Mathematical Sciences and contact me directly to discuss research opportunities.</p>
+      </div>
+      <div class="join-btns">
+        <a href="mailto:aalsammani@desu.edu" class="btn btn-p"><i class="fas fa-envelope"></i> Contact Me</a>
+        <a href="CV.pdf" class="btn btn-o"><i class="fas fa-download"></i> Download CV</a>
+      </div>
+    </div>
+  </div>
+
 </div>
 </div>
 
+<!-- FOOTER -->
 <footer class="footer">
-  <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
+  <p>&copy; 2026 Abdallah Alsammani. All rights reserved.</p>
   <div class="footer-links">
-    <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    <a href="#" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-    <a href="https://github.com/aalsammani" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://scholar.google.com/citations?user=abdallah-alsammani" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+    <a href="https://github.com/aalsammani" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
   </div>
 </footer>
+
 <script>
 function toggleMob(){var n=document.getElementById('mnav');if(n)n.classList.toggle('open')}
 function closeMob(){var n=document.getElementById('mnav');if(n)n.classList.remove('open')}
