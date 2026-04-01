@@ -103,12 +103,16 @@ a:hover{color:var(--warm)}
 .area-card:nth-child(2) .area-top{background:linear-gradient(90deg,var(--gold),#D4A832)}
 .area-card:nth-child(3) .area-top{background:linear-gradient(90deg,var(--warm),#E08060)}
 .area-card:nth-child(4) .area-top{background:linear-gradient(90deg,var(--teal),#3DC9B0)}
+.area-card:nth-child(5) .area-top{background:linear-gradient(90deg,var(--purple),#A070C8)}
+.area-card:nth-child(6) .area-top{background:linear-gradient(90deg,#5CB8E6,#3DC9B0)}
 .area-body{padding:1.4rem 1.3rem 1.3rem}
 .area-icon{width:46px;height:46px;border-radius:12px;margin-bottom:.85rem;display:flex;align-items:center;justify-content:center;font-size:1.05rem}
 .area-card:nth-child(1) .area-icon{background:rgba(41,128,176,.08);color:var(--blue)}
 .area-card:nth-child(2) .area-icon{background:rgba(184,134,11,.07);color:var(--gold)}
 .area-card:nth-child(3) .area-icon{background:rgba(196,85,61,.06);color:var(--warm)}
 .area-card:nth-child(4) .area-icon{background:rgba(26,138,125,.07);color:var(--teal)}
+.area-card:nth-child(5) .area-icon{background:rgba(123,79,157,.07);color:var(--purple)}
+.area-card:nth-child(6) .area-icon{background:rgba(92,184,230,.07);color:#3399CC}
 .area-card h4{font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.4rem;line-height:1.25}
 .area-card p{font-size:.82rem;color:var(--text2);line-height:1.72}
 .area-tags{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.7rem}
@@ -135,6 +139,13 @@ a:hover{color:var(--warm)}
 }
 
 /* ── PUBLICATIONS ── */
+.pub-section-label{
+  font-family:var(--ff-d);font-size:1.05rem;font-weight:600;
+  margin-bottom:1.1rem;margin-top:2.2rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--border-lt);color:var(--text);
+  display:flex;align-items:center;gap:.5rem;
+}
+.pub-section-label i{font-size:.85rem;color:var(--blue);opacity:.7}
 .pub-list{display:flex;flex-direction:column;gap:1.3rem}
 .pub-card{background:var(--bg-w);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);transition:var(--tr);display:grid;grid-template-columns:300px 1fr}
 .pub-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
@@ -146,12 +157,32 @@ a:hover{color:var(--warm)}
 .pub-tag.ml{background:rgba(184,134,11,.08);color:var(--gold)}
 .pub-tag.bio{background:rgba(26,138,125,.08);color:var(--teal)}
 .pub-tag.stat{background:rgba(196,85,61,.06);color:var(--warm)}
+.pub-tag.cs{background:rgba(123,79,157,.07);color:var(--purple)}
 .pub-title{font-family:var(--ff-d);font-size:1rem;font-weight:600;line-height:1.35;margin-bottom:.3rem}
 .pub-authors{font-size:.8rem;color:var(--text2);margin-bottom:.12rem}
 .pub-journal{font-size:.76rem;color:var(--text3);font-style:italic;margin-bottom:.7rem}
 .pub-links{margin-top:auto;display:flex;gap:.3rem}
 .pub-link{font-size:.68rem;font-weight:500;padding:.2rem .55rem;border-radius:5px;border:1px solid var(--border);color:var(--text2);transition:var(--tr);display:inline-flex;align-items:center;gap:.2rem}
 .pub-link:hover{border-color:var(--blue);color:var(--blue);background:rgba(41,128,176,.02)}
+
+/* ── PREPRINTS ── */
+.preprint-list{display:flex;flex-direction:column;gap:.8rem;margin-top:.2rem}
+.preprint-card{
+  background:var(--bg-w);border-radius:var(--radius);border:1px solid var(--border-lt);
+  padding:1rem 1.2rem;transition:var(--tr);
+  display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;
+}
+.preprint-card:hover{box-shadow:var(--shadow-s);border-color:#bfcdd9}
+.preprint-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;margin-top:.1rem}
+.preprint-icon.ic-blue{background:rgba(41,128,176,.08);color:var(--blue)}
+.preprint-icon.ic-teal{background:rgba(26,138,125,.08);color:var(--teal)}
+.preprint-icon.ic-warm{background:rgba(196,85,61,.06);color:var(--warm)}
+.preprint-icon.ic-purple{background:rgba(123,79,157,.07);color:var(--purple)}
+.preprint-title{font-family:var(--ff-d);font-size:.9rem;font-weight:600;line-height:1.3;margin-bottom:.2rem}
+.preprint-authors{font-size:.76rem;color:var(--text2);margin-bottom:.15rem}
+.preprint-meta{font-size:.72rem;color:var(--text3);font-style:italic}
+.preprint-links{display:flex;gap:.3rem;margin-top:.45rem}
+
 .more-pubs{text-align:center;margin-top:2rem}
 
 /* ── FUTURE WORK ── */
@@ -240,14 +271,14 @@ a:hover{color:var(--warm)}
     <div>
       <h2 class="rv">Research <em>Overview</em></h2>
       <p class="hero-text rv">
-        My research develops mathematical and computational methods for studying complex biological systems, with sustained focus on three interconnected areas: <span class="hero-kw">infectious disease dynamics</span>, <span class="hero-kw">machine learning for biomedical prediction</span>, and <span class="hero-kw">computational neuroscience</span>. I work at the intersection of dynamical systems theory, optimal control, and statistical learning to build models that reveal how diseases spread through populations, how interventions reshape transmission, and how patterns in clinical and neural data can inform medical decisions. My published work spans compartmental epidemic models with behavioral and economic coupling, supervised learning for clinical prediction, bias-corrected circular statistics for neural signal analysis, and stability theory for delay differential equations in cancer treatment.
+        My research develops mathematical models and computational methods for studying complex biological and clinical systems, with sustained focus on three interconnected areas: <span class="hero-kw">infectious disease dynamics</span>, <span class="hero-kw">machine learning for biomedical prediction</span>, and <span class="hero-kw">computational neuroscience</span>. I work at the intersection of dynamical systems theory, optimal control, and statistical learning to understand how diseases spread and respond to intervention, and how patterns in clinical and neural data can support medical decisions. Published work spans compartmental epidemic models with behavioral and economic coupling, supervised learning for clinical prediction, bias-corrected circular statistics for intracranial EEG analysis, and stability theory for delay differential equations in cancer treatment.
       </p>
       <p class="hero-text rv">
-        A growing emphasis of my program is the application of machine learning and deep learning to biomedical data at scale. I develop and evaluate ensemble classifiers, support vector machines, and neural network architectures for tasks including sleep disorder prediction from health records, clinical outcome forecasting from electronic health records using natural language processing, and automated detection of pathological high-frequency oscillations in intracranial EEG. In computational neuroscience, I study how phase relationships between brain oscillations encode information about neural function and pathology, developing new statistical tools for directional data that account for the measurement artifacts inherent in electrophysiological recordings. These methods connect to broader questions in epilepsy localization, brain-state classification, and MEG source reconstruction as a mathematical inverse problem.
+        A growing emphasis of my program is the application of machine learning and deep learning to biomedical data. I develop and evaluate ensemble classifiers, support vector machines, and related architectures for clinical prediction tasks including sleep disorder classification from health records. In computational neuroscience, I study phase relationships between brain oscillations as indicators of neural function and pathology, developing statistical tools for directional data that account for measurement artifacts in electrophysiological recordings. This work informs ongoing research on high-frequency oscillation detection in epilepsy and neural state classification from intracranial EEG.
       </p>
       <div class="hero-pillars rv">
         <span class="hero-pill hl-blue"><i class="fas fa-virus"></i> Epidemic Modeling</span>
-        <span class="hero-pill hl-gold"><i class="fas fa-brain"></i> Deep Learning</span>
+        <span class="hero-pill hl-gold"><i class="fas fa-brain"></i> Machine &amp; Deep Learning</span>
         <span class="hero-pill hl-teal"><i class="fas fa-wave-square"></i> Neural Signal Analysis</span>
         <span class="hero-pill hl-warm"><i class="fas fa-sliders-h"></i> Optimal Control</span>
         <span class="hero-pill hl-purple"><i class="fas fa-microscope"></i> Biomedical AI</span>
@@ -265,9 +296,10 @@ a:hover{color:var(--warm)}
 <div id="areas" class="section">
   <div class="slabel">Focus Areas</div>
   <h2 class="sheading rv">Research Areas</h2>
-  <p class="sdesc rv">Four interconnected lines of inquiry, each grounded in mathematical theory and directed toward problems in public health and biomedical science.</p>
+  <p class="sdesc rv">Six interconnected lines of inquiry, each grounded in mathematical theory and directed toward problems in public health, biomedical science, and data systems.</p>
 
   <div class="areas-grid">
+
     <div class="area-card rv">
       <div class="area-top"></div>
       <div class="area-body">
@@ -275,7 +307,7 @@ a:hover{color:var(--warm)}
         <h4>Infectious Disease Modeling</h4>
         <p>I build and analyze compartmental models (SIR, SIRW, and extensions) for diseases including COVID-19, cholera, and hepatitis B. My work examines how vaccination behavior, sanitation interventions, and human decision-making alter transmission dynamics and long-term epidemic outcomes. I use stability analysis, bifurcation theory, and numerical simulation to characterize disease-free and endemic equilibria under realistic conditions.</p>
         <div class="area-tags">
-          <span class="area-tag">ODE/PDE Systems</span>
+          <span class="area-tag">ODE/SDE Systems</span>
           <span class="area-tag">Bifurcation Theory</span>
           <span class="area-tag">Stability Analysis</span>
           <span class="area-tag">R&#8320; Analysis</span>
@@ -288,7 +320,7 @@ a:hover{color:var(--warm)}
       <div class="area-body">
         <div class="area-icon"><i class="fas fa-brain"></i></div>
         <h4>Machine Learning for Biomedical Data</h4>
-        <p>A second line of research applies supervised and unsupervised learning methods to extract clinically useful predictions from biomedical datasets. Recent projects include sleep disorder classification using ensemble methods and comparative analysis of classifiers on health outcomes data. I emphasize model interpretability and rigorous validation alongside predictive accuracy.</p>
+        <p>I apply supervised and unsupervised learning methods to extract clinically useful predictions from biomedical datasets. Recent projects include sleep disorder classification using ensemble classifiers and a comparative evaluation of random forests, support vector machines, KNN, and logistic regression on health outcomes data. I emphasize model interpretability and rigorous validation alongside predictive accuracy.</p>
         <div class="area-tags">
           <span class="area-tag">Random Forests</span>
           <span class="area-tag">SVM</span>
@@ -303,11 +335,11 @@ a:hover{color:var(--warm)}
       <div class="area-body">
         <div class="area-icon"><i class="fas fa-chart-line"></i></div>
         <h4>Circular Statistics &amp; Computational Neuroscience</h4>
-        <p>I develop novel statistical methods for directional data, with applications in neural signal analysis. My published work addresses estimation of circular statistics under measurement bias, a problem that arises when recording phase relationships in brain signals. This line of research connects mathematical statistics to questions in epilepsy research and neural dynamics.</p>
+        <p>I develop statistical methods for directional data with applications in neural signal analysis. My published work addresses estimation of circular statistics under measurement bias, a problem central to analyzing phase relationships in intracranial EEG recordings from epilepsy patients. This work connects mathematical statistics to clinical questions in epilepsy research and neural dynamics.</p>
         <div class="area-tags">
           <span class="area-tag">Directional Statistics</span>
           <span class="area-tag">Bias Correction</span>
-          <span class="area-tag">EEG/iEEG</span>
+          <span class="area-tag">iEEG</span>
           <span class="area-tag">Phase Analysis</span>
         </div>
       </div>
@@ -318,7 +350,7 @@ a:hover{color:var(--warm)}
       <div class="area-body">
         <div class="area-icon"><i class="fas fa-sliders-h"></i></div>
         <h4>Optimal Control in Epidemiology</h4>
-        <p>I study how mathematical control theory can guide the design of public health interventions. Using Pontryagin's Maximum Principle and numerical optimization, I determine time-varying strategies for vaccination, treatment, and sanitation that minimize disease burden subject to resource constraints. This work informs cost-effective policy recommendations for disease control programs.</p>
+        <p>I study how mathematical control theory can guide the design of public health interventions. Using Pontryagin's Maximum Principle and numerical optimization, I determine time-varying strategies for vaccination, treatment, and sanitation that minimize disease burden subject to resource constraints. This work generates cost-effective policy recommendations for disease control programs.</p>
         <div class="area-tags">
           <span class="area-tag">Pontryagin's Principle</span>
           <span class="area-tag">Cost-Effectiveness</span>
@@ -326,15 +358,47 @@ a:hover{color:var(--warm)}
         </div>
       </div>
     </div>
+
+    <div class="area-card rv">
+      <div class="area-top"></div>
+      <div class="area-body">
+        <div class="area-icon"><i class="fas fa-infinity"></i></div>
+        <h4>Fractional Calculus &amp; Dynamical Systems</h4>
+        <p>I study stability and control properties of fractional-order systems, with a focus on Caputo differential equations with state-dependent delays. Recent work establishes adaptive control strategies and Mittag-Leffler stability results for a class of nonlinear fractional systems, extending classical Lyapunov methods to the fractional setting.</p>
+        <div class="area-tags">
+          <span class="area-tag">Caputo Calculus</span>
+          <span class="area-tag">Mittag-Leffler Stability</span>
+          <span class="area-tag">Adaptive Control</span>
+          <span class="area-tag">Delay Systems</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-card rv rv-d1">
+      <div class="area-top"></div>
+      <div class="area-body">
+        <div class="area-icon"><i class="fas fa-database"></i></div>
+        <h4>Data Systems &amp; Database Performance</h4>
+        <p>In collaboration with computer scientists, I contribute to research on scalable data management for NoSQL and document-oriented database systems. This work addresses transaction consistency and access performance in distributed settings, combining algorithmic design with empirical evaluation at scale.</p>
+        <div class="area-tags">
+          <span class="area-tag">NoSQL</span>
+          <span class="area-tag">Transaction Management</span>
+          <span class="area-tag">Data Consistency</span>
+          <span class="area-tag">Distributed Systems</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div class="methods-strip rv">
     <div class="methods-strip-icon"><i class="fas fa-tools"></i></div>
     <div>
       <h4>Mathematical &amp; Computational Toolkit</h4>
-      <p>My research draws on a shared set of mathematical methods and computational tools across all four areas.</p>
+      <p>My research draws on a shared set of mathematical methods and software tools across all research areas.</p>
       <div class="methods-list">
-        <span>Differential Equations</span>
+        <span>Ordinary &amp; Partial Differential Equations</span>
+        <span>Stochastic Differential Equations</span>
         <span>Optimal Control Theory</span>
         <span>Stability &amp; Bifurcation Analysis</span>
         <span>Statistical Learning</span>
@@ -343,6 +407,7 @@ a:hover{color:var(--warm)}
         <span>Python</span>
         <span>MATLAB</span>
         <span>R</span>
+        <span>SAS</span>
       </div>
     </div>
   </div>
@@ -352,138 +417,369 @@ a:hover{color:var(--warm)}
 <div id="publications" class="section-alt">
 <div class="section">
   <div class="slabel">Publications</div>
-  <h2 class="sheading rv">Selected Publications</h2>
-  <p class="sdesc rv">A selection of recent and representative work across epidemiology, machine learning, biostatistics, and mathematical biology.</p>
+  <h2 class="sheading rv">Publications</h2>
+  <p class="sdesc rv">Peer-reviewed journal articles, conference proceedings, and preprints across epidemiology, machine learning, biostatistics, and mathematical biology.</p>
+
+  <!-- JOURNAL & CONFERENCE PAPERS -->
+  <div class="pub-section-label rv"><i class="fas fa-book"></i> Journal Articles &amp; Conference Proceedings</div>
   <div class="pub-list">
 
-    <!-- Pub 1: COVID Vaccination -->
+    <!-- 2026: Information Systems (NoSQL) -->
     <div class="pub-card rv">
-      <div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#EDF4F8"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#2980B0" opacity=".5">SIR + Vaccination Behavior</text><line x1="28" y1="168" x2="190" y2="168" stroke="#c8d8e2" stroke-width=".5"/><line x1="28" y1="138" x2="190" y2="138" stroke="#c8d8e2" stroke-width=".3" stroke-dasharray="3,4"/><path d="M32 163Q52 160,72 142T112 68T152 48T188 76" fill="none" stroke="#1B3A4B" stroke-width="2.2"/><path d="M32 163Q52 161,76 152T120 108T162 88T188 100" fill="none" stroke="#C4553D" stroke-width="1.7" stroke-dasharray="5,3" opacity=".7"/><circle cx="72" cy="142" r="2.5" fill="#1B3A4B" opacity=".6"/><circle cx="112" cy="68" r="2.5" fill="#1B3A4B" opacity=".6"/><rect x="206" y="52" width="82" height="78" rx="6" fill="white" stroke="#dce6ec" stroke-width=".6"/><line x1="214" y1="72" x2="228" y2="72" stroke="#1B3A4B" stroke-width="2"/><text x="233" y="75" font-family="Source Sans 3" font-size="7.5" fill="#4D6478">High vacc.</text><line x1="214" y1="90" x2="228" y2="90" stroke="#C4553D" stroke-width="1.4" stroke-dasharray="4,2"/><text x="233" y="93" font-family="Source Sans 3" font-size="7.5" fill="#4D6478">Low vacc.</text></svg></div>
+      <div class="pub-fig">
+        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="200" fill="#EEF0F8"/>
+          <text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#7B4F9D" opacity=".5">NoSQL Transaction Framework</text>
+          <rect x="28" y="42" width="52" height="30" rx="4" fill="none" stroke="#7B4F9D" stroke-width="1.1" opacity=".6"/>
+          <text x="54" y="61" font-family="IBM Plex Mono,monospace" font-size="8" fill="#7B4F9D" text-anchor="middle" opacity=".8">T1</text>
+          <rect x="28" y="84" width="52" height="30" rx="4" fill="none" stroke="#7B4F9D" stroke-width="1.1" opacity=".6"/>
+          <text x="54" y="103" font-family="IBM Plex Mono,monospace" font-size="8" fill="#7B4F9D" text-anchor="middle" opacity=".8">T2</text>
+          <rect x="28" y="126" width="52" height="30" rx="4" fill="none" stroke="#7B4F9D" stroke-width="1.1" opacity=".6"/>
+          <text x="54" y="145" font-family="IBM Plex Mono,monospace" font-size="8" fill="#7B4F9D" text-anchor="middle" opacity=".8">T3</text>
+          <rect x="112" y="62" width="70" height="60" rx="6" fill="#7B4F9D" opacity=".1" stroke="#7B4F9D" stroke-width=".8" opacity=".3"/>
+          <text x="147" y="87" font-family="Source Sans 3,sans-serif" font-size="8" fill="#7B4F9D" text-anchor="middle" font-weight="600">Coordinator</text>
+          <text x="147" y="101" font-family="IBM Plex Mono,monospace" font-size="7" fill="#4D6478" text-anchor="middle" opacity=".7">ACID</text>
+          <line x1="80" y1="57" x2="112" y2="80" stroke="#7B4F9D" stroke-width=".8" opacity=".4"/>
+          <line x1="80" y1="99" x2="112" y2="92" stroke="#7B4F9D" stroke-width=".8" opacity=".4"/>
+          <line x1="80" y1="141" x2="112" y2="110" stroke="#7B4F9D" stroke-width=".8" opacity=".4"/>
+          <rect x="210" y="62" width="70" height="60" rx="6" fill="none" stroke="#1A8A7D" stroke-width=".8" opacity=".5"/>
+          <text x="245" y="85" font-family="Source Sans 3,sans-serif" font-size="7.5" fill="#1A8A7D" text-anchor="middle" font-weight="600">Document DB</text>
+          <text x="245" y="100" font-family="IBM Plex Mono,monospace" font-size="6.5" fill="#4D6478" text-anchor="middle" opacity=".6">Consistent</text>
+          <text x="245" y="112" font-family="IBM Plex Mono,monospace" font-size="6.5" fill="#4D6478" text-anchor="middle" opacity=".6">Scalable</text>
+          <line x1="182" y1="92" x2="210" y2="92" stroke="#1A8A7D" stroke-width=".9" opacity=".4" marker-end="url(#arr)"/>
+          <defs><marker id="arr" markerWidth="5" markerHeight="4" refX="5" refY="2" orient="auto"><path d="M0,0L5,2L0,4" fill="#1A8A7D" opacity=".5"/></marker></defs>
+        </svg>
+      </div>
+      <div class="pub-body">
+        <span class="pub-tag cs">Data Systems</span>
+        <h4 class="pub-title">A Scalable Transaction Management Framework for Consistent Document-Oriented NoSQL Databases</h4>
+        <p class="pub-authors">Alflahi, A. A. E., Mohammed, M. A. Y., <strong>Alsammani, A.</strong></p>
+        <p class="pub-journal">Information Systems, 140, 102719, 2026. https://doi.org/10.1016/j.is.2026.102719</p>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1016/j.is.2026.102719" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2025: COVID Vaccination -->
+    <div class="pub-card rv">
+      <div class="pub-fig">
+        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="200" fill="#EDF4F8"/>
+          <text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#2980B0" opacity=".5">SIR + Vaccination + Economic Coupling</text>
+          <line x1="28" y1="168" x2="190" y2="168" stroke="#c8d8e2" stroke-width=".5"/>
+          <line x1="28" y1="138" x2="190" y2="138" stroke="#c8d8e2" stroke-width=".3" stroke-dasharray="3,4"/>
+          <path d="M32 163Q52 160,72 142T112 68T152 48T188 76" fill="none" stroke="#1B3A4B" stroke-width="2.2"/>
+          <path d="M32 163Q52 161,76 152T120 108T162 88T188 100" fill="none" stroke="#C4553D" stroke-width="1.7" stroke-dasharray="5,3" opacity=".7"/>
+          <circle cx="72" cy="142" r="2.5" fill="#1B3A4B" opacity=".6"/>
+          <circle cx="112" cy="68" r="2.5" fill="#1B3A4B" opacity=".6"/>
+          <rect x="206" y="52" width="82" height="78" rx="6" fill="white" stroke="#dce6ec" stroke-width=".6"/>
+          <line x1="214" y1="72" x2="228" y2="72" stroke="#1B3A4B" stroke-width="2"/>
+          <text x="233" y="75" font-family="Source Sans 3,sans-serif" font-size="7.5" fill="#4D6478">High vacc.</text>
+          <line x1="214" y1="90" x2="228" y2="90" stroke="#C4553D" stroke-width="1.4" stroke-dasharray="4,2"/>
+          <text x="233" y="93" font-family="Source Sans 3,sans-serif" font-size="7.5" fill="#4D6478">Low vacc.</text>
+        </svg>
+      </div>
       <div class="pub-body">
         <span class="pub-tag epi">Epidemiology</span>
         <h4 class="pub-title">Impact of Vaccination Behavior on COVID-19 Dynamics and Economic Outcomes</h4>
         <p class="pub-authors"><strong>Alsammani, A.</strong>, Ngonghala, C. N., Martcheva, M.</p>
-        <p class="pub-journal">Mathematical Biosciences and Engineering, 22(9), 2300-2338, 2025</p>
-        <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+        <p class="pub-journal">Mathematical Biosciences and Engineering, 22(9), 2300–2338, 2025.</p>
+        <div class="pub-links">
+          <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+          <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+        </div>
       </div>
     </div>
 
-    <!-- Pub 2: Sleep Disorders -->
+    <!-- 2025: Sleep Disorders -->
     <div class="pub-card rv">
-      <div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#F5F1E7"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#B8860B" opacity=".5">ML Classification</text><rect x="26" y="40" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".72"/><rect x="75" y="40" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".1"/><rect x="26" y="89" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".1"/><rect x="75" y="89" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".62"/><text x="49" y="69" font-family="Source Sans 3" font-size="14" fill="white" text-anchor="middle" font-weight="700">94</text><text x="98" y="69" font-family="Source Sans 3" font-size="14" fill="#1B3A4B" text-anchor="middle" opacity=".4">6</text><text x="49" y="118" font-family="Source Sans 3" font-size="14" fill="#1B3A4B" text-anchor="middle" opacity=".4">8</text><text x="98" y="118" font-family="Source Sans 3" font-size="14" fill="white" text-anchor="middle" font-weight="700">92</text><rect x="152" y="52" width="28" height="92" rx="3" fill="#1B3A4B" opacity=".8"/><rect x="186" y="68" width="28" height="76" rx="3" fill="#2980B0" opacity=".7"/><rect x="220" y="78" width="28" height="66" rx="3" fill="#1A8A7D" opacity=".6"/><rect x="254" y="88" width="28" height="56" rx="3" fill="#B8860B" opacity=".5"/><text x="166" y="44" font-family="Source Sans 3" font-size="7.5" fill="#1B3A4B" text-anchor="middle" font-weight="600">RF</text><text x="200" y="60" font-family="Source Sans 3" font-size="7.5" fill="#2980B0" text-anchor="middle" font-weight="600">SVM</text><text x="234" y="70" font-family="Source Sans 3" font-size="7.5" fill="#1A8A7D" text-anchor="middle" font-weight="600">KNN</text><text x="268" y="80" font-family="Source Sans 3" font-size="7.5" fill="#B8860B" text-anchor="middle" font-weight="600">LR</text></svg></div>
+      <div class="pub-fig">
+        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="200" fill="#F5F1E7"/>
+          <text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#B8860B" opacity=".5">ML Classification — Sleep Disorders</text>
+          <rect x="26" y="40" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".72"/>
+          <rect x="75" y="40" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".1"/>
+          <rect x="26" y="89" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".1"/>
+          <rect x="75" y="89" width="46" height="46" rx="4" fill="#1B3A4B" opacity=".62"/>
+          <text x="49" y="69" font-family="Source Sans 3,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="700">94</text>
+          <text x="98" y="69" font-family="Source Sans 3,sans-serif" font-size="14" fill="#1B3A4B" text-anchor="middle" opacity=".4">6</text>
+          <text x="49" y="118" font-family="Source Sans 3,sans-serif" font-size="14" fill="#1B3A4B" text-anchor="middle" opacity=".4">8</text>
+          <text x="98" y="118" font-family="Source Sans 3,sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="700">92</text>
+          <rect x="152" y="52" width="28" height="92" rx="3" fill="#1B3A4B" opacity=".8"/>
+          <rect x="186" y="68" width="28" height="76" rx="3" fill="#2980B0" opacity=".7"/>
+          <rect x="220" y="78" width="28" height="66" rx="3" fill="#1A8A7D" opacity=".6"/>
+          <rect x="254" y="88" width="28" height="56" rx="3" fill="#B8860B" opacity=".5"/>
+          <text x="166" y="44" font-family="Source Sans 3,sans-serif" font-size="7.5" fill="#1B3A4B" text-anchor="middle" font-weight="600">RF</text>
+          <text x="200" y="60" font-family="Source Sans 3,sans-serif" font-size="7.5" fill="#2980B0" text-anchor="middle" font-weight="600">SVM</text>
+          <text x="234" y="70" font-family="Source Sans 3,sans-serif" font-size="7.5" fill="#1A8A7D" text-anchor="middle" font-weight="600">KNN</text>
+          <text x="268" y="80" font-family="Source Sans 3,sans-serif" font-size="7.5" fill="#B8860B" text-anchor="middle" font-weight="600">LR</text>
+        </svg>
+      </div>
       <div class="pub-body">
         <span class="pub-tag ml">Machine Learning</span>
         <h4 class="pub-title">Predicting Sleep Disorders Using Machine Learning: A Comparative Analysis</h4>
-        <p class="pub-authors">Goodyear, S. and <strong>Alsammani, A.</strong></p>
-        <p class="pub-journal">ICCSA 2025, LNCS vol 15648, Springer</p>
-        <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="https://doi.org/10.1007/978-3-031-97000-9_7" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+        <p class="pub-authors">Goodyear, S., <strong>Alsammani, A.</strong></p>
+        <p class="pub-journal">ICCSA 2025, Lecture Notes in Computer Science, Vol. 15648. Springer, 2025. https://doi.org/10.1007/978-3-031-97000-9_7</p>
+        <div class="pub-links">
+          <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+          <a href="https://doi.org/10.1007/978-3-031-97000-9_7" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+        </div>
       </div>
     </div>
 
-    <!-- Pub 3: Circular Statistics -->
+    <!-- 2024: ICCSA NoSQL performance -->
     <div class="pub-card rv">
-      <div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#ECF0F5"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#C4553D" opacity=".5">Circular Statistics</text><circle cx="92" cy="106" r="56" fill="none" stroke="#c8d4de" stroke-width=".8"/><circle cx="92" cy="106" r="36" fill="none" stroke="#c8d4de" stroke-width=".4"/><circle cx="136" cy="78" r="2.8" fill="#C4553D" opacity=".5"/><circle cx="130" cy="68" r="2.8" fill="#C4553D" opacity=".5"/><circle cx="142" cy="84" r="2.8" fill="#C4553D" opacity=".5"/><circle cx="114" cy="56" r="2.8" fill="#2980B0" opacity=".65"/><circle cx="118" cy="52" r="2.8" fill="#2980B0" opacity=".65"/><circle cx="109" cy="61" r="2.8" fill="#2980B0" opacity=".65"/><line x1="92" y1="106" x2="137" y2="80" stroke="#C4553D" stroke-width="1.2" opacity=".4"/><line x1="92" y1="106" x2="117" y2="54" stroke="#2980B0" stroke-width="1.5"/><path d="M172 80Q180 58,190 80T210 80T230 80Q236 54,242 80T260 80" fill="none" stroke="#1B3A4B" stroke-width="1" opacity=".3"/><path d="M172 118Q178 96,186 118T200 118Q206 88,212 118T228 118" fill="none" stroke="#C4553D" stroke-width="1.4" opacity=".5"/><circle cx="178" cy="170" r="2.5" fill="#C4553D" opacity=".5"/><text x="187" y="173" font-family="Source Sans 3" font-size="7" fill="#4D6478">Biased</text><circle cx="230" cy="170" r="2.5" fill="#2980B0" opacity=".65"/><text x="239" y="173" font-family="Source Sans 3" font-size="7" fill="#4D6478">Corrected</text></svg></div>
+      <div class="pub-fig">
+        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="200" fill="#F0EEF8"/>
+          <text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#7B4F9D" opacity=".5">NoSQL — Access Performance</text>
+          <rect x="28" y="52" width="60" height="18" rx="3" fill="#7B4F9D" opacity=".75"/>
+          <rect x="28" y="78" width="46" height="18" rx="3" fill="#7B4F9D" opacity=".5"/>
+          <rect x="28" y="104" width="72" height="18" rx="3" fill="#7B4F9D" opacity=".6"/>
+          <rect x="28" y="130" width="38" height="18" rx="3" fill="#7B4F9D" opacity=".4"/>
+          <text x="31" y="65" font-family="IBM Plex Mono,monospace" font-size="7" fill="white">Write latency</text>
+          <text x="31" y="91" font-family="IBM Plex Mono,monospace" font-size="7" fill="white">Read latency</text>
+          <text x="31" y="117" font-family="IBM Plex Mono,monospace" font-size="7" fill="white">Throughput</text>
+          <text x="31" y="143" font-family="IBM Plex Mono,monospace" font-size="7" fill="white">Conflicts</text>
+          <text x="22" y="178" font-family="Source Sans 3,sans-serif" font-size="7.5" fill="#4D6478">Improved consistency model</text>
+          <rect x="180" y="38" width="106" height="124" rx="8" fill="white" stroke="#d0d4e8" stroke-width=".6"/>
+          <text x="233" y="58" font-family="Source Sans 3,sans-serif" font-size="8" fill="#7B4F9D" text-anchor="middle" font-weight="600">Before vs After</text>
+          <rect x="192" y="68" width="18" height="50" rx="2" fill="#c8c8dc" opacity=".7"/>
+          <rect x="214" y="82" width="18" height="36" rx="2" fill="#7B4F9D" opacity=".7"/>
+          <rect x="244" y="68" width="18" height="50" rx="2" fill="#c8c8dc" opacity=".7"/>
+          <rect x="266" y="88" width="18" height="30" rx="2" fill="#1A8A7D" opacity=".7"/>
+          <text x="201" y="128" font-family="Source Sans 3,sans-serif" font-size="7" fill="#4D6478" text-anchor="middle">Latency</text>
+          <text x="257" y="128" font-family="Source Sans 3,sans-serif" font-size="7" fill="#4D6478" text-anchor="middle">Throughput</text>
+        </svg>
+      </div>
+      <div class="pub-body">
+        <span class="pub-tag cs">Data Systems</span>
+        <h4 class="pub-title">Enhancement of Database Access Performance by Improving Data Consistency in a Non-Relational Database System (NoSQL)</h4>
+        <p class="pub-authors">Alflahi, A. A. E., Mohammed, M. A. Y., <strong>Alsammani, A.</strong></p>
+        <p class="pub-journal">ICCSA 2024, Lecture Notes in Computer Science. Springer, 2024.</p>
+        <div class="pub-links">
+          <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+          <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2023: Circular Statistics IEEE -->
+    <div class="pub-card rv">
+      <div class="pub-fig">
+        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="200" fill="#ECF0F5"/>
+          <text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#C4553D" opacity=".5">Circular Statistics — iEEG</text>
+          <circle cx="92" cy="106" r="56" fill="none" stroke="#c8d4de" stroke-width=".8"/>
+          <circle cx="92" cy="106" r="36" fill="none" stroke="#c8d4de" stroke-width=".4"/>
+          <circle cx="136" cy="78" r="2.8" fill="#C4553D" opacity=".5"/>
+          <circle cx="130" cy="68" r="2.8" fill="#C4553D" opacity=".5"/>
+          <circle cx="142" cy="84" r="2.8" fill="#C4553D" opacity=".5"/>
+          <circle cx="114" cy="56" r="2.8" fill="#2980B0" opacity=".65"/>
+          <circle cx="118" cy="52" r="2.8" fill="#2980B0" opacity=".65"/>
+          <circle cx="109" cy="61" r="2.8" fill="#2980B0" opacity=".65"/>
+          <line x1="92" y1="106" x2="137" y2="80" stroke="#C4553D" stroke-width="1.2" opacity=".4"/>
+          <line x1="92" y1="106" x2="117" y2="54" stroke="#2980B0" stroke-width="1.5"/>
+          <path d="M172 80Q180 58,190 80T210 80T230 80Q236 54,242 80T260 80" fill="none" stroke="#1B3A4B" stroke-width="1" opacity=".3"/>
+          <path d="M172 118Q178 96,186 118T200 118Q206 88,212 118T228 118" fill="none" stroke="#C4553D" stroke-width="1.4" opacity=".5"/>
+          <circle cx="178" cy="170" r="2.5" fill="#C4553D" opacity=".5"/>
+          <text x="187" y="173" font-family="Source Sans 3,sans-serif" font-size="7" fill="#4D6478">Biased</text>
+          <circle cx="230" cy="170" r="2.5" fill="#2980B0" opacity=".65"/>
+          <text x="239" y="173" font-family="Source Sans 3,sans-serif" font-size="7" fill="#4D6478">Corrected</text>
+        </svg>
+      </div>
       <div class="pub-body">
         <span class="pub-tag stat">Biostatistics</span>
         <h4 class="pub-title">Estimation of Circular Statistics in the Presence of Measurement Bias</h4>
         <p class="pub-authors"><strong>Alsammani, A.</strong>, Stacey, W. C., Gliske, S. V.</p>
-        <p class="pub-journal">IEEE J. of Biomedical and Health Informatics, 28(4), 2179-2186, 2023</p>
-        <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="https://doi.org/10.1109/JBHI.2023.3334684" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+        <p class="pub-journal">IEEE Journal of Biomedical and Health Informatics, 28(4), 2179–2186, 2023. https://doi.org/10.1109/JBHI.2023.3334684</p>
+        <div class="pub-links">
+          <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+          <a href="https://doi.org/10.1109/JBHI.2023.3334684" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+        </div>
       </div>
     </div>
 
-    <!-- Pub 4: Cholera -->
+    <!-- 2023: HBV ICCSA -->
     <div class="pub-card rv">
-      <div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#ECF0E8"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#1A8A7D" opacity=".5">Cholera SIRW</text><rect x="22" y="68" width="50" height="26" rx="13" fill="none" stroke="#1B3A4B" stroke-width="1.2"/><text x="47" y="86" font-family="Playfair Display,serif" font-size="13" fill="#1B3A4B" text-anchor="middle" font-style="italic" font-weight="600">S</text><rect x="104" y="68" width="50" height="26" rx="13" fill="none" stroke="#C4553D" stroke-width="1.2"/><text x="129" y="86" font-family="Playfair Display,serif" font-size="13" fill="#C4553D" text-anchor="middle" font-style="italic" font-weight="600">I</text><rect x="186" y="68" width="50" height="26" rx="13" fill="none" stroke="#1A8A7D" stroke-width="1.2"/><text x="211" y="86" font-family="Playfair Display,serif" font-size="13" fill="#1A8A7D" text-anchor="middle" font-style="italic" font-weight="600">R</text><line x1="72" y1="81" x2="100" y2="81" stroke="#4D6478" stroke-width=".9" marker-end="url(#a1)"/><line x1="154" y1="81" x2="182" y2="81" stroke="#4D6478" stroke-width=".9" marker-end="url(#a1)"/><rect x="90" y="125" width="56" height="26" rx="13" fill="none" stroke="#B8860B" stroke-width="1.2"/><text x="118" y="143" font-family="Playfair Display,serif" font-size="13" fill="#B8860B" text-anchor="middle" font-style="italic" font-weight="600">W</text><rect x="185" y="116" width="100" height="62" rx="7" fill="white" stroke="#d0dce4" stroke-width=".6"/><text x="235" y="133" font-family="Source Sans 3" font-size="8" fill="#1B3A4B" text-anchor="middle" font-weight="600">Sanitation Controls</text><text x="200" y="152" font-family="Source Sans 3" font-size="7" fill="#4D6478">Water treatment</text><text x="200" y="163" font-family="Source Sans 3" font-size="7" fill="#4D6478">Hygiene education</text><defs><marker id="a1" markerWidth="5" markerHeight="4" refX="5" refY="2" orient="auto"><path d="M0,0L5,2L0,4" fill="#4D6478"/></marker></defs></svg></div>
+      <div class="pub-fig">
+        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="200" fill="#EAF0F3"/>
+          <text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#1B3A4B" opacity=".5">HBV Dynamics</text>
+          <ellipse cx="100" cy="98" rx="65" ry="42" fill="none" stroke="#2980B0" stroke-width=".9" opacity=".28"/>
+          <ellipse cx="100" cy="98" rx="42" ry="28" fill="none" stroke="#2980B0" stroke-width=".6" opacity=".18"/>
+          <circle cx="100" cy="98" r="4" fill="#C4553D" opacity=".75"/>
+          <text x="110" y="95" font-family="Source Sans 3,sans-serif" font-size="8" fill="#C4553D" font-weight="600">E*</text>
+          <text x="195" y="56" font-family="Playfair Display,serif" font-size="16" fill="#1B3A4B" font-style="italic">R</text>
+          <text x="210" y="61" font-family="Source Sans 3,sans-serif" font-size="9" fill="#1B3A4B">0</text>
+          <text x="222" y="56" font-family="Source Sans 3,sans-serif" font-size="14" fill="#4D6478"> = </text>
+          <text x="246" y="50" font-family="Playfair Display,serif" font-size="11" fill="#1B3A4B" font-style="italic">&#946;&#923;</text>
+          <line x1="238" y1="56" x2="290" y2="56" stroke="#4D6478" stroke-width=".7"/>
+          <text x="238" y="70" font-family="Playfair Display,serif" font-size="10" fill="#1B3A4B" font-style="italic">&#956;(&#956;+&#948;+&#947;)</text>
+          <path d="M195 112L255 112Q264 112,272 99L290 78" fill="none" stroke="#1B3A4B" stroke-width="1.5" opacity=".6"/>
+          <circle cx="255" cy="112" r="3.2" fill="#B8860B"/>
+        </svg>
+      </div>
       <div class="pub-body">
-        <span class="pub-tag epi">Epidemiology</span>
-        <h4 class="pub-title">Cholera Transmission Dynamics with Sanitation Control Measures</h4>
-        <p class="pub-authors"><strong>Alsammani, A.</strong>, Farah, G., Mohammed, M., Yavuz, M.</p>
-        <p class="pub-journal">arXiv:2505.08873, 2025 (Under Review)</p>
-        <div class="pub-links"><a href="https://arxiv.org/abs/2505.08873" class="pub-link"><i class="fas fa-file-pdf"></i> arXiv</a></div>
+        <span class="pub-tag bio">Mathematical Biology</span>
+        <h4 class="pub-title">Mathematical Analysis of Autonomous and Nonautonomous Hepatitis B Virus Transmission Models</h4>
+        <p class="pub-authors"><strong>Alsammani, A.</strong></p>
+        <p class="pub-journal">ICCSA 2023, Lecture Notes in Computer Science. Springer, 2023.</p>
+        <div class="pub-links">
+          <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+          <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+        </div>
       </div>
     </div>
 
-    <!-- Pub 5: Chemotherapy -->
+    <!-- 2019: Chemotherapy -->
     <div class="pub-card rv">
-      <div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#EFECED"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#7B4F9D" opacity=".5">Chemotherapy Delay</text><line x1="24" y1="158" x2="178" y2="158" stroke="#d0d8e0" stroke-width=".4"/><path d="M28 138Q46 134,62 120T94 84T126 68T156 62T174 58" fill="none" stroke="#1B3A4B" stroke-width="2"/><path d="M28 142Q46 140,66 131T102 108T136 96T166 92T174 91" fill="none" stroke="#C4553D" stroke-width="1.4" stroke-dasharray="5,3" opacity=".6"/><line x1="94" y1="38" x2="94" y2="158" stroke="#B8860B" stroke-width=".6" stroke-dasharray="3,3" opacity=".3"/><rect x="192" y="38" width="92" height="76" rx="6" fill="white" stroke="#d8e0e8" stroke-width=".6"/><line x1="238" y1="42" x2="238" y2="110" stroke="#e0e6ec" stroke-width=".4"/><line x1="196" y1="76" x2="280" y2="76" stroke="#e0e6ec" stroke-width=".4"/><circle cx="218" cy="58" r="2.8" fill="#2980B0"/><circle cx="226" cy="88" r="2.8" fill="#2980B0"/><circle cx="254" cy="66" r="2.8" fill="#C4553D"/><circle cx="246" cy="96" r="2.8" fill="#2980B0"/></svg></div>
+      <div class="pub-fig">
+        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="200" fill="#EFECED"/>
+          <text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#7B4F9D" opacity=".5">Chemotherapy — Delay DDE</text>
+          <line x1="24" y1="158" x2="178" y2="158" stroke="#d0d8e0" stroke-width=".4"/>
+          <path d="M28 138Q46 134,62 120T94 84T126 68T156 62T174 58" fill="none" stroke="#1B3A4B" stroke-width="2"/>
+          <path d="M28 142Q46 140,66 131T102 108T136 96T166 92T174 91" fill="none" stroke="#C4553D" stroke-width="1.4" stroke-dasharray="5,3" opacity=".6"/>
+          <line x1="94" y1="38" x2="94" y2="158" stroke="#B8860B" stroke-width=".6" stroke-dasharray="3,3" opacity=".3"/>
+          <rect x="192" y="38" width="92" height="76" rx="6" fill="white" stroke="#d8e0e8" stroke-width=".6"/>
+          <line x1="238" y1="42" x2="238" y2="110" stroke="#e0e6ec" stroke-width=".4"/>
+          <line x1="196" y1="76" x2="280" y2="76" stroke="#e0e6ec" stroke-width=".4"/>
+          <circle cx="218" cy="58" r="2.8" fill="#2980B0"/>
+          <circle cx="226" cy="88" r="2.8" fill="#2980B0"/>
+          <circle cx="254" cy="66" r="2.8" fill="#C4553D"/>
+          <circle cx="246" cy="96" r="2.8" fill="#2980B0"/>
+        </svg>
+      </div>
       <div class="pub-body">
         <span class="pub-tag bio">Mathematical Biology</span>
         <h4 class="pub-title">Stability Analysis of a Chemotherapy Model with Delays</h4>
         <p class="pub-authors">Abdulrashid, I., <strong>Alsammani, A.</strong>, Han, X.</p>
-        <p class="pub-journal">DCDS-B, 24(3), 989-1005, 2019</p>
-        <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+        <p class="pub-journal">Discrete and Continuous Dynamical Systems — Series B, 24(3), 989–1005, 2019.</p>
+        <div class="pub-links">
+          <a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a>
+          <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a>
+        </div>
       </div>
     </div>
 
-    <!-- Pub 6: HBV -->
-    <div class="pub-card rv">
-      <div class="pub-fig"><svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#EAF0F3"/><text x="16" y="18" font-family="IBM Plex Mono,monospace" font-size="7" fill="#1B3A4B" opacity=".5">HBV Dynamics</text><ellipse cx="100" cy="98" rx="65" ry="42" fill="none" stroke="#2980B0" stroke-width=".9" opacity=".28"/><ellipse cx="100" cy="98" rx="42" ry="28" fill="none" stroke="#2980B0" stroke-width=".6" opacity=".18"/><circle cx="100" cy="98" r="4" fill="#C4553D" opacity=".75"/><text x="110" y="95" font-family="Source Sans 3" font-size="8" fill="#C4553D" font-weight="600">E*</text><text x="195" y="56" font-family="Playfair Display,serif" font-size="16" fill="#1B3A4B" font-style="italic">R</text><text x="210" y="61" font-family="Source Sans 3" font-size="9" fill="#1B3A4B">0</text><text x="222" y="56" font-family="Source Sans 3" font-size="14" fill="#4D6478"> = </text><text x="246" y="50" font-family="Playfair Display,serif" font-size="11" fill="#1B3A4B" font-style="italic">&#946;&#923;</text><line x1="238" y1="56" x2="290" y2="56" stroke="#4D6478" stroke-width=".7"/><text x="238" y="70" font-family="Playfair Display,serif" font-size="10" fill="#1B3A4B" font-style="italic">&#956;(&#956;+&#948;+&#947;)</text><path d="M195 112L255 112Q264 112,272 99L290 78" fill="none" stroke="#1B3A4B" stroke-width="1.5" opacity=".6"/><circle cx="255" cy="112" r="3.2" fill="#B8860B"/></svg></div>
-      <div class="pub-body">
-        <span class="pub-tag bio">Mathematical Biology</span>
-        <h4 class="pub-title">Mathematical Analysis of Autonomous and Nonautonomous HBV Transmission Models</h4>
-        <p class="pub-authors"><strong>Alsammani, A.</strong></p>
-        <p class="pub-journal">ICCSA 2023, LNCS, Springer</p>
-        <div class="pub-links"><a href="#" class="pub-link"><i class="fas fa-file-pdf"></i> PDF</a><a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> DOI</a></div>
+  </div><!-- end pub-list -->
+
+  <!-- PREPRINTS & UNDER REVIEW -->
+  <div class="pub-section-label rv" style="margin-top:2.5rem"><i class="fas fa-file-alt"></i> Preprints &amp; Manuscripts Under Review</div>
+  <div class="preprint-list">
+
+    <div class="preprint-card rv">
+      <div class="preprint-icon ic-purple"><i class="fas fa-infinity"></i></div>
+      <div>
+        <div class="preprint-title">Adaptive Control and Mittag-Leffler Stability of Caputo Fractional Systems with State-Dependent Delays</div>
+        <div class="preprint-authors"><strong>Alsammani, A.</strong>, Farah, G.</div>
+        <div class="preprint-meta">arXiv:2602.07105. Preprint, 2026.</div>
+        <div class="preprint-links">
+          <a href="https://arxiv.org/abs/2602.07105" class="pub-link"><i class="fas fa-external-link-alt"></i> arXiv</a>
+        </div>
       </div>
     </div>
+
+    <div class="preprint-card rv rv-d1">
+      <div class="preprint-icon ic-teal"><i class="fas fa-water"></i></div>
+      <div>
+        <div class="preprint-title">Cholera Transmission Dynamics with Sanitation Control Measures</div>
+        <div class="preprint-authors"><strong>Alsammani, A.</strong>, Farah, G. A. M. O., Mohammed, M. A. Y., Yavuz, M.</div>
+        <div class="preprint-meta">arXiv:2505.08873. Under review, 2025.</div>
+        <div class="preprint-links">
+          <a href="https://arxiv.org/abs/2505.08873" class="pub-link"><i class="fas fa-external-link-alt"></i> arXiv</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="preprint-card rv rv-d2">
+      <div class="preprint-icon ic-warm"><i class="fas fa-leaf"></i></div>
+      <div>
+        <div class="preprint-title">Coexistence via Trophic Cascade in Plant-Herbivore-Carnivore Systems</div>
+        <div class="preprint-authors">Mohammed, M. A. Y., <strong>Alsammani, A.</strong>, et al.</div>
+        <div class="preprint-meta">arXiv:2408. Under review, 2024.</div>
+        <div class="preprint-links">
+          <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> arXiv</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="preprint-card rv rv-d3">
+      <div class="preprint-icon ic-blue"><i class="fas fa-dna"></i></div>
+      <div>
+        <div class="preprint-title">Stochastic Modeling and Computational Simulations of HBV Infection Dynamics</div>
+        <div class="preprint-authors"><strong>Alsammani, A.</strong></div>
+        <div class="preprint-meta">arXiv:2308.05819. Under review, 2023.</div>
+        <div class="preprint-links">
+          <a href="https://arxiv.org/abs/2308.05819" class="pub-link"><i class="fas fa-external-link-alt"></i> arXiv</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end preprint-list -->
+
+  <div class="more-pubs rv">
+    <a href="https://scholar.google.com/citations?user=abdallah-alsammani" class="btn btn-o" target="_blank">
+      <i class="fas fa-graduation-cap"></i> View All on Google Scholar
+    </a>
   </div>
 
-  <div class="more-pubs rv"><a href="#" class="btn btn-o" target="_blank"><i class="fas fa-graduation-cap"></i> View All on Google Scholar</a></div>
 </div>
 </div>
 
 <!-- FUTURE DIRECTIONS -->
 <div class="section">
   <div class="slabel">Looking Ahead</div>
-  <h2 class="sheading rv">Future Directions</h2>
-  <p class="sdesc rv">My current and planned research extends naturally toward several problems where mathematical modeling meets biomedical AI.</p>
+  <h2 class="sheading rv">Future Research Directions</h2>
+  <p class="sdesc rv">Ongoing and planned research extending current work at the intersection of applied mathematics, machine learning, and biomedical science.</p>
 
   <div class="future-grid">
     <div class="future-card rv">
       <div class="future-num">01</div>
       <div>
         <h4>AI-Informed Epidemic Forecasting</h4>
-        <p>Combining mechanistic compartmental models with machine learning to produce hybrid forecasting systems that respect biological structure while learning from real-time surveillance data.</p>
+        <p>Combining mechanistic compartmental models with machine learning to develop hybrid forecasting systems that incorporate biological structure while learning from real-time surveillance data.</p>
       </div>
     </div>
     <div class="future-card rv rv-d1">
       <div class="future-num">02</div>
       <div>
         <h4>Uncertainty Quantification in Clinical AI</h4>
-        <p>Developing Bayesian and sensitivity-based frameworks for quantifying prediction uncertainty in machine learning models applied to radiology, endocrinology, and diagnostic screening.</p>
+        <p>Developing Bayesian and sensitivity-based frameworks for quantifying prediction uncertainty in machine learning models applied to clinical screening and diagnostic decision support.</p>
       </div>
     </div>
     <div class="future-card rv rv-d2">
       <div class="future-num">03</div>
       <div>
-        <h4>Optimal Intervention Design</h4>
+        <h4>Multi-Scale Optimal Control</h4>
         <p>Extending optimal control methods to multi-scale and multi-pathogen systems, with the goal of informing resource allocation for vaccination campaigns and public health infrastructure.</p>
       </div>
     </div>
     <div class="future-card rv rv-d3">
       <div class="future-num">04</div>
       <div>
-        <h4>Mathematical Foundations of Medical Imaging</h4>
-        <p>Applying inverse problem theory and regularization methods to image reconstruction tasks in CT and MRI, with emphasis on mathematical guarantees for clinical reliability.</p>
+        <h4>High-Frequency Oscillation Detection in Epilepsy</h4>
+        <p>Applying deep learning architectures to automated detection and classification of pathological high-frequency oscillations in long-term intracranial EEG recordings, building on ongoing clinical collaborations.</p>
       </div>
     </div>
   </div>
 
   <div class="collab-banner rv">
     <h3>Interested in Collaboration?</h3>
-    <p>I welcome inquiries from prospective graduate students, postdoctoral researchers, and faculty interested in joint work at the intersection of applied mathematics, machine learning, and biomedical science.</p>
+    <p>I welcome inquiries from prospective graduate students, postdoctoral researchers, and faculty interested in collaborative work at the intersection of applied mathematics, machine learning, and biomedical science.</p>
     <a href="contact.html" class="btn btn-p"><i class="fas fa-envelope"></i> Get in Touch</a>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p>&copy; 2025 Abdallah Alsammani. All rights reserved.</p>
+  <p>&copy; 2026 Abdallah Alsammani. All rights reserved.</p>
   <div class="footer-links">
-    <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://scholar.google.com" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-    <a href="https://github.com/aalsammani" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://scholar.google.com/citations?user=abdallah-alsammani" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+    <a href="https://github.com/aalsammani" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
   </div>
 </footer>
 
@@ -506,7 +802,6 @@ function closeMob(){var n=document.getElementById('mnav');if(n)n.classList.remov
   var mx=-999,my=-999;
   c.onmousemove=function(e){var r=c.getBoundingClientRect();mx=(e.clientX-r.left)*(W/r.width);my=(e.clientY-r.top)*(H/r.height)};
   c.onmouseleave=function(){mx=-999;my=-999};
-
   function draw(){
     ctx.clearRect(0,0,W,H);t+=.005;
     edges.forEach(function(e){
