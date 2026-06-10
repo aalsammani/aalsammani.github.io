@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Teaching | Abdallah Alsammani</title>
+<title>Teaching | Abdallah Alsammani, Ph.D.</title>
+<meta name="description" content="Teaching philosophy, courses, curriculum development, mentorship, academic service, and professional development of Abdallah Alsammani."/>
+<meta name="author" content="Abdallah Alsammani"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,15 +31,9 @@ img{max-width:100%;display:block}
 a{color:var(--blue);text-decoration:none;transition:var(--tr)}
 a:hover{color:var(--warm)}
 ::selection{background:rgba(41,128,176,.14)}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:300;background:linear-gradient(90deg,var(--blue),var(--teal));transition:width .1s linear}
 
-/* ── TOP NAV ── */
-.topnav{
-  position:sticky;top:0;z-index:200;
-  background:rgba(27,58,75,.97);backdrop-filter:blur(16px);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 2.2rem;height:58px;
-  box-shadow:0 2px 12px rgba(0,0,0,.12);
-}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(27,58,75,.97);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:0 2.2rem;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.12)}
 .topnav-left{display:flex;align-items:center;gap:.65rem}
 .topnav-photo{width:38px;height:38px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.18);flex-shrink:0;background:#2a5068}
 .topnav-photo img{width:100%;height:100%;object-fit:cover}
@@ -55,11 +51,7 @@ a:hover{color:var(--warm)}
 .mob-nav a{display:block;padding:.55rem 0;color:rgba(255,255,255,.6);font-size:.88rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.04)}
 .mob-nav a:hover{color:#5CB8E6}
 
-/* ── HERO ── */
-.hero{
-  padding:3.8rem 2.2rem 3.2rem;position:relative;overflow:hidden;
-  background:linear-gradient(165deg,var(--bg) 0%,#E4EAF2 50%,#DCE5F0 100%);
-}
+.hero{padding:3.8rem 2.2rem 3.2rem;position:relative;overflow:hidden;background:linear-gradient(165deg,var(--bg) 0%,#E4EAF2 50%,#DCE5F0 100%)}
 .hero::before{content:'';position:absolute;top:-80px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(92,184,230,.06) 0%,transparent 70%);pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-60px;left:-80px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(26,138,125,.04) 0%,transparent 70%);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1fr 360px;gap:2.5rem;align-items:center;max-width:1100px;margin:0 auto;position:relative;z-index:1}
@@ -71,7 +63,6 @@ a:hover{color:var(--warm)}
 .canvas-c{width:360px;height:360px;border-radius:50%;position:relative;background:radial-gradient(circle at 42% 38%,rgba(41,128,176,.09) 0%,rgba(41,128,176,.03) 40%,transparent 70%)}
 .canvas-c canvas{position:absolute;inset:0}
 
-/* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.15rem;border-radius:7px;font-family:var(--ff-b);font-size:.82rem;font-weight:600;transition:var(--tr);cursor:pointer;border:none}
 .btn i{font-size:.74rem}
 .btn-p{background:var(--accent);color:#fff}
@@ -79,26 +70,18 @@ a:hover{color:var(--warm)}
 .btn-o{border:1.5px solid var(--border);color:var(--text);background:transparent}
 .btn-o:hover{border-color:var(--blue);color:var(--blue)}
 
-/* ── SECTIONS ── */
 .section{padding:3.5rem 2.2rem;max-width:1100px;margin:0 auto}
 .section-alt{background:var(--bg-w)}
 .section-alt .section{padding:3.5rem 2.2rem}
 .slabel{font-family:var(--ff-m);font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:.4rem;display:inline-flex;align-items:center;gap:.5rem}
 .slabel::before{content:'';width:20px;height:1.5px;background:var(--blue)}
 .sheading{font-family:var(--ff-d);font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:600;line-height:1.18;margin-bottom:.5rem}
-.sdesc{font-size:.95rem;color:var(--text2);max-width:620px;line-height:1.82;margin-bottom:2.2rem}
+.sdesc{font-size:.95rem;color:var(--text2);max-width:640px;line-height:1.82;margin-bottom:2.2rem}
 
-/* ── APPROACH CARDS ── */
 .approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-bottom:.5rem}
-.approach-card{
-  background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border-lt);
-  padding:1.6rem 1.4rem;position:relative;overflow:hidden;transition:var(--tr);
-}
+.approach-card{background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border-lt);padding:1.6rem 1.4rem;position:relative;overflow:hidden;transition:var(--tr)}
 .approach-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
-.approach-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  border-radius:var(--radius-lg) var(--radius-lg) 0 0;
-}
+.approach-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--radius-lg) var(--radius-lg) 0 0}
 .approach-card:nth-child(1)::before{background:linear-gradient(90deg,var(--blue),#5CB8E6)}
 .approach-card:nth-child(2)::before{background:linear-gradient(90deg,var(--teal),#3DC9B0)}
 .approach-card:nth-child(3)::before{background:linear-gradient(90deg,var(--warm),#E08060)}
@@ -109,7 +92,6 @@ a:hover{color:var(--warm)}
 .approach-card h4{font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.4rem}
 .approach-card p{font-size:.84rem;color:var(--text2);line-height:1.72}
 
-/* ── COURSES ── */
 .teach-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
 .teach-block h3{font-family:var(--ff-d);font-size:1.15rem;font-weight:600;margin-bottom:.12rem}
 .teach-block .inst{font-size:.8rem;color:var(--blue);font-weight:500;margin-bottom:.8rem}
@@ -125,35 +107,17 @@ a:hover{color:var(--warm)}
 .cbadge.new{background:rgba(184,134,11,.08);color:var(--gold)}
 .cbadge.cap{background:rgba(123,79,157,.07);color:var(--purple)}
 
-/* ── AUBURN ── */
-.auburn-block{
-  margin-top:2rem;padding:1.4rem 1.6rem;
-  background:linear-gradient(135deg,rgba(41,128,176,.02),rgba(26,138,125,.02));
-  border-radius:var(--radius-lg);border:1px solid var(--border-lt);
-}
+.auburn-block{margin-top:2rem;padding:1.4rem 1.6rem;background:linear-gradient(135deg,rgba(41,128,176,.02),rgba(26,138,125,.02));border-radius:var(--radius-lg);border:1px solid var(--border-lt)}
 .auburn-block h3{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;margin-bottom:.12rem}
 .auburn-block .inst{font-size:.8rem;color:var(--blue);font-weight:500;margin-bottom:.5rem}
 .auburn-block p{font-size:.84rem;color:var(--text2);line-height:1.72}
-.award-badge{
-  display:inline-flex;align-items:center;gap:.35rem;
-  margin-top:.6rem;padding:.3rem .7rem;border-radius:6px;
-  background:rgba(184,134,11,.06);border:1px solid rgba(184,134,11,.12);
-  font-size:.76rem;font-weight:600;color:var(--gold);
-}
+.award-badge{display:inline-flex;align-items:center;gap:.35rem;margin-top:.6rem;padding:.3rem .7rem;border-radius:6px;background:rgba(184,134,11,.06);border:1px solid rgba(184,134,11,.12);font-size:.76rem;font-weight:600;color:var(--gold)}
 .award-badge i{font-size:.7rem}
 
-/* ── CURRICULUM DEVELOPMENT ── */
 .curric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.curric-card{
-  padding:1.3rem 1.4rem;background:var(--bg-w);
-  border-radius:var(--radius-lg);border:1px solid var(--border-lt);
-  transition:var(--tr);display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;
-}
+.curric-card{padding:1.3rem 1.4rem;background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border-lt);transition:var(--tr);display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start}
 .curric-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
-.curric-icon{
-  width:38px;height:38px;border-radius:9px;
-  display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;
-}
+.curric-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
 .curric-icon.ic-blue{background:rgba(41,128,176,.08);color:var(--blue)}
 .curric-icon.ic-teal{background:rgba(26,138,125,.08);color:var(--teal)}
 .curric-icon.ic-gold{background:rgba(184,134,11,.07);color:var(--gold)}
@@ -161,83 +125,84 @@ a:hover{color:var(--warm)}
 .curric-card p{font-size:.8rem;color:var(--text2);line-height:1.68}
 .curric-card .curric-meta{font-size:.72rem;color:var(--text3);margin-top:.35rem;font-style:italic}
 
-/* ── MENTORSHIP ── */
 .mentor-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.mentor-box{
-  padding:1.5rem;background:var(--bg-w);
-  border-radius:var(--radius-lg);border:1px solid var(--border-lt);
-}
+.mentor-box{padding:1.5rem;background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border-lt)}
 .mentor-box h4{font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
 .mentor-box h4 i{color:var(--blue);font-size:.85rem}
 .mentor-box p{font-size:.84rem;color:var(--text2);line-height:1.75}
 .mentor-box ul{list-style:none;margin-top:.5rem}
-.mentor-box li{
-  font-size:.82rem;color:var(--text2);line-height:1.65;
-  padding:.25rem 0;padding-left:1.1rem;position:relative;
-}
-.mentor-box li::before{
-  content:'';position:absolute;left:0;top:.55rem;
-  width:5px;height:5px;border-radius:50%;background:var(--blue);opacity:.35;
-}
+.mentor-box li{font-size:.82rem;color:var(--text2);line-height:1.65;padding:.25rem 0;padding-left:1.1rem;position:relative}
+.mentor-box li::before{content:'';position:absolute;left:0;top:.55rem;width:5px;height:5px;border-radius:50%;background:var(--blue);opacity:.35}
 
-/* ── RESEARCH PROJECTS TABLE ── */
 .rp-table{width:100%;border-collapse:collapse;margin-top:.8rem}
 .rp-table th{font-family:var(--ff-m);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);padding:.4rem .6rem;border-bottom:1px solid var(--border-lt);text-align:left;font-weight:500}
 .rp-table td{font-size:.8rem;color:var(--text2);padding:.5rem .6rem;border-bottom:1px solid var(--border-lt);vertical-align:top;line-height:1.55}
 .rp-table tr:last-child td{border-bottom:none}
 .rp-table tr:hover td{background:rgba(41,128,176,.015)}
+.rp-name{font-weight:600;color:var(--text);white-space:nowrap}
 .rp-sem{font-family:var(--ff-m);font-size:.68rem;color:var(--blue);white-space:nowrap}
 
-/* ── INCLUSION STRIP ── */
-.inclusion-strip{
-  margin-top:2rem;padding:1.8rem 2rem;
-  background:linear-gradient(135deg,rgba(27,58,75,.03),rgba(41,128,176,.04));
-  border-radius:var(--radius-lg);border:1px solid rgba(41,128,176,.1);
-  position:relative;overflow:hidden;
-}
-.inclusion-strip::before{
-  content:'';position:absolute;top:-30px;right:-30px;
-  width:120px;height:120px;border-radius:50%;
-  background:radial-gradient(circle,rgba(92,184,230,.06),transparent 70%);
-  pointer-events:none;
-}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.svc-box{background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border-lt);padding:1.4rem 1.5rem}
+.svc-box h4{font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem}
+.svc-box h4 i{color:var(--blue);font-size:.85rem}
+.svc-box ul{list-style:none}
+.svc-box li{font-size:.82rem;color:var(--text2);line-height:1.55;padding:.32rem 0;padding-left:1.2rem;position:relative;border-bottom:1px dashed var(--border-lt)}
+.svc-box li:last-child{border-bottom:none}
+.svc-box li::before{content:'\f0da';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;left:0;top:.38rem;font-size:.6rem;color:var(--blue);opacity:.45}
+.svc-box li .yr{color:var(--text3);font-size:.72rem;font-family:var(--ff-m)}
+
+.pd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.pd-card{background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border-lt);padding:1.3rem 1.4rem;transition:var(--tr);position:relative}
+.pd-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
+.pd-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.9rem;margin-bottom:.7rem}
+.pd-card:nth-child(1) .pd-icon{background:rgba(26,138,125,.08);color:var(--teal)}
+.pd-card:nth-child(2) .pd-icon{background:rgba(41,128,176,.08);color:var(--blue)}
+.pd-card:nth-child(3) .pd-icon{background:rgba(184,134,11,.07);color:var(--gold)}
+.pd-card h4{font-family:var(--ff-d);font-size:.95rem;font-weight:600;margin-bottom:.15rem;line-height:1.3}
+.pd-org{font-size:.76rem;color:var(--blue);font-weight:500;margin-bottom:.5rem}
+.pd-card p{font-size:.78rem;color:var(--text2);line-height:1.6}
+.pd-status{display:inline-block;margin-top:.5rem;font-family:var(--ff-m);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;padding:.12rem .45rem;border-radius:4px;font-weight:500}
+.pd-status.done{background:rgba(26,138,125,.1);color:var(--teal)}
+.pd-status.prog{background:rgba(184,134,11,.1);color:var(--gold)}
+
+.inclusion-strip{margin-top:2rem;padding:1.8rem 2rem;background:linear-gradient(135deg,rgba(27,58,75,.03),rgba(41,128,176,.04));border-radius:var(--radius-lg);border:1px solid rgba(41,128,176,.1);position:relative;overflow:hidden}
+.inclusion-strip::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(92,184,230,.06),transparent 70%);pointer-events:none}
 .inclusion-strip h4{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;margin-bottom:.5rem}
 .inclusion-strip p{font-size:.86rem;color:var(--text2);line-height:1.78;max-width:780px}
 .inclusion-strip p+p{margin-top:.6rem}
 
-/* ── FOOTER ── */
-.footer{background:var(--accent);color:rgba(255,255,255,.4);padding:1.2rem 2.2rem;display:flex;justify-content:space-between;align-items:center;font-size:.72rem}
+.footer{background:var(--accent);color:rgba(255,255,255,.4);padding:1.4rem 2.2rem;display:flex;justify-content:space-between;align-items:center;font-size:.72rem;flex-wrap:wrap;gap:.6rem}
+.footer a{color:rgba(255,255,255,.55)}.footer a:hover{color:#fff}
 .footer-links{display:flex;gap:.8rem}
-.footer-links a{color:rgba(255,255,255,.3);font-size:.84rem;transition:var(--tr)}
+.footer-links a{color:rgba(255,255,255,.3);font-size:.84rem}
 .footer-links a:hover{color:#fff}
 
-/* ── REVEAL ── */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .rv.vis{opacity:1;transform:translateY(0)}
 .rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
 
-/* ── RESPONSIVE ── */
 @media(max-width:1000px){
   .hero-grid{grid-template-columns:1fr}.canvas-wrap{display:none}
   .approach-grid{grid-template-columns:1fr}
   .curric-grid{grid-template-columns:1fr 1fr}
+  .pd-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
-  .topnav-links{display:none}
-  .hamburger{display:flex;flex-direction:column}
-  .topnav{padding:0 1.2rem}
-  .hero{padding:2.5rem 1.2rem 2rem}
-  .section,.section-alt .section{padding:2.5rem 1.2rem}
+  .topnav-links{display:none}.hamburger{display:flex;flex-direction:column}.topnav{padding:0 1.2rem}
+  .hero{padding:2.5rem 1.2rem 2rem}.section,.section-alt .section{padding:2.5rem 1.2rem}
   .teach-cols{grid-template-columns:1fr}
   .mentor-cols{grid-template-columns:1fr}
   .curric-grid{grid-template-columns:1fr}
-  .footer{flex-direction:column;gap:.5rem;text-align:center;padding:1rem}
+  .svc-grid{grid-template-columns:1fr}
+  .pd-grid{grid-template-columns:1fr}
+  .footer{flex-direction:column;gap:.5rem;text-align:center;padding:1.2rem}
 }
 </style>
 </head>
 <body>
+<div class="progress" id="progress"></div>
 
-<!-- NAV -->
 <nav class="topnav">
   <div class="topnav-left">
     <div class="topnav-photo"><img src="profile.jpg" alt="Abdallah Alsammani"/></div>
@@ -266,194 +231,138 @@ a:hover{color:var(--warm)}
     <div>
       <h2 class="rv">Teaching <em>Philosophy</em></h2>
       <p class="hero-text rv">
-        Mathematics gives us the language to describe complex systems with precision and to reason about them with confidence. In every course I teach, I work to develop habits of thought that are rigorous, portable, and grounded in first principles. Students learn not only how a method works, but why it works, where its assumptions break down, and how it connects to questions beyond the classroom. In applied courses on machine learning, statistical modeling, and scientific computation, I anchor instruction in the underlying theory of optimization, linear algebra, probability, and statistical inference, asking students to engage with algorithms at the level of their mathematical structure rather than treating them as black boxes.
+        Mathematics gives us the language to describe complex systems with precision and to reason about them with confidence. In every course I teach, I work to build habits of thought that are rigorous, portable, and grounded in first principles — so that students learn not only how a method works, but why it works, where its assumptions break down, and how it connects to questions beyond the classroom. In applied courses on machine learning, statistical modeling, and scientific computation, I anchor instruction in the underlying theory of optimization, linear algebra, probability, and inference, asking students to engage with algorithms at the level of their mathematical structure rather than as black boxes.
       </p>
       <div class="btns rv">
         <a href="#approach" class="btn btn-p"><i class="fas fa-chalkboard-teacher"></i> My Approach</a>
         <a href="#courses" class="btn btn-o"><i class="fas fa-book"></i> Courses Taught</a>
+        <a href="#mentorship" class="btn btn-o"><i class="fas fa-users"></i> Mentorship</a>
       </div>
     </div>
     <div class="canvas-wrap rv"><div class="canvas-c"><canvas id="heroCanvas"></canvas></div></div>
   </div>
 </section>
 
-<!-- PEDAGOGICAL APPROACH -->
+<!-- APPROACH -->
 <div id="approach" class="section">
-  <div class="slabel">Pedagogy</div>
+  <div class="slabel rv">Pedagogy</div>
   <h2 class="sheading rv">How I Teach</h2>
   <p class="sdesc rv">Three principles organize my classroom practice, whether the course is proof-based analysis or applied machine learning.</p>
   <div class="approach-grid">
     <div class="approach-card rv">
       <div class="approach-icon"><i class="fas fa-sitemap"></i></div>
       <h4>Theory to Application</h4>
-      <p>Every course follows a deliberate mathematical arc: definitions and central theorems first, worked examples and applications as consequences. In proof-based courses, I walk students through the reasoning that produces a finished argument. In applied courses, every computational technique is preceded by the result that justifies it, so students see computation as an outgrowth of theory rather than a substitute for it.</p>
+      <p>Every course follows a deliberate mathematical arc: definitions and central theorems first, worked examples and applications as consequences. In proof-based courses, I walk students through the reasoning that produces a finished argument; in applied courses, every computational technique is preceded by the result that justifies it, so students see computation as an outgrowth of theory rather than a substitute for it.</p>
     </div>
     <div class="approach-card rv rv-d1">
       <div class="approach-icon"><i class="fas fa-terminal"></i></div>
       <h4>Purposeful Computation</h4>
-      <p>In data science, machine learning, and scientific computation courses, laboratory exercises in Python, R, or MATLAB are tightly coupled to each unit's mathematical content. A representative assignment asks students to derive the gradient update for a regularized model, implement it, apply it to real data, and interpret the results in light of both statistical theory and the subject matter at hand.</p>
+      <p>In data science, machine learning, and scientific-computation courses, laboratory exercises in Python, R, or MATLAB are tightly coupled to each unit's mathematical content. A representative assignment asks students to derive the gradient update for a regularized model, implement it, apply it to real data, and interpret the results in light of both statistical theory and the subject matter at hand.</p>
     </div>
     <div class="approach-card rv rv-d2">
       <div class="approach-icon"><i class="fas fa-microscope"></i></div>
       <h4>Research-Informed Instruction</h4>
-      <p>I draw on my research in infectious disease modeling, computational neuroscience, and health analytics for examples that demonstrate the reach of mathematical methods in biomedical science. When teaching optimization, I illustrate gradient-based techniques through parameter estimation in epidemic models. When teaching probability, I ground conditional reasoning in diagnostic screening problems familiar to students in health-related fields.</p>
+      <p>I draw on my research in infectious-disease modeling, computational neuroscience, and health analytics for examples that demonstrate the reach of mathematical methods. When teaching optimization, I illustrate gradient-based techniques through parameter estimation in epidemic models; when teaching probability, I ground conditional reasoning in diagnostic-screening problems familiar to students in health-related fields.</p>
     </div>
   </div>
 </div>
 
-<!-- COURSES TAUGHT -->
+<!-- COURSES -->
 <div id="courses" class="section-alt">
 <div class="section">
-  <div class="slabel">Courses</div>
+  <div class="slabel rv">Courses</div>
   <h2 class="sheading rv">Courses Taught</h2>
-  <p class="sdesc rv">Undergraduate and graduate courses across three institutions, spanning pure mathematics, applied statistics, differential equations, data science, and machine learning.</p>
+  <p class="sdesc rv">Undergraduate and graduate courses across four institutions and three countries, spanning pure mathematics, applied statistics, differential equations, data science, and machine learning.</p>
 
   <div class="teach-cols">
-
-    <!-- DSU -->
     <div class="teach-block rv">
       <h3>Delaware State University</h3>
       <p class="inst">Department of Mathematical Sciences &middot; 2025&ndash;Present</p>
       <ul class="course-list">
-        <li class="course">
-          <span class="course-code">MTSC 821</span>
-          <span class="course-name">Scientific Computations I</span>
-          <span class="cbadge grad">Graduate</span>
-        </li>
-        <li class="course">
-          <span class="course-code">MTSC 571</span>
-          <span class="course-name">Complex Analysis</span>
-          <span class="cbadge grad">Graduate</span>
-        </li>
-        <li class="course">
-          <span class="course-code">MTSC 452</span>
-          <span class="course-name">Advanced Calculus II</span>
-        </li>
-        <li class="course">
-          <span class="course-code">MTSC 341</span>
-          <span class="course-name">Probability</span>
-          <span class="cbadge online">Online</span>
-        </li>
+        <li class="course"><span class="course-code">MTSC 821</span><span class="course-name">Scientific Computations I</span><span class="cbadge grad">Graduate</span></li>
+        <li class="course"><span class="course-code">MTSC 571</span><span class="course-name">Complex Analysis</span><span class="cbadge grad">Graduate</span></li>
+        <li class="course"><span class="course-code">MTSC 452</span><span class="course-name">Advanced Calculus II</span></li>
+        <li class="course"><span class="course-code">MTSC 341</span><span class="course-name">Probability</span><span class="cbadge online">Online</span></li>
       </ul>
     </div>
 
-    <!-- JU -->
     <div class="teach-block rv rv-d1">
       <h3>Jacksonville University</h3>
       <p class="inst">School of Science &amp; Mathematics &middot; 2022&ndash;2025</p>
       <ul class="course-list">
-        <li class="course">
-          <span class="course-code">MATH 470</span>
-          <span class="course-name">Machine Learning Algorithms</span>
-          <span class="cbadge new">Developed</span>
-        </li>
-        <li class="course">
-          <span class="course-code">MATH 270</span>
-          <span class="course-name">Introduction to Data Science</span>
-          <span class="cbadge new">Developed</span>
-        </li>
-        <li class="course">
-          <span class="course-code">MATH 170</span>
-          <span class="course-name">Data Science Foundations</span>
-          <span class="cbadge new">Developed</span>
-        </li>
-        <li class="course">
-          <span class="course-code">MATH 481WS</span>
-          <span class="course-name">Capstone Research Project</span>
-          <span class="cbadge cap">Capstone</span>
-        </li>
-        <li class="course">
-          <span class="course-code">MATH 420</span>
-          <span class="course-name">Linear Algebra II</span>
-        </li>
-        <li class="course">
-          <span class="course-code">MATH 331</span>
-          <span class="course-name">Differential Equations</span>
-        </li>
-        <li class="course">
-          <span class="course-code">MATH 315</span>
-          <span class="course-name">Probability</span>
-        </li>
-        <li class="course">
-          <span class="course-code">MATH 240</span>
-          <span class="course-name">Calculus III</span>
-        </li>
-        <li class="course">
-          <span class="course-code">MATH 205</span>
-          <span class="course-name">Elementary Statistics</span>
-        </li>
+        <li class="course"><span class="course-code">MATH 470</span><span class="course-name">Machine Learning Algorithms</span><span class="cbadge new">Developed</span></li>
+        <li class="course"><span class="course-code">MATH 270</span><span class="course-name">Introduction to Data Science</span><span class="cbadge new">Developed</span></li>
+        <li class="course"><span class="course-code">MATH 170</span><span class="course-name">Data Science Foundations</span><span class="cbadge new">Developed</span></li>
+        <li class="course"><span class="course-code">MATH 481WS</span><span class="course-name">Capstone Research Project</span><span class="cbadge cap">Capstone</span></li>
+        <li class="course"><span class="course-code">MATH 420</span><span class="course-name">Linear Algebra II</span></li>
+        <li class="course"><span class="course-code">MATH 331</span><span class="course-name">Differential Equations</span></li>
+        <li class="course"><span class="course-code">MATH 315</span><span class="course-name">Probability</span></li>
+        <li class="course"><span class="course-code">MATH 240</span><span class="course-name">Calculus III</span></li>
+        <li class="course"><span class="course-code">MATH 205</span><span class="course-name">Elementary Statistics</span></li>
       </ul>
     </div>
-
   </div>
 
-  <!-- Auburn -->
   <div class="auburn-block rv">
     <h3>Auburn University</h3>
-    <p class="inst">Department of Mathematics &amp; Statistics &middot; Graduate Teaching Assistant &amp; Instructor of Record &middot; 2014&ndash;2020</p>
-    <p>Served as Instructor of Record for Calculus I, II, and III, Pre-Calculus, and College Algebra. Teaching students with widely varying mathematical preparation over six years sharpened my ability to diagnose conceptual gaps, calibrate explanations for diverse audiences, and maintain rigorous standards while providing meaningful academic support. I also supervised the Mathematics Tutoring Center for two semesters, coordinating peer tutoring and academic support for hundreds of undergraduates.</p>
+    <p class="inst">Dept. of Mathematics &amp; Statistics &middot; Graduate Teaching Assistant &amp; Instructor of Record &middot; 2014&ndash;2020</p>
+    <p>Instructor of Record for Calculus I, II, and III, Pre-Calculus, and College Algebra, and Teaching Assistant for Introduction to Statistics, Linear Algebra, and Differential Equations. Six years of teaching students with widely varying preparation sharpened my ability to diagnose conceptual gaps, calibrate explanations for diverse audiences, and maintain rigorous standards while providing meaningful support. I also supervised the Mathematics Tutoring Center for two semesters, coordinating academic support for hundreds of undergraduates.</p>
     <div class="award-badge"><i class="fas fa-trophy"></i> Excellence in Teaching Award &mdash; 2019&ndash;2020</div>
   </div>
 
-  <!-- Sudan -->
   <div class="auburn-block rv" style="margin-top:1.2rem">
     <h3>Al Neelain University &amp; Academy of Engineering and Medical Sciences</h3>
     <p class="inst">Lecturer &middot; Khartoum, Sudan &middot; 2010&ndash;2013</p>
-    <p>Taught undergraduate courses in Real Analysis, Abstract Algebra, Number Theory, Topology, Mathematical Methods, Introduction to Statistics, and MATLAB Programming. This early experience in a resource-constrained environment reinforced the value of clarity, precision, and student engagement as the foundations of effective instruction.</p>
+    <p>Taught undergraduate courses in Real Analysis, Abstract Algebra, Number Theory, Topology, Mathematical Methods, Introduction to Statistics, and MATLAB Programming. This early experience in a resource-constrained environment reinforced the value of clarity, precision, and engagement as the foundations of effective instruction.</p>
   </div>
-
 </div>
 </div>
 
 <!-- CURRICULUM DEVELOPMENT -->
 <div class="section">
-  <div class="slabel">Curriculum Development</div>
+  <div class="slabel rv">Curriculum Development</div>
   <h2 class="sheading rv">Curriculum &amp; Program Development</h2>
-  <p class="sdesc rv">Beyond individual courses, I have contributed to the development of programs, assessments, and pedagogical initiatives designed to strengthen data science education.</p>
+  <p class="sdesc rv">Beyond individual courses, I have helped build programs, assessments, and pedagogical initiatives that strengthen data-science education.</p>
 
   <div class="curric-grid">
-
     <div class="curric-card rv">
       <div class="curric-icon ic-blue"><i class="fas fa-certificate"></i></div>
       <div>
         <h4>Data Science Certificate Program</h4>
-        <p>Designed and launched a Data Science Certificate Program at Jacksonville University, providing a structured credential pathway for students seeking applied skills in data analysis, machine learning, and statistical computing.</p>
+        <p>Designed and launched a Data Science Certificate Program providing a structured credential pathway in data analysis, machine learning, and statistical computing.</p>
         <div class="curric-meta">Jacksonville University &mdash; 2023</div>
       </div>
     </div>
-
     <div class="curric-card rv rv-d1">
       <div class="curric-icon ic-teal"><i class="fas fa-tasks"></i></div>
       <div>
         <h4>Program Assessment</h4>
-        <p>Served as Assessment Coordinator for the Data Science major and minor programs, leading outcomes assessment initiatives, aligning course-level objectives with program goals, and preparing formal assessment reports.</p>
+        <p>Assessment Coordinator for the Data Science major and minor programs — leading outcomes assessment, aligning course objectives with program goals, and preparing formal reports.</p>
         <div class="curric-meta">Jacksonville University &mdash; 2022&ndash;2025</div>
       </div>
     </div>
-
     <div class="curric-card rv rv-d2">
       <div class="curric-icon ic-gold"><i class="fas fa-flask"></i></div>
       <div>
         <h4>Scholarship of Teaching &amp; Learning Grant</h4>
-        <p>Principal investigator for a funded SOTL project investigating active learning strategies and their effects on student outcomes in data science courses, with focus on assessment design and pedagogical innovation.</p>
-        <div class="curric-meta">Jacksonville University &mdash; 2023&ndash;2025</div>
+        <p>Principal investigator for a funded SOTL project on active-learning strategies and interactive learning modules and their effects on student outcomes in data-science courses.</p>
+        <div class="curric-meta">Jacksonville University &mdash; 2023&ndash;2024</div>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- MENTORSHIP & INCLUSION -->
-<div class="section-alt">
+<!-- MENTORSHIP -->
+<div id="mentorship" class="section-alt">
 <div class="section">
-  <div class="slabel">Mentorship</div>
-  <h2 class="sheading rv">Undergraduate Research &amp; Mentorship</h2>
+  <div class="slabel rv">Mentorship</div>
+  <h2 class="sheading rv">Research Mentoring &amp; Advising</h2>
   <p class="sdesc rv">I treat mentorship as a natural extension of classroom teaching, guiding students from their first exposure to research methods through formal presentation of independent work.</p>
 
   <div class="mentor-cols">
     <div class="mentor-box rv">
-      <h4><i class="fas fa-flask"></i> Undergraduate Research Projects</h4>
-      <p>At Jacksonville University, I supervised eight independent undergraduate research projects (MATH 487RI and MATH 490), spanning statistical learning, data analytics, and predictive modeling. Students formulated applied problems, built and validated models, and presented their findings in formal settings. Through this process, students developed the ability to:</p>
+      <h4><i class="fas fa-flask"></i> Research Supervision</h4>
+      <p>I currently mentor graduate and undergraduate researchers at Delaware State University and previously supervised eight independent undergraduate research projects at Jacksonville University (MATH 487RI, MATH 490). Through this work, students develop the ability to:</p>
       <ul>
         <li>Read technical literature critically and identify tractable research questions</li>
         <li>Write precise mathematical and statistical problem formulations</li>
@@ -463,93 +372,129 @@ a:hover{color:var(--warm)}
     </div>
     <div class="mentor-box rv rv-d1">
       <h4><i class="fas fa-graduation-cap"></i> Academic Advising</h4>
-      <p>I advised eight undergraduate students in the Data Science and Mathematics programs at Jacksonville University, providing guidance on course selection, program planning, graduate school preparation, and professional development. At Delaware State University, I continue to mentor students in research and career planning as part of my tenure-track appointment in the Department of Mathematical Sciences.</p>
+      <p>I served as Academic Advisor for eight undergraduate students in the Mathematics and Data Science programs at Jacksonville University, providing individualized guidance on degree planning, course selection, internships, career exploration, and graduate-school preparation. At Delaware State University, I continue to mentor students in research and career planning as part of my tenure-track appointment in the Department of Mathematical Sciences.</p>
     </div>
   </div>
 
-  <!-- Research Projects Table -->
+  <!-- CURRENT STUDENTS -->
   <div class="rv" style="margin-top:1.8rem">
-    <p style="font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.6rem">Supervised Research Projects &mdash; Jacksonville University</p>
+    <p style="font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.6rem">Current Students &mdash; Delaware State University</p>
     <table class="rp-table">
-      <thead>
-        <tr>
-          <th>Semester</th>
-          <th>Project Topic</th>
-          <th>Type</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Student</th><th>Level</th><th>Since</th></tr></thead>
       <tbody>
-        <tr>
-          <td class="rp-sem">Spring 2025</td>
-          <td>Statistical learning methods</td>
-          <td>Independent Research</td>
-        </tr>
-        <tr>
-          <td class="rp-sem">Spring 2025</td>
-          <td>Data analysis and visualization for animal shelter outcomes</td>
-          <td>Independent Research</td>
-        </tr>
-        <tr>
-          <td class="rp-sem">Fall 2024</td>
-          <td>Statistical learning with applications to healthcare data</td>
-          <td>Independent Research</td>
-        </tr>
-        <tr>
-          <td class="rp-sem">Fall 2024</td>
-          <td>Data analytics in industry</td>
-          <td>Internship</td>
-        </tr>
-        <tr>
-          <td class="rp-sem">Fall 2023</td>
-          <td>Road accident data analytics and visualization</td>
-          <td>Independent Research</td>
-        </tr>
-        <tr>
-          <td class="rp-sem">Fall 2023</td>
-          <td>Introduction to data science and prediction algorithms in R</td>
-          <td>Independent Research</td>
-        </tr>
-        <tr>
-          <td class="rp-sem">Fall 2023</td>
-          <td>Business analytics</td>
-          <td>Internship</td>
-        </tr>
-        <tr>
-          <td class="rp-sem">Spring 2023</td>
-          <td>NFL game prediction modeling using singular value decomposition</td>
-          <td>Independent Research</td>
-        </tr>
+        <tr><td class="rp-name">Jing Li</td><td>Ph.D. Student</td><td class="rp-sem">Fall 2025</td></tr>
+        <tr><td class="rp-name">Uchenna J. Okorie</td><td>Ph.D. Student</td><td class="rp-sem">Spring 2026</td></tr>
+        <tr><td class="rp-name">Chibuike Ndeke</td><td>Ph.D. Student</td><td class="rp-sem">Spring 2026</td></tr>
+        <tr><td class="rp-name">Fiona A. Ochieng</td><td>M.S. Student</td><td class="rp-sem">Spring 2026</td></tr>
+        <tr><td class="rp-name">Merasia M. Johnson</td><td>B.S. Student</td><td class="rp-sem">Spring 2026</td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- Inclusion -->
+  <!-- PAST UNDERGRADS -->
+  <div class="rv" style="margin-top:1.8rem">
+    <p style="font-family:var(--ff-d);font-size:1rem;font-weight:600;margin-bottom:.6rem">Undergraduate Research &amp; Internships &mdash; Jacksonville University</p>
+    <table class="rp-table">
+      <thead><tr><th>Student</th><th>Project</th><th>Term</th></tr></thead>
+      <tbody>
+        <tr><td class="rp-name">Sarah Goodyear</td><td>Statistical learning methods</td><td class="rp-sem">Spring 2025</td></tr>
+        <tr><td class="rp-name">Holly Gallup</td><td>Data analysis &amp; visualization for animal-shelter outcomes</td><td class="rp-sem">Spring 2025</td></tr>
+        <tr><td class="rp-name">Ann Ubaka</td><td>Predicting car crashes using machine-learning techniques</td><td class="rp-sem">Fall 2024 &amp; Spring 2025</td></tr>
+        <tr><td class="rp-name">Sarah Goodyear</td><td>Data analytics in industry (internship)</td><td class="rp-sem">Fall 2024</td></tr>
+        <tr><td class="rp-name">Sarah Wehrung</td><td>Road-accident data analytics &amp; visualization</td><td class="rp-sem">Fall 2023</td></tr>
+        <tr><td class="rp-name">Rhea White</td><td>Introduction to data science &amp; prediction algorithms in R</td><td class="rp-sem">Fall 2023</td></tr>
+        <tr><td class="rp-name">Cody Thomas</td><td>NFL game-prediction modeling via singular value decomposition</td><td class="rp-sem">Spring 2023</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <div class="inclusion-strip rv">
     <h4>Commitment to Inclusive Excellence</h4>
-    <p>Supporting students from historically underrepresented groups in the mathematical sciences is a responsibility I hold with conviction. I maintain accessible office hours, design assignments that build skill in a graduated sequence, and foster a classroom environment where rigorous questions are expected and welcomed.</p>
-    <p>My assessments target conceptual understanding rather than procedural recall. In data science and machine learning courses, I engage students with questions of fairness, bias, and the social weight of modeling decisions, because learning to build models responsibly is part of doing applied mathematics well.</p>
+    <p>Supporting students from historically underrepresented groups in the mathematical sciences is a responsibility I hold with conviction. I maintain accessible office hours, design assignments that build skill in a graduated sequence, and foster a classroom where rigorous questions are expected and welcomed.</p>
+    <p>My assessments target conceptual understanding rather than procedural recall. In data-science and machine-learning courses, I engage students with questions of fairness, bias, and the social weight of modeling decisions, because learning to build models responsibly is part of doing applied mathematics well.</p>
   </div>
 </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ACADEMIC SERVICE -->
+<div class="section">
+  <div class="slabel rv">Service</div>
+  <h2 class="sheading rv">Academic Service</h2>
+  <p class="sdesc rv">University, departmental, and professional service supporting governance, hiring, assessment, and outreach.</p>
+
+  <div class="svc-grid">
+    <div class="svc-box rv">
+      <h4><i class="fas fa-building-columns"></i> University &amp; College</h4>
+      <ul>
+        <li>Member, Planning &amp; Budget Committee <span class="yr">· 2024–2025</span></li>
+        <li>Member, Artificial Intelligence Taskforce Committee <span class="yr">· 2023–2024</span></li>
+        <li>Search Committee, Asst. Professor of Computing Science <span class="yr">· 2023–2024</span></li>
+        <li>Search Committee, Asst. Professor of Mathematical Physics <span class="yr">· 2023–2024</span></li>
+        <li>Search Committee, Asst. Professor of Oceanography <span class="yr">· 2023–2024</span></li>
+        <li>Search Committees, Assistant Dean &amp; Visiting Asst. Professor <span class="yr">· 2022–2023</span></li>
+        <li>Applied Science Committee, College of Arts &amp; Sciences <span class="yr">· 2022–2023</span></li>
+      </ul>
+    </div>
+    <div class="svc-box rv rv-d1">
+      <h4><i class="fas fa-people-group"></i> Departmental &amp; Professional</h4>
+      <ul>
+        <li>Assessment Coordinator, Data Science Programs <span class="yr">· 2022–Present</span></li>
+        <li>Developed Data Science Certificate Program <span class="yr">· 2023</span></li>
+        <li>Faculty Mentor, Delaware INBRE Undergraduate Research <span class="yr">· 2026</span></li>
+        <li>Organizing Committee, 52nd Spring Topology &amp; Dynamical Systems Conf. <span class="yr">· 2018</span></li>
+        <li>Event Coordinator, Regional Science Olympiad <span class="yr">· 2017</span></li>
+        <li>Member, American Epilepsy Society (AES) &amp; American Mathematical Society (AMS)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PROFESSIONAL DEVELOPMENT -->
+<div class="section-alt">
+<div class="section">
+  <div class="slabel rv">Continuing Education</div>
+  <h2 class="sheading rv">Professional Development</h2>
+  <p class="sdesc rv">Ongoing training that supports my work across biostatistics, scientific computing, and data analytics.</p>
+
+  <div class="pd-grid">
+    <div class="pd-card rv">
+      <div class="pd-icon"><i class="fas fa-notes-medical"></i></div>
+      <h4>Biostatistics Professional Certificate</h4>
+      <div class="pd-org">Johns Hopkins University (Coursera)</div>
+      <p>Summary statistics, hypothesis testing, and simple &amp; multiple regression analysis in public health.</p>
+      <span class="pd-status done">Completed</span>
+    </div>
+    <div class="pd-card rv rv-d1">
+      <div class="pd-icon"><i class="fab fa-python"></i></div>
+      <h4>FlexStack: Python Fundamentals</h4>
+      <div class="pd-org">Georgia Institute of Technology</div>
+      <p>Foundations &amp; syntax, data structures &amp; modules, and web technologies &amp; data processing.</p>
+      <span class="pd-status done">Completed</span>
+    </div>
+    <div class="pd-card rv rv-d2">
+      <div class="pd-icon"><i class="fas fa-chart-pie"></i></div>
+      <h4>Google Data Analytics Certificate</h4>
+      <div class="pd-org">Google / Coursera</div>
+      <p>Applied analytics, data cleaning, and visualization (5 of 8 courses completed).</p>
+      <span class="pd-status prog">In Progress</span>
+    </div>
+  </div>
+</div>
+</div>
+
 <footer class="footer">
-  <p>&copy; 2026 Abdallah Alsammani. All rights reserved.</p>
+  <p>&copy; 2026 Abdallah Alsammani · Delaware State University · <a href="mailto:aalsammani@desu.edu">aalsammani@desu.edu</a></p>
   <div class="footer-links">
-    <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://scholar.google.com/citations?user=abdallah-alsammani" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-    <a href="https://github.com/aalsammani" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://scholar.google.com/citations?user=abdallah-alsammani" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+    <a href="https://github.com/aalsammani" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
   </div>
 </footer>
 
 <script>
 function toggleMob(){var n=document.getElementById('mnav');if(n)n.classList.toggle('open')}
-function closeMob(){var n=document.getElementById('mnav');if(n)n.classList.remove('open')}
-
-// Scroll reveals
+window.addEventListener('scroll',function(){var h=document.documentElement,b=document.body;var st=h.scrollTop||b.scrollTop;var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;document.getElementById('progress').style.width=(sh>0?(st/sh*100):0)+'%'});
 (function(){var els=document.querySelectorAll('.rv');if(!els.length)return;var obs=new IntersectionObserver(function(ents){ents.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.05,rootMargin:'0px 0px -20px 0px'});els.forEach(function(el){obs.observe(el)})})();
-
-// Hero canvas animation
 (function(){
   var c=document.getElementById('heroCanvas');if(!c)return;
   var ctx=c.getContext('2d'),W=360,H=360,dpr=window.devicePixelRatio||1;
@@ -572,38 +517,8 @@ function closeMob(){var n=document.getElementById('mnav');if(n)n.classList.remov
   c.onmouseleave=function(){mx=-999;my=-999};
   function draw(){
     ctx.clearRect(0,0,W,H);t+=.005;
-    nodes.forEach(function(n){
-      if(!n.ch.length)return;
-      n.ch.forEach(function(ci){
-        var ch=nodes[ci];
-        var nx=n.x+Math.sin(t*.4+n.x*.01)*3,ny=n.y+Math.cos(t*.35+n.y*.01)*2;
-        var chx=ch.x+Math.sin(t*.4+ch.x*.01)*3,chy=ch.y+Math.cos(t*.35+ch.y*.01)*2;
-        ctx.beginPath();ctx.moveTo(nx,ny);
-        ctx.quadraticCurveTo((nx+chx)/2,(ny+chy)/2+Math.sin(t+ci)*4,chx,chy);
-        ctx.strokeStyle='rgba(41,128,176,.1)';ctx.lineWidth=1;ctx.stroke();
-        var pt=Math.abs(Math.sin(t*1.2+ci*.8));
-        var px=nx+(chx-nx)*pt,py=ny+(chy-ny)*pt;
-        ctx.beginPath();ctx.arc(px,py,1.4,0,Math.PI*2);
-        ctx.fillStyle='rgba(92,184,230,.4)';ctx.fill();
-      });
-    });
-    nodes.forEach(function(n,i){
-      var nx=n.x+Math.sin(t*.4+n.x*.01)*3,ny=n.y+Math.cos(t*.35+n.y*.01)*2;
-      var pulse=Math.sin(t*1.5+i)*.12+.88;
-      var dx=mx-nx,dy=my-ny,dist=Math.sqrt(dx*dx+dy*dy);
-      var hover=dist<40?1.3:1,r=n.r*pulse*hover;
-      ctx.beginPath();ctx.arc(nx,ny,r+8,0,Math.PI*2);
-      ctx.fillStyle='rgba(41,128,176,.025)';ctx.fill();
-      var col=i===0?'rgba(196,85,61,':'rgba(92,184,230,';
-      var g=ctx.createRadialGradient(nx-r*.2,ny-r*.2,0,nx,ny,r);
-      g.addColorStop(0,col+(.75*hover)+')');g.addColorStop(1,col+(.45*hover)+')');
-      ctx.beginPath();ctx.arc(nx,ny,r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
-      ctx.beginPath();ctx.arc(nx-r*.2,ny-r*.2,r*.3,0,Math.PI*2);
-      ctx.fillStyle='rgba(255,255,255,.35)';ctx.fill();
-      ctx.font='7.5px IBM Plex Mono,monospace';
-      ctx.fillStyle='rgba(41,128,176,.3)';ctx.textAlign='center';
-      ctx.fillText(n.l,nx,ny+r+11);
-    });
+    nodes.forEach(function(n){if(!n.ch.length)return;n.ch.forEach(function(ci){var ch=nodes[ci];var nx=n.x+Math.sin(t*.4+n.x*.01)*3,ny=n.y+Math.cos(t*.35+n.y*.01)*2;var chx=ch.x+Math.sin(t*.4+ch.x*.01)*3,chy=ch.y+Math.cos(t*.35+ch.y*.01)*2;ctx.beginPath();ctx.moveTo(nx,ny);ctx.quadraticCurveTo((nx+chx)/2,(ny+chy)/2+Math.sin(t+ci)*4,chx,chy);ctx.strokeStyle='rgba(41,128,176,.1)';ctx.lineWidth=1;ctx.stroke();var pt=Math.abs(Math.sin(t*1.2+ci*.8));var px=nx+(chx-nx)*pt,py=ny+(chy-ny)*pt;ctx.beginPath();ctx.arc(px,py,1.4,0,Math.PI*2);ctx.fillStyle='rgba(92,184,230,.4)';ctx.fill()})});
+    nodes.forEach(function(n,i){var nx=n.x+Math.sin(t*.4+n.x*.01)*3,ny=n.y+Math.cos(t*.35+n.y*.01)*2;var pulse=Math.sin(t*1.5+i)*.12+.88;var dx=mx-nx,dy=my-ny,dist=Math.sqrt(dx*dx+dy*dy);var hover=dist<40?1.3:1,r=n.r*pulse*hover;ctx.beginPath();ctx.arc(nx,ny,r+8,0,Math.PI*2);ctx.fillStyle='rgba(41,128,176,.025)';ctx.fill();var col=i===0?'rgba(196,85,61,':'rgba(92,184,230,';var g=ctx.createRadialGradient(nx-r*.2,ny-r*.2,0,nx,ny,r);g.addColorStop(0,col+(.75*hover)+')');g.addColorStop(1,col+(.45*hover)+')');ctx.beginPath();ctx.arc(nx,ny,r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();ctx.beginPath();ctx.arc(nx-r*.2,ny-r*.2,r*.3,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.35)';ctx.fill();ctx.font='7.5px IBM Plex Mono,monospace';ctx.fillStyle='rgba(41,128,176,.3)';ctx.textAlign='center';ctx.fillText(n.l,nx,ny+r+11)});
     requestAnimationFrame(draw);
   }
   draw();
