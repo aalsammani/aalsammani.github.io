@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Abdallah Alsammani, Ph.D. | Applied Mathematics &amp; Data Science</title>
+<meta name="description" content="Abdallah Alsammani, Ph.D. — Assistant Professor of Mathematics and Data Science at Delaware State University. Research in mathematical epidemiology, machine learning for healthcare, scientific machine learning, and computational neuroscience."/>
+<meta name="author" content="Abdallah Alsammani"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Abdallah Alsammani, Ph.D. | Applied Mathematics &amp; Data Science"/>
+<meta property="og:description" content="Applied mathematician and data scientist developing models and machine-learning methods for public health, biomedicine, and neuroscience."/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6FA;--bg-w:#FFF;--bg-alt:#EAF0F5;
+  --text:#1A2B3C;--text2:#4D6478;--text3:#8494A7;
+  --accent:#1B3A4B;--blue:#2980B0;--teal:#1A8A7D;
+  --warm:#C4553D;--gold:#B8860B;--purple:#7B4F9D;
+  --border:#D0D9E4;--border-lt:#E8EDF4;
+  --shadow-s:0 1px 4px rgba(0,0,0,.04);--shadow-m:0 6px 24px rgba(0,0,0,.06);--shadow-l:0 12px 40px rgba(0,0,0,.08);
+  --ff-d:'Playfair Display',Georgia,serif;
+  --ff-b:'Source Sans 3',-apple-system,sans-serif;
+  --ff-m:'IBM Plex Mono',Consolas,monospace;
+  --radius:8px;--radius-lg:14px;
+  --ease:cubic-bezier(.4,0,.2,1);--tr:.3s var(--ease);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-b);color:var(--text);background:var(--bg);line-height:1.72;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--blue);text-decoration:none;transition:var(--tr)}
+a:hover{color:var(--warm)}
+::selection{background:rgba(41,128,176,.14)}
+
+/* scroll progress */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:300;background:linear-gradient(90deg,var(--blue),var(--teal));transition:width .1s linear}
+
+/* ── TOP NAV ── */
+.topnav{position:sticky;top:0;z-index:200;background:rgba(27,58,75,.97);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:0 2.2rem;height:58px;box-shadow:0 2px 12px rgba(0,0,0,.12)}
+.topnav-left{display:flex;align-items:center;gap:.65rem}
+.topnav-photo{width:38px;height:38px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.18);flex-shrink:0;background:#2a5068}
+.topnav-photo img{width:100%;height:100%;object-fit:cover}
+.topnav-name{font-family:var(--ff-d);font-size:1.05rem;font-weight:600;color:#fff;white-space:nowrap}
+.topnav-name span{color:#5CB8E6}
+.topnav-links{list-style:none;display:flex;gap:.15rem}
+.topnav-links a{font-size:.84rem;font-weight:500;color:rgba(255,255,255,.55);padding:.38rem .78rem;border-radius:6px;transition:var(--tr);position:relative}
+.topnav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.topnav-links a.active{color:#5CB8E6;font-weight:600}
+.topnav-links a.active::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:18px;height:2px;background:#5CB8E6;border-radius:1px}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:5px}
+.hamburger span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;margin:4px 0;transition:var(--tr)}
+.mob-nav{display:none;background:rgba(18,41,58,.98);padding:.5rem 1.5rem;position:sticky;top:58px;z-index:199}
+.mob-nav.open{display:block}
+.mob-nav a{display:block;padding:.55rem 0;color:rgba(255,255,255,.6);font-size:.88rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.04)}
+.mob-nav a:hover{color:#5CB8E6}
+
+/* ── HERO ── */
+.hero{padding:3.5rem 2.2rem 3rem;position:relative;overflow:hidden;background:linear-gradient(165deg,var(--bg) 0%,#E4EAF2 50%,#DCE5F0 100%)}
+.hero::before{content:'';position:absolute;top:-80px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(92,184,230,.06) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-60px;left:-80px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(26,138,125,.04) 0%,transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:2.5rem;align-items:start;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+
+/* ── NAME CARD ── */
+.name-card{display:grid;grid-template-columns:160px 1fr;gap:1.8rem;align-items:center;margin-bottom:1.8rem}
+.name-photo{width:160px;height:160px;border-radius:50%;overflow:hidden;border:4px solid rgba(27,58,75,.1);box-shadow:var(--shadow-l);background:linear-gradient(135deg,#d2e1ec,#bdd0de);flex-shrink:0}
+.name-photo img{width:100%;height:100%;object-fit:cover}
+.name-info h1{font-family:var(--ff-d);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;line-height:1.15;margin-bottom:.25rem;color:var(--text)}
+.name-info .role{font-size:.92rem;font-weight:500;color:var(--blue);margin-bottom:.12rem}
+.name-info .dept{font-size:.83rem;color:var(--text2);line-height:1.5;margin-bottom:.06rem}
+.name-info .univ{font-size:.83rem;color:var(--text2);font-weight:500}
+.name-info .loc{font-size:.76rem;color:var(--text3);margin-top:.12rem}
+.name-info .loc i{font-size:.65rem;margin-right:.2rem;opacity:.5}
+.name-socials{display:flex;gap:.35rem;margin-top:.6rem;flex-wrap:wrap}
+.name-socials a{
+  width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;
+  background:rgba(27,58,75,.05);color:var(--accent);font-size:.78rem;transition:var(--tr);
+}
+.name-socials a:hover{background:var(--blue);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-s)}
+
+/* ── BIO ── */
+.bio-p{font-size:.94rem;color:var(--text2);line-height:1.88;max-width:620px;margin-bottom:.9rem}
+.bio-p strong{color:var(--text);font-weight:600}
+.bio-p:last-of-type{margin-bottom:1.4rem}
+
+/* ── RESEARCH PILLS ── */
+.r-pills{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.r-pill{
+  display:inline-flex;align-items:center;gap:.3rem;
+  padding:.28rem .62rem;border-radius:20px;font-size:.72rem;font-weight:500;
+  border:1px solid var(--border);background:rgba(255,255,255,.7);
+  color:var(--text2);transition:var(--tr);
+}
+.r-pill i{font-size:.6rem;opacity:.55}
+.r-pill.p-blue{border-color:rgba(41,128,176,.25);color:var(--blue);background:rgba(41,128,176,.04)}
+.r-pill.p-gold{border-color:rgba(184,134,11,.25);color:var(--gold);background:rgba(184,134,11,.04)}
+.r-pill.p-teal{border-color:rgba(26,138,125,.25);color:var(--teal);background:rgba(26,138,125,.04)}
+.r-pill.p-warm{border-color:rgba(196,85,61,.2);color:var(--warm);background:rgba(196,85,61,.04)}
+.r-pill.p-purple{border-color:rgba(123,79,157,.2);color:var(--purple);background:rgba(123,79,157,.04)}
+
+.btns{display:flex;gap:.6rem;flex-wrap:wrap}
+.canvas-wrap{display:flex;align-items:center;justify-content:center;padding-top:1rem}
+.canvas-c{width:360px;height:360px;border-radius:50%;position:relative;background:radial-gradient(circle at 42% 38%,rgba(41,128,176,.09) 0%,rgba(41,128,176,.03) 40%,transparent 70%)}
+.canvas-c canvas{position:absolute;inset:0}
+
+/* ── SECTIONS ── */
+.section{padding:3.5rem 2.2rem;max-width:1100px;margin:0 auto}
+.section-alt{background:var(--bg-w)}
+.section-alt .section{padding:3.5rem 2.2rem}
+.slabel{font-family:var(--ff-m);font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:.4rem;display:inline-flex;align-items:center;gap:.5rem}
+.slabel::before{content:'';width:20px;height:1.5px;background:var(--blue)}
+.sheading{font-family:var(--ff-d);font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:600;line-height:1.18;margin-bottom:.5rem}
+.sdesc{font-size:.95rem;color:var(--text2);max-width:600px;line-height:1.82;margin-bottom:2.2rem}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.15rem;border-radius:7px;font-family:var(--ff-b);font-size:.82rem;font-weight:600;transition:var(--tr);cursor:pointer;border:none}
+.btn i{font-size:.74rem}
+.btn-p{background:var(--accent);color:#fff}
+.btn-p:hover{background:#0F1F2A;color:#fff;transform:translateY(-1px);box-shadow:var(--shadow-m)}
+.btn-o{border:1.5px solid var(--border);color:var(--text);background:transparent}
+.btn-o:hover{border-color:var(--blue);color:var(--blue)}
+
+/* ── STATS STRIP ── */
+.stats{background:var(--accent);position:relative;overflow:hidden}
+.stats::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(92,184,230,.08),transparent 50%),radial-gradient(circle at 80% 70%,rgba(26,138,125,.07),transparent 50%);pointer-events:none}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.stat-item{padding:2rem 1.2rem;text-align:center;position:relative}
+.stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:25%;height:50%;width:1px;background:rgba(255,255,255,.1)}
+.stat-num{font-family:var(--ff-d);font-size:2.1rem;font-weight:700;color:#fff;line-height:1;margin-bottom:.3rem}
+.stat-num span{color:#5CB8E6}
+.stat-lbl{font-size:.74rem;color:rgba(255,255,255,.55);letter-spacing:.03em}
+
+/* ── EXPERTISE STRIP ── */
+.exp{background:var(--bg-w);border-top:1px solid var(--border-lt);border-bottom:1px solid var(--border-lt)}
+.exp-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto}
+.exp-item{padding:1.8rem 1.2rem;text-align:center;position:relative;transition:var(--tr)}
+.exp-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:var(--border-lt)}
+.exp-item:hover{background:rgba(41,128,176,.015)}
+.exp-icon{width:40px;height:40px;border-radius:10px;margin:0 auto .5rem;display:flex;align-items:center;justify-content:center;background:rgba(41,128,176,.07);color:var(--blue);font-size:.95rem;transition:var(--tr)}
+.exp-item:hover .exp-icon{background:rgba(41,128,176,.12);transform:scale(1.05)}
+.exp-item h4{font-family:var(--ff-d);font-size:.92rem;font-weight:600;margin-bottom:.2rem}
+.exp-item p{font-size:.76rem;color:var(--text2);line-height:1.5}
+
+/* ── BACKGROUND (education + appointments) ── */
+.bg-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem}
+.bg-col h3{font-family:var(--ff-d);font-size:1.1rem;font-weight:600;margin-bottom:1.1rem;display:flex;align-items:center;gap:.55rem}
+.bg-col h3 i{font-size:.85rem;color:var(--blue);opacity:.75}
+.tl{position:relative;padding-left:1.4rem}
+.tl::before{content:'';position:absolute;left:5px;top:6px;bottom:6px;width:1.5px;background:linear-gradient(var(--blue),var(--teal));opacity:.25}
+.tl-item{position:relative;padding-bottom:1.25rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-1.4rem;top:5px;width:11px;height:11px;border-radius:50%;background:var(--bg-w);border:2.5px solid var(--blue)}
+.tl-item.teal::before{border-color:var(--teal)}
+.tl-yr{font-family:var(--ff-m);font-size:.68rem;color:var(--blue);font-weight:500;letter-spacing:.02em}
+.tl-item.teal .tl-yr{color:var(--teal)}
+.tl-title{font-size:.9rem;font-weight:600;color:var(--text);line-height:1.3;margin:.1rem 0 .05rem}
+.tl-sub{font-size:.8rem;color:var(--text2);line-height:1.4}
+.tl-note{font-size:.74rem;color:var(--text3);font-style:italic;margin-top:.15rem;line-height:1.4}
+
+/* ── NEWS / HIGHLIGHTS ── */
+.highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.hl-card{
+  background:var(--bg-w);border-radius:var(--radius-lg);border:1px solid var(--border-lt);
+  padding:1.3rem 1.4rem;transition:var(--tr);position:relative;overflow:hidden;
+}
+.hl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#5CB8E6)}
+.hl-card.t2::before{background:linear-gradient(90deg,var(--teal),#3DC9B0)}
+.hl-card.t3::before{background:linear-gradient(90deg,var(--warm),#E08060)}
+.hl-card.t4::before{background:linear-gradient(90deg,var(--gold),#D4A832)}
+.hl-card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#bfcdd9}
+.hl-date{font-family:var(--ff-m);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+.hl-date .dot{width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.hl-card h4{font-family:var(--ff-d);font-size:.95rem;font-weight:600;margin-bottom:.3rem;line-height:1.32}
+.hl-card p{font-size:.8rem;color:var(--text2);line-height:1.68}
+.hl-card .hl-meta{font-size:.72rem;color:var(--text3);margin-top:.45rem;font-style:italic}
+
+/* ── FOOTER ── */
+.footer{background:var(--accent);color:rgba(255,255,255,.4);padding:1.4rem 2.2rem;display:flex;justify-content:space-between;align-items:center;font-size:.72rem;flex-wrap:wrap;gap:.6rem}
+.footer a{color:rgba(255,255,255,.55)}
+.footer a:hover{color:#fff}
+.footer-links{display:flex;gap:.8rem}
+.footer-links a{color:rgba(255,255,255,.3);font-size:.84rem;transition:var(--tr)}
+.footer-links a:hover{color:#fff}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.vis{opacity:1;transform:translateY(0)}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr}.canvas-wrap{display:none}
+  .name-card{grid-template-columns:140px 1fr;gap:1.3rem}
+  .name-photo{width:140px;height:140px}
+  .highlights-grid{grid-template-columns:repeat(2,1fr)}
+  .bg-grid{grid-template-columns:1fr;gap:2rem}
+}
+@media(max-width:768px){
+  .topnav-links{display:none}
+  .hamburger{display:flex;flex-direction:column}
+  .topnav{padding:0 1.2rem}
+  .hero{padding:2.5rem 1.2rem 2rem}
+  .section,.section-alt .section{padding:2.5rem 1.2rem}
+  .exp-row{grid-template-columns:repeat(2,1fr)}
+  .exp-item:nth-child(2)::after{display:none}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .stat-item:nth-child(2)::after{display:none}
+  .stat-item:nth-child(1),.stat-item:nth-child(2){border-bottom:1px solid rgba(255,255,255,.1)}
+  .name-card{grid-template-columns:1fr;text-align:center;gap:1rem}
+  .name-photo{margin:0 auto;width:130px;height:130px}
+  .name-socials{justify-content:center}
+  .bio-p{text-align:left}
+  .highlights-grid{grid-template-columns:1fr}
+  .footer{flex-direction:column;gap:.5rem;text-align:center;padding:1.2rem}
+}
+@media(max-width:480px){.exp-row{grid-template-columns:1fr}.exp-item::after{display:none!important}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav class="topnav">
+  <div class="topnav-left">
+    <div class="topnav-photo"><img src="profile.jpg" alt="Abdallah Alsammani"/></div>
+    <div class="topnav-name">Abdallah <span>Alsammani</span></div>
+  </div>
+  <ul class="topnav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="teaching.html">Teaching</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-nav" id="mnav">
+  <a href="index.html">Home</a>
+  <a href="research.html">Research</a>
+  <a href="teaching.html">Teaching</a>
+  <a href="team.html">Team</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="name-card rv">
+        <div class="name-photo"><img src="profile.jpg" alt="Abdallah Alsammani"/></div>
+        <div class="name-info">
+          <h1>Abdallah Alsammani, Ph.D.</h1>
+          <p class="role">Assistant Professor of Mathematics and Data Science</p>
+          <p class="dept">Department of Mathematical Sciences</p>
+          <p class="univ">Delaware State University</p>
+          <p class="loc"><i class="fas fa-map-marker-alt"></i>Dover, Delaware 19901, USA</p>
+          <div class="name-socials">
+            <a href="mailto:aalsammani@desu.edu" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://scholar.google.com/citations?user=abdallah-alsammani" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+            <a href="https://github.com/aalsammani" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener" title="ORCID"><i class="fab fa-orcid"></i></a>
+            <a href="CV.pdf" title="Curriculum Vitae"><i class="fas fa-file-lines"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <p class="bio-p rv">
+        I am an applied mathematician and data scientist whose work develops <strong>mathematical models</strong> and <strong>machine-learning methods</strong> for complex biological, clinical, and public-health systems. My research integrates dynamical systems (ODEs and SDEs), optimal control, and statistical learning to study infectious-disease dynamics, build interpretable clinical-prediction tools, and analyze neural and electrophysiological data, including intracranial EEG.
+      </p>
+      <p class="bio-p rv">
+        I earned my Ph.D. in Applied Mathematics from <strong>Auburn University</strong>, held postdoctoral appointments at the <strong>University of Nebraska Medical Center</strong> and the <strong>University of Georgia</strong>, and served as Assistant Professor of Data Science at <strong>Jacksonville University</strong> before joining Delaware State University in 2025. I welcome interdisciplinary collaboration across public health, medicine, neuroscience, and other data-driven domains.
+      </p>
+
+      <div class="r-pills rv">
+        <span class="r-pill p-blue"><i class="fas fa-virus"></i> Mathematical Epidemiology</span>
+        <span class="r-pill p-gold"><i class="fas fa-brain"></i> Machine Learning for Health</span>
+        <span class="r-pill p-purple"><i class="fas fa-diagram-project"></i> Scientific ML</span>
+        <span class="r-pill p-teal"><i class="fas fa-wave-square"></i> Computational Neuroscience</span>
+        <span class="r-pill p-warm"><i class="fas fa-chart-line"></i> Statistical Methodology</span>
+      </div>
+
+      <div class="btns rv">
+        <a href="research.html" class="btn btn-p"><i class="fas fa-flask"></i> View Research</a>
+        <a href="teaching.html" class="btn btn-o"><i class="fas fa-chalkboard-teacher"></i> Teaching</a>
+        <a href="CV.pdf" class="btn btn-o"><i class="fas fa-download"></i> Download CV</a>
+      </div>
+    </div>
+    <div class="canvas-wrap rv"><div class="canvas-c"><canvas id="heroCanvas"></canvas></div></div>
+  </div>
+</section>
+
+<!-- ═══════════ STATS ═══════════ -->
+<section class="stats">
+  <div class="stats-row">
+    <div class="stat-item rv"><div class="stat-num" data-count="12">0</div><div class="stat-lbl">Years of Research &amp; Teaching</div></div>
+    <div class="stat-item rv rv-d1"><div class="stat-num" data-count="20" data-suffix="+">0</div><div class="stat-lbl">Publications &amp; Preprints</div></div>
+    <div class="stat-item rv rv-d2"><div class="stat-num" data-count="12" data-suffix="+">0</div><div class="stat-lbl">Students Mentored</div></div>
+    <div class="stat-item rv rv-d3"><div class="stat-num" data-count="4">0</div><div class="stat-lbl">Countries of Training</div></div>
+  </div>
+</section>
+
+<!-- ═══════════ EXPERTISE ═══════════ -->
+<section class="exp">
+  <div class="exp-row">
+    <div class="exp-item rv">
+      <div class="exp-icon"><i class="fas fa-square-root-variable"></i></div>
+      <h4>Mathematical Modeling</h4>
+      <p>Dynamical systems, stability and bifurcation analysis, and optimal control for biological systems.</p>
+    </div>
+    <div class="exp-item rv rv-d1">
+      <div class="exp-icon"><i class="fas fa-brain"></i></div>
+      <h4>Machine Learning</h4>
+      <p>Interpretable and calibrated models for clinical prediction, classification, and decision support.</p>
+    </div>
+    <div class="exp-item rv rv-d2">
+      <div class="exp-icon"><i class="fas fa-wave-square"></i></div>
+      <h4>Computational Neuroscience</h4>
+      <p>Intracranial EEG analysis, high-frequency oscillations, and circular statistics.</p>
+    </div>
+    <div class="exp-item rv rv-d3">
+      <div class="exp-icon"><i class="fas fa-chart-line"></i></div>
+      <h4>Data Science</h4>
+      <p>Statistical learning, biomedical analytics, and high-dimensional data analysis.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BACKGROUND ═══════════ -->
+<div class="section">
+  <div class="slabel rv">Background</div>
+  <h2 class="sheading rv">Education &amp; Appointments</h2>
+  <p class="sdesc rv">A path through four countries and four institutions, from honors mathematics in Sudan to a tenure-track professorship in the United States.</p>
+
+  <div class="bg-grid">
+    <div class="bg-col rv">
+      <h3><i class="fas fa-user-graduate"></i> Education</h3>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-yr">2020</div>
+          <div class="tl-title">Ph.D., Applied Mathematics</div>
+          <div class="tl-sub">Auburn University, Auburn, AL</div>
+          <div class="tl-note">Dissertation: Dynamical Behavior of Nonautonomous and Stochastic HBV Infection Model</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-yr">2014</div>
+          <div class="tl-title">Postgraduate Diploma, Mathematics</div>
+          <div class="tl-sub">International Centre for Theoretical Physics (ICTP), Trieste, Italy</div>
+          <div class="tl-note">Thesis: Alexander Polynomials for Knots</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-yr">2012</div>
+          <div class="tl-title">M.Sc., Applied Mathematics</div>
+          <div class="tl-sub">African Institute for Mathematical Sciences (AIMS), Mbour, Senegal</div>
+          <div class="tl-note">Thesis: Elliptic Curve Cryptography over Finite Fields</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-yr">2009</div>
+          <div class="tl-title">B.Sc., Mathematics (Honors)</div>
+          <div class="tl-sub">Al Neelain University, Khartoum, Sudan</div>
+          <div class="tl-note">Outstanding Undergraduate Student Award</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-col rv rv-d1">
+      <h3><i class="fas fa-briefcase"></i> Academic Appointments</h3>
+      <div class="tl">
+        <div class="tl-item teal">
+          <div class="tl-yr">2025 — Present</div>
+          <div class="tl-title">Assistant Professor of Mathematics &amp; Data Science</div>
+          <div class="tl-sub">Delaware State University — Dept. of Mathematical Sciences (Tenure-Track)</div>
+        </div>
+        <div class="tl-item teal">
+          <div class="tl-yr">2022 — 2025</div>
+          <div class="tl-title">Assistant Professor of Data Science</div>
+          <div class="tl-sub">Jacksonville University — School of Science &amp; Mathematics</div>
+        </div>
+        <div class="tl-item teal">
+          <div class="tl-yr">2022</div>
+          <div class="tl-title">Postdoctoral Research Associate</div>
+          <div class="tl-sub">University of Georgia — Dept. of Infectious Diseases</div>
+          <div class="tl-note">Epidemiological modeling for CDC-contracted research</div>
+        </div>
+        <div class="tl-item teal">
+          <div class="tl-yr">2021 — 2022</div>
+          <div class="tl-title">Postdoctoral Research Associate</div>
+          <div class="tl-sub">University of Nebraska Medical Center — Dept. of Neurosurgery</div>
+          <div class="tl-note">Intracranial EEG methods for epilepsy research</div>
+        </div>
+        <div class="tl-item teal">
+          <div class="tl-yr">2014 — 2020</div>
+          <div class="tl-title">Graduate Teaching Assistant &amp; Instructor of Record</div>
+          <div class="tl-sub">Auburn University — Dept. of Mathematics &amp; Statistics</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ NEWS ═══════════ -->
+<div class="section-alt">
+<div class="section">
+  <div class="slabel rv">Highlights</div>
+  <h2 class="sheading rv">News &amp; Recent Work</h2>
+  <p class="sdesc rv">Selected recent publications, awards, and milestones from the lab.</p>
+
+  <div class="highlights-grid">
+
+    <div class="hl-card rv">
+      <div class="hl-date"><span class="dot"></span> 2026 · In Press</div>
+      <h4>HFO Characterization in Epilepsy — accepted in <em>Neurology</em></h4>
+      <p>Multi-author study on how recording duration and vigilance state shape high-frequency-oscillation characterization from long-term intracranial EEG.</p>
+      <p class="hl-meta"><em>Neurology</em>, accepted April 2026 (in press).</p>
+    </div>
+
+    <div class="hl-card t2 rv rv-d1">
+      <div class="hl-date"><span class="dot"></span> 2026 · Published</div>
+      <h4>Interpretable Machine-Learning Prognosis of Mycetoma</h4>
+      <p>An interpretable ML model predicting mycetoma outcomes from routine clinical data, supporting diagnosis in low-resource settings.</p>
+      <p class="hl-meta"><em>Trans. R. Soc. Trop. Med. Hyg.</em>, 2026.</p>
+    </div>
+
+    <div class="hl-card t4 rv rv-d2">
+      <div class="hl-date"><span class="dot"></span> 2026 · Award</div>
+      <h4>Faculty Summer Research Grant</h4>
+      <p>Awarded internal support (PI) for interdisciplinary work in mathematical modeling, infectious-disease dynamics, and data science.</p>
+      <p class="hl-meta">Delaware State University, 2026.</p>
+    </div>
+
+
+    <div class="hl-card rv rv-d1">
+      <div class="hl-date"><span class="dot"></span> 2026 · Preprint</div>
+      <h4>Calibrated, Interpretable ML for ICU Mortality</h4>
+      <p>Predicting ICU mortality from the first 24 hours of clinical data, with emphasis on calibration and interpretability.</p>
+      <p class="hl-meta">medRxiv, 2026. <a href="research.html">See publications</a></p>
+    </div>
+
+    <div class="hl-card t2 rv rv-d2">
+      <div class="hl-date"><span class="dot"></span> 2025 · Published</div>
+      <h4>Vaccination Behavior &amp; COVID-19 Economics</h4>
+      <p>A coupled epidemiological–economic model linking vaccination behavior and economic conditions to long-term pandemic trajectories.</p>
+      <p class="hl-meta"><em>Math. Biosci. Eng.</em>, 22(9), 2300–2338, 2025.</p>
+    </div>
+    <div class="hl-card t3 rv">
+      <div class="hl-date"><span class="dot"></span> 2025–2026 · Lab</div>
+      <h4>AMDS Lab welcomes new members</h4>
+      <p>Three Ph.D. students, one M.S. student, and an undergraduate researcher joined the Applied Mathematics &amp; Data Science Lab.</p>
+      <p class="hl-meta"><a href="team.html">Meet the team <i class="fas fa-arrow-right" style="font-size:.6rem"></i></a></p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <p>&copy; 2026 Abdallah Alsammani · Delaware State University · <a href="mailto:aalsammani@desu.edu">aalsammani@desu.edu</a></p>
+  <div class="footer-links">
+    <a href="https://scholar.google.com/citations?user=abdallah-alsammani" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+    <a href="https://github.com/aalsammani" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/abdallah-alsammani/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</footer>
+
+<script>
+function toggleMob(){var n=document.getElementById('mnav');if(n)n.classList.toggle('open')}
+
+/* scroll progress */
+window.addEventListener('scroll',function(){var h=document.documentElement,b=document.body;var st=h.scrollTop||b.scrollTop;var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;document.getElementById('progress').style.width=(sh>0?(st/sh*100):0)+'%'});
+
+/* reveal */
+(function(){var els=document.querySelectorAll('.rv');if(!els.length)return;var obs=new IntersectionObserver(function(ents){ents.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.05,rootMargin:'0px 0px -20px 0px'});els.forEach(function(el){obs.observe(el)})})();
+
+/* count-up */
+(function(){var els=document.querySelectorAll('.stat-num[data-count]');if(!els.length)return;var seen=new WeakSet();var obs=new IntersectionObserver(function(ents){ents.forEach(function(e){if(e.isIntersecting&&!seen.has(e.target)){seen.add(e.target);var el=e.target,end=+el.dataset.count,suf=el.dataset.suffix||'',t0=null,dur=1300;function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);var ease=1-Math.pow(1-p,3);el.textContent=Math.round(end*ease)+(p===1?suf:'');if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)}})},{threshold:.4});els.forEach(function(el){obs.observe(el)})})();
+
+/* neural-network hero canvas */
+(function(){var c=document.getElementById('heroCanvas');if(!c)return;var ctx=c.getContext('2d'),W=360,H=360,dpr=window.devicePixelRatio||1;c.width=W*dpr;c.height=H*dpr;c.style.width=W+'px';c.style.height=H+'px';ctx.scale(dpr,dpr);var cx=W/2,cy=H/2,t=0;
+var L=[{x:cx-130,n:[-74,-25,25,74]},{x:cx-44,n:[-58,-19,19,58]},{x:cx+44,n:[-44,0,44]},{x:cx+130,n:[-26,26]}];
+var P=[],mP=26;function mk(){var li=0|Math.random()*(L.length-1),fl=L[li],tl=L[li+1],fi=0|Math.random()*fl.n.length,ti=0|Math.random()*tl.n.length;return{fx:fl.x,fy:cy+fl.n[fi],tx:tl.x,ty:cy+tl.n[ti],p:0,sp:.003+Math.random()*.005,sz:1.6+Math.random()*2,op:.5+Math.random()*.35}}
+for(var i=0;i<mP;i++){var p=mk();p.p=Math.random();P.push(p)}
+var syms='\u2211 \u2207 \u03c3 \u03b8 \u03bb \u2202 \u03c0 \u03bc \u222b \u0394 \u03b5 \u03c9'.split(' ');var fS=syms.map(function(s){return{c:s,x:30+Math.random()*(W-60),y:30+Math.random()*(H-60),sz:10+Math.random()*7,op:.04+Math.random()*.04,dr:.1+Math.random()*.22,ph:Math.random()*Math.PI*2}});
+var mx=-999,my=-999;c.onmousemove=function(e){var r=c.getBoundingClientRect();mx=(e.clientX-r.left)*(W/r.width);my=(e.clientY-r.top)*(H/r.height)};c.onmouseleave=function(){mx=-999;my=-999};
+function draw(){ctx.clearRect(0,0,W,H);t+=.006;
+fS.forEach(function(s){ctx.font=s.sz+'px Playfair Display,serif';ctx.fillStyle='rgba(41,128,176,'+s.op+')';ctx.textAlign='center';ctx.fillText(s.c,s.x+Math.cos(t*s.dr*.7+s.ph)*5,s.y+Math.sin(t*s.dr+s.ph)*10)});
+for(var li=0;li<L.length-1;li++){var fl=L[li],tl=L[li+1];fl.n.forEach(function(fy){tl.n.forEach(function(ty){ctx.beginPath();var m=(fl.x+tl.x)/2;ctx.moveTo(fl.x,cy+fy);ctx.bezierCurveTo(m,cy+fy,m,cy+ty,tl.x,cy+ty);ctx.strokeStyle='rgba(41,128,176,.09)';ctx.lineWidth=.9;ctx.stroke()})})}
+P.forEach(function(p){p.p+=p.sp;if(p.p>=1)Object.assign(p,mk());var mt=1-p.p,m=(p.fx+p.tx)/2,px=mt*mt*p.fx+2*mt*p.p*m+p.p*p.p*p.tx,py=mt*mt*p.fy+2*mt*p.p*((p.fy+p.ty)/2)+p.p*p.p*p.ty;ctx.beginPath();ctx.arc(px,py,p.sz+5,0,Math.PI*2);ctx.fillStyle='rgba(92,184,230,'+p.op*.1+')';ctx.fill();ctx.beginPath();ctx.arc(px,py,p.sz,0,Math.PI*2);ctx.fillStyle='rgba(130,215,245,'+p.op+')';ctx.fill()});
+L.forEach(function(layer,li){layer.n.forEach(function(ny,ni){var nx=layer.x,nY=cy+ny,pulse=Math.sin(t*1.8+li*1.3+ni*.9)*.16+.84,dx=mx-nx,dy=my-nY,dist=Math.sqrt(dx*dx+dy*dy),hover=dist<55?1+(1-dist/55)*.5:1,r=(5+li*.7)*pulse*hover;ctx.beginPath();ctx.arc(nx,nY,r+12,0,Math.PI*2);ctx.fillStyle='rgba(41,128,176,'+(.035*pulse*hover)+')';ctx.fill();var g=ctx.createRadialGradient(nx-r*.2,nY-r*.2,0,nx,nY,r);g.addColorStop(0,'rgba(155,220,245,'+(.75*pulse*hover)+')');g.addColorStop(1,'rgba(41,128,176,'+(.5*pulse*hover)+')');ctx.beginPath();ctx.arc(nx,nY,r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();ctx.beginPath();ctx.arc(nx-r*.25,nY-r*.25,r*.35,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+(.38*pulse*hover)+')';ctx.fill()})});
+ctx.font='8.5px IBM Plex Mono,monospace';ctx.textAlign='center';ctx.fillStyle='rgba(41,128,176,.22)';['Input','Hidden\u2081','Hidden\u2082','Output'].forEach(function(l,i){ctx.fillText(l,L[i].x,cy+102)});
+requestAnimationFrame(draw)}draw()})();
+</script>
+</body>
+</html>
