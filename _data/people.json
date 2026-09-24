@@ -1,0 +1,84 @@
+{
+ "current": [
+  {
+   "name": "Jing Li",
+   "role": "Ph.D. Student",
+   "topic": "",
+   "links": {}
+  },
+  {
+   "name": "Uchenna J. Okorie",
+   "role": "Ph.D. Student",
+   "topic": "",
+   "links": {}
+  },
+  {
+   "name": "Fiona A. Ochieng",
+   "role": "M.S. Student",
+   "topic": "",
+   "links": {}
+  }
+ ],
+ "former": [
+  {
+   "institution": "Delaware State University",
+   "members": [
+    {
+     "name": "Merasia M. Johnson",
+     "term": "Spring 2026",
+     "project": "Biomedical machine learning for ICU mortality prediction",
+     "outcome": {
+      "text": "Calibrated and Interpretable Machine Learning for ICU Mortality Prediction Using First 24-Hour Clinical Data",
+      "venue": "medRxiv preprint, 2026",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.05.30.26354524v1"
+     }
+    }
+   ]
+  },
+  {
+   "institution": "Jacksonville University",
+   "members": [
+    {
+     "name": "Sarah Goodyear",
+     "term": "Fall 2024 – Spring 2025",
+     "project": "Independent research on statistical learning methods and an industry data analytics internship",
+     "outcome": {
+      "text": "Predicting Sleep Disorders Using Machine Learning: A Comparative Analysis",
+      "venue": "ICCSA 2025",
+      "url": "https://doi.org/10.1007/978-3-031-97000-9_7"
+     }
+    },
+    {
+     "name": "Holly Gallup",
+     "term": "Spring 2025",
+     "project": "Data analysis and visualization for animal shelter outcomes"
+    },
+    {
+     "name": "Ann Ubaka",
+     "term": "Fall 2024 – Spring 2025",
+     "project": "Construction work zone crash analysis and safety modeling",
+     "outcome": {
+      "text": "Construction Work Zone Safety: Identifying Critical Crash Factors and Patterns in Florida",
+      "venue": "Construction Research Congress 2026",
+      "url": "https://ascelibrary.org/doi/10.1061/9780784486993.087"
+     }
+    },
+    {
+     "name": "Sarah Wehrung",
+     "term": "Fall 2023",
+     "project": "Road accident data analytics and visualization"
+    },
+    {
+     "name": "Rhea White",
+     "term": "Fall 2023",
+     "project": "Introduction to data science and prediction algorithms in R"
+    },
+    {
+     "name": "Cody Thomas",
+     "term": "Spring 2023",
+     "project": "NFL game prediction modeling using singular value decomposition"
+    }
+   ]
+  }
+ ]
+}

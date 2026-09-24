@@ -1,0 +1,303 @@
+[
+ {
+  "id": "chen2026neurology",
+  "year": 2026,
+  "type": "journal",
+  "areas": [
+   "neuro"
+  ],
+  "selected": true,
+  "title": "The influence of recording duration and vigilance state on high-frequency oscillation characterization in epilepsy",
+  "authors": "Chen, Z., Gliske, S. V., **Alsammani, A.**, Tyner, K., Das, S., Mutahr, M., Lin, J., et al.",
+  "venue": "<em>Neurology</em>, 107(2), e218225.",
+  "links": {
+   "DOI": "https://doi.org/10.1212/WNL.0000000000218225"
+  }
+ },
+ {
+  "id": "yousif2026trstmh",
+  "year": 2026,
+  "type": "journal",
+  "areas": [
+   "biomed"
+  ],
+  "selected": true,
+  "title": "Interpretable machine-learning prognosis of mycetoma from routine clinical data",
+  "authors": "Yousif, M. H., **Alsammani, A.**, Abdalla, M. H., Bashier, E. B. M., Mohammed, M. A. Y., et al.",
+  "venue": "<em>Transactions of the Royal Society of Tropical Medicine and Hygiene</em>, trag061.",
+  "links": {
+   "DOI": "https://doi.org/10.1093/trstmh/trag061"
+  }
+ },
+ {
+  "id": "alflahi2026is",
+  "year": 2026,
+  "type": "journal",
+  "areas": [
+   "other"
+  ],
+  "title": "A scalable transaction management framework for consistent document-oriented NoSQL databases",
+  "authors": "Alflahi, A. A. E., Mohammed, M. A. Y., &amp; **Alsammani, A.**",
+  "venue": "<em>Information Systems</em>, 140, 102719.",
+  "links": {
+   "DOI": "https://doi.org/10.1016/j.is.2026.102719"
+  }
+ },
+ {
+  "id": "rueda2026crc",
+  "year": 2026,
+  "type": "conference",
+  "areas": [
+   "other"
+  ],
+  "title": "A methodology for sustainable management of construction equipment fleets: Estimating emissions and enhancing environmental performance",
+  "authors": "Rueda-Benavides, J., Khalafalla, M., Gransberg, D. D., &amp; **Alsammani, A.**",
+  "venue": "In <em>Construction Research Congress 2026</em> (pp. 491–501).",
+  "links": {}
+ },
+ {
+  "id": "ubaka2026crc",
+  "year": 2026,
+  "type": "conference",
+  "areas": [
+   "other"
+  ],
+  "title": "Construction work zone safety: Identifying critical crash factors and patterns in Florida",
+  "authors": "Ubaka, A., **Alsammani, A.**, Khalafalla, M., &amp; Kobelo Regalado, D.",
+  "venue": "In <em>Construction Research Congress 2026</em> (pp. 888–898).",
+  "links": {
+   "Publisher": "https://ascelibrary.org/doi/10.1061/9780784486993.087"
+  }
+ },
+ {
+  "id": "mohammed2026awareness",
+  "year": 2026,
+  "type": "preprint",
+  "areas": [
+   "dynsys"
+  ],
+  "title": "Long-term coexistence of epidemics and risk awareness: Impacts of adaptive human response and fatigue",
+  "authors": "Mohammed, M., &amp; **Alsammani, A.**",
+  "venue": "Preprint, arXiv:2607.18301.",
+  "links": {
+   "arXiv": "https://arxiv.org/abs/2607.18301"
+  }
+ },
+ {
+  "id": "alsammani2026icu",
+  "year": 2026,
+  "type": "preprint",
+  "areas": [
+   "biomed"
+  ],
+  "selected": true,
+  "title": "Calibrated and interpretable machine learning for ICU mortality prediction using first 24-hour clinical data",
+  "authors": "**Alsammani, A.**, Johnson, M., &amp; Elrefaei, J.",
+  "venue": "Preprint, <em>medRxiv</em>, 2026.05.30.26354524.",
+  "links": {
+   "medRxiv": "https://www.medrxiv.org/content/10.64898/2026.05.30.26354524v1"
+  }
+ },
+ {
+  "id": "alsammani2026identifiability",
+  "year": 2026,
+  "type": "preprint",
+  "areas": [
+   "sciml"
+  ],
+  "selected": true,
+  "title": "A tutorial on symbolic structural identifiability analysis of ODE models in Julia",
+  "authors": "**Alsammani, A.**",
+  "venue": "Preprint, arXiv:2605.18910.",
+  "links": {
+   "arXiv": "https://arxiv.org/abs/2605.18910"
+  }
+ },
+ {
+  "id": "alsammani2026crash",
+  "year": 2026,
+  "type": "preprint",
+  "areas": [
+   "other"
+  ],
+  "title": "Crash severity dynamics and risk determinants in Florida: An integrated statistical and explainable machine learning analysis",
+  "authors": "**Alsammani, A.**, Khalafalla, M., &amp; Kobelo Regalado, D.",
+  "venue": "Preprint, SSRN 6512551.",
+  "links": {}
+ },
+ {
+  "id": "alsammani2026fractional",
+  "year": 2026,
+  "type": "preprint",
+  "areas": [
+   "dynsys"
+  ],
+  "title": "Adaptive control and Mittag-Leffler stability of Caputo fractional systems with state-dependent delays",
+  "authors": "**Alsammani, A.**, &amp; Farah, G.",
+  "venue": "Preprint, arXiv:2602.07105.",
+  "links": {
+   "arXiv": "https://arxiv.org/abs/2602.07105"
+  }
+ },
+ {
+  "id": "alsammani2025mbe",
+  "year": 2025,
+  "type": "journal",
+  "areas": [
+   "dynsys"
+  ],
+  "selected": true,
+  "title": "Impact of vaccination behavior on COVID-19 dynamics and economic outcomes",
+  "authors": "**Alsammani, A.**, Ngonghala, C. N., &amp; Martcheva, M.",
+  "venue": "<em>Mathematical Biosciences and Engineering</em>, 22(9), 2300–2338.",
+  "links": {
+   "DOI": "https://doi.org/10.3934/mbe.2025084"
+  }
+ },
+ {
+  "id": "goodyear2025iccsa",
+  "year": 2025,
+  "type": "conference",
+  "areas": [
+   "biomed"
+  ],
+  "title": "Predicting sleep disorders using machine learning: A comparative analysis",
+  "authors": "Goodyear, S., &amp; **Alsammani, A.**",
+  "venue": "In <em>International Conference on Computational Science and Its Applications</em> (pp. 106–121).",
+  "links": {
+   "DOI": "https://doi.org/10.1007/978-3-031-97000-9_7"
+  }
+ },
+ {
+  "id": "alsammani2025cholera",
+  "year": 2025,
+  "type": "preprint",
+  "areas": [
+   "dynsys"
+  ],
+  "title": "Cholera transmission dynamics with sanitation control measures",
+  "authors": "**Alsammani, A.**, Farah, G. A. M. O., Mohammed, M. A. Y., &amp; Yavuz, M.",
+  "venue": "Preprint, arXiv:2505.08873.",
+  "links": {
+   "arXiv": "https://arxiv.org/abs/2505.08873"
+  }
+ },
+ {
+  "id": "alflahi2024iccsa",
+  "year": 2024,
+  "type": "conference",
+  "areas": [
+   "other"
+  ],
+  "title": "Enhancement of database access performance by improving data consistency in a non-relational database system (NoSQL)",
+  "authors": "Alflahi, A. A. E., Mohammed, M. A. Y., &amp; **Alsammani, A.**",
+  "venue": "In <em>International Conference on Computational Science and Its Applications</em> (pp. 194–205).",
+  "links": {}
+ },
+ {
+  "id": "mohammed2024trophic",
+  "year": 2024,
+  "type": "preprint",
+  "areas": [
+   "dynsys"
+  ],
+  "title": "Coexistence via trophic cascade in plant-herbivore-carnivore systems under intense predation pressure",
+  "authors": "Mohammed, M., Mohammed, M. A. Y., **Alsammani, A.**, Bakheet, M., Hui, C., et al.",
+  "venue": "Preprint, arXiv:2408.04862.",
+  "links": {
+   "arXiv": "https://arxiv.org/abs/2408.04862"
+  }
+ },
+ {
+  "id": "alsammani2023jbhi",
+  "year": 2023,
+  "type": "journal",
+  "areas": [
+   "biomed",
+   "neuro"
+  ],
+  "selected": true,
+  "title": "Estimation of circular statistics in the presence of measurement bias",
+  "authors": "**Alsammani, A.**, Stacey, W. C., &amp; Gliske, S. V.",
+  "venue": "<em>IEEE Journal of Biomedical and Health Informatics</em>, 28(2), 1089–1100.",
+  "links": {
+   "DOI": "https://doi.org/10.1109/JBHI.2023.3334684"
+  }
+ },
+ {
+  "id": "alsammani2023iccsa",
+  "year": 2023,
+  "type": "conference",
+  "areas": [
+   "dynsys"
+  ],
+  "title": "Mathematical analysis of autonomous and nonautonomous hepatitis B virus transmission models",
+  "authors": "**Alsammani, A.**",
+  "venue": "In <em>International Conference on Computational Science and Its Applications</em> (pp. 327–343).",
+  "links": {}
+ },
+ {
+  "id": "alsammani2023hbv",
+  "year": 2023,
+  "type": "preprint",
+  "areas": [
+   "dynsys"
+  ],
+  "title": "Stochastic dynamics of hepatitis B virus infection: Analysis, stability, and numerical simulation",
+  "authors": "**Alsammani, A.**",
+  "venue": "Preprint, arXiv:2308.05819.",
+  "links": {
+   "arXiv": "https://arxiv.org/abs/2308.05819"
+  }
+ },
+ {
+  "id": "tyner2022sleep",
+  "year": 2022,
+  "type": "abstract",
+  "areas": [
+   "neuro"
+  ],
+  "title": "The impact of intracranial EEG on sleep is independent of whether a craniotomy was performed",
+  "authors": "Tyner, K., **Alsammani, A.**, Hegeman, G., Stacey, W., &amp; Gliske, S.",
+  "venue": "<em>SLEEP</em>, 45, 1.",
+  "links": {}
+ },
+ {
+  "id": "alsammani2021aes",
+  "year": 2021,
+  "type": "abstract",
+  "areas": [
+   "neuro"
+  ],
+  "title": "Effect of sleep stage on high-frequency oscillations and artifacts",
+  "authors": "**Alsammani, A.**, Gliske, S., &amp; Stacey, W.",
+  "venue": "AES 2021 Annual Meeting Abstract Database.",
+  "links": {}
+ },
+ {
+  "id": "alsammani2020dissertation",
+  "year": 2020,
+  "type": "other",
+  "areas": [
+   "dynsys"
+  ],
+  "title": "Dynamical behavior of nonautonomous and stochastic HBV infection model",
+  "authors": "**Alsammani, A. A. M.**",
+  "venue": "Ph.D. dissertation, Auburn University.",
+  "links": {}
+ },
+ {
+  "id": "abdulrashid2019dcdsb",
+  "year": 2019,
+  "type": "journal",
+  "areas": [
+   "dynsys"
+  ],
+  "title": "Stability analysis of a chemotherapy model with delays",
+  "authors": "Abdulrashid, I., **Alsammani, A. A. M.**, &amp; Han, X.",
+  "venue": "<em>Discrete &amp; Continuous Dynamical Systems – Series B</em>, 24(3), 989.",
+  "links": {
+   "DOI": "https://doi.org/10.3934/dcdsb.2019002"
+  }
+ }
+]

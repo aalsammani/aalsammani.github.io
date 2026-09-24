@@ -1,0 +1,41 @@
+[
+ {
+  "title": "Structural identifiability for mechanistic and hybrid models",
+  "question": "Which parameters of a differential equation model, with or without a learned component, can be recovered from the quantities actually observed?",
+  "tags": [
+   "Scientific ML",
+   "Structural identifiability",
+   "Symbolic computation"
+  ],
+  "figure": "identifiability",
+  "links": {
+   "Paper": "https://arxiv.org/abs/2605.18910"
+  }
+ },
+ {
+  "title": "Vaccination behavior, COVID-19 dynamics, and economic outcomes",
+  "question": "How do vaccination decisions and economic conditions feed back on one another to shape the long term course of an epidemic?",
+  "tags": [
+   "Dynamical systems",
+   "Behavioral epidemiology",
+   "Stability analysis"
+  ],
+  "figure": "epidemic",
+  "links": {
+   "Paper": "https://doi.org/10.3934/mbe.2025084"
+  }
+ },
+ {
+  "title": "High frequency oscillations in long term intracranial EEG",
+  "question": "How do recording duration and vigilance state change the characterization of HFOs, a candidate biomarker of the seizure generating region?",
+  "tags": [
+   "Computational neuroscience",
+   "Signal analysis",
+   "Circular statistics"
+  ],
+  "figure": "hfo",
+  "links": {
+   "Paper": "https://doi.org/10.1212/WNL.0000000000218225"
+  }
+ }
+]

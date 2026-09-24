@@ -1,0 +1,26 @@
+[
+ {
+  "title": "Symbolic structural identifiability analysis of ODE models in Julia",
+  "kind": "Tutorial",
+  "text": "A step by step tutorial on deciding, from the model equations alone, which parameters of an ODE model can be recovered from the observed outputs.",
+  "links": {
+   "arXiv": "https://arxiv.org/abs/2605.18910"
+  }
+ },
+ {
+  "title": "Student Guidelines for Responsible Use of Generative AI",
+  "kind": "Educational resource",
+  "text": "A one page guide giving students a practical framework for using generative AI in coursework while preserving learning, integrity, privacy, and responsibility.",
+  "links": {
+   "PDF": "AI-Guide-4-students.pdf"
+  }
+ },
+ {
+  "title": "Code and notebooks",
+  "kind": "Repositories",
+  "text": "Research code and course materials are released through GitHub as projects are published.",
+  "links": {
+   "GitHub": "https://github.com/aalsammani"
+  }
+ }
+]
