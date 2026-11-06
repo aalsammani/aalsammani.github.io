@@ -9,7 +9,8 @@
   ],
   "figure": "identifiability",
   "links": {
-   "Paper": "https://arxiv.org/abs/2605.18910"
+   "Paper": "https://doi.org/10.1007/s11538-026-01779-0",
+   "Code": "https://doi.org/10.5281/zenodo.18684343"
   }
  },
  {
@@ -26,7 +27,7 @@
   }
  },
  {
-  "title": "High frequency oscillations in long term intracranial EEG",
+  "title": "High-frequency oscillations in long-term intracranial EEG",
   "question": "How do recording duration and vigilance state change the characterization of HFOs, a candidate biomarker of the seizure generating region?",
   "tags": [
    "Computational neuroscience",

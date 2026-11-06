@@ -10,7 +10,7 @@ from figures import ICONS, hero_svg, FIG_HYBRID, FIG_EPI, FIG_IEEG, FIG_UQ, FIG_
 SITE = "https://aalsammani.github.io"
 EMAIL = "aalsammani@desu.edu"
 PROFILES = {  # verified URLs only (see CONTENT_VERIFICATION.md)
-    "Google Scholar": ("i-scholar", "https://scholar.google.com/citations?user=abdallah-alsammani"),
+    "Google Scholar": ("i-scholar", "https://scholar.google.com/citations?view_op=search_authors&amp;mauthors=Abdallah+Alsammani"),  # profile ID unverified (PENDING_UPDATES #3); author search until the 12-character user= ID is supplied
     "ORCID": ("i-orcid", "https://orcid.org/0000-0003-4340-4550"),
     "GitHub": ("i-github", "https://github.com/aalsammani"),
     "LinkedIn": ("i-linkedin", "https://www.linkedin.com/in/abdallah-alsammani/"),
@@ -42,7 +42,7 @@ def head(title, desc, canonical, person=False):
  "worksFor":{{"@type":"CollegeOrUniversity","name":"Delaware State University","department":"Department of Mathematical Sciences"}},
  "email":"mailto:{EMAIL}","url":"{SITE}/","image":"{SITE}/assets/img/profile.jpg","sameAs":[{same}],
  "alumniOf":[{{"@type":"CollegeOrUniversity","name":"Auburn University"}}],
- "knowsAbout":["Dynamical systems","Stochastic modeling","Structural identifiability","Scientific machine learning","Uncertainty quantification","Biomedical data science","Computational neuroscience","Mathematical epidemiology"]}}
+ "knowsAbout":["Applied mathematics","Dynamical systems","Ordinary, stochastic, and partial differential equations","Mathematical biology","Mathematical epidemiology","Structural and practical identifiability","Inverse problems","Uncertainty quantification","Scientific machine learning","Interpretable machine learning","Biomedical data science","Computational neuroscience","Numerical methods and scientific computing"]}}
 </script>'''
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -52,11 +52,11 @@ def head(title, desc, canonical, person=False):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <meta name="author" content="Abdallah Alsammani">
-<link rel="canonical" href="{SITE}/{canonical}">
+<link rel="canonical" href="{SITE}/{'' if canonical == 'index.html' else canonical}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:url" content="{SITE}/{canonical}">
+<meta property="og:url" content="{SITE}/{'' if canonical == 'index.html' else canonical}">
 <meta property="og:image" content="{SITE}/assets/img/profile.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#294766">
@@ -102,7 +102,12 @@ def page_header(h1, lede, nav=None):
 
 def pub_item(p):
     links = ''.join(f'<a href="{u}"{ext(u)}>{l}</a>' for l, u in p['links'].items())
-    lab = f'<span class="label label--preprint">Preprint</span>' if p['type'] == 'preprint' else f'<span class="label">{TYPE_LABEL[p["type"]]}</span>'
+    if p.get('status') == 'accepted':  # formally accepted, not yet published: never labeled as a published article
+        lab = '<span class="label label--accepted">Accepted (in press)</span>'
+    elif p['type'] == 'preprint':
+        lab = '<span class="label label--preprint">Preprint</span>'
+    else:
+        lab = f'<span class="label">{TYPE_LABEL[p["type"]]}</span>'
     return f'''
     <article class="pub" data-areas="{' '.join(p['areas'])}" data-type="{p['type']}">
       <div><h3 class="pub__title">{p['title']}</h3><p class="pub__authors">{me(p['authors'])} ({p['year']}).</p><p class="pub__venue">{p['venue']}</p></div>
@@ -141,23 +146,23 @@ def pillar(pid, num, title, anim, summary, questions, tags, pubs, section):
 
 pillars_html = (
   pillar("modeling","01","Mathematical Modeling",ANIM_MODELING,
-    "Deterministic, stochastic, delayed, and fractional order models of infectious disease and biological processes, analyzed with stability, bifurcation, and optimal control theory.",
-    ["How do seasonality, random fluctuation, and delay change the long term behavior of an infection model?","Which vaccination, treatment, or sanitation strategies are optimal, and how sensitive are they to human behavior?"],
+    "Deterministic, stochastic, delayed, and fractional-order models of infectious disease and biological processes, analyzed with stability, bifurcation, and optimal control theory.",
+    ["How do seasonality, random fluctuation, and delay change the long-term behavior of an infection model?","Which vaccination, treatment, or sanitation strategies are optimal, and how sensitive are they to human behavior?"],
     ["ODE, SDE, delay systems","Basic reproduction number","Lyapunov stability","Optimal control","Fractional calculus"],
-    [("Vaccination behavior, COVID-19 dynamics, and economic outcomes","MBE, 2025","https://doi.org/10.3934/mbe.2025084"),("Mittag-Leffler stability of Caputo fractional systems with delays","arXiv, 2026","https://arxiv.org/abs/2602.07105"),("Cholera transmission with sanitation controls","arXiv, 2025","https://arxiv.org/abs/2505.08873")],"dynsys") +
+    [("Vaccination behavior, COVID-19 dynamics, and economic outcomes","MBE, 2025","https://doi.org/10.3934/mbe.2025084"),("Mittag-Leffler stability of Caputo fractional systems with delays","arXiv, 2026","https://arxiv.org/abs/2602.07105"),("Threshold dynamics and integrated control of cholera transmission","arXiv, 2025","https://arxiv.org/abs/2505.08873")],"dynsys") +
   pillar("sciml","02","Scientific Machine Learning",ANIM_SCIML,
     "Hybrid models that keep mechanistic structure and let a learned component absorb what the mechanism omits, with structural identifiability analysis to decide what the data can determine before fitting.",
     ["When a learned term is added to a mechanistic model, which parameters remain identifiable from the observed outputs?","How should neural and universal differential equations be trained so that the learned part cannot silently compensate for a wrong mechanism?"],
     ["Neural and universal ODEs","Structural identifiability","Symbolic computation","Uncertainty quantification"],
-    [("A tutorial on symbolic structural identifiability analysis of ODE models in Julia","arXiv, 2026","https://arxiv.org/abs/2605.18910"),("Stochastic dynamics of hepatitis B virus infection","arXiv, 2023","https://arxiv.org/abs/2308.05819")],"sciml") +
+    [("A tutorial on symbolic structural identifiability analysis of ODE models in Julia","Bull. Math. Biol., 2026","https://doi.org/10.1007/s11538-026-01779-0"),("Stochastic dynamics of hepatitis B virus infection","arXiv, 2023","https://arxiv.org/abs/2308.05819")],"sciml") +
   pillar("biomed","03","Biomedical Data Science",ANIM_BIOMED,
     "Clinical prediction models that are calibrated and interpretable, statistical methods for data with unusual structure such as angles, and the optimization theory behind training learning models.",
     ["Can a model built from routine clinical data support prognosis where specialist resources are scarce?","How well calibrated are a model's probabilities, and how should they be corrected without losing discrimination?"],
     ["Calibration and interpretability","Circular statistics","Bayesian inference","Optimization for learning"],
-    [("Calibrated and interpretable ML for ICU mortality prediction","medRxiv, 2026","https://www.medrxiv.org/content/10.64898/2026.05.30.26354524v1"),("Interpretable ML prognosis of mycetoma from routine clinical data","TRSTMH, 2026","https://doi.org/10.1093/trstmh/trag061"),("Circular statistics in the presence of measurement bias","IEEE JBHI","https://doi.org/10.1109/JBHI.2023.3334684")],"learning") +
+    [("Calibrated and interpretable ML for ICU mortality prediction","medRxiv, 2026","https://www.medrxiv.org/content/10.64898/2026.05.30.26354524v1"),("Interpretable ML prognosis of mycetoma from routine clinical data","TRSTMH, 2026","https://doi.org/10.1093/trstmh/trag061"),("Machine learning algorithm selection: a unified framework","J. Intell. Fuzzy Syst., accepted","publications.html#all"),("Circular statistics in the presence of measurement bias","IEEE JBHI","https://doi.org/10.1109/JBHI.2023.3334684")],"learning") +
   pillar("neuro","04","Computational Neuroscience",ANIM_NEURO,
-    "Statistical analysis of intracranial EEG from patients with epilepsy, centered on high frequency oscillations as a candidate biomarker and on the recording conditions that confound them.",
-    ["How do recording duration, sleep stage, and circadian time change the detection and interpretation of high frequency oscillations?","Can automated detection be made robust enough for long term clinical recordings?"],
+    "Statistical analysis of intracranial EEG from patients with epilepsy, centered on high-frequency oscillations as a candidate biomarker and on the recording conditions that confound them.",
+    ["How do recording duration, sleep stage, and circadian time change the detection and interpretation of high-frequency oscillations?","Can automated detection be made robust enough for long term clinical recordings?"],
     ["Signal processing","Event detection","Sleep and vigilance state","Phase and circadian analysis"],
     [("Recording duration and vigilance state in HFO characterization","Neurology, 2026","https://doi.org/10.1212/WNL.0000000000218225"),("Effect of sleep stage on high frequency oscillations and artifacts","AES, 2021","publications.html")],"domains"))
 
@@ -172,13 +177,13 @@ rdiag = ('<div class="rdiag" aria-label="Research program as a progression">'
 
 home = f"""
 <section class="hero"><div class="container hero__grid">
-  <div class="hero__portrait"><img src="assets/img/profile.jpg" alt="Portrait of Abdallah Alsammani" width="200" height="200" fetchpriority="high"></div>
+  <div class="hero__portrait"><img src="assets/img/profile.jpg" alt="Portrait of Abdallah Alsammani" width="400" height="400" fetchpriority="high"></div>
   <div>
     <p class="hero__kicker">Assistant Professor of Mathematics &amp; Data Science</p>
     <h1 class="hero__name">Abdallah Alsammani, Ph.D.</h1>
     <p class="hero__inst">Department of Mathematical Sciences, Delaware State University</p>
-    <p class="hero__identity">Mathematical &amp; Scientific Machine Learning for Biomedical Systems</p>
-    <p class="hero__statement">I am an applied mathematician. I build differential equation models of biological and clinical systems, ask which of their parameters can actually be learned from data, and combine them with machine learning when the mechanism is only partly known. The questions that drive the work are concrete: how an infection spreads and responds to intervention, which patients are at risk and how far a model's probability can be trusted, and what high frequency oscillations in intracranial EEG reveal about epilepsy.</p>
+    <p class="hero__identity">Mathematical Modeling &amp; Scientific Machine Learning for Biomedical Systems</p>
+    <p class="hero__statement">I am an applied mathematician and data scientist developing mathematical and scientific machine learning methods for biomedical systems. My research integrates differential equation models with machine learning to understand complex biological and clinical dynamics, determine what can be reliably learned from data, and quantify uncertainty in model predictions. My current work spans infectious-disease modeling, trustworthy prediction of clinical outcomes, and computational neuroscience, including the study of high-frequency oscillations in intracranial EEG. I also welcome interdisciplinary collaborations that apply mathematical modeling and data science to challenging scientific and real-world problems.</p>
     <div class="btn-row"><a class="btn btn--primary" href="research.html">Research</a><a class="btn btn--outline" href="publications.html">Publications</a><a class="btn btn--outline" href="CV.pdf">CV</a></div>
     {profile_links()}
   </div>
@@ -232,7 +237,7 @@ def area(aid, title, lead, paras, tags, works, extra=''):
 
 works_dynsys = [("Impact of vaccination behavior on COVID-19 dynamics and economic outcomes","Math. Biosci. Eng., 2025","https://doi.org/10.3934/mbe.2025084"),
      ("Adaptive control and Mittag-Leffler stability of Caputo fractional systems with state-dependent delays","arXiv, 2026","https://arxiv.org/abs/2602.07105"),
-     ("Long-term coexistence of epidemics and risk awareness","arXiv, 2026","https://arxiv.org/abs/2607.18301"),
+     ("Long-term coexistence of epidemics and risk awareness","BIOMATH, 2026","https://doi.org/10.55630/j.biomath.2026.10.234"),
      ("Stability analysis of a chemotherapy model with delays","DCDS-B, 2019","https://doi.org/10.3934/dcdsb.2019002")]
 explorer_sir = explorer('sir', 'Explore: the SIR model and the basic reproduction number',
     'A closed population divided into susceptible, infectious, and recovered fractions with transmission rate β and recovery rate γ; ' + MATH_R0 + '. Synthetic illustration solved in the browser; not data from a publication.',
@@ -255,25 +260,26 @@ research = page_header('Research', 'Mathematically rigorous computational method
     "Deterministic and stochastic models of infectious diseases and biological processes, analyzed with the tools of dynamical systems and control theory.",
     ["My work in this area began with stability analysis of a chemotherapy model with delays and with hepatitis B virus infection models in autonomous, nonautonomous, and stochastic settings. More recent projects couple disease dynamics to human behavior: a model in which vaccination behavior, COVID-19 transmission, and economic outcomes influence one another, a cholera model with sanitation controls, and a study of how adaptive risk awareness and fatigue shape the long term coexistence of epidemics and awareness.",
      "A parallel line extends stability theory itself. With G. Farah I have established adaptive control and Mittag-Leffler stability results for Caputo fractional systems with state dependent delays, so that memory dependent dynamics can be analyzed with the same rigor as classical ones. Across these projects the tools are consistent: threshold quantities such as the basic reproduction number, Lyapunov based stability arguments, bifurcation analysis, and optimal control."],
-    ["ODE, SDE and delay systems","Stability and bifurcation","Basic reproduction number","Optimal control","Fractional calculus"],
+    ["ODE, SDE and delay systems","Stability and bifurcation","Basic reproduction number","Optimal control","Fractional calculus","Numerical simulation"],
     works_dynsys, explorer_sir)
 }
   {area("sciml","Scientific Machine Learning &amp; Structural Identifiability",
     "Methods that combine mechanistic models with learned components, and the identifiability analysis that determines what such a model can recover from data.",
     ["A hybrid model keeps the structure of a mechanistic model, " + MATH_HYBRID + " and lets a flexible component <em>g</em>, typically a neural network, absorb what the mechanism <em>f</em> cannot express. Neural and universal differential equations are the general form. The approach retains interpretability where mechanism is trusted and adds flexibility where it is not, but it raises a question that must be answered before any fitting: which parameters can be recovered from the observed outputs at all?",
-     "Structural identifiability answers that question symbolically, from the model equations alone. I have written a tutorial on carrying out this analysis in Julia, and I treat identifiability as the first step of every modeling project. The ongoing goal is a theory of identifiable hybrid models: conditions under which a mechanistic model augmented with a learned component remains identifiable, and training procedures that enforce them."],
-    ["Neural and universal differential equations","Hybrid mechanistic and learned models","Structural identifiability","Symbolic computation","Uncertainty quantification"],
-    [("A tutorial on symbolic structural identifiability analysis of ODE models in Julia","arXiv, 2026","https://arxiv.org/abs/2605.18910"),
-     ("Stochastic dynamics of hepatitis B virus infection","arXiv, 2023","https://arxiv.org/abs/2308.05819")],
+     "Structural identifiability answers that question symbolically, from the model equations alone. My tutorial on carrying out this analysis in Julia is published in the <em>Bulletin of Mathematical Biology</em> with a reproducibility package, and I treat identifiability as the first step of every modeling project. The ongoing goal is a theory of identifiable hybrid models: conditions under which a mechanistic model augmented with a learned component remains identifiable, and training procedures that enforce them."],
+    ["Neural and universal differential equations","Hybrid mechanistic and learned models","Structural identifiability","Inverse problems and parameter estimation","Symbolic computation","Uncertainty quantification"],
+    [("A tutorial on symbolic structural identifiability analysis of ODE models in Julia","Bull. Math. Biol., 2026","https://doi.org/10.1007/s11538-026-01779-0"),
+     ("Stochastic dynamics of hepatitis B virus infection: Extinction, persistence, and ergodicity","arXiv, 2023","https://arxiv.org/abs/2308.05819")],
     figure(FIG_NODE, "Architecture of a hybrid neural differential equation: the mechanistic vector field and a neural network are summed and integrated by an ODE solver; both parameter sets are trained by differentiating through the solver.") + explorer_ident + explorer_hybrid)}
   {area("learning","Statistical Learning, Uncertainty Quantification &amp; Optimization",
     "Predictive models whose probabilities mean what they say, statistical methodology for data with unusual structure, and the optimization theory that underlies training.",
     ["A clinical prediction model is useful only if it is calibrated, so that predicted probabilities match observed frequencies, and interpretable, so that its reasoning can be inspected. With undergraduate researcher M. Johnson and J. Elrefaei I developed a calibrated and interpretable model for ICU mortality from the first twenty four hours of clinical data, and with clinical collaborators an interpretable prognosis model for mycetoma from routine measurements. In statistical methodology, I developed a method for estimating circular statistics, such as the phase of an oscillation, when each measurement carries a systematic bias.",
      "An emerging direction treats the training of machine learning and deep learning models as a problem in dynamical systems and control. Gradient descent discretizes a gradient flow, momentum methods are second order dynamics, and stochastic gradients inject structured noise, so the stability, delay, and perturbation theory I use for biological systems applies to the algorithms that fit models as well. I am pursuing step size and adaptive schemes with stability guarantees, optimizers whose effect on robustness and calibration can be characterized, and training methods for hybrid and neural differential equation models that respect identifiability constraints. This direction is in progress and has not yet produced publications."],
-    ["Calibration and interpretability","Circular statistics","Bayesian inference","Survival and time series analysis","Optimization for learning"],
+    ["Calibration and interpretability","Circular statistics","Bayesian inference","Survival and time series analysis","Algorithm selection and evaluation","Low-rank approximation","Optimization for learning"],
     [("Calibrated and interpretable machine learning for ICU mortality prediction","medRxiv preprint, 2026","https://www.medrxiv.org/content/10.64898/2026.05.30.26354524v1"),
      ("Interpretable machine-learning prognosis of mycetoma from routine clinical data","Trans. R. Soc. Trop. Med. Hyg., 2026","https://doi.org/10.1093/trstmh/trag061"),
-     ("Estimation of circular statistics in the presence of measurement bias","IEEE J. Biomed. Health Inform., 28(2)","https://doi.org/10.1109/JBHI.2023.3334684")],
+     ("Machine learning algorithm selection: A unified framework from classical methods to foundation models","J. Intell. Fuzzy Syst., accepted 2026 (in press)","publications.html#all"),
+     ("Estimation of circular statistics in the presence of measurement bias","IEEE J. Biomed. Health Inform., 2024","https://doi.org/10.1109/JBHI.2023.3334684")],
     figure(FIG_UQ, "Uncertainty propagation: when the transmission rate of an SIR model is only known to within twenty percent, the possible epidemic curves form a band. Quantifying and reporting such bands is part of every forecasting project. Synthetic illustration."))}
 </div></section>
 
@@ -350,6 +356,7 @@ allnews = ''.join(f'<li><span class="news__date">{n["date"]}</span><div><div cla
 group = page_header('Research Group', 'A small group in the Department of Mathematical Sciences at Delaware State University developing mathematical models and data driven methods for problems in public health, biomedicine, and neuroscience, and training students to do the same.',
     [("people","People"),("projects","Current projects"),("opportunities","Opportunities"),("news","Group news")]) + f'''
 <section class="section" id="people"><div class="container">
+  <h2 class="sr-only">People</h2>
   <div class="pi"><div class="pi__photo"><img src="assets/img/profile.jpg" alt="Portrait of Abdallah Alsammani" width="140" height="140"></div>
     <div><h3>Abdallah Alsammani, Ph.D.</h3><div class="pi__role">Principal Investigator · Assistant Professor of Mathematics and Data Science</div>
     <p class="small muted">I completed my Ph.D. in Applied Mathematics at Auburn University in 2020, then held postdoctoral positions in Neurosurgery at the University of Nebraska Medical Center and in Infectious Diseases at the University of Georgia. I was Assistant Professor of Data Science at Jacksonville University from 2022 to 2025 before joining Delaware State University. I am a member of the American Epilepsy Society and the American Mathematical Society.</p>
@@ -362,7 +369,7 @@ group = page_header('Research Group', 'A small group in the Department of Mathem
   <div class="section-head"><h2>Current projects</h2><p>Directions the group is pursuing now. Each is a place where a new student can contribute.</p></div>
   <ol class="projects">
     <li><div><h3>Hybrid epidemic forecasting</h3><p>Compartmental models combined with learned transmission terms, with identifiability checked symbolically before fitting and forecasts evaluated on withheld data with calibration diagnostics.</p></div></li>
-    <li><div><h3>Identifiability and optimization for hybrid models</h3><p>Conditions under which a mechanistic model augmented with a neural component remains structurally identifiable, and training procedures with stability guarantees that enforce them. Related: <a href="https://arxiv.org/abs/2605.18910" target="_blank" rel="noopener">identifiability tutorial</a>.</p></div></li>
+    <li><div><h3>Identifiability and optimization for hybrid models</h3><p>Conditions under which a mechanistic model augmented with a neural component remains structurally identifiable, and training procedures with stability guarantees that enforce them. Related: <a href="https://doi.org/10.1007/s11538-026-01779-0" target="_blank" rel="noopener">identifiability tutorial</a> (<em>Bulletin of Mathematical Biology</em>, 2026).</p></div></li>
     <li><div><h3>Trustworthy clinical prediction</h3><p>Calibration, uncertainty quantification, and interpretability for clinical models, from ICU outcomes to multimodal electronic health record data, with calibration assessed across patient subgroups.</p></div></li>
     <li><div><h3>Automated HFO detection in long term intracranial EEG</h3><p>Deep learning detectors for pathological high frequency oscillations that account for vigilance state and recording duration, building on the group's clinical collaborations. Related: <a href="https://doi.org/10.1212/WNL.0000000000218225" target="_blank" rel="noopener">Neurology, 2026</a>.</p></div></li>
   </ol>
@@ -422,7 +429,7 @@ teaching = page_header('Teaching', 'Mathematics provides a language for describi
     {framework("Ethics and integrity","Is my own contribution honestly and clearly represented?",["Disclose AI use when required.","Do not present AI generated work as your own.","Follow course specific expectations.","Agree on clear AI use norms in collaborative work."])}
     {framework("Awareness and safety","Is the output, and what I entered, safe to rely on?",["Protect personal, confidential, proprietary, and identifying information.","Confirm course and assignment expectations before using AI.","Recognize that AI outputs may be inaccurate or biased.","Recheck guidance as tools and policies evolve."])}
   </div>
-  <div class="resource-panel"><div><h3>Student Guidelines for Responsible Use of Generative AI</h3><div class="sub">A practical guide for responsible AI use in higher education.</div><p>A one page framework for deciding when and how generative AI can support coursework while preserving learning, academic integrity, privacy, and individual responsibility. It is an educational resource, not an institutional policy; where a course policy differs, the course policy governs.</p><p class="small muted" style="margin-top:var(--s3)">Companion scholarship: Alsammani, A. (2026). <em>A Student-Centered Framework for Responsible Use of Generative AI in Higher Education.</em> EdArXiv preprint.</p></div>
+  <div class="resource-panel"><div><h3>Student Guidelines for Responsible Use of Generative AI</h3><div class="sub">A practical guide for responsible AI use in higher education.</div><p>A one page framework for deciding when and how generative AI can support coursework while preserving learning, academic integrity, privacy, and individual responsibility. It is an educational resource, not an institutional policy; where a course policy differs, the course policy governs.</p><p class="small muted" style="margin-top:var(--s3)">Companion scholarship: Alsammani, A. (2026). <em>A Student-Centered Framework for Responsible Use of Generative AI in Higher Education.</em> EdArXiv preprint. <a href="https://doi.org/10.35542/osf.io/vsjhe_v2" target="_blank" rel="noopener">doi:10.35542/osf.io/vsjhe_v2</a></p></div>
     <div class="btn-row"><a class="btn btn--primary" href="AI-Guide-4-students.pdf" target="_blank" rel="noopener">View the guide (PDF)</a></div></div>
 </div></section>
 
@@ -485,6 +492,7 @@ page('cv.html', 'Curriculum Vitae — Abdallah Alsammani, Ph.D.', 'Academic appo
 # ============================================================ CONTACT
 contact = page_header('Contact', 'For research collaboration, graduate and undergraduate advising, seminar and conference invitations, and consultation on mathematical modeling and biomedical data analysis.') + f'''
 <section class="section"><div class="container contact">
+  <h2 class="sr-only">Contact details</h2>
   <ul class="contact-list">
     <li><h3>Email</h3><a href="mailto:{EMAIL}">{EMAIL}</a></li>
     <li><h3>Office</h3>Department of Mathematical Sciences<br>Delaware State University<br>1200 N. DuPont Highway, Dover, DE 19901</li>

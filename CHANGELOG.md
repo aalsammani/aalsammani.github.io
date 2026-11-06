@@ -113,3 +113,39 @@
   expandable panel with questions, methods, and selected publications. Animations are pure CSS and switch off under
   prefers-reduced-motion; the diagram stacks vertically below 1024 px.
 - Group page PI biography rewritten in first person. No em dashes in prose anywhere on the site.
+
+## v7.1 — 2026-11-06 · Publication audit, research software, figure corrections (no redesign)
+Full details and evidence: `WEBSITE_UPDATE_REPORT_2026-11-06.md`.
+### Publications (`_data/publications.json`, 22 → 27 records; all IDs preserved)
+- New: Alsammani, *Machine learning algorithm selection* — **accepted** in *Journal of Intelligent & Fuzzy Systems*
+  (Nov 5, 2026), shown as "Accepted (in press)"; no DOI/volume/pages (none exist yet). Companion code + Zenodo DOI linked.
+- Preprint → journal: identifiability tutorial (*Bull. Math. Biol.* 88(11), Art. 212, doi:10.1007/s11538-026-01779-0);
+  epidemic–awareness paper (*BIOMATH* 15(2), Art. 2610234, doi:10.55630/j.biomath.2026.10.234). arXiv kept as extra links.
+- Corrected: full author lists (Neurology, TRSTMH, arXiv 2408.04862); TRSTMH 120(9) 929–947; JBHI year 2023 → 2024 (issue
+  date); current arXiv titles for 2505.08873 (v2) and 2308.05819 (v3); DOIs added for CRC fleet paper, ICCSA 2023/2024,
+  SLEEP 2022, SSRN preprints; open arXiv versions linked for JBHI, ICCSA 2023/2024, Information Systems.
+- Added from CV/ORCID: low-rank compression preprint (SSRN 7293357), EdArXiv AI framework preprint, AES 2025 and
+  AI-in-Epilepsy 2026 abstracts. ICU paper unchanged (medRxiv preprint; no published version).
+- Schema: optional `"status": "accepted"` on a journal record → label "Accepted (in press)" (`.label--accepted`).
+### Content
+- News: three new homepage items (JIFS acceptance, BMB, BIOMATH); arXiv-posting item superseded by the BMB item.
+- Software & resources: identifiability reproducibility package, ML Selection Framework, SIRA code, *Calculus and Matrix
+  Methods for Data Science* open textbook (PENDING #16), Zenodo DOI for the AI guide; EdArXiv DOI on Teaching (PENDING #19).
+- Research/Home/Group links updated from arXiv to journal DOIs; method tags and JSON-LD `knowsAbout` aligned with the
+  stated research areas. Google Scholar link → author search (profile ID still unverified, PENDING #3).
+- Generator now reproduces the owner's direct GitHub edits to index.html (hero statement, identity line, 400 px portrait,
+  hyphenation); a rebuild no longer reverts them.
+### Figures (`_build/figures.py`, `assets/js/explorers.js`)
+- Hero phase portrait: vector field used decay 0.35 but trajectories 0.16 (≈10° misalignment) → one shared constant.
+- Pillar 02 animation regenerated from a single ODE (linear spiral sink + cubic correction, RK4), field and particles consistent.
+- Pillar 01: removed unlabeled S(t) curve drawn on a different scale from the three (×3-scaled) I(t) curves.
+- Pillar 04: synthetic iEEG regenerated so each event marker sits on an actual high-frequency burst.
+- Featured vaccination figure: hand-drawn Bézier curves and an unlabeled dashed curve → curves computed from an SIR model
+  with vaccination, labeled synthetic. Identifiability figure: clipped caption text rewrapped.
+- Reliability-diagram label corrected ("overestimates risk", not "overconfident"); explorers: x tick labels no longer
+  rounded (2.5 shown as "3"), identifiability demo shows a genuinely different (a, b) pair when a = b.
+### Technical
+- Fixed broken `< h3>` tag on the homepage; visually hidden `<h2>` on Group and Contact (heading outline);
+  home canonical/og:url → site root (matches sitemap); sitemap lastmod updated; ASCE link → DOI link.
+- `preview/*.preview.html` regenerated from current pages (were v4.1, Sept 3) by new `_build/make_previews.py`.
+- New `_build/validate.py` (structure, links, anchors, data consistency; `--external` resolves DOIs and links).

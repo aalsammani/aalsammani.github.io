@@ -1,12 +1,12 @@
 # PROJECT_CONTEXT.md — Long-term memory for the Alsammani website
 
-Last updated: 2026-09-13 (v5.0 comprehensive redesign)
+Last updated: 2026-11-06 (v7.1 publication audit; earlier: 2026-09-13 v5.0 redesign)
 
 ## Owner
 Abdallah Alsammani, Ph.D. — Assistant Professor of Mathematics and Data Science (tenure-track),
 Department of Mathematical Sciences, Delaware State University, Dover, DE. aalsammani@desu.edu · 302.857.6642.
-Site URL assumed: https://aalsammani.github.io (from the CV header). Update SITE_URL in `_build/partials.py`,
-`sitemap.xml`, and `robots.txt` if a custom domain is adopted.
+Site URL: https://aalsammani.github.io (from the CV header). Update `SITE` in `_build/build.py`,
+`sitemap.xml`, and `robots.txt` if a custom domain is adopted. (`_build/partials.py` no longer exists.)
 
 ## Purpose of the site
 Communicate a coherent research identity — **Mathematical & Scientific Machine Learning for Biomedical Systems** —
@@ -14,8 +14,10 @@ to prospective students, collaborators, funders, and hiring/tenure committees. I
 academic research program, not an online CV and not a technology start-up.
 
 ## Source of truth
-The CV (updated June 26, 2026) is the single source of truth for every factual claim. If the site and CV disagree,
-the CV wins and the site is corrected. Nothing is invented; unverifiable content is omitted and logged in
+The CV (current file: October 25, 2026) is the source of truth for appointments, teaching, service, and mentoring.
+For **publication status and bibliographic data**, the publisher/registry record (Crossref DOI metadata, arXiv,
+medRxiv, ORCID) is authoritative, because the CV lags behind acceptances and revisions; a status is changed only on
+verifiable evidence (accepted ≠ published; submitted ≠ accepted). Nothing is invented; unverifiable content is omitted and logged in
 PENDING_UPDATES.md rather than guessed.
 
 ## Site architecture (v4.0)
@@ -70,3 +72,13 @@ foregrounded, because they sit outside the biomedical identity.
 - Palette moved to a lighter academic blue (#294766 / #315574) with a burgundy accent (#7A2E3B); see WEBSITE_STYLE_GUIDE.md.
 - Research is framed as a progression (Dynamical Systems → Structural Identifiability → Scientific ML → Biomedical Applications)
   with three methodological themes and three application domains; optimization for learning is an emerging, unpublished direction.
+
+## v7.1 notes (2026-11-06)
+- Publication records may carry `"status": "accepted"` (journal type) for formally accepted, unpublished articles; they
+  render as "Accepted (in press)" and must not carry a journal DOI. Remove the field when the article is published.
+- The owner sometimes edits `index.html` directly on GitHub; before rebuilding, compare the live HTML with a fresh build
+  (`git diff` after `python _build/build.py`) and port any such edits into `_build/build.py` first.
+- Figures and animations in `_build/figures.py` are generated from documented equations where they depict dynamics
+  (hero, FIG_EPI, ANIM_SCIML, ANIM_NEURO); ANIM_MODELING, ANIM_BIOMED, FIG_UQ, FIG_IEEG, FIG_NODE remain precomputed/static.
+- Checks: `python _build/validate.py` (add `--external` to resolve all DOIs/links). Previews: `python _build/make_previews.py`.
+- GitHub Pages builds with Jekyll (no `.nojekyll`); `_data/` and `_build/` are therefore not published, root `*.md` files are.

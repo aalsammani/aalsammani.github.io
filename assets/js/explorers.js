@@ -41,7 +41,7 @@
     }
     for (i = 0; i <= 4; i++) {
       var xv = this.xmin + (this.xmax - this.xmin) * i / 4, xx = this.x(xv);
-      t = el('text', { x: xx, y: y0 + 18, 'text-anchor': 'middle', 'font-size': 12, fill: C.gray }, this.g); t.textContent = fmt(xv, 0);
+      t = el('text', { x: xx, y: y0 + 18, 'text-anchor': 'middle', 'font-size': 12, fill: C.gray }, this.g); t.textContent = fmt(xv, Math.abs(xv - Math.round(xv)) < 1e-9 ? 0 : 1); // e.g. 2.5, not "3"
     }
     t = el('text', { x: (x0 + x1) / 2, y: this.H - 8, 'text-anchor': 'middle', 'font-size': 13, fill: C.gray }, this.g); t.textContent = opts.xlabel || '';
     t = el('text', { x: 14, y: (y0 + y1) / 2, 'text-anchor': 'middle', 'font-size': 13, fill: C.gray, transform: 'rotate(-90 14 ' + (y0 + y1) / 2 + ')' }, this.g); t.textContent = opts.ylabel || '';
@@ -119,7 +119,8 @@
         alt = root.querySelector('[data-p=alt]'), out = root.querySelector('[data-out]');
     function draw() {
       var a = +aS.value, b = +bS.value, s = a + b, T = 10, n = 200, ts = [], y = [], y2 = [];
-      var a2 = Math.min(s - 0.05, Math.max(0.05, s - a)); // a different split with the same sum
+      // a different split with the same sum: swap a and b, or (when a = b) split the sum 30/70
+      var a2 = Math.abs(a - b) > 0.02 ? b : Math.round(s * 30) / 100;
       for (var i = 0; i <= n; i++) { var t = T * i / n; ts.push(t); y.push(Math.exp(-s * t)); y2.push(Math.exp(-((a2) + (s - a2)) * t)); }
       var p = new Plot(svg, { xmin: 0, xmax: T, ymin: 0, ymax: 1, xlabel: 'time t', ylabel: 'observed output y(t) = x(t)/x₀' });
       p.line(ts, y, { stroke: C.navy, 'stroke-width': alt.checked ? 6 : 2.4, 'stroke-opacity': alt.checked ? 0.35 : 1 });

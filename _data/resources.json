@@ -1,10 +1,39 @@
 [
  {
   "title": "Symbolic structural identifiability analysis of ODE models in Julia",
-  "kind": "Tutorial",
-  "text": "A step by step tutorial on deciding, from the model equations alone, which parameters of an ODE model can be recovered from the observed outputs.",
+  "kind": "Tutorial &amp; code",
+  "text": "A step by step tutorial, published in the <em>Bulletin of Mathematical Biology</em>, on deciding from the model equations alone which parameters of an ODE model can be recovered from the observed outputs, with a reproducibility package containing the pinned Julia environment and worked examples.",
   "links": {
-   "arXiv": "https://arxiv.org/abs/2605.18910"
+   "Paper": "https://doi.org/10.1007/s11538-026-01779-0",
+   "Code": "https://github.com/aalsammani/Structural_Identifiability_Tutorial_Julia",
+   "Zenodo DOI": "https://doi.org/10.5281/zenodo.18684343"
+  }
+ },
+ {
+  "title": "ML Selection Framework: companion notebooks",
+  "kind": "Software",
+  "text": "Six Jupyter notebooks accompanying the article <em>Machine Learning Algorithm Selection: A Unified Framework from Classical Methods to Foundation Models</em>, accepted for publication in the <em>Journal of Intelligent &amp; Fuzzy Systems</em> (not yet published). They are educational examples of the methods, selection guidelines, and evaluation protocol described in the article, not experimental results. MIT license; v1.0.0 archived as doi:10.5281/zenodo.19599148.",
+  "links": {
+   "GitHub": "https://github.com/aalsammani/ml-selection-framework",
+   "Zenodo (all versions)": "https://doi.org/10.5281/zenodo.19599147"
+  }
+ },
+ {
+  "title": "SIRA: epidemic and risk awareness model",
+  "kind": "Code",
+  "text": "Model implementation, numerical simulations, stability, bifurcation, and sensitivity analyses, and figure scripts accompanying the <em>BIOMATH</em> article on long-term coexistence of epidemics and risk awareness.",
+  "links": {
+   "GitHub": "https://github.com/aalsammani/sira-epidemic-awareness",
+   "Zenodo DOI": "https://doi.org/10.5281/zenodo.22164947"
+  }
+ },
+ {
+  "title": "Calculus and Matrix Methods for Data Science",
+  "kind": "Open textbook",
+  "text": "An applied introduction with Python: calculus, series, linear algebra, and multivariable calculus, with each concept worked by hand and then implemented, verified, and visualized in Python.",
+  "links": {
+   "Read online": "https://aalsammani.github.io/calculus-4-DS/",
+   "GitHub": "https://github.com/aalsammani/calculus-4-DS"
   }
  },
  {
@@ -12,7 +41,8 @@
   "kind": "Educational resource",
   "text": "A one page guide giving students a practical framework for using generative AI in coursework while preserving learning, integrity, privacy, and responsibility.",
   "links": {
-   "PDF": "AI-Guide-4-students.pdf"
+   "PDF": "AI-Guide-4-students.pdf",
+   "Zenodo DOI": "https://doi.org/10.5281/zenodo.22153920"
   }
  },
  {

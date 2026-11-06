@@ -1,28 +1,41 @@
 [
  {
   "date": "2026",
+  "title": "Article on machine learning algorithm selection accepted for publication in <em>Journal of Intelligent &amp; Fuzzy Systems</em>",
+  "text": "A unified framework from classical methods to foundation models; accepted November 5, 2026 and not yet published. Companion notebooks are openly available.",
+  "url": "https://github.com/aalsammani/ml-selection-framework",
+  "home": true
+ },
+ {
+  "date": "2026",
+  "title": "Tutorial on symbolic structural identifiability analysis of ODE models in Julia published in <em>Bulletin of Mathematical Biology</em>",
+  "text": "Accompanied by an archived reproducibility package; previously available as arXiv:2605.18910.",
+  "url": "https://doi.org/10.1007/s11538-026-01779-0",
+  "home": true
+ },
+ {
+  "date": "2026",
+  "title": "Long-term coexistence of epidemics and risk awareness published in <em>BIOMATH</em>",
+  "text": "With Mozzamil Mohammed; model code released as SIRA.",
+  "url": "https://doi.org/10.55630/j.biomath.2026.10.234",
+  "home": true
+ },
+ {
+  "date": "2026",
   "title": "Study of recording duration and vigilance state in HFO characterization published in <em>Neurology</em>",
   "text": "With the epilepsy research group at the University of Nebraska Medical Center.",
-  "url": "https://doi.org/10.1212/WNL.0000000000218225",
-  "home": true
+  "url": "https://doi.org/10.1212/WNL.0000000000218225"
  },
  {
   "date": "2026",
   "title": "Preprint: calibrated and interpretable machine learning for ICU mortality prediction",
   "text": "Posted to medRxiv; co-authored with undergraduate researcher Merasia M. Johnson.",
-  "url": "https://www.medrxiv.org/content/10.64898/2026.05.30.26354524v1",
-  "home": true
+  "url": "https://www.medrxiv.org/content/10.64898/2026.05.30.26354524v1"
  },
  {
   "date": "2026",
   "title": "Faculty Summer Research Grant awarded (Principal Investigator)",
-  "text": "Delaware State University support for research in mathematical modeling, infectious disease dynamics, and data science.",
-  "home": true
- },
- {
-  "date": "2026",
-  "title": "Tutorial on symbolic structural identifiability analysis of ODE models in Julia posted to arXiv",
-  "url": "https://arxiv.org/abs/2605.18910"
+  "text": "Delaware State University support for research in mathematical modeling, infectious disease dynamics, and data science."
  },
  {
   "date": "2026",
@@ -32,7 +45,7 @@
  {
   "date": "2026",
   "title": "Work zone safety paper, co-authored with former mentee Ann Ubaka, published in the Construction Research Congress 2026 proceedings",
-  "url": "https://ascelibrary.org/doi/10.1061/9780784486993.087"
+  "url": "https://doi.org/10.1061/9780784486993.087"
  },
  {
   "date": "2026",

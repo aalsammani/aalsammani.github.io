@@ -93,6 +93,7 @@ strong{font-weight:600}
 .tag{display:inline-block;font-size:var(--fs-xs);color:var(--text-secondary);padding:.15rem .55rem;border:1px solid var(--border);border-radius:999px;background:#fff}
 .label{display:inline-block;font-size:var(--fs-xs);font-weight:600;color:var(--text-muted)}
 .label--preprint{color:var(--accent-burgundy)}
+.label--accepted{color:var(--primary-blue)}
 .on-page{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);margin-top:var(--s5);font-size:var(--fs-sm)}
 .on-page a{text-decoration:none;font-weight:600;color:var(--text-secondary)}
 .on-page a:hover{color:var(--accent-burgundy)}

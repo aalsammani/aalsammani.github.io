@@ -1,4 +1,4 @@
-# Abdallah Alsammani — Academic Website (v7.0, September 2026)
+# Abdallah Alsammani — Academic Website (v7.1, November 2026)
 
 Static site for GitHub Pages: plain HTML, one stylesheet, one small script, no frameworks or build dependencies.
 Deploy by copying this folder's contents to the root of the `aalsammani.github.io` repository.
@@ -16,7 +16,7 @@ assets/js/explorers.js      interactive research illustrations (research.html)
 assets/img/                 profile.jpg, favicon.svg
 _data/                      CONTENT SOURCE OF TRUTH (JSON): publications, news, people, featured, resources
 _build/                     generator: python3 _build/build.py regenerates the seven pages from _data + prose
-robots.txt sitemap.xml .nojekyll
+robots.txt sitemap.xml          (no .nojekyll: Pages runs Jekyll, which skips _data/ and _build/)
 ```
 
 ## Updating content (no HTML editing needed)
@@ -28,7 +28,9 @@ robots.txt sitemap.xml .nojekyll
 4. **Featured projects** — edit `_data/featured.json`; to use a real figure, put the image in `assets/img/` and change the
    `figure` field handling in `_build/build.py` (FIGS dict) or replace the SVG string with an `<img>` tag.
 5. **Software & resources** — edit `_data/resources.json`.
-6. Run `python3 _build/build.py` from this folder and commit the regenerated HTML.
+6. Run `python3 _build/build.py`, then `python3 _build/make_previews.py` and `python3 _build/validate.py`, and commit the regenerated HTML.
+
+A formally accepted (not yet published) article gets `"status": "accepted"` and is labeled "Accepted (in press)".
 
 Prose that is not data (research narrative, teaching text, CV entries) lives in `_build/build.py`.
 

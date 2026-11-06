@@ -1,6 +1,6 @@
 # CONTENT_VERIFICATION.md — Every public claim traced to the CV
 
-Reference: CV updated June 26, 2026 (8 pages). Status key: ✅ verified in CV · ⚠️ from previous site, not in CV ·
+Reference (historical sections below): CV updated June 26, 2026 (8 pages). **Current reference: CV.pdf updated October 25, 2026 (9 pages), plus publisher/Crossref/arXiv/medRxiv/ORCID/Zenodo records checked 2026-11-06 (see the v7.1 section at the end, which supersedes earlier publication statuses).** Status key: ✅ verified in CV · ⚠️ from previous site, not in CV ·
 ⛔ removed (unsupported) · ❓ awaiting PI confirmation (see PENDING_UPDATES.md)
 
 ## Identity & contact
@@ -103,3 +103,33 @@ Removed: "accepted April 2026 (in press)" (paper is published) ⛔; "AMDS Lab we
 
 ## v7.0 (2026-09-24)
 - Hero introduction and Group biography rewritten in first person from the CV; no new facts introduced. Pillar animations are synthetic illustrations of standard models (SIR, spiral sink flow, reliability diagram, synthetic EEG) and are labeled as such in their accessible names.
+
+## v7.1 audit (2026-11-06) — supersedes earlier publication statuses
+Sources: Crossref REST API (every DOI), DOI registry handle API (resolution), arXiv API (titles, versions, journal-ref),
+medRxiv/bioRxiv API (published-version lookup), ORCID public API (0000-0003-4340-4550, works list), OpenAlex, Zenodo API,
+GitHub API, CV.pdf (Oct 25, 2026). Full evidence table: WEBSITE_UPDATE_REPORT_2026-11-06.md.
+
+| Record | Status shown | Evidence |
+|---|---|---|
+| ML algorithm selection, *J. Intell. Fuzzy Syst.* | Accepted (in press), accepted 2026-11-05 | PI statement; companion README "accepted for publication"; no Crossref record (not published) ✅ |
+| Identifiability tutorial, *Bull. Math. Biol.* 88(11) Art. 212 | Journal article | Crossref: online 2026-10-25; arXiv journal-ref ✅ |
+| Epidemics & risk awareness, *BIOMATH* 15(2) Art. 2610234 | Journal article | Crossref: online 2026-10-23; arXiv journal-ref ✅ |
+| ICU mortality, medRxiv | Preprint | medRxiv API: v1 only, no published version ✅ |
+| Neurology 107(2) e218225 | Journal article, 11 authors | Crossref ✅ |
+| TRSTMH 120(9) 929–947 | Journal article, 7 authors | Crossref ✅ |
+| Information Systems 140, 102719 | Journal article | Crossref ✅ (+ arXiv 2601.16490) |
+| IEEE JBHI 28(2) 1089–1100 | Journal article, **2024** | Crossref issue date Feb 2024 ✅ (was shown as 2023) |
+| CRC 2026 fleet / work-zone papers | Conference papers | Crossref, DOIs 10.1061/9780784487006.049 and 10.1061/9780784486993.087 ✅ |
+| ICCSA 2023 / 2024 / 2025 | Conference papers | Crossref DOIs ✅ |
+| arXiv 2505.08873, 2308.05819 | Preprints, current v2/v3 titles | arXiv API ✅ (titles changed in 2026 revisions) |
+| SSRN 6512551, 6388938, 7293357 | Preprints | Crossref posted-content ✅; 7293357 on ORCID, not yet on CV ❓ |
+| EdArXiv 10.35542/osf.io/vsjhe_v2 | Preprint | Crossref, ORCID ✅ |
+| SLEEP 2022 abstract | 45(Suppl 1) A255 | Crossref ✅ |
+| AES 2021 abstract | link to AES abstract page | ORCID ✅ |
+| AES 2025, AI in Epilepsy 2026 abstracts | Conference abstracts | CV p.3 only (no public record found) ✅ CV |
+| Software: ML Selection Framework, SIRA, identifiability package, AI guide | Resources | Zenodo + GitHub API (public, author = PI) ✅ |
+| Calculus and Matrix Methods for Data Science | Resource | GitHub repo + live Pages site, author = PI ✅ |
+
+Editorial (not bibliographic): the ML-selection and low-rank papers are tagged `sciml` for the area filter.
+Figures: all site figures and animations are synthetic illustrations of standard models; v7.1 regenerated four of them
+from documented equations in `_build/figures.py` (none depicts results from a publication).
